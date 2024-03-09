@@ -19,8 +19,13 @@ body {
   font-style: normal;
 }
 
-.section {
+section {
   display: block;
+  scale: 0.9;
+  opacity: 0;
+  animation: fade-in linear forwards;
+  animation-timeline: view();
+  animation-range: entry;
 }
 
 .section-wrapper {
@@ -45,5 +50,12 @@ body {
 @media (max-width: 768px) {
   .section-wrapper {
     padding: 7.2rem 1.5rem;
+  }
+}
+
+@keyframes fade-in {
+  to {
+    scale: 1;
+    opacity: 1;
   }
 }
