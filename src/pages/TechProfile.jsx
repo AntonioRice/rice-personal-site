@@ -11,7 +11,7 @@ const TechProfile = () => {
       <section className="flex flex-col items-center justify-center section-wrapper sm:px-0 border-b-2">
         <div className="w-48 h-48 mb-4 mt-10">
           <img
-            className="bg-[#232323] px-3 py-1 rounded-lg"
+            className="rounded-full mx-auto mb-6 ring-4 ring-[#cccccc]"
             src="https://avatars.githubusercontent.com/u/26939265?v=4"
             alt="Antonio Rice"
           />
@@ -83,6 +83,7 @@ const TechProfile = () => {
           </div>
         </div>
       </section>
+
       <section className="section-wrapper">
         <h1 className="text-6xl font-bold">
           Experience <span className="text-red-500 -ml-3">.</span>
