@@ -9,13 +9,18 @@ const TechProfile = () => {
   return (
     <div className="flex-grow bg-[#0F1217] text-white p-5">
       <section className="flex flex-col items-center justify-center section-wrapper sm:px-0 border-b-2">
-        <div className="w-48 h-48 mb-4 mt-10">
+        <a
+          title="Linkedin"
+          href="http://www.linkedin.com/in/riceantonio"
+          target="_blank"
+          className="w-48 h-48 mb-4 mt-10 "
+        >
           <img
-            className="rounded-full mx-auto mb-6 ring-4 ring-[#cccccc]"
+            className="rounded-full mx-auto mb-6 ring-4 ring-[#cccccc] hover:ring-red-500"
             src="https://avatars.githubusercontent.com/u/26939265?v=4"
-            alt="Antonio Rice"
+            alt="Antonio Rice Headshot"
           />
-        </div>
+        </a>
         <h1 className="text-8xl font-bold text-[#cccccc] mb-5">
           Hi, I'm <span className="text-[#ffffff]">Antonio</span>
           <span className="text-red-500">.</span>
@@ -83,8 +88,7 @@ const TechProfile = () => {
           </div>
         </div>
       </section>
-
-      <section className="section-wrapper">
+      <section className="section-wrapper border-b-2">
         <h1 className="text-6xl font-bold">
           Experience <span className="text-red-500 -ml-3">.</span>
         </h1>
