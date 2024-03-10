@@ -74,7 +74,7 @@ const Header = () => {
             </a>
           </li>
           <li>
-            <a href="/photography" className="text-[#cccccc] pointer-events-none">
+            <a href="/techprofile" className="text-[#cccccc] pointer-events-none">
               <IoCameraOutline size={20} />
             </a>
           </li>
