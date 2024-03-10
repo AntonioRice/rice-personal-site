@@ -56,7 +56,7 @@ const Header = () => {
               href="/photography"
               className=" text-[#cccccc] text-lg uppercase hover:text-[#ffffff] hover:border-b-2 hover:border-red-500 pointer-events-none"
             >
-              Photography
+              Photographer
             </a>
           </li>
         </ul>
