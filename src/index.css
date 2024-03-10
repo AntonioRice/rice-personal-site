@@ -21,7 +21,7 @@ body {
 
 section {
   display: block;
-  scale: 0.9;
+  scale: 0.7;
   opacity: 0;
   animation: fade-in linear forwards;
   animation-timeline: view();
@@ -45,6 +45,7 @@ section {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
   border-radius: 0.5rem;
+  font-weight: 450;
 }
 
 @media (max-width: 768px) {
