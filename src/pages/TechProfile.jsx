@@ -208,7 +208,7 @@ const TechProfile = () => {
             <div>
               <button
                 className="bg-[#cccccc] hover:bg-red-500 text-black py-2 px-4 rounded-md transition duration-300 ease-in-out"
-                onClick={() => window.open("src/assets/ALR-Resume-2024-v2.pdf", "_blank")}
+                onClick={() => window.open("/ALR-Resume-2024-v2.pdf", "_blank")}
               >
                 My Resume
               </button>
@@ -264,7 +264,7 @@ const TechProfile = () => {
             </a>
             <a
               title="Resume"
-              href="src/assets/ALR-Resume-2024-v2.pdf"
+              href="/ALR-Resume-2024-v2.pdf"
               target="_blank"
               rel="noreferrer"
               className="hover:text-[#e35757]"

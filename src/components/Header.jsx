@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { IoHomeOutline, IoCameraOutline } from "react-icons/io5";
-
 import { FaCode } from "react-icons/fa6";
 
 const Header = () => {
@@ -34,7 +33,7 @@ const Header = () => {
       <a href="/" className="text-[#ffffff] text-3xl hover:text-red-500 uppercase">
         ar<span className="text-red-500">.</span>
       </a>
-      <nav className="sm:hidden">
+      <nav className="hidden md:flex">
         <ul className="flex space-x-4">
           <li>
             <a
@@ -55,15 +54,14 @@ const Header = () => {
           <li>
             <a
               href="/photography"
-              className=" text-[#cccccc] text-lg uppercase hover:text-[#ffffff] hover:border-b-2 hover:border-red-500"
+              className=" text-[#cccccc] text-lg uppercase hover:text-[#ffffff] hover:border-b-2 hover:border-red-500 pointer-events-none"
             >
               Photography
             </a>
           </li>
         </ul>
       </nav>
-      {/* <---- Icon Small Nav Bar ----> */}
-      <nav className="md:hidden">
+      <nav className="flex md:hidden">
         <ul className="flex space-x-3">
           <li>
             <a href="/" className="text-[#cccccc]">
@@ -76,7 +74,7 @@ const Header = () => {
             </a>
           </li>
           <li>
-            <a href="/photography" className=" text-[#cccccc]">
+            <a href="/photography" className="text-[#cccccc] pointer-events-none">
               <IoCameraOutline size={20} />
             </a>
           </li>
