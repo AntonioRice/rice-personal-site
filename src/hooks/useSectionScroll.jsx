@@ -1,4 +1,5 @@
-import { useRef, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+import { useScroll, useTransform } from "framer-motion";
 
 function useSectionScroll(offset) {
   const ref = useRef(null);

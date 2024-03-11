@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 import { FaLinkedin, FaGithub } from "react-icons/fa6";
 import { SiGoogledocs } from "react-icons/si";
 import { TfiEmail } from "react-icons/tfi";
@@ -8,7 +8,7 @@ import useSectionScroll from "../hooks/useSectionScroll";
 
 // TODO: Break up into reusable components
 const TechProfile = () => {
-  const offset = ["-0.2 0.8", "0.6 1"];
+  const offset = ["0 1", ".5 1"];
   const about = useSectionScroll(offset);
   const experience = useSectionScroll(offset);
   const contact = useSectionScroll(offset);
@@ -41,7 +41,7 @@ const TechProfile = () => {
             </h1>
             <button
               onClick={() => {
-                contactRef.current?.scrollIntoView({ behavior: "smooth" });
+                contact.ref?.current?.scrollIntoView({ behavior: "smooth" });
               }}
               className="bg-[#cccccc] hover:bg-red-500 text-black py-2 px-4 rounded-md transition duration-300 ease-in-out"
             >
