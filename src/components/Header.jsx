@@ -52,31 +52,31 @@ const Header = () => {
             </a>
           </li>
           <li>
-            <a
+            {/* <a
               href="/photography"
-              className=" text-[#cccccc] text-lg uppercase hover:text-[#ffffff] hover:border-b-2 hover:border-red-500 pointer-events-none"
+              className=" text-[#cccccc] text-lg uppercase hover:text-[#ffffff] hover:border-b-2 hover:border-red-500"
             >
               Photographer
-            </a>
+            </a> */}
           </li>
         </ul>
       </nav>
       <nav className="flex md:hidden">
-        <ul className="flex space-x-3">
+        <ul className="flex space-x-8">
           <li>
-            <a href="/" className="text-[#cccccc]">
+            <a title="home" href="/" className="text-[#cccccc] hover:text-red-500">
               <IoHomeOutline size={20} />
             </a>
           </li>
           <li>
-            <a href="/techprofile" className="text-[#cccccc]">
+            <a title="tech profile" href="/techprofile" className="text-[#cccccc] hover:text-red-500">
               <FaCode size={20} />
             </a>
           </li>
           <li>
-            <a href="/techprofile" className="text-[#cccccc] pointer-events-none">
+            {/* <a title="photography profile" href="/photography" className="text-[#cccccc] hover:text-red-500">
               <IoCameraOutline size={20} />
-            </a>
+            </a> */}
           </li>
         </ul>
       </nav>

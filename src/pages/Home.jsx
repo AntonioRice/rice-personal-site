@@ -22,9 +22,9 @@ const Home = () => {
             <img
               src={leftHomePhoto}
               alt="Software Engineer"
-              className="w-full h-auto sm:h-[calc(50vh-32px)] md:h-[calc(100vh-64px)] object-cover group-hover:opacity-100 opacity-40 blur-[1px]"
+              className="w-full h-auto sm:h-[calc(50vh-20px)] md:h-[calc(100vh-40px)] object-cover group-hover:opacity-100 opacity-40 blur-[1px]"
             />
-            <div className="absolute inset-0 flex justify-center items-center px-5 z-10 sm:bg-gradient-to-t md:bg-gradient-to-l from-[#242323] md:from-2% sm:from-0%">
+            <div className="absolute inset-0 flex justify-center items-center px-5 z-10 sm:bg-gradient-to-t md:bg-gradient-to-l from-[#0F1217] md:from-2% sm:from-0%">
               <h1 className="text-5xl font-bold text-white uppercase text-center">Software Engineer</h1>
             </div>
           </div>
@@ -32,9 +32,9 @@ const Home = () => {
             <img
               src={rightHomePhoto}
               alt="Photographer"
-              className="w-full h-auto sm:h-[calc(50vh-32px)] md:h-[calc(100vh-64px)] object-cover group-hover:opacity-100 opacity-40"
+              className="w-full h-auto sm:h-[calc(50vh-20px)] md:h-[calc(100vh-40px)] object-cover group-hover:opacity-100 opacity-40"
             />
-            <div className="absolute inset-0 flex justify-center items-center px-5 z-10 sm:bg-gradient-to-b md:bg-gradient-to-r from-[#242323] md:from-2% sm:from-0%">
+            <div className="absolute inset-0 flex justify-center items-center px-5 z-10 sm:bg-gradient-to-b md:bg-gradient-to-r from-[#0F1217] md:from-2% sm:from-0%">
               <h1 className="text-5xl font-bold text-white uppercase text-center">Photographer</h1>
               <h1 className="fixed text-xl font-bold text-red-500 uppercase text-center mt-20">(coming soon)</h1>
             </div>

@@ -179,7 +179,7 @@ const Photography = () => {
             A. Rice Photography <span className="text-red-500">.</span>
           </h1>
           <a
-            href="https://www.instagram.com/mr_arroz"
+            href="instagram://user?username=mr_arroz"
             target="_blank"
             rel="noreferrer"
             className="ml-2 text-[#cccccc] hover:text-[#e35757]"
@@ -187,8 +187,8 @@ const Photography = () => {
             <FaInstagram size={20} />
           </a>
         </div>
-        <div className="mx-auto p-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3">
+        <div className="mx-auto sm:p-1 md:p-10">
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             {posts.map(({ id, thumbnail, title, year, description }) => (
               <PostItem
                 key={id}

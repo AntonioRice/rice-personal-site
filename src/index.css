@@ -33,18 +33,15 @@ section {
   z-index: 10;
   max-width: 1150px;
   margin: auto;
-  padding: 9.6rem;
+  padding: 6rem;
   overflow: hidden;
 }
 
 .pill {
   --tw-bg-opacity: 1;
   background-color: rgb(35 35 35 / var(--tw-bg-opacity));
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-  border-radius: 0.5rem;
+  padding: 0.25rem 0.75rem 0.25rem 0.75rem;
+  border-radius: 0.7rem;
   font-weight: 450;
 }
 
