@@ -9,7 +9,9 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (lastScrollY < window.scrollY) {
+      if (window.scrollY < 50) {
+        setIsVisible(true);
+      } else if (lastScrollY < window.scrollY) {
         setIsVisible(false);
       } else {
         setIsVisible(true);
