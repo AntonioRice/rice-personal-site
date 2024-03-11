@@ -26,13 +26,15 @@ const Header = () => {
 
   return (
     <div
-      className={`fixed top-0 left-0 w-full bg-transparent py-6 px-10 flex justify-between items-center z-50 transition-opacity duration-500 ${
+      className={`fixed top-0 left-0 w-full bg-transparent py-6 px-5 flex justify-between items-center z-50 transition-opacity duration-500 ${
         isVisible ? "opacity-100" : "opacity-0"
       } hover:opacity-100`}
     >
-      <a href="/" className="text-[#ffffff] text-3xl hover:text-red-500 uppercase">
-        ar<span className="text-red-500">.</span>
-      </a>
+      <div className="size-10">
+        <a href="/">
+          <img src="/logo.png" alt="Logo" />
+        </a>
+      </div>
       <nav className="hidden md:flex">
         <ul className="flex space-x-4">
           <li>
