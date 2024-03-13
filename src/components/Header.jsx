@@ -65,7 +65,7 @@ const Header = () => {
           </li>
         </ul>
       </nav>
-      <nav className="flex md:hidden">
+      <nav className="flex md:hidden bg-black p-2 rounded-2xl bg-opacity-80">
         <ul className="flex space-x-8">
           <li>
             <a title="home" href="/" className="text-[#cccccc] hover:text-red-500">
@@ -78,9 +78,9 @@ const Header = () => {
             </a>
           </li>
           <li>
-            {/* <a title="photography profile" href="/photography" className="text-[#cccccc] hover:text-red-500">
+            <a title="photography profile" href="/photography" className="text-[#cccccc] hover:text-red-500">
               <IoCameraOutline size={20} />
-            </a> */}
+            </a>
           </li>
         </ul>
       </nav>

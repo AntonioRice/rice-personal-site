@@ -1,7 +1,9 @@
 const Footer = () => {
   return (
-    <div className="text-white text-center p-2 bottom-0 h-1">
-      <p className="text-[#ffffff] text-[12px]">© 2024 Antonio Rice, All Rights Reserved.</p>
+    <div className="bottom-0 z-50 h-10 p-2 text-center text-white">
+      <p className="text-[12px] text-[#ffffff]">
+        © 2024 Antonio Rice, All Rights Reserved.
+      </p>
     </div>
   );
 };

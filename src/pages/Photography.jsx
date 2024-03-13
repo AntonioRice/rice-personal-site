@@ -173,9 +173,9 @@ const Photography = () => {
 
   return (
     <AnimatedPage>
-      <div className="flex flex-col pt-10 mt-14">
-        <div className="flex items-center justify-center my-auto">
-          <h1 className="text-md text-[#cccccc] uppercase font-extralight">
+      <div className="mt-14 flex flex-col pt-10">
+        <div className="my-auto flex items-center justify-center">
+          <h1 className="text-md font-extralight uppercase text-[#cccccc]">
             A. Rice Photography <span className="text-red-500">.</span>
           </h1>
           <a
@@ -188,7 +188,7 @@ const Photography = () => {
           </a>
         </div>
         <div className="mx-auto sm:p-1 md:p-10">
-          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {posts.map(({ id, thumbnail, title, year, description }) => (
               <PostItem
                 key={id}

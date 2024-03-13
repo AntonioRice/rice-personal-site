@@ -18,7 +18,7 @@ function App() {
       children: [
         { index: true, element: <Home /> },
         { path: "techprofile", element: <TechProfile /> },
-        // { path: "photography", element: <Photography /> },
+        { path: "photography", element: <Photography /> },
       ],
     },
   ]);
@@ -26,7 +26,7 @@ function App() {
   root.render(
     <React.StrictMode>
       <RouterProvider router={router} />
-    </React.StrictMode>
+    </React.StrictMode>,
   );
 }
 
