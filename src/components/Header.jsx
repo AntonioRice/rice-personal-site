@@ -27,8 +27,8 @@ const Header = () => {
   }, []);
 
   return (
-    <div
-      className={`fixed top-0 left-0 w-full bg-transparent py-6 px-5 flex justify-between items-center z-50 transition-opacity duration-500 ${
+    <header
+      className={`fixed left-0 top-0 z-50 flex w-full items-center justify-between bg-transparent px-5 py-6 transition-opacity duration-500 ${
         isVisible ? "opacity-100" : "opacity-0"
       } hover:opacity-100`}
     >
@@ -41,7 +41,7 @@ const Header = () => {
         <ul className="flex space-x-4">
           <li>
             <a
-              className="text-[#cccccc] text-lg uppercase hover:text-[#ffffff] hover:border-b-2 hover:border-red-500"
+              className="text-lg uppercase text-[#cccccc] hover:border-b-2 hover:border-red-500 hover:text-[#ffffff]"
               href="/"
             >
               home
@@ -49,7 +49,7 @@ const Header = () => {
           </li>
           <li>
             <a
-              className="text-[#cccccc] text-lg  uppercase hover:text-[#ffffff] hover:border-b-2 hover:border-red-500"
+              className="text-lg uppercase  text-[#cccccc] hover:border-b-2 hover:border-red-500 hover:text-[#ffffff]"
               href="/techprofile"
             >
               Software Engineer
@@ -65,26 +65,38 @@ const Header = () => {
           </li>
         </ul>
       </nav>
-      <nav className="flex md:hidden bg-black p-2 rounded-2xl bg-opacity-80">
+      <nav className="flex rounded-2xl bg-black bg-opacity-80 p-2 md:hidden">
         <ul className="flex space-x-8">
           <li>
-            <a title="home" href="/" className="text-[#cccccc] hover:text-red-500">
+            <a
+              title="home"
+              href="/"
+              className="text-[#cccccc] hover:text-red-500"
+            >
               <IoHomeOutline size={20} />
             </a>
           </li>
           <li>
-            <a title="tech profile" href="/techprofile" className="text-[#cccccc] hover:text-red-500">
+            <a
+              title="tech profile"
+              href="/techprofile"
+              className="text-[#cccccc] hover:text-red-500"
+            >
               <FaCode size={20} />
             </a>
           </li>
           <li>
-            <a title="photography profile" href="/photography" className="text-[#cccccc] hover:text-red-500">
+            <a
+              title="photography profile"
+              href="/photography"
+              className="text-[#cccccc] hover:text-red-500"
+            >
               <IoCameraOutline size={20} />
             </a>
           </li>
         </ul>
       </nav>
-    </div>
+    </header>
   );
 };
 
