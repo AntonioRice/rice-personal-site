@@ -31,7 +31,7 @@ const TechProfile = () => {
           </a>
           <h1 className="mb-5 font-bold text-[#cccccc] sm:text-4xl md:text-8xl ">
             Hi, I'm <span className="text-[#ffffff]">Antonio</span>
-            <span className="text-red-500">.</span>
+            <div className="ml-1 inline-block size-4 rounded-full bg-red-500 sm:size-2" />
           </h1>
           <h1 className="mb-5 p-5 text-center text-2xl font-extralight text-[#cccccc]">
             For over half a decade, I've been at the forefront of innovation,
@@ -54,7 +54,8 @@ const TechProfile = () => {
         >
           <section className="section-wrapper border-t-2">
             <h1 className="text-6xl font-bold">
-              About <span className="-ml-3 text-red-500">.</span>
+              About
+              <div className="ml-1 inline-block size-3 rounded-full bg-red-500" />
             </h1>
             <div className="mt-5 grid gap-9 md:grid-cols-3 ">
               <div className="col-span-2">
@@ -115,7 +116,8 @@ const TechProfile = () => {
         >
           <section className="section-wrapper border-t-2">
             <h1 className="text-6xl font-bold">
-              Experience <span className="-ml-3 text-red-500">.</span>
+              Experience
+              <div className="ml-1 inline-block size-3 rounded-full bg-red-500" />
             </h1>
             <div className="mb-8 mt-8">
               <div className="mb-4 flex items-center justify-between">
@@ -252,7 +254,8 @@ const TechProfile = () => {
         >
           <section className="section-wrapper mt-20 flex flex-col items-center justify-center border-t-2">
             <h1 className="text-8xl font-bold sm:text-6xl">
-              Contact<span className="text-red-500">.</span>
+              Contact
+              <div className="ml-2 inline-block size-5 rounded-full bg-red-500 sm:size-3" />
             </h1>
             <h1 className="mb-5 text-center text-2xl font-extralight text-[#cccccc] sm:text-xl">
               Send me an email if you want to connect. You can also find me on
