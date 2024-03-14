@@ -56,12 +56,12 @@ const Header = () => {
             </a>
           </li>
           <li>
-            {/* <a
+            <a
               href="/photography"
-              className=" text-[#cccccc] text-lg uppercase hover:text-[#ffffff] hover:border-b-2 hover:border-red-500"
+              className=" text-lg uppercase  text-[#cccccc] hover:border-b-2 hover:border-red-500 hover:text-[#ffffff]"
             >
               Photographer
-            </a> */}
+            </a>
           </li>
         </ul>
       </nav>

@@ -35,7 +35,7 @@ const Home = () => {
             onClick={handleRightClick}
             className="rounded-md bg-white px-4 py-2 transition duration-300 ease-in-out hover:bg-red-500"
           >
-            photography
+            photographer
           </button>
         </div>
       </section>
