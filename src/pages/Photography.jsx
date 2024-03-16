@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaInstagram } from "react-icons/fa6";
-import AlbumItem from "../components/AlbumItem";
+import Album from "../components/Album";
 import AnimatedPage from "../components/AnimatedPage";
 import axios from "axios";
 
@@ -39,14 +39,13 @@ const Photography = () => {
         </div>
         <div className="sm:p-1 md:p-10">
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            {albums.map(({ id, coverImageUrl, name, albumDate, images }) => (
-              <AlbumItem
+            {albums.map(({ id, coverImageUrl, name, albumDate }) => (
+              <Album
                 key={id}
                 albumId={id}
                 coverImageUrl={coverImageUrl}
                 name={name}
                 albumDate={albumDate}
-                images={images}
               />
             ))}
           </div>
