@@ -1,8 +1,11 @@
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
+import usePageTracking from "../hooks/usePageTracking";
 
 const Layout = () => {
+  usePageTracking();
+
   return (
     <div className="flex h-screen flex-col bg-[#0F1217]">
       <Header />

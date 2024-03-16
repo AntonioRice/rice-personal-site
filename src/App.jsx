@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import dotenv from "dotenv";
 import "./index.css";
 import Layout from "./components/Layout";
 import AlbumDetails from "./pages/AlbumDetails";
@@ -9,6 +10,10 @@ import TechProfile from "./pages/TechProfile";
 import Photography from "./pages/Photography";
 import ErrorPage from "./pages/ErrorPage";
 import ReactGA from "react-ga4";
+
+dotenv.config();
+
+ReactGA.initialize(process.env.GOOGLE_ANALYTICS_TAG);
 
 function App() {
   const root = ReactDOM.createRoot(document.getElementById("root"));
