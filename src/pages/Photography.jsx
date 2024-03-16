@@ -1,23 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaInstagram } from "react-icons/fa6";
-import Thumbnail from "../assets/images/DSC07414.jpg";
-import PostItem from "../components/PostItem";
+import AlbumItem from "../components/AlbumItem";
 import AnimatedPage from "../components/AnimatedPage";
-
-// TODO: Fetch real data
-const DUMMY_POSTS = [
-  {
-    id: "1",
-    thumbnail: Thumbnail,
-    title: "Egypt",
-    year: "2023",
-    description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius esse, nisi id atque, eaque minus vitae placeat unde delectus harum, ea sed laudantium odio rerum sapiente omnis distinctio! Earum repellat enim expedita repudiandae quod aperiam consectetur suscipit? Impedit optio ipsam quae sequi atque. Ea tempore, eum ad placeat sequi fugit sit et temporibus delectus soluta perspiciatis saepe quae amet! Quibusdam accusantium cum quas soluta nesciunt facilis neque sequi amet molestias ducimus laudantium, totam unde suscipit corporis. Amet ut vitae aperiam. Molestiae natus iste commodi ea voluptate vel officia, perspiciatis laboriosam obcaecati mollitia? Alias temporibus accusamus necessitatibus suscipit obcaecati rerum nihil culpa, beatae sequi numquam! Veritatis veniam unde, ab minima ea nam commodi ipsa sit doloremque at eius eos reprehenderit debitis, itaque in sapiente temporibus molestias nostrum voluptatem sunt officiis amet quam. Officiis veniam, rerum minima, ullam qui illo nemo error corrupti, eligendi animi facere nihil. Id quaerat alias cum repellat.",
-  },
-];
+import axios from "axios";
 
 const Photography = () => {
-  const [posts] = useState(DUMMY_POSTS);
+  const [albums, setAlbums] = useState([]);
+
+  useEffect(() => {
+    async function fetchAlbum() {
+      try {
+        const response = await axios.get("http://localhost:8080/api/albums");
+        setAlbums(response.data.data);
+      } catch (e) {
+        console.error("Error retrieving albums", e);
+        alert("Error retrieving albums");
+      }
+    }
+
+    fetchAlbum();
+  }, []);
 
   return (
     <AnimatedPage>
@@ -37,14 +39,14 @@ const Photography = () => {
         </div>
         <div className="sm:p-1 md:p-10">
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            {posts.map(({ id, thumbnail, title, year, description }) => (
-              <PostItem
+            {albums.map(({ id, coverImageUrl, name, albumDate, images }) => (
+              <AlbumItem
                 key={id}
-                postID={id}
-                thumbnail={thumbnail}
-                title={title}
-                year={year}
-                description={description}
+                albumId={id}
+                coverImageUrl={coverImageUrl}
+                name={name}
+                albumDate={albumDate}
+                images={images}
               />
             ))}
           </div>
