@@ -23,7 +23,7 @@ jobs:
 
       - name: Run the new container
         run: |
-          docker run -d --name rice-personal-site-container -p 8080:8080 \
+          docker run -d --name rice-personal-site-container -p 3000:3000 \
           -e GOOGLE_ANALYTICS_TAG=${{ secrets.GOOGLE_ANALYTICS_TAG }} \
           -e SERVER_URL=${{ secrets.SERVER_URL }} \
           ricex407/rice-personal-site:latest
