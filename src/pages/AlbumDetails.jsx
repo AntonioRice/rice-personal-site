@@ -13,7 +13,7 @@ const AlbumDetails = () => {
     const fetchImages = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/api/images/album/${albumId}`,
+          `${process.env.SERVER_URL}/images/album/${albumId}`,
         );
         setImages(response.data.images);
       } catch (error) {

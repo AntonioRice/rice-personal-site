@@ -10,7 +10,7 @@ const Photography = () => {
   useEffect(() => {
     async function fetchAlbum() {
       try {
-        const response = await axios.get("http://localhost:8080/api/albums");
+        const response = await axios.get(`${process.env.SERVER_URL}/albums`);
         setAlbums(response.data.data);
       } catch (e) {
         console.error("Error retrieving albums", e);

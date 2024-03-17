@@ -1,0 +1,28 @@
+name: CD for rice-personal-site
+
+on:
+  workflow_run:
+    workflows: ["CI for rice-personal-site"]
+    branches: [main]
+    types:
+      - completed
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Login to Docker Hub
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+      - name: Pull latest Docker image
+        run: docker pull ricex407/rice-personal-site:latest
+
+      - name: Stop the current container
+        run: docker stop rice-personal-site-container || true
+
+      - name: Remove the stopped container
+        run: docker rm rice-personal-site-container || true
+
+      - name: Run the new container
+        run: docker run -d --name rice-personal-site-container -p 8080:8080 ricex407/rice-personal-site:latest
