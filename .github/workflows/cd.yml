@@ -3,7 +3,7 @@ name: CD for rice-personal-site
 on:
   workflow_run:
     workflows: ["CI for rice-personal-site"]
-    branches: [main]
+    branches: [master]
     types:
       - completed
 
@@ -25,4 +25,8 @@ jobs:
         run: docker rm rice-personal-site-container || true
 
       - name: Run the new container
-        run: docker run -d --name rice-personal-site-container -p 8080:8080 ricex407/rice-personal-site:latest
+        run: |
+          docker run -d --name rice-personal-site-container -p 8080:8080 \
+          -e GOOGLE_ANALYTICS_TAG=${{ secrets.GOOGLE_ANALYTICS_TAG }} \
+          -e SERVER_URL=${{ secrets.SERVER_URL }} \
+          ricex407/rice-personal-site:latest

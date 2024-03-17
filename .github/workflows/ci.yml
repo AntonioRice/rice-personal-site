@@ -3,7 +3,7 @@ name: CI for rice-personal-site
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build-and-push:
