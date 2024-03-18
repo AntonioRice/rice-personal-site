@@ -13,7 +13,12 @@ import ReactGA from "react-ga4";
 
 dotenv.config();
 
-ReactGA.initialize(process.env.GOOGLE_ANALYTICS_TAG);
+const GOOGLE_ANALYTICS_TAG = import.meta.env.VITE_GOOGLE_ANALYTICS_TAG;
+if (!GOOGLE_ANALYTICS_TAG) {
+  console.error("SERVER_URL environment variable is not defined");
+}
+
+ReactGA.initialize(GOOGLE_ANALYTICS_TAG);
 
 function App() {
   const root = ReactDOM.createRoot(document.getElementById("root"));
