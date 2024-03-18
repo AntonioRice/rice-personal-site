@@ -10,7 +10,12 @@ const Photography = () => {
   useEffect(() => {
     async function fetchAlbum() {
       try {
-        const response = await axios.get(`${process.env.SERVER_URL}/albums`);
+        const SERVER_URL = import.meta.env.VITE_SERVER_URL;
+        if (!SERVER_URL) {
+          console.error("SERVER_URL environment variable is not defined");
+          return;
+        }
+        const response = await axios.get(`${SERVER_URL}/albums`);
         setAlbums(response.data.data);
       } catch (e) {
         console.error("Error retrieving albums", e);

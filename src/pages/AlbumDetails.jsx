@@ -12,8 +12,14 @@ const AlbumDetails = () => {
   useEffect(() => {
     const fetchImages = async () => {
       try {
+        const SERVER_URL = import.meta.env.VITE_SERVER_URL;
+        if (!SERVER_URL) {
+          console.error("SERVER_URL environment variable is not defined");
+          return;
+        }
+
         const response = await axios.get(
-          `${process.env.SERVER_URL}/images/album/${albumId}`,
+          `${SERVER_URL}/images/album/${albumId}`,
         );
         setImages(response.data.images);
       } catch (error) {
