@@ -11,6 +11,7 @@ import ErrorPage from "./pages/ErrorPage";
 import ReactGA from "react-ga4";
 
 const GOOGLE_ANALYTICS_TAG = import.meta.env.VITE_GOOGLE_ANALYTICS_TAG;
+
 if (!GOOGLE_ANALYTICS_TAG) {
   console.error("SERVER_URL environment variable is not defined");
 }

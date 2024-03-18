@@ -3,6 +3,8 @@ import { useParams, useLocation } from "react-router-dom";
 import axios from "axios";
 import AnimatedPage from "../components/AnimatedPage";
 
+const SERVER_URL = import.meta.env.VITE_SERVER_URL;
+
 const AlbumDetails = () => {
   const location = useLocation();
   const { name, year } = location.state || {};
@@ -12,10 +14,8 @@ const AlbumDetails = () => {
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const SERVER_URL = import.meta.env.VITE_SERVER_URL;
         if (!SERVER_URL) {
           console.error("SERVER_URL environment variable is not defined");
-          return;
         }
 
         const response = await axios.get(

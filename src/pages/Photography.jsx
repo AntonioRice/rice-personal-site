@@ -4,16 +4,16 @@ import Album from "../components/Album";
 import AnimatedPage from "../components/AnimatedPage";
 import axios from "axios";
 
+const SERVER_URL = import.meta.env.VITE_SERVER_URL;
+
 const Photography = () => {
   const [albums, setAlbums] = useState([]);
 
   useEffect(() => {
     async function fetchAlbum() {
       try {
-        const SERVER_URL = import.meta.env.VITE_SERVER_URL;
         if (!SERVER_URL) {
           console.error("SERVER_URL environment variable is not defined");
-          return;
         }
         const response = await axios.get(`${SERVER_URL}/albums`);
         setAlbums(response.data.data);
