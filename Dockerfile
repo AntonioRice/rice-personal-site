@@ -19,7 +19,7 @@ FROM nginx:1.23-alpine
 RUN rm /etc/nginx/conf.d/default.conf
 
 # Copy the custom nginx configuration file
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY nginx/nginx.conf /etc/nginx/nginx.conf
 
 # Copy the built app to the nginx directory
 COPY --from=build /app/dist /usr/share/nginx/html
