@@ -1,8 +1,7 @@
 # Build stage
 FROM node:17-alpine as build
 WORKDIR /app
-COPY package.json .
-COPY package-lock.json .
+COPY package.json package-lock.json ./
 RUN npm install
 
 # Copy the source code and build the application
@@ -16,11 +15,14 @@ RUN VITE_SERVER_URL=$VITE_SERVER_URL VITE_GOOGLE_ANALYTICS_TAG=$VITE_GOOGLE_ANAL
 # Production stage
 FROM nginx:1.23-alpine
 
+# Remove the default nginx configuration file
+RUN rm /etc/nginx/conf.d/default.conf
+
+# Copy the custom nginx configuration file
+COPY nginx.conf /etc/nginx/nginx.conf
+
 # Copy the built app to the nginx directory
 COPY --from=build /app/dist /usr/share/nginx/html
-
-# Copy the nginx configuration file
-COPY nginx.conf /etc/nginx/nginx.conf
 
 # Expose port 80 to the outside once the container has launched
 EXPOSE 80
