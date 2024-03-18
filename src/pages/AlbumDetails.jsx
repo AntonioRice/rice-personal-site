@@ -14,10 +14,6 @@ const AlbumDetails = () => {
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        if (!SERVER_URL) {
-          console.error("SERVER_URL environment variable is not defined");
-        }
-
         const response = await axios.get(
           `${SERVER_URL}/images/album/${albumId}`,
         );
