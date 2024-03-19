@@ -17,21 +17,12 @@ COPY . .
 # Build the application
 RUN npm run build
 
-# Production stage
-FROM nginx:1.23-alpine
+# Serve stage
+FROM node:17-alpine
+WORKDIR /app
+COPY --from=build /app/build /app/build
+COPY server.js /app
+RUN npm install express
 
-# Copy the custom nginx configuration file
-COPY nginx.conf /etc/nginx/nginx.conf
-
-# Remove the default nginx configuration file
-RUN rm /etc/nginx/conf.d/default.conf
-
-# Copy the built app to the nginx directory
-COPY --from=build /app/dist /usr/share/nginx/html
-
-# Expose port 80 to the outside once the container has launched
 EXPOSE 80
-
-# The command to run when the container starts
-CMD ["sh", "-c", "until ping -c1 frontend; do echo 'Waiting for frontend...'; sleep 1; done; nginx -g 'daemon off;'"]
-
+CMD ["node", "server.js"]
