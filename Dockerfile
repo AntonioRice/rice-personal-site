@@ -20,7 +20,7 @@ RUN npm run build
 # Serve stage
 FROM node:17-alpine
 WORKDIR /app
-COPY --from=build /app/build /app/build
+COPY --from=build /app/dist /app/dist
 COPY server.js /app
 RUN npm install express
 
