@@ -33,4 +33,5 @@ COPY --from=build /app/dist /usr/share/nginx/html
 EXPOSE 80
 
 # The command to run when the container starts
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["sh", "-c", "until ping -c1 frontend; do echo 'Waiting for frontend...'; sleep 1; done; nginx -g 'daemon off;'"]
+
