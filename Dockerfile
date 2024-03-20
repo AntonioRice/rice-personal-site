@@ -1,28 +1,15 @@
 # Build stage
 FROM node:17-alpine as build
 WORKDIR /app
-COPY package.json package-lock.json ./
+COPY package.json .
 RUN npm install
-
-# Set build-time environment variables
-ARG VITE_SERVER_URL
-ARG VITE_GOOGLE_ANALYTICS_TAG
-
-ENV VITE_SERVER_URL=${VITE_SERVER_URL}
-ENV VITE_GOOGLE_ANALYTICS_TAG=${VITE_GOOGLE_ANALYTICS_TAG}
-
-# Copy the source code
 COPY . .
-
-# Build the application
 RUN npm run build
 
-# Serve stage
-FROM node:17-alpine
-WORKDIR /app
-COPY --from=build /app/dist /app/dist
-COPY server.js ./
-RUN npm install express
-
+# NGINX
+FROM nginx:1.23-alpine
+WORKDIR /usr/share/nginx/html
+RUN rm -rf *
+COPY --from=build ./app/dist .
 EXPOSE 80
-CMD ["node", "server.js"]
+ENTRYPOINT [ "nginx", "-g", "daemon off;" ]

@@ -29,6 +29,6 @@ jobs:
       - name: Start the new Docker Compose services
         run: sudo docker-compose up -d
         env:
-          MONGO_PASSWORD: ${{ secrets.MONGO_PASSWORD }}
+          VITE_MONGO_PASSWORD: ${{ secrets.MONGO_PASSWORD }}
           VITE_GOOGLE_ANALYTICS_TAG: ${{ secrets.VITE_GOOGLE_ANALYTICS_TAG }}
           VITE_SERVER_URL: ${{ secrets.VITE_SERVER_URL }}
