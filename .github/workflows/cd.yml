@@ -15,20 +15,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install Docker Compose
-        run: |
-          sudo curl -L "https://github.com/docker/compose/releases/download/v2.2.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-          sudo chmod +x /usr/local/bin/docker-compose
-
       - name: Pull latest Docker images
-        run: sudo docker-compose pull
+        run: sudo docker pull ricex407/rice-personal-site:latest
 
-      - name: Stop and remove the current Docker Compose services
-        run: sudo docker-compose down || true
+      - name: Delete old container
+        run: docker rm -f rice-personal-site-container
 
-      - name: Start the new Docker Compose services
-        run: sudo docker-compose up -d
-        env:
-          VITE_MONGO_PASSWORD: ${{ secrets.MONGO_PASSWORD }}
-          VITE_GOOGLE_ANALYTICS_TAG: ${{ secrets.VITE_GOOGLE_ANALYTICS_TAG }}
-          VITE_SERVER_URL: ${{ secrets.VITE_SERVER_URL }}
+      - name: Run Docker Container
+        run: docker run -d -p 3000:80 --name rice-personal-site-container ricex407/rice-personal-site
