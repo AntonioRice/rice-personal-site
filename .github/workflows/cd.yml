@@ -1,8 +1,8 @@
-name: CD for rice-personal-site
+name: CD Pipeline
 
 on:
   workflow_run:
-    workflows: ["CI for rice-personal-site"]
+    workflows: ["CI Pipeline"]
     branches: [master]
     types:
       - completed
@@ -22,4 +22,4 @@ jobs:
         run: docker rm -f rice-personal-site-container
 
       - name: Run Docker Container
-        run: docker run -d -p 3000:80 --name rice-personal-site-container ricex407/rice-personal-site
+        run: docker run -d -p 3000:80 --name rice-personal-site-container ricex407/rice-personal-site:latest

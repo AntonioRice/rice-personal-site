@@ -1,4 +1,4 @@
-name: CI for rice-personal-site
+name: CI Pipeline
 
 on:
   push:
