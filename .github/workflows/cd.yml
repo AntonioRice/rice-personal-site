@@ -22,4 +22,4 @@ jobs:
         run: docker rm rice-personal-site-container || true
 
       - name: Run Docker Container
-        run: docker run -d -p 80:80 --name rice-personal-site-container ricex407/rice-personal-site:latest
+        run: docker run -d -p 3000:80 --name rice-personal-site-container ricex407/rice-personal-site:latest
