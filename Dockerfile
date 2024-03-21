@@ -26,6 +26,10 @@ WORKDIR /usr/share/nginx/html
 RUN rm -rf *
 # Copy the static build directory from the previous build stage into the Nginx serve directory
 COPY --from=build /app/dist .
+
+# Copy custom nginx fil
+COPY antoniorice.com /etc/nginx/conf.d/
+
 # Inform Docker that the container listens on port 80
 EXPOSE 80
 # Start Nginx and keep it running in the foreground
