@@ -10,18 +10,19 @@ ENV VITE_MONGO_PASSWORD=$VITE_MONGO_PASSWORD
 ENV VITE_SERVER_URL=$VITE_SERVER_URL
 ENV VITE_GOOGLE_ANALYTICS_TAG=$VITE_GOOGLE_ANALYTICS_TAG
 
-WORKDIR /
+WORKDIR /app
 COPY package.json .
 RUN npm install
 COPY . .
 RUN npm run build
 
+RUN ls -l /app/dist
 RUN ls -l /dist
 
 # nginx
 FROM nginx:1.23-alpine
 WORKDIR /usr/share/nginx/html
 RUN rm -rf *
-COPY --from=build /dist /usr/share/nginx/html
+COPY --from=build /app/dist /usr/share/nginx/html
 EXPOSE 80
 ENTRYPOINT [ "nginx", "-g", "daemon off;" ]
