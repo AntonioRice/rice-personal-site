@@ -24,6 +24,6 @@ jobs:
         run: |
           docker run -d \
             --net rice-personal-site-network \
-            -p 80:80 \
+            -p 3000:80 \
             --name rice-personal-site-container \
             ricex407/rice-personal-site:latest
