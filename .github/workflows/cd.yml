@@ -11,9 +11,6 @@ jobs:
   deploy:
     runs-on: self-hosted
     steps:
-      - name: Checkout the repository
-        uses: actions/checkout@v3
-
       - name: Pull the latest images
         run: docker-compose pull
 
