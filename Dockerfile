@@ -13,26 +13,13 @@ ENV VITE_GOOGLE_ANALYTICS_TAG=$VITE_GOOGLE_ANALYTICS_TAG
 
 # Set the working directory to /app
 WORKDIR /app
-COPY package.json .
+
+# Install app dependencies
+COPY package.json ./
 RUN npm install
+
+# Bundle app source
 COPY . .
+
+# Build the application
 RUN npm run build
-
-# Nginx stage
-FROM nginx:1.23-alpine
-# Set the working directory to the directory where Nginx serves files
-WORKDIR /usr/share/nginx/html
-# Remove default Nginx static files
-RUN rm -rf *
-# Copy the static build directory from the previous build stage into the Nginx serve directory
-COPY --from=build /app/dist .
-
-# Copy custom nginx file
-COPY antoniorice.com.conf /etc/nginx/conf.d/
-
-RUN rm /etc/nginx/conf.d/default.conf
-
-# Inform Docker that the container listens on port 80
-EXPOSE 80
-# Start Nginx and keep it running in the foreground
-ENTRYPOINT [ "nginx", "-g", "daemon off;" ]
