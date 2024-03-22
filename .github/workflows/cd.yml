@@ -10,20 +10,19 @@ on:
 jobs:
   deploy:
     runs-on: self-hosted
+
     steps:
-      - name: Pull latest Docker image
-        run: sudo docker pull ricex407/rice-personal-site:latest
+      - name: Check out the repository
+        uses: actions/checkout@v3
 
-      - name: Stop the current container
-        run: docker stop rice-personal-site-container || true
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Remove the stopped container
-        run: docker rm rice-personal-site-container || true
-
-      - name: Run Docker Container
+      - name: Pull latest images and redeploy using Docker Compose
         run: |
-          docker run -d \
-            --net rice-personal-site-network \
-            -p 3000:80 \
-            --name rice-personal-site-container \
-            ricex407/rice-personal-site:latest
+          docker-compose -f docker-compose.yml pull
+          docker-compose -f docker-compose.yml down
+          docker-compose -f docker-compose.yml up -d
