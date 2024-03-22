@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+  rice-personal-site:
+    image: ricex407/rice-personal-site:latest
+    ports:
+      - "80:3000"
+    networks:
+      - rice-personal-site-network
+
+  s3-image-uploader:
+    image: ricex407/s3-image-uploader:latest
+    expose:
+      - "8080"
+    networks:
+      - rice-personal-site-network
+
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+    ports:
+      - "3000:80"
+      - "8080:8080"
+    depends_on:
+      - rice-personal-site
+      - s3-image-uploader
+    networks:
+      - rice-personal-site-network
+
+networks:
+  rice-personal-site-network:
+    driver: bridge
