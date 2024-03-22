@@ -10,9 +10,8 @@ on:
 jobs:
   deploy:
     runs-on: self-hosted
-
     steps:
-      - name: Pull latest Docker images
+      - name: Pull latest Docker image
         run: sudo docker pull ricex407/rice-personal-site:latest
 
       - name: Stop the current container
@@ -22,4 +21,9 @@ jobs:
         run: docker rm rice-personal-site-container || true
 
       - name: Run Docker Container
-        run: docker run -d -p 80:80 --name rice-personal-site-container ricex407/rice-personal-site:latest
+        run: |
+          docker run -d \
+            --net rice-personal-site-network \
+            -p 80:80 \
+            --name rice-personal-site-container \
+            ricex407/rice-personal-site:latest
