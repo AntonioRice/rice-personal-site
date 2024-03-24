@@ -17,5 +17,8 @@ jobs:
       - name: Pull the latest images
         run: docker-compose pull
 
+      - name: Shutdown old containers
+        run: docker-compose down
+
       - name: Deploy with Docker Compose
         run: docker-compose up -d
