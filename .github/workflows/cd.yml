@@ -14,6 +14,9 @@ jobs:
       - name: Checkout the repository
         uses: actions/checkout@v3
 
+      - name: Cleanup workspace
+        run: sudo rm -rf /home/runner/work/rice-personal-site/rice-personal-site || true
+
       - name: Pull the latest images
         run: docker-compose pull
 
