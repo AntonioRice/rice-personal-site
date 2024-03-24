@@ -2,6 +2,7 @@ version: "3.8"
 
 services:
   rice-personal-site-container:
+    container_name: rice-personal-site-container
     image: ricex407/rice-personal-site:latest
     ports:
       - "3000:80"
@@ -10,12 +11,14 @@ services:
     restart: unless-stopped
 
   s3-image-uploader-container:
+    container_name: s3-image-uploader-container
     image: ricex407/s3-image-uploader:latest
     networks:
       - rice-personal-site-network
 
   nginx:
     image: nginx:latest
+    container_name: nginx-container
     volumes:
       - ./antoniorice.com.conf:/etc/nginx/conf.d/default.conf
     ports:

@@ -14,9 +14,6 @@ jobs:
       - name: Checkout the repository
         uses: actions/checkout@v3
 
-      - name: Log GITHUB_WORKSPACE
-        run: echo "GITHUB_WORKSPACE=${{ github.workspace }}"
-
       - name: Pull the latest images
         run: docker-compose pull
 
