@@ -8,7 +8,7 @@ services:
       - "3000:80"
     networks:
       - rice-personal-site-network
-    restart: unless-stopped
+    restart: "no"
 
   s3-image-uploader-container:
     container_name: s3-image-uploader-container
