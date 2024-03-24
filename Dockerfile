@@ -1,5 +1,5 @@
 # Build stage
-FROM node:17-alpine as build
+FROM node:18-alpine as build
 
 # Declare Args
 ARG VITE_MONGO_PASSWORD
