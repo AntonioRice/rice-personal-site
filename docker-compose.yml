@@ -5,7 +5,7 @@ services:
     container_name: rice-personal-site-container
     image: ricex407/rice-personal-site:latest
     ports:
-      - "3000:3000"
+      - "3000:80"
     networks:
       - rice-personal-site-network
     restart: "no"
