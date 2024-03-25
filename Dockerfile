@@ -23,3 +23,6 @@ COPY . .
 
 # Build the application
 RUN npm run build
+
+# Start command
+CMD ["npm", "start"]
