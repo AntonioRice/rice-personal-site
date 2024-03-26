@@ -20,8 +20,14 @@ jobs:
       - name: Shutdown old containers
         run: docker-compose down
 
-      - name: Rebuild the backend container
-        run: docker-compose build s3-image-uploader-container
+      - name: Remove existing s3-image-uploader-container
+        run: |
+          if docker container ls -a | grep -q s3-image-uploader-container; then
+            docker container rm -f s3-image-uploader-container
+          fi
 
       - name: Deploy with Docker Compose
         run: docker-compose up -d
+
+      - name: Clean up any unused Docker resources
+        run: docker system prune -af
