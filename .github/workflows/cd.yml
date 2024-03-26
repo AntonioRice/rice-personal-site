@@ -28,6 +28,10 @@ jobs:
 
       - name: Deploy with Docker Compose
         run: docker-compose up -d
+        env:
+          API_PORT: ${{ secrets.API_PORT }}
+          MONGO_PASSWORD: ${{ secrets.MONGO_PASSWORD }}
+          MONGO_DATABASE: ${{ secrets.MONGO_DATABASE }}
 
       - name: Clean up any unused Docker resources
         run: docker system prune -af
