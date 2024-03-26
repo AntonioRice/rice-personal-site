@@ -20,5 +20,8 @@ jobs:
       - name: Shutdown old containers
         run: docker-compose down
 
+      - name: Rebuild the backend container
+        run: docker-compose build s3-image-uploader-container
+
       - name: Deploy with Docker Compose
         run: docker-compose up -d
