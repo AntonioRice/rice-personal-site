@@ -27,6 +27,5 @@ jobs:
           push: true
           tags: ricex407/rice-personal-site:latest
           build-args: |
-            VITE_MONGO_PASSWORD=${{ secrets.MONGO_PASSWORD }}
             VITE_SERVER_URL=${{ secrets.VITE_SERVER_URL }}
             VITE_GOOGLE_ANALYTICS_TAG=${{ secrets.VITE_GOOGLE_ANALYTICS_TAG }}
