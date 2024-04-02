@@ -7,6 +7,8 @@
   --secondary-color: #ffffff;
   --tertiary-color: #cccccc;
   --accent-color: red;
+
+  position: relative;
 }
 
 html,

@@ -19,13 +19,14 @@ const TechProfile = () => {
         <section className="section-wrapper flex flex-col items-center justify-center sm:px-0">
           <a
             title="Linkedin"
-            href="http://www.linkedin.com/in/riceantonio"
+            href="https://www.linkedin.com/in/riceantonio"
             target="_blank"
+            rel="noopener noreferrer"
             className="mb-4 mt-10 h-48 w-48"
           >
             <img
               className="mx-auto mb-6 rounded-full ring-4 ring-[#cccccc] transition duration-300 ease-in-out hover:ring-red-500"
-              src="https://avatars.githubusercontent.com/u/26939265?v=4"
+              src="src/assets/images/avatar.jpeg"
               alt="Antonio Rice Headshot"
             />
           </a>
@@ -261,9 +262,9 @@ const TechProfile = () => {
               Send me an email if you want to connect. You can also find me on
               <span className="ml-1">
                 <a
-                  href="http://www.linkedin.com/in/riceantonio"
+                  href="https://www.linkedin.com/in/riceantonio"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="decoration-red-500 hover:text-[#ffffff] hover:underline"
                 >
                   Linkedin!
@@ -274,7 +275,7 @@ const TechProfile = () => {
               title="Email"
               href="mailto:contact@antoniorice.com"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="flex cursor-pointer items-center space-x-2 hover:text-[#e35757]"
             >
               <TfiEmail size={25} className="mt-2" />
@@ -285,9 +286,9 @@ const TechProfile = () => {
             <section className="mt-5 flex space-x-4">
               <a
                 title="Linkedin"
-                href="http://www.linkedin.com/in/riceantonio"
+                href="https://www.linkedin.com/in/riceantonio"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="hover:text-[#e35757]"
               >
                 <FaLinkedin size={30} />
@@ -296,7 +297,7 @@ const TechProfile = () => {
                 title="Github"
                 href="https://www.github.com/AntonioRice"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="hover:text-[#e35757]"
               >
                 <FaGithub size={30} />
@@ -305,7 +306,7 @@ const TechProfile = () => {
                 title="Resume"
                 href="/ALR-Resume-2024-v2.pdf"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="hover:text-[#e35757]"
               >
                 <SiGoogledocs size={30} />

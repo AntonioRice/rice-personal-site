@@ -19,7 +19,12 @@ const Album = ({ albumId, coverImageUrl, name, albumDate }) => {
         <h1 className="flex text-2xl uppercase text-[#ffffff]">{name}</h1>
         <h1 className="absolute mt-14 text-black">{year}</h1>
       </div>
-      <img src={coverImageUrl} alt={name} loading="lazy" />
+      <img
+        src={coverImageUrl}
+        alt={name}
+        loading="lazy"
+        className="pointer-events-none"
+      />
     </div>
   );
 };

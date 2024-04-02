@@ -1,6 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import Layout from "./components/Layout";
 import AlbumDetails from "./pages/AlbumDetails";
@@ -14,31 +13,26 @@ const GOOGLE_ANALYTICS_TAG = import.meta.env.VITE_GOOGLE_ANALYTICS_TAG;
 
 if (!GOOGLE_ANALYTICS_TAG) {
   console.log("GOOGLE_ANALYTICS_TAG environment variable is not defined");
+} else {
+  ReactGA.initialize(GOOGLE_ANALYTICS_TAG);
 }
 
-ReactGA.initialize(GOOGLE_ANALYTICS_TAG);
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    errorElement: <ErrorPage />,
+    children: [
+      { index: true, element: <Home /> },
+      { path: "techprofile", element: <TechProfile /> },
+      { path: "photography", element: <Photography /> },
+      { path: "album/:albumId", element: <AlbumDetails /> },
+    ],
+  },
+]);
 
 function App() {
-  const root = ReactDOM.createRoot(document.getElementById("root"));
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Layout />,
-      errorElement: <ErrorPage />,
-      children: [
-        { index: true, element: <Home /> },
-        { path: "techprofile", element: <TechProfile /> },
-        { path: "photography", element: <Photography /> },
-        { path: "album/:albumId", element: <AlbumDetails /> },
-      ],
-    },
-  ]);
-
-  root.render(
-    <React.StrictMode>
-      <RouterProvider router={router} />
-    </React.StrictMode>,
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
