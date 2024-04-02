@@ -34,7 +34,8 @@ const TechProfile = () => {
             Hi, I'm <span className="text-[#ffffff]">Antonio</span>
             <a
               href="https://www.kappaalphapsi1911.com/"
-              title="Learn about my organization, Kappa Alpha Psi Fraternity Inc."
+              title="Kappa Alpha Psi Fraternity, Inc. 1911"
+              rel="noopener noreferrer"
               className="ml-1 inline-block size-4 rounded-full bg-red-500 sm:size-2"
               aria-label="Learn about my organization, Kappa Alpha Psi Fraternity Inc."
             ></a>
