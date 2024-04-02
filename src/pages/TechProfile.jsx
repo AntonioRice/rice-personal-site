@@ -36,6 +36,7 @@ const TechProfile = () => {
               href="https://www.kappaalphapsi1911.com/"
               title="Kappa Alpha Psi Fraternity, Inc. 1911"
               rel="noopener noreferrer"
+              target="_blank"
               className="ml-1 inline-block size-4 rounded-full bg-red-500 sm:size-2"
               aria-label="Learn about my organization, Kappa Alpha Psi Fraternity Inc."
             ></a>
