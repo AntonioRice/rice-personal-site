@@ -30,9 +30,14 @@ const TechProfile = () => {
               alt="Antonio Rice Headshot"
             />
           </a>
-          <h1 className="mb-5 font-bold text-[#cccccc] sm:text-4xl md:text-8xl ">
+          <h1 className="mb-5 text-6xl font-bold text-[#cccccc] sm:text-5xl">
             Hi, I'm <span className="text-[#ffffff]">Antonio</span>
-            <div className="ml-1 inline-block size-4 rounded-full bg-red-500 sm:size-2" />
+            <a
+              href="https://www.kappaalphapsi1911.com/"
+              title="Learn about my organization, Kappa Alpha Psi Fraternity Inc."
+              className="ml-1 inline-block size-4 rounded-full bg-red-500 sm:size-2"
+              aria-label="Learn about my organization, Kappa Alpha Psi Fraternity Inc."
+            ></a>
           </h1>
           <h1 className="mb-5 p-5 text-center text-2xl font-extralight text-[#cccccc]">
             For over half a decade, I've been at the forefront of innovation,
