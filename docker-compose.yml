@@ -10,6 +10,7 @@ services:
     networks:
       - rice-personal-site-network
     restart: unless-stopped
+    tty: true
 
   s3-image-uploader-container:
     container_name: s3-image-uploader-container
