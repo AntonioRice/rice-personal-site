@@ -10,7 +10,6 @@ services:
     networks:
       - rice-personal-site-network
     restart: unless-stopped
-    tty: true
 
   s3-image-uploader-container:
     container_name: s3-image-uploader-container
@@ -21,7 +20,7 @@ services:
       - MONGO_DATABASE=${MONGO_DATABASE}
     networks:
       - rice-personal-site-network
-    tty: true
+    restart: unless-stopped
 
   nginx:
     image: nginx:latest
@@ -35,7 +34,7 @@ services:
       - s3-image-uploader-container
     networks:
       - rice-personal-site-network
-    tty: true
+    restart: unless-stopped
 
 networks:
   rice-personal-site-network:
