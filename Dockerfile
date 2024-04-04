@@ -28,5 +28,6 @@ FROM nginx:stable-alpine as production
 
 # Copy the build output to replace the default nginx contents.
 COPY --from=build /app/dist /usr/share/nginx/html
+COPY antoniorice.com.conf /etc/nginx/conf.d/default.conf
 
 CMD ["nginx", "-g", "daemon off;"]
