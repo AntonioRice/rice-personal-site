@@ -1,11 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import moment from "moment";
 import ImageWithLoader from "./ImageWithLoader";
 
 const Album = ({ albumId, coverImageUrl, name, albumDate }) => {
   const navigate = useNavigate();
-  const year = moment(albumDate).year();
+  const year = new Date(albumDate).getFullYear();
 
   const handleAlbumClick = () => {
     navigate(`/album/${albumId}`, { state: { name, year } });
