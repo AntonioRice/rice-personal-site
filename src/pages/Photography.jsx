@@ -4,7 +4,7 @@ import Album from "../components/Album";
 import AnimatedPage from "../components/AnimatedPage";
 import axios from "axios";
 
-const SERVER_URL = import.meta.env.VITE_SERVER_URL;
+const VITE_SERVER_URL = import.meta.env.VITE_SERVER_URL;
 
 const Photography = () => {
   const [albums, setAlbums] = useState([]);
@@ -12,16 +12,15 @@ const Photography = () => {
   useEffect(() => {
     async function fetchAlbum() {
       try {
-        const response = await axios.get(`${SERVER_URL}/albums`);
+        const response = await axios.get(`${VITE_SERVER_URL}/albums`);
         setAlbums(response.data.data);
-      } catch (e) {
-        console.error("Error retrieving albums", e);
-        alert("Error retrieving albums");
+      } catch (err) {
+        console.error("Error retrieving albums", err);
       }
     }
 
     fetchAlbum();
-  }, []);
+  });
 
   return (
     <AnimatedPage>

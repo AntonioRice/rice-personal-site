@@ -11,7 +11,10 @@ const ExperienceBlock = ({ experience }) => {
         </h3>
       </div>
       {experience.roles.map((role, roleIndex) => (
-        <div key={roleIndex} className="mb-5 border-b-[1px] border-gray-700">
+        <div
+          key={roleIndex}
+          className="mx-2 mb-5 border-b-[1px] border-gray-700"
+        >
           <div className="text-[#cccccc] sm:text-[12px]">{role.duration}</div>
           <h4 className="mb-2 text-2xl font-bold">
             <span className="text-red-500"> - </span>

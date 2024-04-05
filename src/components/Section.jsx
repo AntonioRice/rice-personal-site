@@ -1,6 +1,6 @@
 const Section = ({ id, title, children }) => {
   return (
-    <section id={id} className="section-wrapper border-t-2">
+    <section id={id} className="section-wrapper">
       <h1 className="text-6xl font-bold">
         {title}
         <div className="ml-1 inline-block size-3 rounded-full bg-red-500" />
