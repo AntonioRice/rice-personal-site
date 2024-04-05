@@ -30,13 +30,12 @@ const TechProfile = () => {
       <AnimatedPage>
         <div className="flex-grow bg-[#0F1217] text-white">
           <HeroSection />
-
           <motion.section
             ref={aboutSection.ref}
             style={{ scale: aboutSection.scale, opacity: aboutSection.opacity }}
           >
             <Section id="about" title="About">
-              <div className="mt-5 grid gap-9 md:grid-cols-3 ">
+              <div className="mt-5 grid gap-9 md:grid-cols-3">
                 <div className="col-span-2">
                   {skills.about.descriptions.map((description, index) => (
                     <Description key={index} description={description} />
@@ -155,6 +154,17 @@ const TechProfile = () => {
               </section>
             </section>
           </motion.section>
+
+          <div className="grid grid-cols-1 p-5 md:grid-cols-4 lg:grid-cols-6">
+            <div className="col-span-1 col-start-6 p-2 sm:p-6">
+              <p className="leading-0 text-xs font-extralight tracking-wide opacity-60 sm:text-[.65rem]">
+                Designed and built by me. Utilizing React.js and Tailwind CSS on
+                the frontend. Backend is built with Node.js and Express, with
+                MongoDB and AWS S3. Deployed to AWS EC2 via Github Actions,
+                Docker, and NGINX.
+              </p>
+            </div>
+          </div>
         </div>
       </AnimatedPage>
     </ScrollContext.Provider>
