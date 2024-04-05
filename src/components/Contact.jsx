@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { FaLinkedin, FaGithub } from "react-icons/fa6";
 import { SiGoogledocs } from "react-icons/si";
 import { TfiEmail } from "react-icons/tfi";
-import useSectionScroll from "../hooks/useSectionScroll";
 
 function Contact() {
   return (
