@@ -1,8 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { FaLinkedin, FaGithub } from "react-icons/fa6";
-import { SiGoogledocs } from "react-icons/si";
-import { TfiEmail } from "react-icons/tfi";
+import { FaLinkedin, FaGithub, FaFilePdf, FaEnvelope } from "react-icons/fa6";
 
 function Contact() {
   return (
@@ -31,7 +28,7 @@ function Contact() {
         rel="noopener noreferrer"
         className="flex cursor-pointer items-center space-x-2 hover:text-[#e35757]"
       >
-        <TfiEmail size={25} className="mt-2" />
+        <FaEnvelope size={25} className="mt-2" />
         <span className="text-2xl underline sm:text-xl">
           contact@antoniorice.com
         </span>
@@ -62,7 +59,7 @@ function Contact() {
           rel="noopener noreferrer"
           className="hover:text-[#e35757]"
         >
-          <SiGoogledocs size={30} />
+          <FaFilePdf size={30} />
         </a>
       </section>
     </section>

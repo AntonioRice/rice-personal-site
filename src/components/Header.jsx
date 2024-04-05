@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { IoHomeOutline, IoCameraOutline } from "react-icons/io5";
-import { FaCode } from "react-icons/fa6";
+import { IoHomeOutline, IoCameraOutline, IoCodeSlash } from "react-icons/io5";
 
 const Header = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -82,7 +81,7 @@ const Header = () => {
               href="/techprofile"
               className="text-[#cccccc] hover:text-red-500"
             >
-              <FaCode size={20} />
+              <IoCodeSlash size={20} />
             </a>
           </li>
           <li>
