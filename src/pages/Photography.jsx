@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FaInstagram } from "react-icons/fa6";
+import { PiInstagramLogo } from "react-icons/pi";
 import Album from "../components/Album";
 import AnimatedPage from "../components/AnimatedPage";
 import axios from "axios";
@@ -35,7 +35,7 @@ const Photography = () => {
             rel="noreferrer"
             className="ml-2 text-[#cccccc] hover:text-[#e35757]"
           >
-            <FaInstagram size={20} />
+            <PiInstagramLogo size={20} />
           </a>
         </div>
         <div className="sm:p-1 md:p-10">
