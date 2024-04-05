@@ -103,6 +103,88 @@ export const skills = {
       ],
     },
   ],
+  beforeTech: [
+    {
+      company: "Macy's",
+      roles: [
+        {
+          title: "Executive Sales Manager",
+          duration: "2016 - 2017",
+          descriptions: [
+            "Managed a team of 30 associates, encompassing responsibilities such as conducting interviews, providing performance coaching, and managing key sales metrics.",
+          ],
+          skills: [
+            "Team Leadership",
+            "Coaching",
+            "Operations Management",
+            "Customer Service",
+          ],
+        },
+      ],
+    },
+    {
+      company: "Amazon",
+      roles: [
+        {
+          title: "Inbound Area Manager II",
+          duration: "2014 - 2015",
+          descriptions: [
+            "Supervised PIT Drivers, Dock Clerks, Process Assistants, Ambassadors, and general labor associates on a 60-door inbound dock, overseeing the facility's entire workflow.",
+          ],
+          skills: [
+            "Team Leadership",
+            "Supply Chain Management",
+            "Operations Management",
+            "Warehouse Operations",
+          ],
+        },
+      ],
+    },
+    {
+      company: "Target",
+      roles: [
+        {
+          title: "Logistics Team Lead",
+          duration: "2013 - 2014",
+          descriptions: [
+            "Spearheaded productivity initiatives by overseeing the overnight Logistics Team comprising 30+ Associates, ensuring an optimal shopping experience for customers.",
+          ],
+          skills: [
+            "Team Leadership",
+            "Team Building",
+            "Teamwork",
+            "Time Management",
+          ],
+        },
+      ],
+    },
+    {
+      company: "U.S. Bank",
+      roles: [
+        {
+          title: "Bank Teller",
+          duration: "2012 - 2014",
+          descriptions: [
+            "Consistently surpassed quarterly sales targets by substantial margins, earning multiple top performer awards, including a #2 district-wide ranking and recognition within the branch.",
+          ],
+          skills: ["Customer Service", "Money Management", "Sales"],
+        },
+      ],
+    },
+    {
+      company: "Finish Line",
+      roles: [
+        {
+          title: "Sales Associate",
+          duration: "2009 - 2013",
+          descriptions: [
+            "Leveraged strong communication, multitasking, teamwork, and customer service skills to thrive in a fast-paced, dynamic work environment.",
+          ],
+          skills: ["Customer Service", "Customer Satisfaction", "Retail"],
+        },
+      ],
+    },
+  ],
 };
 
 export default skills;

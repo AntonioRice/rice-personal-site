@@ -30,6 +30,7 @@ body {
   margin: auto;
   padding: 6rem;
   overflow: hidden;
+  border-bottom-width: 2px;
 }
 
 .pill {
