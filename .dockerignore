@@ -1,1 +1,27 @@
-node_modules
+# Node modules
+node_modules/
+
+# Dist folder if you are building it within the Dockerfile
+dist/
+
+# Environment files
+.env
+
+# Git and version control
+.gitignore
+
+# Various IDEs
+.vscode/
+*.sublime-workspace
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Documentation
+README.md
+LICENSE
