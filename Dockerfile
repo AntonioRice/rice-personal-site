@@ -13,7 +13,7 @@ ENV VITE_GOOGLE_ANALYTICS_TAG=$VITE_GOOGLE_ANALYTICS_TAG
 WORKDIR /app
 
 # Install app dependencies
-COPY package.json ./
+COPY package*.json ./
 RUN npm ci --only=production
 
 # Bundle app source
