@@ -1,9 +1,6 @@
 # Node modules
 node_modules/
 
-# Dist folder if you are building it within the Dockerfile
-dist/
-
 # Environment files
 .env
 
