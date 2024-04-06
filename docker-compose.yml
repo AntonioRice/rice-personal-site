@@ -4,7 +4,6 @@ services:
   rice-personal-site-container:
     container_name: rice-personal-site-container
     image: ricex407/rice-personal-site:latest
-    command: npm start
     ports:
       - "3000:3000"
     networks:
