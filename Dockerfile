@@ -14,7 +14,7 @@ WORKDIR /app
 
 # Install app dependencies
 COPY package.json ./
-RUN npm install
+RUN npm ci --only=production
 
 # Bundle app source
 COPY . .
@@ -22,5 +22,9 @@ COPY . .
 # Build the application
 RUN npm run build
 
-# Start command
-CMD ["npm", "start"]
+# Production stage
+FROM nginx:stable-alpine AS production
+COPY --from=build /app/dist /usr/share/nginx/html
+COPY antoniorice.com.conf /etc/nginx/conf.d/default.conf
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
