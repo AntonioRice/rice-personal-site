@@ -6,6 +6,7 @@ import AlbumDetails from "./pages/AlbumDetails";
 import Home from "./pages/Home";
 import TechProfile from "./pages/TechProfile";
 import Photography from "./pages/Photography";
+
 import Cv from "./pages/Cv";
 import ErrorPage from "./pages/ErrorPage";
 import ReactGA from "react-ga4";
