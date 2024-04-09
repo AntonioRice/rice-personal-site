@@ -17,6 +17,7 @@ import DevNote from "../components/DevNote";
 const TechProfile = () => {
   const navigate = useNavigate();
   const offset = ["0 1", ".5 1"];
+  const heroSection = useSectionScroll(offset);
   const aboutSection = useSectionScroll(offset);
   const experienceSection = useSectionScroll(offset);
   const contactSection = useSectionScroll(offset);
@@ -32,6 +33,7 @@ const TechProfile = () => {
   return (
     <ScrollContext.Provider
       value={{
+        heroRef: heroSection.ref,
         aboutRef: aboutSection.ref,
         experienceRef: experienceSection.ref,
         contactRef: contactSection.ref,
@@ -39,7 +41,13 @@ const TechProfile = () => {
     >
       <AnimatedPage>
         <div className="flex-grow bg-[#0F1217] text-white">
-          <HeroSection />
+          <motion.section
+            ref={heroSection.ref}
+            style={{ scale: heroSection.scale, opacity: heroSection.opacity }}
+          >
+            <HeroSection />
+          </motion.section>
+
           <motion.section
             ref={aboutSection.ref}
             style={{ scale: aboutSection.scale, opacity: aboutSection.opacity }}

@@ -6,7 +6,7 @@ import Section from "../components/Section";
 import ExperienceBlock from "../components/ExperienceBlock";
 import Contact from "../components/Contact";
 
-const CV = () => {
+const Cv = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -27,4 +27,4 @@ const CV = () => {
   );
 };
 
-export default CV;
+export default Cv;

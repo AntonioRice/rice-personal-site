@@ -6,7 +6,7 @@ import AlbumDetails from "./pages/AlbumDetails";
 import Home from "./pages/Home";
 import TechProfile from "./pages/TechProfile";
 import Photography from "./pages/Photography";
-import CV from "./pages/CV";
+import Cv from "./pages/Cv";
 import ErrorPage from "./pages/ErrorPage";
 import ReactGA from "react-ga4";
 
@@ -25,7 +25,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       { index: true, element: <Home /> },
-      { path: "cv", element: <CV /> },
+      { path: "cv", element: <Cv /> },
       { path: "techprofile", element: <TechProfile /> },
       { path: "photography", element: <Photography /> },
       { path: "album/:albumId", element: <AlbumDetails /> },
