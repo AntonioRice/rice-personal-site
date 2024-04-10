@@ -82,8 +82,8 @@ const Home = () => {
           <section className="order-1 flex items-center justify-center p-10 sm:mt-[88px] md:order-2 md:col-span-1">
             <img
               src="src/assets/images/main-avatar-2.jpg"
-              alt=""
-              className="max-h-full max-w-full rounded-full ring-4 ring-white"
+              alt="main 2d avatar"
+              className="max-h-full max-w-full rounded-full ring-4 ring-white sm:size-52"
             />
           </section>
         </div>
