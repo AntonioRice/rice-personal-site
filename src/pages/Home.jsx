@@ -7,14 +7,14 @@ const Home = () => {
   const eventTracker = useEventsTracker("Home Navigation");
   const navigate = useNavigate();
 
-  const handleLeftClick = (label) => {
+  const handleLeftClick = () => {
+    eventTracker("swe button clicked", "SWE");
     navigate("/techprofile");
-    eventTracker("swe button clicked", label);
   };
 
-  const handleRightClick = (label) => {
+  const handleRightClick = () => {
+    eventTracker("photographer button clicked", "Photographer");
     navigate("/photography");
-    eventTracker("photographer button clicked", label);
   };
 
   const text = "software engineer";
@@ -69,7 +69,7 @@ const Home = () => {
                   className="rounded-md bg-white px-4 py-2 hover:bg-red-500"
                   whileHover={{ scale: 1.1 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  onClick={() => handleLeftClick("software engineer")}
+                  onClick={handleLeftClick}
                 >
                   software engineer
                 </motion.button>
@@ -78,7 +78,7 @@ const Home = () => {
                   className="rounded-md bg-white px-4 py-2 hover:bg-red-500"
                   whileHover={{ scale: 1.1 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  onClick={() => handleRightClick("photographer")}
+                  onClick={handleRightClick}
                 >
                   photographer
                 </motion.button>

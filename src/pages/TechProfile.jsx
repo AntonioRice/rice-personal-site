@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { FaDownload, FaArrowRightLong } from "react-icons/fa6";
 import AnimatedPage from "../components/AnimatedPage";
 import useSectionScroll from "../hooks/useSectionScroll";
+import useEventsTracker from "../hooks/useEventsTracker";
 import skills from "../utils/skillsData";
 import SkillPill from "../components/SkillPill";
 import Description from "../components/Description";
@@ -16,6 +17,7 @@ import DevNote from "../components/DevNote";
 
 const TechProfile = () => {
   const navigate = useNavigate();
+  const eventTracker = useEventsTracker("Tech Profile Navigation");
   const offset = ["0 1", ".5 1"];
   const heroSection = useSectionScroll(offset);
   const aboutSection = useSectionScroll(offset);
@@ -23,10 +25,12 @@ const TechProfile = () => {
   const contactSection = useSectionScroll(offset);
 
   const handleDownload = () => {
+    eventTracker("Resume downloaded", "ALR Resume");
     window.open("/ALR-Resume-2024-v2.pdf", "_blank", "noopener");
   };
 
   const handleNavigateToCV = () => {
+    eventTracker("cv button clicked", "CV");
     navigate("/cv");
   };
 

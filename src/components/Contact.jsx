@@ -1,7 +1,10 @@
 import React from "react";
 import { FaLinkedin, FaGithub, FaFilePdf, FaEnvelope } from "react-icons/fa6";
+import useEventsTracker from "../hooks/useEventsTracker";
 
-function Contact() {
+const Contact = () => {
+  const eventTracker = useEventsTracker("Contact Navigation");
+
   return (
     <section className="section-wrapper mt-20 flex flex-col items-center justify-center !border-b-0">
       <h1 className="text-8xl font-bold sm:text-6xl">
@@ -16,6 +19,7 @@ function Contact() {
             target="_blank"
             rel="noopener noreferrer"
             className="decoration-red-500 hover:text-[#ffffff] hover:underline"
+            onClick={() => eventTracker("Linkedin button clicked", "Linkedin")}
           >
             Linkedin!
           </a>
@@ -27,6 +31,7 @@ function Contact() {
         target="_blank"
         rel="noopener noreferrer"
         className="flex cursor-pointer items-center space-x-2 hover:text-[#e35757]"
+        onClick={() => eventTracker("Email button clicked", "Email")}
       >
         <FaEnvelope size={25} className="mt-2" />
         <span className="text-2xl underline sm:text-xl">
@@ -40,6 +45,7 @@ function Contact() {
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-[#e35757]"
+          onClick={() => eventTracker("Linkedin button clicked", "Linkedin")}
         >
           <FaLinkedin size={30} />
         </a>
@@ -49,6 +55,7 @@ function Contact() {
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-[#e35757]"
+          onClick={() => eventTracker("Github button clicked", "Github")}
         >
           <FaGithub size={30} />
         </a>
@@ -58,12 +65,13 @@ function Contact() {
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-[#e35757]"
+          onClick={() => eventTracker("Resume downloaded", "ALR Resume")}
         >
           <FaFilePdf size={30} />
         </a>
       </section>
     </section>
   );
-}
+};
 
 export default Contact;
