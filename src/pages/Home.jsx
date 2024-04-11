@@ -1,16 +1,20 @@
 import { useNavigate } from "react-router-dom";
 import AnimatedPage from "../components/AnimatedPage";
 import { motion, AnimatePresence } from "framer-motion";
+import useEventsTracker from "../hooks/useEventsTracker";
 
 const Home = () => {
+  const eventTracker = useEventsTracker("Home Navigation");
   const navigate = useNavigate();
 
-  const handleLeftClick = () => {
+  const handleLeftClick = (label) => {
     navigate("/techprofile");
+    eventTracker("swe button clicked", label);
   };
 
-  const handleRightClick = () => {
+  const handleRightClick = (label) => {
     navigate("/photography");
+    eventTracker("photographer button clicked", label);
   };
 
   const text = "software engineer";
@@ -61,18 +65,20 @@ const Home = () => {
               </p>
               <div className="flex animate-pulse flex-row gap-3 hover:gap-3 sm:justify-center">
                 <motion.button
+                  title="software engineer"
                   className="rounded-md bg-white px-4 py-2 hover:bg-red-500"
                   whileHover={{ scale: 1.1 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  onClick={handleLeftClick}
+                  onClick={() => handleLeftClick("software engineer")}
                 >
                   software engineer
                 </motion.button>
                 <motion.button
+                  title="photographer"
                   className="rounded-md bg-white px-4 py-2 hover:bg-red-500"
                   whileHover={{ scale: 1.1 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  onClick={handleRightClick}
+                  onClick={() => handleRightClick("photographer")}
                 >
                   photographer
                 </motion.button>
