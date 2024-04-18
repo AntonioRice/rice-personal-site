@@ -1,9 +1,16 @@
 import React from "react";
-import ReactGA from "react-ga4";
+import TagManager from "react-gtm-module";
 
 const useEventsTracker = (category = "Event Category") => {
   const trackEvent = (action = "action", label = "label") => {
-    ReactGA.event({ category, action, label });
+    TagManager.dataLayer({
+      dataLayer: {
+        event: "interaction",
+        category,
+        action,
+        label,
+      },
+    });
   };
 
   return trackEvent;

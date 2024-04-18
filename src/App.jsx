@@ -8,14 +8,14 @@ import TechProfile from "./pages/TechProfile";
 import Photography from "./pages/Photography";
 import CV from "./pages/CV";
 import ErrorPage from "./pages/ErrorPage";
-import ReactGA from "react-ga4";
+import TagManager from "react-gtm-module";
 
-const GOOGLE_ANALYTICS_TAG = import.meta.env.VITE_GOOGLE_ANALYTICS_TAG;
+const VITE_GTM_ID = import.meta.env.VITE_GTM_ID;
 
-if (!GOOGLE_ANALYTICS_TAG) {
-  console.log("GOOGLE_ANALYTICS_TAG environment variable is not defined");
+if (VITE_GTM_ID) {
+  TagManager.initialize({ gtmId: VITE_GTM_ID });
 } else {
-  ReactGA.initialize(GOOGLE_ANALYTICS_TAG);
+  console.log("VITE_GTM_ID environment variable is not defined");
 }
 
 const router = createBrowserRouter([

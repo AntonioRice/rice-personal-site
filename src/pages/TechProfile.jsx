@@ -17,7 +17,7 @@ import DevNote from "../components/DevNote";
 
 const TechProfile = () => {
   const navigate = useNavigate();
-  const eventTracker = useEventsTracker("Tech Profile Navigation");
+  const trackEvent = useEventsTracker("User Interaction");
   const offset = ["0 1", ".5 1"];
   const heroSection = useSectionScroll(offset);
   const aboutSection = useSectionScroll(offset);
@@ -25,12 +25,12 @@ const TechProfile = () => {
   const contactSection = useSectionScroll(offset);
 
   const handleDownload = () => {
-    eventTracker("Resume downloaded", "ALR Resume");
+    trackEvent("Resume downloaded", "ALR Resume");
     window.open("/ALR-Resume-2024-v2.pdf", "_blank", "noopener");
   };
 
   const handleNavigateToCV = () => {
-    eventTracker("cv button clicked", "CV");
+    trackEvent("CV button clicked", "CV");
     navigate("/cv");
   };
 
