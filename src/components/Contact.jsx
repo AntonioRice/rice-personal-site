@@ -3,7 +3,7 @@ import { FaLinkedin, FaGithub, FaFilePdf, FaEnvelope } from "react-icons/fa6";
 import useEventsTracker from "../hooks/useEventsTracker";
 
 const Contact = () => {
-  const eventTracker = useEventsTracker("Contact Navigation");
+  const trackEvent = useEventsTracker("User Interaction");
 
   return (
     <section className="section-wrapper mt-20 flex flex-col items-center justify-center !border-b-0">
@@ -19,7 +19,7 @@ const Contact = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="decoration-red-500 hover:text-[#ffffff] hover:underline"
-            onClick={() => eventTracker("Linkedin button clicked", "Linkedin")}
+            onClick={() => trackEvent("Linkedin button clicked", "Linkedin")}
           >
             Linkedin!
           </a>
@@ -31,7 +31,7 @@ const Contact = () => {
         target="_blank"
         rel="noopener noreferrer"
         className="flex cursor-pointer items-center space-x-2 hover:text-[#e35757]"
-        onClick={() => eventTracker("Email button clicked", "Email")}
+        onClick={() => trackEvent("Email button clicked", "Email")}
       >
         <FaEnvelope size={25} className="mt-2" />
         <span className="text-2xl underline sm:text-xl">
@@ -45,7 +45,7 @@ const Contact = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-[#e35757]"
-          onClick={() => eventTracker("Linkedin button clicked", "Linkedin")}
+          onClick={() => trackEvent("Linkedin button clicked", "Linkedin")}
         >
           <FaLinkedin size={30} />
         </a>
@@ -55,7 +55,7 @@ const Contact = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-[#e35757]"
-          onClick={() => eventTracker("Github button clicked", "Github")}
+          onClick={() => trackEvent("Github button clicked", "Github")}
         >
           <FaGithub size={30} />
         </a>
@@ -65,7 +65,7 @@ const Contact = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-[#e35757]"
-          onClick={() => eventTracker("Resume downloaded", "ALR Resume")}
+          onClick={() => trackEvent("Resume downloaded", "ALR Resume")}
         >
           <FaFilePdf size={30} />
         </a>
