@@ -20,7 +20,7 @@ const Photography = () => {
     }
 
     fetchAlbum();
-  });
+  }, []);
 
   return (
     <AnimatedPage>
