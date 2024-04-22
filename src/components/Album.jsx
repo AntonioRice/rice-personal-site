@@ -19,7 +19,7 @@ const Album = ({ albumId, coverImageUrl, name, albumDate }) => {
         <p className="flex text-2xl uppercase text-[#ffffff]">{name}</p>
         <p className="absolute mt-14 text-black">{year}</p>
       </div>
-      <ImageWithLoader src={coverImageUrl} alt={name} />
+      <ImageWithLoader src={coverImageUrl} alt={name} loading="eager" />
     </div>
   );
 };

@@ -7,7 +7,12 @@ const Spinner = () => (
   </div>
 );
 
-const ImageWithLoader = ({ src, alt, aspectRatio = 4 / 5 }) => {
+const ImageWithLoader = ({
+  src,
+  alt,
+  aspectRatio = 4 / 5,
+  loading = "lazy",
+}) => {
   const [loaded, setLoaded] = useState(false);
 
   const containerStyle = {
@@ -28,7 +33,7 @@ const ImageWithLoader = ({ src, alt, aspectRatio = 4 / 5 }) => {
         alt={alt}
         onLoad={() => setLoaded(true)}
         className={`pointer-events-none absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ease-in-out ${loaded ? "opacity-100" : "opacity-0"}`}
-        loading="lazy"
+        loading={loading}
       />
     </div>
   );

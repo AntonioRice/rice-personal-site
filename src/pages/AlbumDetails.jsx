@@ -42,6 +42,7 @@ const AlbumDetails = () => {
                 key={image.id}
                 src={image.url}
                 alt={`Image ${i + 1}`}
+                loading={i < 5 ? "eager" : "lazy"}
               />
             ))}
           </div>
