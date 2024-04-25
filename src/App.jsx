@@ -13,10 +13,7 @@ import TagManager from "react-gtm-module";
 const VITE_GTM_ID = import.meta.env.VITE_GTM_ID;
 
 if (VITE_GTM_ID) {
-  console.log("VITE_GTM_ID environment variable is defined");
   TagManager.initialize({ gtmId: VITE_GTM_ID });
-} else {
-  console.log("VITE_GTM_ID environment variable is not defined");
 }
 
 const router = createBrowserRouter([
