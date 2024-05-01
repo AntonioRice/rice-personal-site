@@ -34,7 +34,7 @@ export const skills = {
       company: "CH Robinson",
       roles: [
         {
-          title: "Software Engineer - Tech Lead",
+          title: "Senior Software Engineer - Tech Lead",
           duration: "2022 - 2023",
           descriptions: [
             "Led a team of 7, including 5 engineers, by providing technical guidance and conducting code reviews, resulting in a 30% increase in sprint completion rates through strategic blocker elimination and system design contributions.",
