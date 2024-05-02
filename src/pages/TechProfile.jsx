@@ -128,36 +128,12 @@ const TechProfile = () => {
               <div className="mt-8 flex flex-wrap items-center justify-center gap-5 p-4">
                 <div className="transform transition duration-300 hover:scale-110">
                   <a
-                    href="https://www.credly.com/badges/0c799f8c-357b-434f-949c-d7f866f9e994/public_url"
-                    target="_blank"
-                  >
-                    <img
-                      src="src/assets/images/microsoft-certified-azure-fundamentals.png"
-                      alt="My Azure Fundamentals Badge"
-                      className="block h-auto w-36"
-                    />
-                  </a>
-                </div>
-                <div className="transform transition duration-300 hover:scale-110">
-                  <a
                     href="https://www.coursera.org/verify/6GUWJ3DY26YH"
                     target="_blank"
                   >
                     <img
                       src="src/assets/images/react-basics-badge.png"
                       alt="My React Basic Badge"
-                      className="block h-auto w-36"
-                    />
-                  </a>
-                </div>
-                <div className="transform transition duration-300 hover:scale-110">
-                  <a
-                    href="https://www.coursera.org/verify/RCXBLMD22KFA"
-                    target="_blank"
-                  >
-                    <img
-                      src="src/assets/images/javascript-badge.png"
-                      alt="My Programming with Javascript Badge"
                       className="block h-auto w-36"
                     />
                   </a>
@@ -206,6 +182,18 @@ const TechProfile = () => {
                     <img
                       src="src/assets/images/sd-badge.png"
                       alt="My System Design Badge"
+                      className="block h-auto w-36"
+                    />
+                  </a>
+                </div>
+                <div className="transform transition duration-300 hover:scale-110">
+                  <a
+                    href="https://www.credly.com/badges/0c799f8c-357b-434f-949c-d7f866f9e994/public_url"
+                    target="_blank"
+                  >
+                    <img
+                      src="src/assets/images/microsoft-certified-azure-fundamentals.png"
+                      alt="My Azure Fundamentals Badge"
                       className="block h-auto w-36"
                     />
                   </a>
