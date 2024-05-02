@@ -137,6 +137,7 @@ const TechProfile = () => {
                       className="block h-auto w-36"
                     />
                   </a>
+                  <p>React Basics</p>
                 </div>
                 <div className="transform transition duration-300 hover:scale-110">
                   <a
@@ -149,6 +150,7 @@ const TechProfile = () => {
                       className="block h-auto w-36"
                     />
                   </a>
+                  <p>Javascript Basics</p>
                 </div>
                 <div className="transform transition duration-300 hover:scale-110">
                   <a
@@ -161,6 +163,7 @@ const TechProfile = () => {
                       className="block h-auto w-36"
                     />
                   </a>
+                  <p>DSA</p>
                 </div>
                 <div className="transform transition duration-300 hover:scale-110">
                   <a
@@ -173,6 +176,7 @@ const TechProfile = () => {
                       className="block h-auto w-36"
                     />
                   </a>
+                  <p>Node.js Masterclass</p>
                 </div>
                 <div className="transform transition duration-300 hover:scale-110">
                   <a
@@ -185,6 +189,7 @@ const TechProfile = () => {
                       className="block h-auto w-36"
                     />
                   </a>
+                  <p>System Design</p>
                 </div>
                 <div className="transform transition duration-300 hover:scale-110">
                   <a
@@ -197,6 +202,7 @@ const TechProfile = () => {
                       className="block h-auto w-36"
                     />
                   </a>
+                  <p className="flex justify-center">Azure Fundamentals</p>
                 </div>
               </div>
             </Section>
