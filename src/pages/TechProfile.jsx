@@ -22,6 +22,7 @@ const TechProfile = () => {
   const heroSection = useSectionScroll(offset);
   const aboutSection = useSectionScroll(offset);
   const experienceSection = useSectionScroll(offset);
+  const learningSection = useSectionScroll(offset);
   const contactSection = useSectionScroll(offset);
 
   const handleDownload = () => {
@@ -41,6 +42,7 @@ const TechProfile = () => {
         aboutRef: aboutSection.ref,
         experienceRef: experienceSection.ref,
         contactRef: contactSection.ref,
+        learningRef: learningSection.ref,
       }}
     >
       <AnimatedPage>
@@ -51,7 +53,6 @@ const TechProfile = () => {
           >
             <HeroSection />
           </motion.section>
-
           <motion.section
             ref={aboutSection.ref}
             style={{ scale: aboutSection.scale, opacity: aboutSection.opacity }}
@@ -74,7 +75,6 @@ const TechProfile = () => {
               </div>
             </Section>
           </motion.section>
-
           <motion.section
             ref={experienceSection.ref}
             style={{
@@ -117,7 +117,102 @@ const TechProfile = () => {
               </div>
             </Section>
           </motion.section>
-
+          <motion.section
+            ref={learningSection.ref}
+            style={{
+              scale: learningSection.scale,
+              opacity: learningSection.opacity,
+            }}
+          >
+            <Section id="learning" title="Learning">
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-5 p-4">
+                <div className="transform transition duration-300 hover:scale-110">
+                  <a
+                    href="https://www.credly.com/badges/0c799f8c-357b-434f-949c-d7f866f9e994/public_url"
+                    target="_blank"
+                  >
+                    <img
+                      src="src/assets/images/microsoft-certified-azure-fundamentals.png"
+                      alt="My Azure Fundamentals Badge"
+                      className="block h-auto w-36"
+                    />
+                  </a>
+                </div>
+                <div className="transform transition duration-300 hover:scale-110">
+                  <a
+                    href="https://www.coursera.org/verify/6GUWJ3DY26YH"
+                    target="_blank"
+                  >
+                    <img
+                      src="src/assets/images/react-basics-badge.png"
+                      alt="My React Basic Badge"
+                      className="block h-auto w-36"
+                    />
+                  </a>
+                </div>
+                <div className="transform transition duration-300 hover:scale-110">
+                  <a
+                    href="https://www.coursera.org/verify/RCXBLMD22KFA"
+                    target="_blank"
+                  >
+                    <img
+                      src="src/assets/images/javascript-badge.png"
+                      alt="My Programming with Javascript Badge"
+                      className="block h-auto w-36"
+                    />
+                  </a>
+                </div>
+                <div className="transform transition duration-300 hover:scale-110">
+                  <a
+                    href="https://www.coursera.org/verify/RCXBLMD22KFA"
+                    target="_blank"
+                  >
+                    <img
+                      src="src/assets/images/javascript-badge.png"
+                      alt="My Programming with Javascript Badge"
+                      className="block h-auto w-36"
+                    />
+                  </a>
+                </div>
+                <div className="transform transition duration-300 hover:scale-110">
+                  <a
+                    href="https://www.udemy.com/certificate/UC-dc61789f-b15c-4248-8249-bdd38f5d822c/"
+                    target="_blank"
+                  >
+                    <img
+                      src="src/assets/images/dsa-badge.png"
+                      alt="My Data Structures & Algorithms Badge"
+                      className="block h-auto w-36"
+                    />
+                  </a>
+                </div>
+                <div className="transform transition duration-300 hover:scale-110">
+                  <a
+                    href="https://www.udemy.com/certificate/UC-cd3d2f8d-4432-4f6e-89c9-73a9baf20317/"
+                    target="_blank"
+                  >
+                    <img
+                      src="src/assets/images/node-badge.png"
+                      alt="My Node.js Badge"
+                      className="block h-auto w-36"
+                    />
+                  </a>
+                </div>
+                <div className="transform transition duration-300 hover:scale-110">
+                  <a
+                    href="https://www.udemy.com/certificate/UC-cda3ef74-3372-425e-b601-a6f15516d9c7/"
+                    target="_blank"
+                  >
+                    <img
+                      src="src/assets/images/sd-badge.png"
+                      alt="My System Design Badge"
+                      className="block h-auto w-36"
+                    />
+                  </a>
+                </div>
+              </div>
+            </Section>
+          </motion.section>
           <motion.section
             ref={contactSection.ref}
             style={{
