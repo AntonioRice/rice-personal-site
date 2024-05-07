@@ -1,5 +1,6 @@
 import React from "react";
 import { useScrollContext } from "../context/ScrollContext";
+import { motion } from "framer-motion";
 
 function HeroSection() {
   const { contactRef } = useScrollContext();
@@ -26,7 +27,7 @@ function HeroSection() {
           title="Kappa Alpha Psi Fraternity, Inc. 1911"
           rel="noopener noreferrer"
           target="_blank"
-          className="ml-1 inline-block size-4 rounded-full bg-red-500 sm:size-2"
+          className="ml-1 inline-block size-4 animate-pulse rounded-full bg-red-500 sm:size-2"
           aria-label="Learn about my organization, Kappa Alpha Psi Fraternity Inc."
         ></a>
       </h1>
@@ -36,14 +37,17 @@ function HeroSection() {
         excited to turn the page and dive into the next chapter of my
         professional journey!
       </p>
-      <button
+      <motion.button
+        title="contactMe"
+        className="animate-pulse rounded-md bg-[#cccccc] px-4 py-2 text-black hover:animate-none hover:bg-red-500"
+        whileHover={{ scale: 1.1 }}
+        transition={{ type: "spring", stiffness: 400, damping: 10 }}
         onClick={() => {
           contactRef.current.scrollIntoView({ behavior: "smooth" });
         }}
-        className="rounded-md bg-[#cccccc] px-4 py-2 text-black transition duration-300 ease-in-out hover:bg-red-500"
       >
-        Contact me
-      </button>
+        Contact Me
+      </motion.button>
     </section>
   );
 }

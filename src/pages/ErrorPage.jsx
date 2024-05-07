@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import AnimatedPage from "../components/AnimatedPage";
+import { motion } from "framer-motion";
 
 const ErrorPage = () => {
   const navigate = useNavigate();
@@ -11,17 +12,20 @@ const ErrorPage = () => {
 
   return (
     <AnimatedPage>
-      <section className="flex min-h-screen flex-col items-center justify-center">
+      <section className="page-wrapper flex flex-col items-center justify-center">
         <h1 className="text-4xl font-bold text-[#ffffff] sm:text-lg">
           Whoops, you shouldn't have gotten here
           <span className="text-red-500">...</span>
         </h1>
-        <button
+        <motion.button
+          title="returnHome"
+          className="mt-5 animate-pulse rounded-md bg-[#cccccc] px-4 py-2 text-black hover:bg-red-500"
+          whileHover={{ scale: 1.1 }}
+          transition={{ type: "spring", stiffness: 400, damping: 10 }}
           onClick={navigateHome}
-          className="mt-5 rounded-lg bg-[#cccccc]  p-1 hover:bg-red-500"
         >
-          Return to Home
-        </button>
+          Return Home
+        </motion.button>
       </section>
     </AnimatedPage>
   );
