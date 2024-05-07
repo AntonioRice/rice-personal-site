@@ -1,10 +1,8 @@
 const Footer = () => {
   return (
-    <div className="bottom-0 z-50 h-10 p-2 text-center text-white">
-      <p className="text-[12px] text-[#ffffff]">
-        © 2024 Antonio Rice, All Rights Reserved.
-      </p>
-    </div>
+    <footer className="relative inset-x-0 bottom-0 z-50 h-10 bg-transparent p-2 text-center">
+      <p className="text-xs">© 2024 Antonio Rice, All Rights Reserved.</p>
+    </footer>
   );
 };
 
