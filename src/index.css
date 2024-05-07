@@ -21,6 +21,11 @@ body {
   font-optical-sizing: auto;
   font-weight: 400;
   background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.page-wrapper {
+  min-height: calc(100vh - 2.5rem);
 }
 
 .section-wrapper {
