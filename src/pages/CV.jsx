@@ -13,7 +13,7 @@ const CV = () => {
 
   return (
     <AnimatedPage>
-      <div className="mt-5 flex-grow bg-[#0F1217] text-white">
+      <div className="page-wrapper">
         <motion.section>
           <Section id="beforeTech" title="Life Before Tech">
             {skills.beforeTech.map((exp, expIndex) => (

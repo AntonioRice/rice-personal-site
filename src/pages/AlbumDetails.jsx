@@ -29,7 +29,7 @@ const AlbumDetails = () => {
 
   return (
     <AnimatedPage>
-      <div className="flex min-h-screen flex-col pt-20">
+      <div className="page-wrapper flex flex-col pt-20">
         <div className="flex items-center justify-center">
           <h1 className="text-md font-extralight uppercase text-[#cccccc]">
             {name} <span className="text-[#cccccc]">- {year}</span>
