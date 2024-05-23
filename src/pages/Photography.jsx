@@ -6,6 +6,10 @@ import axios from "axios";
 
 const VITE_SERVER_URL = import.meta.env.VITE_SERVER_URL;
 
+const isMobileDevice = () => {
+  return /Mobi|Android|iPhone/i.test(navigator.userAgent);
+};
+
 const Photography = () => {
   const [albums, setAlbums] = useState([]);
 
@@ -22,6 +26,10 @@ const Photography = () => {
     fetchAlbum();
   }, []);
 
+  const instagramUrl = isMobileDevice()
+    ? "instagram://user?username=mr_arroz"
+    : "https://www.instagram.com/mr_arroz/";
+
   return (
     <AnimatedPage>
       <div className="page-wrapper flex flex-col pt-20">
@@ -30,7 +38,7 @@ const Photography = () => {
             A. Rice Photography <span className="text-red-500">.</span>
           </h1>
           <a
-            href="instagram://user?username=mr_arroz"
+            href={instagramUrl}
             target="_blank"
             rel="noreferrer"
             className="ml-2 text-[#cccccc] hover:text-[#e35757]"
