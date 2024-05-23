@@ -56,7 +56,7 @@ const TechProfile = () => {
           ref={aboutSection.ref}
           style={{ scale: aboutSection.scale, opacity: aboutSection.opacity }}
         >
-          <Section id="about" title="About">
+          <Section id="about" title="about">
             <div className="mt-5 grid gap-9 md:grid-cols-3">
               <div className="col-span-2">
                 {skills.about.descriptions.map((description, index) => (
@@ -81,7 +81,7 @@ const TechProfile = () => {
             opacity: experienceSection.opacity,
           }}
         >
-          <Section id="experience" title="Experience">
+          <Section id="experience" title="experience">
             {skills.experience.map((exp, expIndex) => (
               <ExperienceBlock key={expIndex} experience={exp} />
             ))}
@@ -99,7 +99,7 @@ const TechProfile = () => {
                     onClick={handleDownload}
                   >
                     <FaDownload size={16} className="mr-2" />
-                    <span>My Resume</span>
+                    <span>my resume</span>
                   </motion.button>
                 </div>
 
@@ -114,7 +114,7 @@ const TechProfile = () => {
                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     onClick={handleNavigateToCV}
                   >
-                    <span>CV</span>
+                    <span>my cv</span>
                     <FaArrowRightLong size={16} className="ml-2" />
                   </motion.button>
                 </div>
@@ -129,7 +129,7 @@ const TechProfile = () => {
             opacity: learningSection.opacity,
           }}
         >
-          <Section id="learning" title="Learning">
+          <Section id="learning" title="learning">
             <div className="mt-8 flex items-center justify-center gap-5 p-4 sm:flex-wrap">
               <div className="transform transition duration-300 hover:scale-110">
                 <a
