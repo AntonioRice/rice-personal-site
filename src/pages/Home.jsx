@@ -71,7 +71,7 @@ const Home = () => {
               <div className="flex flex-row gap-3 text-black sm:justify-center ">
                 <motion.button
                   title="software engineer"
-                  className="animate-pulse rounded-md bg-[#cccccc] px-4 py-2 hover:animate-none hover:bg-red-500 hover:text-white"
+                  className="animate-pulse rounded-md bg-[#cccccc] px-4 py-2 hover:animate-none hover:bg-red-500"
                   whileHover={{ scale: 1.1 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                   onClick={handleLeftClick}
@@ -80,7 +80,7 @@ const Home = () => {
                 </motion.button>
                 <motion.button
                   title="photographer"
-                  className="animate-pulse rounded-md bg-[#cccccc] px-4 py-2 hover:animate-none hover:bg-red-500 hover:text-white"
+                  className="animate-pulse rounded-md bg-[#cccccc] px-4 py-2 hover:animate-none hover:bg-red-500"
                   whileHover={{ scale: 1.1 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                   onClick={handleRightClick}
