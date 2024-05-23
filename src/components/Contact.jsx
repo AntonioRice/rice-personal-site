@@ -8,7 +8,7 @@ const Contact = () => {
   return (
     <section className="section-wrapper mt-20 flex flex-col items-center justify-center !border-b-0">
       <h1 className="text-8xl font-bold sm:text-6xl">
-        Contact
+        contact
         <div className="ml-2 inline-block size-5 rounded-full bg-red-500 sm:size-3" />
       </h1>
       <h1 className="mb-5 text-center text-2xl font-extralight text-[#cccccc] sm:text-xl">

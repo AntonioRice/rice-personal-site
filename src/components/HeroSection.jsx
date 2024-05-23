@@ -46,7 +46,7 @@ function HeroSection() {
           contactRef.current.scrollIntoView({ behavior: "smooth" });
         }}
       >
-        Contact Me
+        contact me
       </motion.button>
     </section>
   );
