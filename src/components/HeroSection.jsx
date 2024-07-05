@@ -39,7 +39,7 @@ function HeroSection() {
       </p>
       <motion.button
         title="contactMe"
-        className="animate-pulse rounded-md bg-[#cccccc] px-4 py-2 text-black hover:animate-none hover:bg-red-500"
+        className="animate-pulse rounded-md bg-[#cccccc] px-4 py-2 text-black hover:animate-none hover:bg-gray-200"
         whileHover={{ scale: 1.1 }}
         transition={{ type: "spring", stiffness: 400, damping: 10 }}
         onClick={() => {

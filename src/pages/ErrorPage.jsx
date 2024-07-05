@@ -19,7 +19,7 @@ const ErrorPage = () => {
         </h1>
         <motion.button
           title="returnHome"
-          className="mt-5 animate-pulse rounded-md bg-[#cccccc] px-4 py-2 text-black hover:bg-red-500"
+          className="mt-5 animate-pulse rounded-md bg-[#cccccc] px-4 py-2 text-black hover:bg-gray-200"
           whileHover={{ scale: 1.1 }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
           onClick={navigateHome}

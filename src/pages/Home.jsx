@@ -71,7 +71,7 @@ const Home = () => {
               <div className="flex flex-row gap-3 text-black sm:justify-center ">
                 <motion.button
                   title="software engineer"
-                  className="animate-pulse rounded-md bg-[#cccccc] px-4 py-2 hover:animate-none hover:bg-red-500"
+                  className="animate-pulse rounded-md bg-[#cccccc] px-4 py-2 hover:animate-none hover:bg-gray-200"
                   whileHover={{ scale: 1.1 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                   onClick={handleLeftClick}
@@ -80,7 +80,7 @@ const Home = () => {
                 </motion.button>
                 <motion.button
                   title="photographer"
-                  className="animate-pulse rounded-md bg-[#cccccc] px-4 py-2 hover:animate-none hover:bg-red-500"
+                  className="animate-pulse rounded-md bg-[#cccccc] px-4 py-2 hover:animate-none hover:bg-gray-200"
                   whileHover={{ scale: 1.1 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                   onClick={handleRightClick}
@@ -92,9 +92,9 @@ const Home = () => {
           </section>
           <section className="order-1 flex items-center justify-center p-10 sm:mt-[88px] md:order-2 md:col-span-1">
             <img
-              src="src/assets/images/main-avatar-2.jpg"
+              src="src/assets/images/main-avatar-3.jpg"
               alt="main 2d avatar"
-              className="rounded-full ring-4 ring-white sm:w-52"
+              className="rounded-full ring-4 ring-white sm:w-52 sm:h-52"
             />
           </section>
         </div>

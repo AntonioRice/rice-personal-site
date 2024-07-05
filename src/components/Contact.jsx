@@ -6,7 +6,7 @@ const Contact = () => {
   const trackEvent = useEventsTracker("User Interaction");
 
   return (
-    <section className="section-wrapper mt-20 flex flex-col items-center justify-center !border-b-0">
+    <section className="section-wrapper mt-20 flex flex-col items-center justify-center !border-b-0 text-[#cccccc]">
       <h1 className="text-8xl font-bold sm:text-6xl">
         contact
         <div className="ml-2 inline-block size-5 rounded-full bg-red-500 sm:size-3" />
@@ -18,7 +18,7 @@ const Contact = () => {
             href="https://www.linkedin.com/in/riceantonio"
             target="_blank"
             rel="noopener noreferrer"
-            className="decoration-red-500 hover:text-[#ffffff] hover:underline"
+            className="decoration-red-500 hover:underline"
             onClick={() => trackEvent("Linkedin button clicked", "Linkedin")}
           >
             Linkedin!
@@ -30,7 +30,7 @@ const Contact = () => {
         href="mailto:contact@antoniorice.com"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex cursor-pointer items-center space-x-2 hover:text-[#e35757]"
+        className="flex cursor-pointer items-center space-x-2 hover:text-gray-100 hover:scale-105"
         onClick={() => trackEvent("Email button clicked", "Email")}
       >
         <FaEnvelope size={25} className="mt-2" />
@@ -44,7 +44,7 @@ const Contact = () => {
           href="https://www.linkedin.com/in/riceantonio"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-[#e35757]"
+          className="hover:text-gray-100 hover:scale-105"
           onClick={() => trackEvent("Linkedin button clicked", "Linkedin")}
         >
           <FaLinkedin size={30} />
@@ -54,7 +54,7 @@ const Contact = () => {
           href="https://www.github.com/AntonioRice"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-[#e35757]"
+          className="hover:text-gray-100 hover:scale-105"
           onClick={() => trackEvent("Github button clicked", "Github")}
         >
           <FaGithub size={30} />
@@ -64,7 +64,7 @@ const Contact = () => {
           href="/ALR-Resume-2024-v2.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-[#e35757]"
+          className="hover:text-gray-100 hover:scale-105"
           onClick={() => trackEvent("Resume downloaded", "ALR Resume")}
         >
           <FaFilePdf size={30} />

@@ -93,7 +93,7 @@ const TechProfile = () => {
                   </h1>
                   <motion.button
                     title="downloadResume"
-                    className="inline-flex h-10 w-32 animate-pulse items-center justify-center rounded-md bg-[#cccccc] px-4 py-2 text-black hover:animate-none hover:bg-red-500"
+                    className="inline-flex h-10 w-32 animate-pulse items-center justify-center rounded-md bg-[#cccccc] px-4 py-2 text-black hover:animate-none hover:bg-gray-200"
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     onClick={handleDownload}
@@ -109,7 +109,7 @@ const TechProfile = () => {
                   </h1>
                   <motion.button
                     title="navigateToCV"
-                    className="inline-flex h-10 w-32 animate-pulse items-center justify-center rounded-md bg-[#cccccc] px-4 py-2 text-black hover:animate-none hover:bg-red-500"
+                    className="inline-flex h-10 w-32 animate-pulse items-center justify-center rounded-md bg-[#cccccc] px-4 py-2 text-black hover:animate-none hover:bg-gray-200"
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     onClick={handleNavigateToCV}
