@@ -30,7 +30,7 @@ const Contact = () => {
         href="mailto:contact@antoniorice.com"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex cursor-pointer items-center space-x-2 hover:text-gray-100 hover:scale-105"
+        className="flex transform cursor-pointer items-center space-x-2 transition duration-300 hover:scale-110 hover:text-gray-100"
         onClick={() => trackEvent("Email button clicked", "Email")}
       >
         <FaEnvelope size={25} className="mt-2" />
@@ -44,7 +44,7 @@ const Contact = () => {
           href="https://www.linkedin.com/in/riceantonio"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-gray-100 hover:scale-105"
+          className="transform transition duration-300 hover:scale-110 hover:text-gray-100"
           onClick={() => trackEvent("Linkedin button clicked", "Linkedin")}
         >
           <FaLinkedin size={30} />
@@ -54,7 +54,7 @@ const Contact = () => {
           href="https://www.github.com/AntonioRice"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-gray-100 hover:scale-105"
+          className="transform transition duration-300 hover:scale-110 hover:text-gray-100"
           onClick={() => trackEvent("Github button clicked", "Github")}
         >
           <FaGithub size={30} />
@@ -64,7 +64,7 @@ const Contact = () => {
           href="/ALR-Resume-2024-v2.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-gray-100 hover:scale-105"
+          className="transform transition duration-300 hover:scale-110 hover:text-gray-100"
           onClick={() => trackEvent("Resume downloaded", "ALR Resume")}
         >
           <FaFilePdf size={30} />

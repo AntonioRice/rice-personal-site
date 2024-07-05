@@ -15,13 +15,13 @@ function HeroSection() {
         className="mb-4 mt-10 h-48 w-48"
       >
         <img
-          className="mx-auto mb-6 rounded-full ring-4 ring-[#cccccc] transition duration-300 ease-in-out hover:ring-red-500"
+          className="mx-auto mb-6 transform rounded-full ring-4 ring-[#cccccc] transition duration-300 ease-in-out hover:scale-110 hover:ring-[#ffffff]"
           src="src/assets/images/avatar.jpeg"
-          alt="Antonio Rice Headshot"
+          alt="Antonio Rice Head shot"
         />
       </a>
-      <h1 className="mb-5 text-6xl font-bold text-[#cccccc] sm:text-5xl">
-        Hi, I'm <span className="text-[#ffffff]">Antonio</span>
+      <h1 className="mb-5 text-6xl font-bold text-[#ffffff] sm:text-5xl">
+        Welcome
         <a
           href="https://www.kappaalphapsi1911.com/"
           title="Kappa Alpha Psi Fraternity, Inc. 1911"
