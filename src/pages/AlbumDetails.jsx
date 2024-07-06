@@ -4,7 +4,7 @@ import axios from "axios";
 import AnimatedPage from "../components/AnimatedPage";
 import ImageWithLoader from "../components/ImageWithLoader";
 
-const SERVER_URL = import.meta.env.VITE_SERVER_URL;
+const VITE_SERVER_URL = import.meta.env.VITE_SERVER_URL;
 
 const AlbumDetails = () => {
   const location = useLocation();
@@ -16,7 +16,7 @@ const AlbumDetails = () => {
     const fetchImages = async () => {
       try {
         const response = await axios.get(
-          `${SERVER_URL}/images/album/${albumId}`,
+          `${VITE_SERVER_URL}/images/album/${albumId}`,
         );
         setImages(response.data.images);
       } catch (error) {

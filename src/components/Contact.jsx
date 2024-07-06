@@ -1,44 +1,383 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import axios from "axios";
 import { FaLinkedin, FaGithub, FaFilePdf, FaEnvelope } from "react-icons/fa6";
 import useEventsTracker from "../hooks/useEventsTracker";
+import { validate } from "email-validator";
+import countryCodes from "../utils/countryCodes";
+
+const VITE_SERVER_URL = import.meta.env.VITE_SERVER_URL;
 
 const Contact = () => {
+  const [loading, setLoading] = useState(false);
+  const [completed, setCompleted] = useState(false);
+  const controls = useAnimation();
+  const [touched, setTouched] = useState({});
+  const [charCount, setCharCount] = useState(0);
+  const [isFormValid, setIsFormValid] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    countryCode: "+1",
+    phoneNumber: "",
+    subject: "",
+    message: "",
+  });
+
   const trackEvent = useEventsTracker("User Interaction");
 
+  useEffect(() => {
+    const isValid =
+      formData.firstName &&
+      formData.lastName &&
+      validate(formData.email) &&
+      formData.countryCode &&
+      formData.phoneNumber &&
+      formData.subject &&
+      formData.message;
+    setIsFormValid(isValid);
+  }, [formData]);
+
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    let formattedValue = value;
+    if (id === "phoneNumber") {
+      formattedValue = formatPhoneNumber(value);
+    }
+    if (id === "message") {
+      setCharCount(value.length);
+    }
+
+    setFormData((prev) => ({
+      ...prev,
+      [id]: formattedValue,
+    }));
+  };
+
+  const handleBlur = (e) => {
+    const { id } = e.target;
+    setTouched((prev) => ({ ...prev, [id]: true }));
+  };
+
+  const handleSend = async (e) => {
+    e.preventDefault();
+
+    if (isFormValid) {
+      setLoading(true);
+      setCompleted(false);
+      controls.start({
+        strokeDashoffset: [100, 0],
+        stroke: ["#f00", "#ff0", "#0f0"],
+        transition: { duration: 2 },
+      });
+
+      try {
+        const response = await axios.post(
+          `${VITE_SERVER_URL}/contact`,
+          formData,
+        );
+        controls.start({
+          strokeDashoffset: 0,
+          strokeDasharray: "0 100",
+          stroke: "#0f0",
+          transition: { duration: 0.5 },
+        });
+        setCompleted(true);
+      } catch (error) {
+        controls.start({
+          stroke: "#f00",
+          transition: { duration: 0.5 },
+        });
+        setCompleted(false);
+      } finally {
+        setLoading(false);
+      }
+    } else {
+      setTouched({
+        firstName: true,
+        lastName: true,
+        email: true,
+        phoneNumber: true,
+        subject: true,
+        message: true,
+      });
+    }
+  };
+
+  const isFieldInvalid = (fieldName) => {
+    return (
+      (touched[fieldName] && !formData[fieldName]) ||
+      (fieldName === "email" &&
+        touched[fieldName] &&
+        !validate(formData[fieldName]))
+    );
+  };
+
+  const formatPhoneNumber = (input) => {
+    input = input.replace(/\D/g, "");
+
+    if (input.length > 10) {
+      input = input.slice(0, 10);
+    }
+
+    let formatted = "";
+    if (input.length > 0) {
+      formatted = `(${input.slice(0, 3)}`;
+    }
+    if (input.length > 3) {
+      formatted += `) ${input.slice(3, 6)}`;
+    }
+    if (input.length > 6) {
+      formatted += `-${input.slice(6, 10)}`;
+    }
+
+    return formatted;
+  };
+
   return (
-    <section className="section-wrapper mt-20 flex flex-col items-center justify-center !border-b-0 text-[#cccccc]">
-      <h1 className="text-8xl font-bold sm:text-6xl">
-        contact
-        <div className="ml-2 inline-block size-5 rounded-full bg-red-500 sm:size-3" />
-      </h1>
-      <h1 className="mb-5 text-center text-2xl font-extralight text-[#cccccc] sm:text-xl">
-        Send me an email if you want to connect. You can also find me on
-        <span className="ml-1">
-          <a
-            href="https://www.linkedin.com/in/riceantonio"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="decoration-red-500 hover:underline"
-            onClick={() => trackEvent("Linkedin button clicked", "Linkedin")}
-          >
-            Linkedin!
-          </a>
-        </span>
-      </h1>
-      <a
-        title="Email"
-        href="mailto:contact@antoniorice.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex transform cursor-pointer items-center space-x-2 transition duration-300 hover:scale-110 hover:text-gray-100"
-        onClick={() => trackEvent("Email button clicked", "Email")}
-      >
-        <FaEnvelope size={25} className="mt-2" />
-        <span className="text-2xl underline sm:text-xl">
-          contact@antoniorice.com
-        </span>
-      </a>
-      <section className="mt-5 flex space-x-4">
+    <section className="section-wrapper flex flex-col !border-b-0">
+      <div className="relative">
+        <form
+          className={`relative rounded-xl bg-[#232323] p-6 ${loading || completed ? "opacity-30" : "opacity-100"}`}
+          onSubmit={handleSend}
+        >
+          <div className="flex flex-col items-center py-10 text-4xl">
+            <h1>Let's work together</h1>
+          </div>
+          <div className="-mx-3 flex flex-wrap">
+            <div className="mb-6 w-full px-3 md:w-1/2">
+              <label className="mb-2 block text-xs font-bold uppercase tracking-wide text-[#cccccc]">
+                First Name
+              </label>
+              <input
+                className={`mb-3 block w-full rounded border bg-[#0f1217] px-4 py-3 leading-tight text-[#cccccc] focus:outline-[#cccccc] ${
+                  isFieldInvalid("firstName")
+                    ? "border-red-500"
+                    : "border-[#0f1217]"
+                } focus:outline-none`}
+                id="firstName"
+                type="text"
+                placeholder="Jane"
+                value={formData.firstName}
+                onChange={(e) => handleInputChange(e, "First Name")}
+                onBlur={handleBlur}
+                required
+                disabled={loading || completed}
+              />
+              {isFieldInvalid("firstName") && (
+                <p className="text-xs italic text-red-500">
+                  Please fill out this field.
+                </p>
+              )}
+            </div>
+            <div className="mb-6 w-full px-3 md:w-1/2">
+              <label className="mb-2 block text-xs font-bold uppercase tracking-wide text-[#cccccc]">
+                Last Name
+              </label>
+              <input
+                className={`mb-3 block w-full rounded border bg-[#0f1217] px-4 py-3 leading-tight text-[#cccccc] focus:outline-[#cccccc]  ${
+                  isFieldInvalid("lastName")
+                    ? "border-red-500"
+                    : "border-[#0f1217]"
+                } focus:outline-none`}
+                id="lastName"
+                type="text"
+                placeholder="Doe"
+                value={formData.lastName}
+                onChange={(e) => handleInputChange(e, "Last Name")}
+                onBlur={handleBlur}
+                required
+                disabled={loading || completed}
+              />
+              {isFieldInvalid("lastName") && (
+                <p className="text-xs italic text-red-500">
+                  Please fill out this field.
+                </p>
+              )}
+            </div>
+          </div>
+          <div className="-mx-3 flex flex-wrap">
+            <div className="mb-6 w-full px-3 md:w-1/3">
+              <label className="mb-2 block text-xs font-bold uppercase tracking-wide text-[#cccccc]">
+                Email
+              </label>
+              <input
+                className={`mb-3 block w-full rounded border bg-[#0f1217] px-4 py-3 leading-tight text-[#cccccc] focus:outline-[#cccccc] ${
+                  isFieldInvalid("email")
+                    ? "border-red-500"
+                    : "border-[#0f1217]"
+                } focus:outline-none`}
+                id="email"
+                type="email"
+                placeholder="Email"
+                value={formData.email}
+                onChange={(e) => handleInputChange(e, "Email")}
+                onBlur={handleBlur}
+                required
+                disabled={loading || completed}
+              />
+              {isFieldInvalid("email") && (
+                <p className="text-xs italic text-red-500">
+                  Please provide a valid email.
+                </p>
+              )}
+            </div>
+            <div className="mb-6 w-full px-3 md:w-1/3">
+              <label className="mb-2 block text-xs font-bold uppercase tracking-wide text-[#cccccc]">
+                Country Code
+              </label>
+              <select
+                className={`mb-3 block w-full rounded border bg-[#0f1217] px-4 py-[.60rem] leading-tight text-[#cccccc] focus:outline-[#cccccc] ${
+                  isFieldInvalid("countryCode")
+                    ? "border-red-500"
+                    : "border-[#0f1217]"
+                } focus:outline-none`}
+                id="countryCode"
+                value={formData.countryCode}
+                onChange={(e) => handleInputChange(e, "Country Code")}
+                onBlur={handleBlur}
+                required
+                disabled={loading || completed}
+              >
+                {countryCodes.map((country) => (
+                  <option key={country.code} value={country.code}>
+                    {country.name} ({country.code})
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="mb-6 w-full px-3 md:w-1/3">
+              <label className="mb-2 block text-xs font-bold uppercase tracking-wide text-[#cccccc]">
+                Phone Number
+              </label>
+              <input
+                className={`mb-3 block w-full rounded border bg-[#0f1217] px-4 py-3 leading-tight text-[#cccccc] focus:outline-[#cccccc] ${
+                  isFieldInvalid("phoneNumber")
+                    ? "border-red-500"
+                    : "border-[#0f1217]"
+                } focus:outline-none`}
+                id="phoneNumber"
+                type="tel"
+                placeholder="(---) --- ----"
+                value={formData.phoneNumber}
+                onChange={(e) => handleInputChange(e, "Phone Number")}
+                onBlur={handleBlur}
+                required
+                disabled={loading || completed}
+              />
+              {isFieldInvalid("phoneNumber") && (
+                <p className="text-xs italic text-red-500">
+                  Please fill out this field.
+                </p>
+              )}
+            </div>
+          </div>
+          <div className="-mx-3 flex flex-wrap">
+            <div className="mb-6 w-full px-3">
+              <label className="mb-2 block text-xs font-bold uppercase tracking-wide text-[#cccccc]">
+                Subject
+              </label>
+              <input
+                className={`mb-3 block w-full rounded border bg-[#0f1217] px-4 py-3 leading-tight text-[#cccccc] focus:outline-[#cccccc]  ${
+                  isFieldInvalid("subject")
+                    ? "border-red-500"
+                    : "border-[#0f1217]"
+                } focus:outline-none`}
+                id="subject"
+                type="text"
+                placeholder="Subject"
+                value={formData.subject}
+                onChange={(e) => handleInputChange(e, "Subject")}
+                onBlur={handleBlur}
+                required
+                disabled={loading || completed}
+              />
+              {isFieldInvalid("subject") && (
+                <p className="text-xs italic text-red-500">
+                  Please fill out this field.
+                </p>
+              )}
+            </div>
+          </div>
+          <div className="-mx-3 flex h-full flex-wrap">
+            <div className="mb-6 w-full px-3">
+              <label className="mb-2 block text-xs font-bold uppercase tracking-wide text-[#cccccc]">
+                Message
+              </label>
+              <textarea
+                className={`mb-3 block w-full rounded border bg-[#0f1217] px-4 py-3 leading-tight text-[#cccccc] focus:outline-[#cccccc] ${
+                  isFieldInvalid("message")
+                    ? "border-red-500"
+                    : "border-[#0f1217]"
+                } focus:outline-none`}
+                id="message"
+                rows={10}
+                maxLength={500}
+                value={formData.message}
+                onChange={(e) => handleInputChange(e, "message")}
+                onBlur={handleBlur}
+                required
+                disabled={loading || completed}
+              />
+              <div className="text-right text-xs text-[#cccccc]">
+                {charCount}/500
+              </div>
+              {isFieldInvalid("message") && (
+                <p className="text-xs italic text-red-500">
+                  Please provide a message.
+                </p>
+              )}
+            </div>
+          </div>
+          <div className="flex justify-end">
+            <button
+              type="submit"
+              className={`animate-pulse rounded-md bg-[#cccccc] px-4 py-2 text-black hover:animate-none hover:bg-[#ffffff] ${
+                (!isFormValid || loading || completed) &&
+                "cursor-not-allowed opacity-50"
+              }`}
+              disabled={!isFormValid || loading || completed}
+            >
+              Send Message
+            </button>
+          </div>
+        </form>
+
+        <div
+          className={`absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 items-center justify-center ${loading || completed ? "flex" : "hidden"}`}
+        >
+          <motion.div className="flex size-64 flex-col items-center justify-center rounded-2xl border border-[#606064] bg-[#232323]">
+            <h1 className="h-1/5">
+              {!completed ? "Sending..." : "Message Sent"}
+            </h1>
+            <motion.svg width="100" height="100" viewBox="0 0 100 100">
+              <motion.circle
+                cx="50"
+                cy="50"
+                r="45"
+                strokeWidth="5"
+                stroke="#ddd"
+                fill="none"
+                initial={{ strokeDasharray: 100, strokeDashoffset: 100 }}
+                animate={controls}
+              />
+              {completed && (
+                <motion.path
+                  d="M34 50 L45 60 L66 40"
+                  fill="none"
+                  stroke="#0f0"
+                  strokeWidth="5"
+                  initial={{ pathLength: 0 }}
+                  animate={{ pathLength: 1 }}
+                  transition={{ duration: 0.5 }}
+                />
+              )}
+            </motion.svg>
+          </motion.div>
+        </div>
+      </div>
+      <section className="mt-5 flex justify-center space-x-4">
         <a
           title="Linkedin"
           href="https://www.linkedin.com/in/riceantonio"
@@ -47,7 +386,7 @@ const Contact = () => {
           className="transform transition duration-300 hover:scale-110 hover:text-gray-100"
           onClick={() => trackEvent("Linkedin button clicked", "Linkedin")}
         >
-          <FaLinkedin size={30} />
+          <FaLinkedin size={40} />
         </a>
         <a
           title="Github"
@@ -57,7 +396,7 @@ const Contact = () => {
           className="transform transition duration-300 hover:scale-110 hover:text-gray-100"
           onClick={() => trackEvent("Github button clicked", "Github")}
         >
-          <FaGithub size={30} />
+          <FaGithub size={40} />
         </a>
         <a
           title="Resume"
@@ -67,7 +406,7 @@ const Contact = () => {
           className="transform transition duration-300 hover:scale-110 hover:text-gray-100"
           onClick={() => trackEvent("Resume downloaded", "ALR Resume")}
         >
-          <FaFilePdf size={30} />
+          <FaFilePdf size={40} />
         </a>
       </section>
     </section>

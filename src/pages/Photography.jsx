@@ -48,15 +48,16 @@ const Photography = () => {
         </div>
         <div className="sm:p-1 md:p-10">
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            {albums.map(({ id, coverImageUrl, name, albumDate }) => (
-              <Album
-                key={id}
-                albumId={id}
-                coverImageUrl={coverImageUrl}
-                name={name}
-                albumDate={albumDate}
-              />
-            ))}
+            {albums &&
+              albums.map(({ id, coverImageUrl, name, albumDate }) => (
+                <Album
+                  key={id}
+                  albumId={id}
+                  coverImageUrl={coverImageUrl}
+                  name={name}
+                  albumDate={albumDate}
+                />
+              ))}
           </div>
         </div>
       </div>
