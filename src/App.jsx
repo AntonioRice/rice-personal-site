@@ -24,8 +24,8 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: "cv", element: <CV /> },
-      { path: "techprofile", element: <TechProfile /> },
-      { path: "photography", element: <Photography /> },
+      { path: "software-engineer", element: <TechProfile /> },
+      { path: "photographer", element: <Photography /> },
       { path: "album/:albumId", element: <AlbumDetails /> },
     ],
   },
