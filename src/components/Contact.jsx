@@ -177,7 +177,7 @@ const Contact = () => {
               </div>
               {isFieldInvalid("firstName") && (
                 <p className="text-xs italic text-red-500">
-                  Please fill out this field.
+                  Please provide first name.
                 </p>
               )}
             </div>
@@ -204,7 +204,7 @@ const Contact = () => {
               </div>
               {isFieldInvalid("lastName") && (
                 <p className="text-xs italic text-red-500">
-                  Please fill out this field.
+                  Please provide last name.
                 </p>
               )}
             </div>
@@ -282,7 +282,7 @@ const Contact = () => {
               </div>
               {isFieldInvalid("phoneNumber") && (
                 <p className="text-xs italic text-red-500">
-                  Please fill out this field.
+                  Please provide a phone number.
                 </p>
               )}
             </div>
@@ -311,7 +311,7 @@ const Contact = () => {
               </div>
               {isFieldInvalid("subject") && (
                 <p className="text-xs italic text-red-500">
-                  Please fill out this field.
+                  Please provide a subject.
                 </p>
               )}
             </div>
@@ -339,14 +339,18 @@ const Contact = () => {
                   required
                 />
               </div>
-              <div className="text-right text-xs text-[#cccccc]">
-                {charCount}/500
+              <div className="flex justify-between">
+                <div>
+                  {isFieldInvalid("message") && (
+                    <p className="text-xs italic text-red-500">
+                      Please provide a message.
+                    </p>
+                  )}
+                </div>
+                <div className="text-right text-xs text-[#cccccc]">
+                  {charCount}/500
+                </div>
               </div>
-              {isFieldInvalid("message") && (
-                <p className="text-xs italic text-red-500">
-                  Please provide a message.
-                </p>
-              )}
             </div>
           </div>
           <div className="flex justify-end">
