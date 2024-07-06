@@ -9,12 +9,12 @@ const Home = () => {
 
   const handleLeftClick = () => {
     eventTracker("swe button clicked", "SWE");
-    navigate("/techprofile");
+    navigate("/software-engineer");
   };
 
   const handleRightClick = () => {
     eventTracker("photographer button clicked", "Photographer");
-    navigate("/photography");
+    navigate("/photographer");
   };
 
   const text = "antonio rice";
@@ -61,11 +61,8 @@ const Home = () => {
             </div>
             <div className="sm:text-center">
               <p className="mb-5 pb-5 text-xl font-extralight text-[#cccccc]">
-                i'm a{" "}
-                <span className="underline decoration-gray-600">
-                  software engineer{" "}
-                </span>{" "}
-                and a wannabe photographer, which would you like to explore?
+                i'm a software engineer and a wannabe photographer, which would
+                you like to explore?
               </p>
               <div className="flex flex-row gap-3 text-black sm:justify-center">
                 <motion.button

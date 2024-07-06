@@ -49,14 +49,14 @@ const Header = () => {
           <li>
             <a
               className="text-lg uppercase  text-[#cccccc] hover:border-b-2 hover:border-red-500 hover:text-[#ffffff]"
-              href="/techprofile"
+              href="/software-engineer"
             >
               Software Engineer
             </a>
           </li>
           <li>
             <a
-              href="/photography"
+              href="/photographer"
               className=" text-lg uppercase  text-[#cccccc] hover:border-b-2 hover:border-red-500 hover:text-[#ffffff]"
             >
               Photographer
@@ -78,7 +78,7 @@ const Header = () => {
           <li>
             <a
               title="tech profile"
-              href="/techprofile"
+              href="/software-engineer"
               className="text-[#cccccc] hover:text-red-500"
             >
               <IoCodeSlash size={20} />
@@ -87,7 +87,7 @@ const Header = () => {
           <li>
             <a
               title="photography profile"
-              href="/photography"
+              href="/photographer"
               className="text-[#cccccc] hover:text-red-500"
             >
               <IoCameraOutline size={20} />
