@@ -1,7 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import axios from "axios";
-import { FaLinkedin, FaGithub, FaFilePdf, FaEnvelope } from "react-icons/fa6";
+import {
+  FaLinkedin,
+  FaGithub,
+  FaFilePdf,
+  FaEnvelope,
+  FaPhone,
+  FaIdCard,
+} from "react-icons/fa6";
+import { MdModeEdit } from "react-icons/md";
 import useEventsTracker from "../hooks/useEventsTracker";
 import { validate } from "email-validator";
 import countryCodes from "../utils/countryCodes";
@@ -142,29 +150,31 @@ const Contact = () => {
           className={`relative rounded-xl bg-[#232323] p-6 ${loading || completed ? "opacity-30" : "opacity-100"}`}
           onSubmit={handleSend}
         >
-          <div className="flex flex-col items-center py-10 text-4xl">
+          <div className="mb-5 flex flex-col items-center py-10 text-4xl">
             <h1>Let's work together</h1>
           </div>
           <div className="-mx-3 flex flex-wrap">
             <div className="mb-6 w-full px-3 md:w-1/2">
-              <label className="mb-2 block text-xs font-bold uppercase tracking-wide text-[#cccccc]">
-                First Name
-              </label>
-              <input
-                className={`mb-3 block w-full rounded border bg-[#0f1217] px-4 py-3 leading-tight text-[#cccccc] focus:outline-[#cccccc] ${
-                  isFieldInvalid("firstName")
-                    ? "border-red-500"
-                    : "border-[#0f1217]"
-                } focus:outline-none`}
-                id="firstName"
-                type="text"
-                placeholder="Jane"
-                value={formData.firstName}
-                onChange={(e) => handleInputChange(e, "First Name")}
-                onBlur={handleBlur}
-                required
-                disabled={loading || completed}
-              />
+              <div className="relative">
+                <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3">
+                  <FaIdCard className="size-4 text-[#cccccc]" />
+                </div>
+                <input
+                  className={`mb-3 block w-full rounded border bg-[#0f1217] py-3 pl-10 leading-tight text-[#cccccc] focus:outline-[#cccccc] ${
+                    isFieldInvalid("firstName")
+                      ? "border-red-500"
+                      : "border-[#0f1217]"
+                  } focus:outline-none`}
+                  id="firstName"
+                  type="text"
+                  placeholder="First Name"
+                  value={formData.firstName}
+                  onChange={(e) => handleInputChange(e, "First Name")}
+                  onBlur={handleBlur}
+                  required
+                  disabled={loading || completed}
+                />
+              </div>
               {isFieldInvalid("firstName") && (
                 <p className="text-xs italic text-red-500">
                   Please fill out this field.
@@ -172,24 +182,26 @@ const Contact = () => {
               )}
             </div>
             <div className="mb-6 w-full px-3 md:w-1/2">
-              <label className="mb-2 block text-xs font-bold uppercase tracking-wide text-[#cccccc]">
-                Last Name
-              </label>
-              <input
-                className={`mb-3 block w-full rounded border bg-[#0f1217] px-4 py-3 leading-tight text-[#cccccc] focus:outline-[#cccccc]  ${
-                  isFieldInvalid("lastName")
-                    ? "border-red-500"
-                    : "border-[#0f1217]"
-                } focus:outline-none`}
-                id="lastName"
-                type="text"
-                placeholder="Doe"
-                value={formData.lastName}
-                onChange={(e) => handleInputChange(e, "Last Name")}
-                onBlur={handleBlur}
-                required
-                disabled={loading || completed}
-              />
+              <div className="relative">
+                <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3">
+                  <FaIdCard className="size-4 text-[#cccccc]" />
+                </div>
+                <input
+                  className={`mb-3 block w-full rounded border bg-[#0f1217] py-3 pl-10 leading-tight text-[#cccccc] focus:outline-[#cccccc]  ${
+                    isFieldInvalid("lastName")
+                      ? "border-red-500"
+                      : "border-[#0f1217]"
+                  } focus:outline-none`}
+                  id="lastName"
+                  type="text"
+                  placeholder="Last Name"
+                  value={formData.lastName}
+                  onChange={(e) => handleInputChange(e, "Last Name")}
+                  onBlur={handleBlur}
+                  required
+                  disabled={loading || completed}
+                />
+              </div>
               {isFieldInvalid("lastName") && (
                 <p className="text-xs italic text-red-500">
                   Please fill out this field.
@@ -199,34 +211,34 @@ const Contact = () => {
           </div>
           <div className="-mx-3 flex flex-wrap">
             <div className="mb-6 w-full px-3 md:w-1/3">
-              <label className="mb-2 block text-xs font-bold uppercase tracking-wide text-[#cccccc]">
-                Email
-              </label>
-              <input
-                className={`mb-3 block w-full rounded border bg-[#0f1217] px-4 py-3 leading-tight text-[#cccccc] focus:outline-[#cccccc] ${
-                  isFieldInvalid("email")
-                    ? "border-red-500"
-                    : "border-[#0f1217]"
-                } focus:outline-none`}
-                id="email"
-                type="email"
-                placeholder="Email"
-                value={formData.email}
-                onChange={(e) => handleInputChange(e, "Email")}
-                onBlur={handleBlur}
-                required
-                disabled={loading || completed}
-              />
+              <div className="relative">
+                <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3">
+                  <FaEnvelope className="size-4 text-[#cccccc]" />
+                </div>
+                <input
+                  className={`mb-3 block w-full rounded border bg-[#0f1217] py-3 pl-10 leading-tight text-[#cccccc] focus:outline-[#cccccc] ${
+                    isFieldInvalid("email")
+                      ? "border-red-500"
+                      : "border-[#0f1217]"
+                  } focus:outline-none`}
+                  id="email"
+                  type="email"
+                  placeholder="Email"
+                  value={formData.email}
+                  onChange={(e) => handleInputChange(e, "Email")}
+                  onBlur={handleBlur}
+                  required
+                  disabled={loading || completed}
+                />
+              </div>
               {isFieldInvalid("email") && (
                 <p className="text-xs italic text-red-500">
                   Please provide a valid email.
                 </p>
               )}
             </div>
+
             <div className="mb-6 w-full px-3 md:w-1/3">
-              <label className="mb-2 block text-xs font-bold uppercase tracking-wide text-[#cccccc]">
-                Country Code
-              </label>
               <select
                 className={`mb-3 block w-full rounded border bg-[#0f1217] px-4 py-[.60rem] leading-tight text-[#cccccc] focus:outline-[#cccccc] ${
                   isFieldInvalid("countryCode")
@@ -248,24 +260,26 @@ const Contact = () => {
               </select>
             </div>
             <div className="mb-6 w-full px-3 md:w-1/3">
-              <label className="mb-2 block text-xs font-bold uppercase tracking-wide text-[#cccccc]">
-                Phone Number
-              </label>
-              <input
-                className={`mb-3 block w-full rounded border bg-[#0f1217] px-4 py-3 leading-tight text-[#cccccc] focus:outline-[#cccccc] ${
-                  isFieldInvalid("phoneNumber")
-                    ? "border-red-500"
-                    : "border-[#0f1217]"
-                } focus:outline-none`}
-                id="phoneNumber"
-                type="tel"
-                placeholder="(---) --- ----"
-                value={formData.phoneNumber}
-                onChange={(e) => handleInputChange(e, "Phone Number")}
-                onBlur={handleBlur}
-                required
-                disabled={loading || completed}
-              />
+              <div className="relative">
+                <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3">
+                  <FaPhone className="size-4 text-[#cccccc]" />
+                </div>
+                <input
+                  className={`mb-3 block w-full rounded border bg-[#0f1217] py-3 pl-10 leading-tight text-[#cccccc] focus:outline-[#cccccc] ${
+                    isFieldInvalid("phoneNumber")
+                      ? "border-red-500"
+                      : "border-[#0f1217]"
+                  } focus:outline-none`}
+                  id="phoneNumber"
+                  type="tel"
+                  placeholder="(---) --- ----"
+                  value={formData.phoneNumber}
+                  onChange={(e) => handleInputChange(e, "Phone Number")}
+                  onBlur={handleBlur}
+                  required
+                  disabled={loading || completed}
+                />
+              </div>
               {isFieldInvalid("phoneNumber") && (
                 <p className="text-xs italic text-red-500">
                   Please fill out this field.
@@ -275,24 +289,26 @@ const Contact = () => {
           </div>
           <div className="-mx-3 flex flex-wrap">
             <div className="mb-6 w-full px-3">
-              <label className="mb-2 block text-xs font-bold uppercase tracking-wide text-[#cccccc]">
-                Subject
-              </label>
-              <input
-                className={`mb-3 block w-full rounded border bg-[#0f1217] px-4 py-3 leading-tight text-[#cccccc] focus:outline-[#cccccc]  ${
-                  isFieldInvalid("subject")
-                    ? "border-red-500"
-                    : "border-[#0f1217]"
-                } focus:outline-none`}
-                id="subject"
-                type="text"
-                placeholder="Subject"
-                value={formData.subject}
-                onChange={(e) => handleInputChange(e, "Subject")}
-                onBlur={handleBlur}
-                required
-                disabled={loading || completed}
-              />
+              <div className="relative">
+                <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3">
+                  <MdModeEdit className="size-4 text-[#cccccc]" />
+                </div>
+                <input
+                  className={`mb-3 block w-full rounded border bg-[#0f1217] py-3 pl-10 leading-tight text-[#cccccc] focus:outline-[#cccccc]  ${
+                    isFieldInvalid("subject")
+                      ? "border-red-500"
+                      : "border-[#0f1217]"
+                  } focus:outline-none`}
+                  id="subject"
+                  type="text"
+                  placeholder="Subject"
+                  value={formData.subject}
+                  onChange={(e) => handleInputChange(e, "Subject")}
+                  onBlur={handleBlur}
+                  required
+                  disabled={loading || completed}
+                />
+              </div>
               {isFieldInvalid("subject") && (
                 <p className="text-xs italic text-red-500">
                   Please fill out this field.
@@ -302,24 +318,27 @@ const Contact = () => {
           </div>
           <div className="-mx-3 flex h-full flex-wrap">
             <div className="mb-6 w-full px-3">
-              <label className="mb-2 block text-xs font-bold uppercase tracking-wide text-[#cccccc]">
-                Message
-              </label>
-              <textarea
-                className={`mb-3 block w-full rounded border bg-[#0f1217] px-4 py-3 leading-tight text-[#cccccc] focus:outline-[#cccccc] ${
-                  isFieldInvalid("message")
-                    ? "border-red-500"
-                    : "border-[#0f1217]"
-                } focus:outline-none`}
-                id="message"
-                rows={10}
-                maxLength={500}
-                value={formData.message}
-                onChange={(e) => handleInputChange(e, "message")}
-                onBlur={handleBlur}
-                required
-                disabled={loading || completed}
-              />
+              <div className="relative">
+                <div className="pointer-events-none absolute inset-y-0 start-0 top-4 flex ps-3">
+                  <MdModeEdit className="size-4 text-[#cccccc]" />
+                </div>
+                <textarea
+                  className={`mb-3 block w-full resize-none rounded border bg-[#0f1217] py-3 pl-10 leading-tight text-[#cccccc] focus:outline-[#cccccc] ${
+                    isFieldInvalid("message")
+                      ? "border-red-500"
+                      : "border-[#0f1217]"
+                  } focus:outline-none`}
+                  id="message"
+                  rows={10}
+                  maxLength={500}
+                  value={formData.message}
+                  onChange={(e) => handleInputChange(e, "message")}
+                  onBlur={handleBlur}
+                  placeholder="Message"
+                  disabled={loading || completed}
+                  required
+                />
+              </div>
               <div className="text-right text-xs text-[#cccccc]">
                 {charCount}/500
               </div>
