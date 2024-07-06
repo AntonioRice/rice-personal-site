@@ -291,7 +291,7 @@ const Contact = () => {
             <div className="mb-6 w-full px-3">
               <div className="relative">
                 <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3">
-                  <MdModeEdit className="size-4 text-[#cccccc]" />
+                  <MdModeEdit className="size-5 text-[#cccccc]" />
                 </div>
                 <input
                   className={`mb-3 block w-full rounded border bg-[#0f1217] py-3 pl-10 leading-tight text-[#cccccc] focus:outline-[#cccccc]  ${
@@ -319,8 +319,8 @@ const Contact = () => {
           <div className="-mx-3 flex h-full flex-wrap">
             <div className="mb-6 w-full px-3">
               <div className="relative">
-                <div className="pointer-events-none absolute inset-y-0 start-0 top-4 flex ps-3">
-                  <MdModeEdit className="size-4 text-[#cccccc]" />
+                <div className="pointer-events-none absolute inset-y-0 start-0 top-3 flex ps-3">
+                  <MdModeEdit className="size-5 text-[#cccccc]" />
                 </div>
                 <textarea
                   className={`mb-3 block w-full resize-none rounded border bg-[#0f1217] py-3 pl-10 leading-tight text-[#cccccc] focus:outline-[#cccccc] ${
