@@ -20,10 +20,10 @@ jobs:
       - name: Shutdown old containers
         run: docker-compose down
 
-      - name: Remove existing s3-image-uploader-container
+      - name: Remove existing rice-personal-api-container
         run: |
-          if docker container ls -a | grep -q s3-image-uploader-container; then
-            docker container rm -f s3-image-uploader-container
+          if docker container ls -a | grep -q rice-personal-api-container; then
+            docker container rm -f rice-personal-api-container
           fi
 
       - name: Deploy with Docker Compose
