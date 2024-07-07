@@ -33,5 +33,11 @@ jobs:
           MONGO_PASSWORD: ${{ secrets.MONGO_PASSWORD }}
           MONGO_DATABASE: ${{ secrets.MONGO_DATABASE }}
 
+      - name: Check Docker containers status
+        run: docker ps -a
+
+      - name: Capture Docker logs
+        run: docker-compose logs
+
       - name: Clean up any unused Docker resources
         run: docker system prune -af
