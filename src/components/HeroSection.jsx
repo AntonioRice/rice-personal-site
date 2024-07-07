@@ -21,7 +21,7 @@ function HeroSection() {
         />
       </a>
       <h1 className="mb-5 text-6xl font-bold text-[#ffffff] sm:text-5xl">
-        Welcome
+        welcome
         <a
           href="https://www.kappaalphapsi1911.com/"
           title="Kappa Alpha Psi Fraternity, Inc. 1911"
