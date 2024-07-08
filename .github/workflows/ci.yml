@@ -29,3 +29,14 @@ jobs:
           build-args: |
             VITE_SERVER_URL=${{ secrets.VITE_SERVER_URL }}
             VITE_GTM_ID=${{ secrets.VITE_GTM_ID }}
+
+  deploy:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to EC2
+        run: |
+          ssh -o StrictHostKeyChecking=no -i "keypairv3.pem" ec2-user@${{ secrets.EC2_IP_ADDRESS }} << 'EOF'
+            docker pull ricex407/rice-personal-site:latest
+            docker-compose up -d
+          EOF
