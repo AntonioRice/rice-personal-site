@@ -81,10 +81,7 @@ const Contact = () => {
       });
 
       try {
-        const response = await axios.post(
-          `${VITE_SERVER_URL}/contact`,
-          formData,
-        );
+        await axios.post(`${VITE_SERVER_URL}/contact`, formData);
         controls.start({
           strokeDashoffset: 0,
           strokeDasharray: "0 100",
