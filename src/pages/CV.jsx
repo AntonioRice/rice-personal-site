@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import AnimatedPage from "../components/AnimatedPage";
 import skills from "../utils/skillsData";

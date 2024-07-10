@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { PiInstagramLogo } from "react-icons/pi";
 import Album from "../components/Album";
 import AnimatedPage from "../components/AnimatedPage";

@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 
 const animations = {
@@ -7,7 +6,12 @@ const animations = {
 };
 const AnimatedPage = ({ children }) => {
   return (
-    <motion.div variants={animations} initial="initial" animate="animate" transition={{ duration: 1 }}>
+    <motion.div
+      variants={animations}
+      initial="initial"
+      animate="animate"
+      transition={{ duration: 1 }}
+    >
       {children}
     </motion.div>
   );

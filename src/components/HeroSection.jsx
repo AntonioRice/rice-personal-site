@@ -1,4 +1,3 @@
-import React from "react";
 import { useScrollContext } from "../context/ScrollContext";
 import { motion } from "framer-motion";
 

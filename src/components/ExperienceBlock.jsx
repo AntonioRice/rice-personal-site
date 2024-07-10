@@ -1,4 +1,3 @@
-import React from "react";
 import Description from "./Description";
 import SkillPill from "./SkillPill";
 

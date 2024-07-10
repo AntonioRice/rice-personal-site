@@ -1,5 +1,3 @@
-import React from "react";
-
 const DevNote = () => {
   return (
     <div className="grid grid-cols-1 p-5 md:grid-cols-4 lg:grid-cols-6">

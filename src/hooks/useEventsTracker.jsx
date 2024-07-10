@@ -1,4 +1,3 @@
-import React from "react";
 import TagManager from "react-gtm-module";
 
 const useEventsTracker = (category = "Event Category") => {
