@@ -18,6 +18,13 @@ services:
       - API_PORT=${API_PORT}
       - MONGO_PASSWORD=${MONGO_PASSWORD}
       - MONGO_DATABASE=${MONGO_DATABASE}
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_REGION=${AWS_REGION}
+      - AWS_BUCKET_NAME=${AWS_BUCKET_NAME}
+      - AWS_SES_SENDER=${AWS_SES_SENDER}
+      - PERSONAL_EMAIL=${PERSONAL_EMAIL}
+      - MONGO_DB_LOCAL_URI=${MONGO_DB_LOCAL_URI}
     networks:
       - rice-personal-site-network
     restart: unless-stopped
