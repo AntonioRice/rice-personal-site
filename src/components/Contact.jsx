@@ -17,9 +17,10 @@ import countryCodes from "../utils/countryCodes";
 const VITE_SERVER_URL = import.meta.env.VITE_SERVER_URL;
 
 const Contact = () => {
+  const controls = useAnimation();
   const [loading, setLoading] = useState(false);
   const [completed, setCompleted] = useState(false);
-  const controls = useAnimation();
+  const [error, setError] = useState(false);
   const [touched, setTouched] = useState({});
   const [charCount, setCharCount] = useState(0);
   const [isFormValid, setIsFormValid] = useState(false);
@@ -74,6 +75,7 @@ const Contact = () => {
     if (isFormValid) {
       setLoading(true);
       setCompleted(false);
+
       controls.start({
         strokeDashoffset: [100, 0],
         stroke: ["#f00", "#ff0", "#0f0"],
@@ -90,11 +92,13 @@ const Contact = () => {
         });
         setCompleted(true);
       } catch (error) {
+        setError(true);
         controls.start({
           stroke: "#f00",
           transition: { duration: 0.5 },
         });
         setCompleted(false);
+        setTimeout(() => setError(false), 3000);
       } finally {
         setLoading(false);
       }
@@ -144,7 +148,7 @@ const Contact = () => {
     <section className="section-wrapper flex flex-col !border-b-0">
       <div className="relative">
         <form
-          className={`relative rounded-xl bg-[#232323] p-6 ${loading || completed ? "opacity-30" : "opacity-100"}`}
+          className={`relative rounded-xl border-[1px] border-gray-500 bg-[#232323] p-6 ${loading || completed ? "opacity-30" : "opacity-100"}`}
           onSubmit={handleSend}
         >
           <div className="mb-5 flex flex-col items-center py-10 text-4xl">
@@ -365,11 +369,17 @@ const Contact = () => {
         </form>
 
         <div
-          className={`absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 items-center justify-center ${loading || completed ? "flex" : "hidden"}`}
+          className={`absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 items-center justify-center ${
+            loading || completed || error ? "flex" : "hidden"
+          }`}
         >
           <motion.div className="flex size-64 flex-col items-center justify-center rounded-2xl border border-[#606064] bg-[#232323]">
             <h1 className="h-1/5">
-              {!completed ? "Sending..." : "Message Sent"}
+              {!completed && !error
+                ? "Sending..."
+                : completed
+                  ? "Message Sent"
+                  : "Error"}
             </h1>
             <motion.svg width="100" height="100" viewBox="0 0 100 100">
               <motion.circle
@@ -387,6 +397,17 @@ const Contact = () => {
                   d="M34 50 L45 60 L66 40"
                   fill="none"
                   stroke="#0f0"
+                  strokeWidth="5"
+                  initial={{ pathLength: 0 }}
+                  animate={{ pathLength: 1 }}
+                  transition={{ duration: 0.5 }}
+                />
+              )}
+              {error && (
+                <motion.path
+                  d="M30 30 L70 70 M70 30 L30 70"
+                  fill="none"
+                  stroke="#f00"
                   strokeWidth="5"
                   initial={{ pathLength: 0 }}
                   animate={{ pathLength: 1 }}
