@@ -1,31 +1,37 @@
 export const skills = {
   about: {
-    descriptions: [
+    description: [
       "Hello, I'm Antonio, a dedicated Full Stack Software Engineer from Minneapolis, MN. I have a passion for tackling intricate challenges and developing exceptional software solutions.",
       "My most notable experience was with C.H. Robinson, a leading 3rd Party Logistics firm based in Eden Prairie, MN. I began my journey there as a junior software engineer and, through commitment and continuous learning, I advanced to become a Tech Lead and a Subject Matter Expert.",
       "When not immersed in code, I love journeying through life with my family, capturing moments through my lens – which I find quite stunning, by the way! My curiosity also drives me to explore emerging technologies across diverse industries, and I have a profound interest in all things automotive.",
       "Currently, I am on the lookout for new opportunities where I can apply my problem-solving skills and broaden my knowledge. If you have a position or a project you believe aligns with my expertise, I'm all ears and ready to connect!",
     ],
-    skills: [
-      "Javascript",
-      "Node",
-      "React",
-      "Express",
-      ".Net Core",
-      "C#",
-      "ServiceStack",
-      "RESTful Api",
-      "Elasticsearch",
-      "MongoDB",
-      "SQL",
-      "CI/CD",
-      "Kafka",
-      "Kubernetes",
-      "ESB",
-      "RabbitMQ",
-      "Docker",
+    skillSet: [
+      {
+        category: "Programming Languages",
+        skills: ["Javascript", "C#"],
+      },
+      {
+        category: "Frameworks and Libraries",
+        skills: ["Node", "React", "Express", ".Net Core", "ServiceStack"],
+      },
+      { category: "APIs", skills: ["RESTful Api"] },
+      {
+        category: "Databases",
+        skills: ["MongoDB", "SQL", "PostgreSQL", "Elasticsearch"],
+      },
+      {
+        category: "Messaging & Monitoring",
+        skills: ["Kafka", "RabbitMQ", "ESB"],
+      },
+      {
+        category: "DevOps",
+        skills: ["Github Actions", "CI/CD", "Docker", "Kubernetes"],
+      },
+      { category: "Cloud Services", skills: ["AWS", "Azure"] },
     ],
   },
+
   experience: [
     {
       company: "CH Robinson",

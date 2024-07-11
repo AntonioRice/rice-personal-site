@@ -56,19 +56,26 @@ const TechProfile = () => {
           style={{ scale: aboutSection.scale, opacity: aboutSection.opacity }}
         >
           <Section id="about" title="about">
-            <div className="mt-5 grid gap-9 md:grid-cols-3">
-              <div className="col-span-2">
-                {skills.about.descriptions.map((description, index) => (
+            <div className="mt-5 grid gap-10 md:grid-cols-2">
+              <div className="col-span-1">
+                {skills.about.description.map((description, index) => (
                   <Description key={index} description={description} />
                 ))}
               </div>
-              <div className="sm:col-span-2 md:col-span-1">
-                <div className="mb-5 text-xl uppercase">Skills</div>
-                <div className="mb-4 flex flex-wrap gap-2">
-                  {skills.about.skills.map((skill, index) => (
-                    <SkillPill key={index} skill={skill} />
-                  ))}
-                </div>
+              <div className="col-span-2 md:col-span-1">
+                <div className="mb-5 text-xl uppercase">skills</div>
+                {skills.about.skillSet.map((skillCategory, index) => (
+                  <div key={index} className="mb-4">
+                    <div className="text-md font-light">
+                      {skillCategory.category}
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {skillCategory.skills.map((skill, skillIndex) => (
+                        <SkillPill key={skillIndex} skill={skill} />
+                      ))}
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </Section>
