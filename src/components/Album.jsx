@@ -11,12 +11,12 @@ const Album = ({ albumId, coverImageUrl, name, albumDate }) => {
 
   return (
     <div
-      className="duration-400 relative opacity-100 transition ease-in-out hover:opacity-65"
+      className="relative transition ease-in-out opacity-100 duration-400 hover:opacity-65"
       onClick={handleAlbumClick}
     >
       <div className="absolute inset-0 z-10 flex items-center justify-center bg-transparent opacity-0 hover:opacity-100">
-        <p className="flex text-2xl uppercase text-[#ffffff]">{name}</p>
-        <p className="absolute mt-14 text-black">{year}</p>
+        <p className="flex text-2xl text-white uppercase">{name}</p>
+        <p className="absolute text-black mt-14">{year}</p>
       </div>
       <ImageWithLoader src={coverImageUrl} alt={name} loading="eager" />
     </div>
