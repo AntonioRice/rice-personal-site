@@ -26,7 +26,7 @@ const TechProfile = () => {
 
   const handleDownload = () => {
     trackEvent("Resume downloaded", "ALR Resume");
-    window.open("/ALR-Resume-2024-v2.pdf", "_blank", "noopener");
+    window.open("/ALR-Resume-2024-v4.pdf", "_blank", "noopener");
   };
 
   const handleNavigateToCV = () => {
@@ -56,7 +56,7 @@ const TechProfile = () => {
           style={{ scale: aboutSection.scale, opacity: aboutSection.opacity }}
         >
           <Section id="about" title="about">
-            <div className="mt-5 grid gap-10 md:grid-cols-2">
+            <div className="grid gap-10 mt-5 md:grid-cols-2">
               <div className="col-span-1">
                 {skills.about.description.map((description, index) => (
                   <Description key={index} description={description} />
@@ -66,7 +66,7 @@ const TechProfile = () => {
                 <div className="mb-5 text-xl uppercase">skills</div>
                 {skills.about.skillSet.map((skillCategory, index) => (
                   <div key={index} className="mb-4">
-                    <div className="text-md font-light">
+                    <div className="font-light text-md">
                       {skillCategory.category}
                     </div>
                     <div className="flex flex-wrap gap-2">
@@ -136,8 +136,8 @@ const TechProfile = () => {
           }}
         >
           <Section id="learning" title="learning">
-            <div className="mt-8 flex items-center justify-center gap-5 p-4 sm:flex-wrap">
-              <div className="transform transition duration-300 hover:scale-110">
+            <div className="flex items-center justify-center gap-5 p-4 mt-8 sm:flex-wrap">
+              <div className="transition duration-300 transform hover:scale-110">
                 <a
                   href="https://www.coursera.org/verify/6GUWJ3DY26YH"
                   target="_blank"
@@ -150,7 +150,7 @@ const TechProfile = () => {
                 </a>
                 <p>React Basics</p>
               </div>
-              <div className="transform transition duration-300 hover:scale-110">
+              <div className="transition duration-300 transform hover:scale-110">
                 <a
                   href="https://www.coursera.org/verify/RCXBLMD22KFA"
                   target="_blank"
@@ -163,7 +163,7 @@ const TechProfile = () => {
                 </a>
                 <p>Javascript Basics</p>
               </div>
-              <div className="transform transition duration-300 hover:scale-110">
+              <div className="transition duration-300 transform hover:scale-110">
                 <a
                   href="https://www.udemy.com/certificate/UC-dc61789f-b15c-4248-8249-bdd38f5d822c/"
                   target="_blank"
@@ -176,7 +176,7 @@ const TechProfile = () => {
                 </a>
                 <p>DSA</p>
               </div>
-              <div className="transform transition duration-300 hover:scale-110">
+              <div className="transition duration-300 transform hover:scale-110">
                 <a
                   href="https://www.udemy.com/certificate/UC-cd3d2f8d-4432-4f6e-89c9-73a9baf20317/"
                   target="_blank"
@@ -189,7 +189,7 @@ const TechProfile = () => {
                 </a>
                 <p>Node.js Masterclass</p>
               </div>
-              <div className="transform transition duration-300 hover:scale-110">
+              <div className="transition duration-300 transform hover:scale-110">
                 <a
                   href="https://www.udemy.com/certificate/UC-cda3ef74-3372-425e-b601-a6f15516d9c7/"
                   target="_blank"
@@ -202,7 +202,7 @@ const TechProfile = () => {
                 </a>
                 <p>System Design</p>
               </div>
-              <div className="transform transition duration-300 hover:scale-110">
+              <div className="transition duration-300 transform hover:scale-110">
                 <a
                   href="https://www.credly.com/badges/0c799f8c-357b-434f-949c-d7f866f9e994/public_url"
                   target="_blank"
