@@ -1,16 +1,6 @@
 version: "3.8"
 
 services:
-  rice-personal-site-container:
-    container_name: rice-personal-site-container
-    image: ricex407/rice-personal-site:latest
-    ports:
-      - "3000:3000"
-    networks:
-      - rice-personal-site-network
-    restart: unless-stopped
-    tty: true
-
   rice-personal-api-container:
     container_name: rice-personal-api-container
     image: ricex407/rice-personal-api:latest
@@ -25,6 +15,8 @@ services:
       - AWS_SES_SENDER=${AWS_SES_SENDER}
       - PERSONAL_EMAIL=${PERSONAL_EMAIL}
       - MONGO_DB_LOCAL_URI=${MONGO_DB_LOCAL_URI}
+    ports:
+      - "8080:8080"
     networks:
       - rice-personal-site-network
     restart: unless-stopped
@@ -37,7 +29,6 @@ services:
     ports:
       - "80:80"
     depends_on:
-      - rice-personal-site-container
       - rice-personal-api-container
     networks:
       - rice-personal-site-network
