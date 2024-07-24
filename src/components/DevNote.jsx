@@ -5,7 +5,8 @@ const DevNote = () => {
         <p className="leading-0 text-xs font-extralight tracking-wide opacity-60 sm:text-[.65rem]">
           Designed and built by me. Utilizing React.js and Tailwind CSS on the
           frontend. Backend is built with Node.js and Express, with MongoDB and
-          AWS S3. Deployed to AWS EC2 via Github Actions, Docker, and NGINX.
+          AWS S3. Deployed to AWS EC2 & S3 via Github Actions, Docker, and
+          NGINX.
         </p>
       </div>
     </div>
