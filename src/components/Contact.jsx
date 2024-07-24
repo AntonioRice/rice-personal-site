@@ -151,13 +151,13 @@ const Contact = () => {
           className={`relative rounded-xl border-[1px] border-gray-500 bg-[#232323] p-6 ${loading || completed ? "opacity-30" : "opacity-100"}`}
           onSubmit={handleSend}
         >
-          <div className="flex flex-col items-center py-10 mb-5 text-4xl">
+          <div className="mb-5 flex flex-col items-center py-10 text-4xl">
             <h1>Let's work together</h1>
           </div>
-          <div className="flex flex-wrap -mx-3">
-            <div className="w-full px-3 mb-6 md:w-1/2">
+          <div className="-mx-3 flex flex-wrap">
+            <div className="mb-6 w-full px-3 md:w-1/2">
               <div className="relative">
-                <div className="absolute inset-y-0 flex items-center pointer-events-none start-0 ps-3">
+                <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3">
                   <FaIdCard className="size-4 text-[#cccccc]" />
                 </div>
                 <input
@@ -182,9 +182,9 @@ const Contact = () => {
                 </p>
               )}
             </div>
-            <div className="w-full px-3 mb-6 md:w-1/2">
+            <div className="mb-6 w-full px-3 md:w-1/2">
               <div className="relative">
-                <div className="absolute inset-y-0 flex items-center pointer-events-none start-0 ps-3">
+                <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3">
                   <FaIdCard className="size-4 text-[#cccccc]" />
                 </div>
                 <input
@@ -210,10 +210,10 @@ const Contact = () => {
               )}
             </div>
           </div>
-          <div className="flex flex-wrap -mx-3">
-            <div className="w-full px-3 mb-6 md:w-1/3">
+          <div className="-mx-3 flex flex-wrap">
+            <div className="mb-6 w-full px-3 md:w-1/3">
               <div className="relative">
-                <div className="absolute inset-y-0 flex items-center pointer-events-none start-0 ps-3">
+                <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3">
                   <FaEnvelope className="size-4 text-[#cccccc]" />
                 </div>
                 <input
@@ -239,7 +239,7 @@ const Contact = () => {
               )}
             </div>
 
-            <div className="w-full px-3 mb-6 md:w-1/3">
+            <div className="mb-6 w-full px-3 md:w-1/3">
               <select
                 className={`mb-3 block w-full rounded border bg-[#0f1217] px-4 py-[.60rem] leading-tight text-[#cccccc] focus:outline-[1px] focus:outline-gray-500 ${
                   isFieldInvalid("countryCode")
@@ -260,9 +260,9 @@ const Contact = () => {
                 ))}
               </select>
             </div>
-            <div className="w-full px-3 mb-6 md:w-1/3">
+            <div className="mb-6 w-full px-3 md:w-1/3">
               <div className="relative">
-                <div className="absolute inset-y-0 flex items-center pointer-events-none start-0 ps-3">
+                <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3">
                   <FaPhone className="size-4 text-[#cccccc]" />
                 </div>
                 <input
@@ -288,10 +288,10 @@ const Contact = () => {
               )}
             </div>
           </div>
-          <div className="flex flex-wrap -mx-3">
-            <div className="w-full px-3 mb-6">
+          <div className="-mx-3 flex flex-wrap">
+            <div className="mb-6 w-full px-3">
               <div className="relative">
-                <div className="absolute inset-y-0 flex items-center pointer-events-none start-0 ps-3">
+                <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3">
                   <MdModeEdit className="size-5 text-[#cccccc]" />
                 </div>
                 <input
@@ -317,10 +317,10 @@ const Contact = () => {
               )}
             </div>
           </div>
-          <div className="flex flex-wrap h-full -mx-3">
-            <div className="w-full px-3 mb-6">
+          <div className="-mx-3 flex h-full flex-wrap">
+            <div className="mb-6 w-full px-3">
               <div className="relative">
-                <div className="absolute inset-y-0 flex pointer-events-none start-0 top-3 ps-3">
+                <div className="pointer-events-none absolute inset-y-0 start-0 top-3 flex ps-3">
                   <MdModeEdit className="size-5 text-[#cccccc]" />
                 </div>
                 <textarea
@@ -417,13 +417,13 @@ const Contact = () => {
           </motion.div>
         </div>
       </div>
-      <section className="flex justify-center mt-5 space-x-4">
+      <section className="mt-5 flex justify-center space-x-4">
         <a
           title="Linkedin"
           href="https://www.linkedin.com/in/riceantonio"
           target="_blank"
           rel="noopener noreferrer"
-          className="transition duration-300 transform hover:scale-110 hover:text-gray-100"
+          className="transform transition duration-300 hover:scale-110 hover:text-gray-100"
           onClick={() => trackEvent("Linkedin button clicked", "Linkedin")}
         >
           <FaLinkedin size={40} />
@@ -433,17 +433,17 @@ const Contact = () => {
           href="https://www.github.com/AntonioRice"
           target="_blank"
           rel="noopener noreferrer"
-          className="transition duration-300 transform hover:scale-110 hover:text-gray-100"
+          className="transform transition duration-300 hover:scale-110 hover:text-gray-100"
           onClick={() => trackEvent("Github button clicked", "Github")}
         >
           <FaGithub size={40} />
         </a>
         <a
           title="Resume"
-          href="/ALR-Resume-2024-v4.pdf"
+          href="/assets/ALR-Resume-2024-v4.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="transition duration-300 transform hover:scale-110 hover:text-gray-100"
+          className="transform transition duration-300 hover:scale-110 hover:text-gray-100"
           onClick={() => trackEvent("Resume downloaded", "ALR Resume")}
         >
           <FaFilePdf size={40} />

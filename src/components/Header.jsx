@@ -33,7 +33,7 @@ const Header = () => {
     >
       <div className="size-10">
         <a href="/">
-          <img src="/logo.png" alt="Logo" />
+          <img src="/assets/images/logo.png" alt="Logo" />
         </a>
       </div>
       <nav className="hidden md:flex">
