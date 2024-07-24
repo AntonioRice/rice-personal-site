@@ -88,8 +88,8 @@ const Home = () => {
           </section>
           <section className="order-1 flex items-center justify-center p-10 sm:mt-[88px] md:order-2 md:col-span-1">
             <img
-              src="src/assets/images/main-avatar-3.jpg"
-              alt="main 2d avatar"
+              src="/assets/images/main-avatar-3.jpg"
+              alt="main avatar"
               className="rounded-full ring-4 ring-white sm:h-52 sm:w-52"
             />
           </section>

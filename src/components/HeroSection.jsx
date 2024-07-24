@@ -15,7 +15,7 @@ function HeroSection() {
       >
         <img
           className="mx-auto mb-6 transform rounded-full ring-4 ring-[#cccccc] transition duration-300 ease-in-out hover:scale-110 hover:ring-[#ffffff]"
-          src="src/assets/images/avatar.jpeg"
+          src="/assets/images/avatar.jpeg"
           alt="Antonio Rice Head shot"
         />
       </a>
