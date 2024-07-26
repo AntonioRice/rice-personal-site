@@ -6,6 +6,7 @@ services:
     image: ricex407/rice-personal-api:latest
     environment:
       - API_PORT=${API_PORT}
+      - ALLOWED_ORIGINS=${ALLOWED_ORIGINS}
       - MONGO_PASSWORD=${MONGO_PASSWORD}
       - MONGO_DATABASE=${MONGO_DATABASE}
       - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
