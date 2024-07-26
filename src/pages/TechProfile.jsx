@@ -51,11 +51,12 @@ const TechProfile = () => {
         >
           <HeroSection />
         </motion.section>
+
         <motion.section
           ref={aboutSection.ref}
           style={{ scale: aboutSection.scale, opacity: aboutSection.opacity }}
         >
-          <Section id="about" title="about">
+          <Section id="about-me" title="about me">
             <div className="mt-5 grid gap-10 md:grid-cols-2">
               <div className="col-span-1">
                 {skills.about.description.map((description, index) => (
@@ -99,7 +100,7 @@ const TechProfile = () => {
                   </h1>
                   <motion.button
                     title="downloadResume"
-                    className="inline-flex h-10 w-32 animate-pulse items-center justify-center rounded-md bg-[#cccccc] px-4 py-2 text-black hover:animate-none hover:bg-gray-200"
+                    className="inline-flex h-10 w-36 animate-pulse items-center justify-center rounded-md bg-[#cccccc] px-4 py-2 text-black hover:animate-none hover:bg-gray-200"
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     onClick={handleDownload}
@@ -115,7 +116,7 @@ const TechProfile = () => {
                   </h1>
                   <motion.button
                     title="navigateToCV"
-                    className="inline-flex h-10 w-32 animate-pulse items-center justify-center rounded-md bg-[#cccccc] px-4 py-2 text-black hover:animate-none hover:bg-gray-200"
+                    className="inline-flex h-10 w-36 animate-pulse items-center justify-center rounded-md bg-[#cccccc] px-4 py-2 text-black hover:animate-none hover:bg-gray-200"
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     onClick={handleNavigateToCV}

@@ -38,16 +38,20 @@ body {
   border-bottom-width: 2px;
 }
 
-.pill {
-  --tw-bg-opacity: 1;
-  background-color: rgb(35 35 35 / var(--tw-bg-opacity));
-  padding: 0.25rem 0.75rem 0.25rem 0.75rem;
-  border-radius: 0.7rem;
-  font-weight: 350;
-}
-
 @media (max-width: 768px) {
   .section-wrapper {
     padding: 7.2rem 1.5rem;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }

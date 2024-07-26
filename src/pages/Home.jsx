@@ -26,9 +26,9 @@ const Home = () => {
   return (
     <AnimatePresence>
       <AnimatedPage>
-        <div className="page-wrapper flex flex-col md:grid md:grid-cols-3 md:pt-20">
+        <div className="page-wrapper flex flex-col px-10 md:grid md:grid-cols-3 md:pt-20">
           <section className="order-2 flex flex-col justify-center p-10 sm:items-center md:order-1 md:col-span-2">
-            <div className="top-8 text-[#cccccc] sm:justify-center">
+            <div className="top-8 sm:justify-center">
               <div className="font-bold">
                 <p className="text-xl">hello!</p>
                 <h1 className="sm:text-6xl md:text-8xl">
