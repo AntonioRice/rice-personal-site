@@ -31,7 +31,6 @@ export const skills = {
       { category: "Cloud Services", skills: ["AWS", "Azure"] },
     ],
   },
-
   experience: [
     {
       company: "Various Clients",
@@ -207,6 +206,44 @@ export const skills = {
           skills: ["Customer Service", "Customer Satisfaction", "Retail"],
         },
       ],
+    },
+  ],
+  learning: [
+    {
+      href: "https://www.coursera.org/verify/6GUWJ3DY26YH",
+      src: "/assets/images/react-basics-badge.png",
+      alt: "My React Basic Badge",
+      description: "React Basics",
+    },
+    {
+      href: "https://www.coursera.org/verify/RCXBLMD22KFA",
+      src: "/assets/images/javascript-badge.png",
+      alt: "My Programming with Javascript Badge",
+      description: "Javascript Basics",
+    },
+    {
+      href: "https://www.udemy.com/certificate/UC-dc61789f-b15c-4248-8249-bdd38f5d822c/",
+      src: "/assets/images/node-badge.png",
+      alt: "My Node.js Badge",
+      description: "Node.js Masterclass",
+    },
+    {
+      href: "https://www.udemy.com/certificate/UC-cd3d2f8d-4432-4f6e-89c9-73a9baf20317/",
+      src: "/assets/images/dsa-badge.png",
+      alt: "My Data Structures & Algorithms Badge",
+      description: "DSA",
+    },
+    {
+      href: "https://www.udemy.com/certificate/UC-cda3ef74-3372-425e-b601-a6f15516d9c7/",
+      src: "/assets/images/sd-badge.png",
+      alt: "My System Design Badge",
+      description: "System Design",
+    },
+    {
+      href: "https://www.credly.com/badges/0c799f8c-357b-434f-949c-d7f866f9e994/public_url",
+      src: "/assets/images/microsoft-certified-azure-fundamentals.png",
+      alt: "My Azure Fundamentals Badge",
+      description: "Azure Fundamentals",
     },
   ],
 };
