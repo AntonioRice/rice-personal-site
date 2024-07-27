@@ -148,7 +148,7 @@ const Contact = () => {
     <section className="section-wrapper flex flex-col !border-b-0">
       <div className="relative">
         <form
-          className={`relative rounded-xl border-[1px] border-gray-500  bg-[#aca8a821] p-6 ${loading || completed ? "opacity-30" : "opacity-100"}`}
+          className={`relative rounded-xl border-[1px] border-gray-500  bg-[#202124] p-6 ${loading || completed ? "opacity-30" : "opacity-100"}`}
           onSubmit={handleSend}
         >
           <div className="mb-5 flex flex-col items-center py-10 text-4xl">
@@ -161,7 +161,7 @@ const Contact = () => {
                   <FaIdCard className="size-4 text-[#cccccc]" />
                 </div>
                 <input
-                  className={`mb-3 block w-full rounded border bg-[#0f1217] py-3 pl-10 leading-tight text-[#cccccc] focus:outline-[1px] focus:outline-gray-500 ${
+                  className={`mb-3 block w-full rounded border py-3 pl-10 leading-tight text-white focus:outline-[1px] focus:outline-gray-500 ${
                     isFieldInvalid("firstName")
                       ? "border-red-500"
                       : "border-[#0f1217]"
@@ -188,7 +188,7 @@ const Contact = () => {
                   <FaIdCard className="size-4 text-[#cccccc]" />
                 </div>
                 <input
-                  className={`mb-3 block w-full rounded border bg-[#0f1217] py-3 pl-10 leading-tight text-[#cccccc] focus:outline-[1px] focus:outline-gray-500 ${
+                  className={`mb-3 block w-full rounded border py-3 pl-10 leading-tight text-white focus:outline-[1px] focus:outline-gray-500 ${
                     isFieldInvalid("lastName")
                       ? "border-red-500"
                       : "border-[#0f1217]"
@@ -217,7 +217,7 @@ const Contact = () => {
                   <FaEnvelope className="size-4 text-[#cccccc]" />
                 </div>
                 <input
-                  className={`mb-3 block w-full rounded border bg-[#0f1217] py-3 pl-10 leading-tight text-[#cccccc] focus:outline-[1px] focus:outline-gray-500 ${
+                  className={`mb-3 block w-full rounded border py-3 pl-10 leading-tight text-white focus:outline-[1px] focus:outline-gray-500 ${
                     isFieldInvalid("email")
                       ? "border-red-500"
                       : "border-[#0f1217]"
@@ -241,7 +241,7 @@ const Contact = () => {
 
             <div className="mb-6 w-full px-3 md:w-1/3">
               <select
-                className={`mb-3 block w-full rounded border bg-[#0f1217] px-4 py-[.60rem] leading-tight text-[#cccccc] focus:outline-[1px] focus:outline-gray-500 ${
+                className={`mb-3 block w-full rounded border px-4 py-[.60rem] leading-tight text-white focus:outline-[1px] focus:outline-gray-500 ${
                   isFieldInvalid("countryCode")
                     ? "border-red-500"
                     : "border-[#0f1217]"
@@ -266,7 +266,7 @@ const Contact = () => {
                   <FaPhone className="size-4 text-[#cccccc]" />
                 </div>
                 <input
-                  className={`mb-3 block w-full rounded border bg-[#0f1217] py-3 pl-10 leading-tight text-[#cccccc] focus:outline-[1px] focus:outline-gray-500 ${
+                  className={`mb-3 block w-full rounded border py-3 pl-10 leading-tight text-white focus:outline-[1px] focus:outline-gray-500 ${
                     isFieldInvalid("phoneNumber")
                       ? "border-red-500"
                       : "border-[#0f1217]"
@@ -295,7 +295,7 @@ const Contact = () => {
                   <MdModeEdit className="size-5 text-[#cccccc]" />
                 </div>
                 <input
-                  className={`mb-3 block w-full rounded border bg-[#0f1217] py-3 pl-10 leading-tight text-[#cccccc] focus:outline-[1px] focus:outline-gray-500 ${
+                  className={`mb-3 block w-full rounded border py-3 pl-10 leading-tight text-white focus:outline-[1px] focus:outline-gray-500 ${
                     isFieldInvalid("subject")
                       ? "border-red-500"
                       : "border-[#0f1217]"
@@ -324,7 +324,7 @@ const Contact = () => {
                   <MdModeEdit className="size-5 text-[#cccccc]" />
                 </div>
                 <textarea
-                  className={`mb-3 block w-full resize-none rounded border bg-[#0f1217] py-3 pl-10 leading-tight text-[#cccccc] focus:outline-[1px] focus:outline-gray-500 ${
+                  className={`mb-3 block w-full resize-none rounded border py-3 pl-10 leading-tight text-white focus:outline-[1px] focus:outline-gray-500 ${
                     isFieldInvalid("message")
                       ? "border-red-500"
                       : "border-[#0f1217]"
@@ -423,7 +423,7 @@ const Contact = () => {
           href="https://www.linkedin.com/in/riceantonio"
           target="_blank"
           rel="noopener noreferrer"
-          className="transform transition duration-300 hover:scale-110 hover:text-gray-100"
+          className="transform transition duration-300 hover:scale-110 hover:text-blue-700"
           onClick={() => trackEvent("Linkedin button clicked", "Linkedin")}
         >
           <FaLinkedin size={40} />
@@ -443,7 +443,7 @@ const Contact = () => {
           href="/assets/ALR-Resume-2024-v4.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="transform transition duration-300 hover:scale-110 hover:text-gray-100"
+          className="transform transition duration-300 hover:scale-110 hover:text-red-500"
           onClick={() => trackEvent("Resume downloaded", "ALR Resume")}
         >
           <FaFilePdf size={40} />
