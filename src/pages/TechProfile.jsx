@@ -9,6 +9,7 @@ import {
   ExperienceBlock,
   LearningBlock,
   LeetCodeBlock,
+  ProjectBlock,
   HeroSection,
   Contact,
   DevNote,
@@ -25,6 +26,7 @@ const TechProfile = () => {
   const heroSection = useSectionScroll(offset);
   const aboutSection = useSectionScroll(offset);
   const experienceSection = useSectionScroll(offset);
+  const projectSection = useSectionScroll(offset);
   const learningSection = useSectionScroll(offset);
   const contactSection = useSectionScroll(offset);
 
@@ -44,6 +46,7 @@ const TechProfile = () => {
         heroRef: heroSection.ref,
         aboutRef: aboutSection.ref,
         experienceRef: experienceSection.ref,
+        projectRef: projectSection.ref,
         contactRef: contactSection.ref,
         learningRef: learningSection.ref,
       }}
@@ -131,6 +134,17 @@ const TechProfile = () => {
                 </div>
               </div>
             </div>
+          </Section>
+        </motion.section>
+        <motion.section
+          ref={projectSection.ref}
+          style={{
+            scale: projectSection.scale,
+            opacity: projectSection.opacity,
+          }}
+        >
+          <Section id="projects" title="projects">
+            <ProjectBlock />
           </Section>
         </motion.section>
         <motion.section

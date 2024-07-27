@@ -8,6 +8,7 @@ export { default as HeroSection } from "./HeroSection";
 export { default as ExperienceBlock } from "./ExperienceBlock";
 export { default as LearningBlock } from "./LearningBlock";
 export { default as LeetCodeBlock } from "./LeetCodeBlock";
+export { default as ProjectBlock } from "./ProjectBlock";
 
 export { default as Contact } from "./Contact";
 export { default as Description } from "./Description";
