@@ -8,6 +8,7 @@ import {
   Section,
   ExperienceBlock,
   LearningBlock,
+  LeetCodeBlock,
   HeroSection,
   Contact,
   DevNote,
@@ -140,7 +141,7 @@ const TechProfile = () => {
           }}
         >
           <Section id="learning" title="learning">
-            <div className="mt-8 flex items-center justify-center gap-6 text-sm sm:flex-wrap">
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm">
               {skills.learning.map((learn, index) => (
                 <LearningBlock
                   key={index}
@@ -150,6 +151,7 @@ const TechProfile = () => {
                   description={learn.description}
                 />
               ))}
+              <LeetCodeBlock />
             </div>
           </Section>
         </motion.section>
