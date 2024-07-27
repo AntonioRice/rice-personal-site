@@ -30,8 +30,8 @@ const Home = () => {
           <section className="order-2 flex flex-col justify-center p-10 sm:items-center md:order-1 md:col-span-2">
             <div className="top-8 sm:justify-center">
               <div className="font-bold">
-                <p className="text-xl">hello!</p>
-                <h1 className="sm:text-6xl md:text-8xl">
+                <p className="text-xl sm:text-2xl md:text-3xl">hello!</p>
+                <h1 className="text-4xl sm:text-6xl md:text-8xl">
                   <motion.span
                     initial="hidden"
                     animate="visible"
@@ -60,7 +60,7 @@ const Home = () => {
                   />
                 </h1>
               </div>
-              <p className="my-5 pb-5 text-xl font-extralight text-[#cccccc]">
+              <p className="my-5 max-w-xl pb-5 text-lg font-extralight text-[#cccccc] sm:text-xl">
                 i'm a software engineer and a wannabe photographer, which would
                 you like to explore?
               </p>
