@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import AnimatedPage from "../components/AnimatedPage";
+import { AnimatedPage } from "../components";
 import { motion, AnimatePresence } from "framer-motion";
 import useEventsTracker from "../hooks/useEventsTracker";
 

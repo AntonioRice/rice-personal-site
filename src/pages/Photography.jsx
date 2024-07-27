@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { PiInstagramLogo } from "react-icons/pi";
-import Album from "../components/Album";
-import AnimatedPage from "../components/AnimatedPage";
+import { Album, AnimatedPage } from "../components";
 import axios from "axios";
 
 const VITE_SERVER_URL = import.meta.env.VITE_SERVER_URL;

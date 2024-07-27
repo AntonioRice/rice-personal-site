@@ -1,19 +1,21 @@
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaDownload, FaArrowRightLong } from "react-icons/fa6";
-import AnimatedPage from "../components/AnimatedPage";
+import {
+  AnimatedPage,
+  SkillPill,
+  Description,
+  Section,
+  ExperienceBlock,
+  LearningBlock,
+  HeroSection,
+  Contact,
+  DevNote,
+} from "../components";
 import useSectionScroll from "../hooks/useSectionScroll";
 import useEventsTracker from "../hooks/useEventsTracker";
 import skills from "../utils/skillsData";
-import SkillPill from "../components/SkillPill";
-import Description from "../components/Description";
-import Section from "../components/Section";
-import ExperienceBlock from "../components/ExperienceBlock";
-import HeroSection from "../components/HeroSection";
 import ScrollContext from "../context/ScrollContext";
-import Contact from "../components/Contact";
-import DevNote from "../components/DevNote";
-import LearningBlock from "../components/LearningBlock";
 
 const TechProfile = () => {
   const navigate = useNavigate();

@@ -1,10 +1,7 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import AnimatedPage from "../components/AnimatedPage";
+import { AnimatedPage, Section, ExperienceBlock, Contact } from "../components";
 import skills from "../utils/skillsData";
-import Section from "../components/Section";
-import ExperienceBlock from "../components/ExperienceBlock";
-import Contact from "../components/Contact";
 
 const CV = () => {
   useEffect(() => {

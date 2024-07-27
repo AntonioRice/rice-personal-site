@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useLocation } from "react-router-dom";
 import axios from "axios";
-import AnimatedPage from "../components/AnimatedPage";
-import ImageWithLoader from "../components/ImageWithLoader";
+import { AnimatedPage, ImageWithLoader } from "../components";
 
 const VITE_SERVER_URL = import.meta.env.VITE_SERVER_URL;
 
