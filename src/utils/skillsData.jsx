@@ -265,7 +265,7 @@ export const skills = {
     {
       title: "Data Structures & Algorithms",
       description: [
-        "Github repository containing my solutions to many LeetCode problems. My goal for this project is to deepen my understanding of complex topics in DSA.",
+        "A GitHub repository showcasing my solutions to a wide array of LeetCode problems. This project aims to deepen my understanding of complex Data Structures and Algorithms (DSA) topics.",
       ],
       image: "/assets/images/dsa-github.png",
       href: "https://github.com/AntonioRice/data-structures-algorithms",
