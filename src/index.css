@@ -17,9 +17,9 @@ body {
   padding: 0;
   min-height: 100vh;
   height: 100%;
-  font-family: "Inter", sans-serif;
+  font-family: "Oswald", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 300;
+  font-weight: 400;
   background-color: var(--primary-color);
   color: var(--secondary-color);
 }
@@ -62,16 +62,4 @@ select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   -webkit-text-fill-color: #f1f1f1;
   transition: background-color 5000s ease-in-out 0s;
-}
-
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }

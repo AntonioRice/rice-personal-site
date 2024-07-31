@@ -64,22 +64,22 @@ const TechProfile = () => {
           style={{ scale: aboutSection.scale, opacity: aboutSection.opacity }}
         >
           <Section id="about-me" title="about me">
-            <div className="mt-5 grid gap-10 md:grid-cols-2">
-              <div className="col-span-1">
-                {skills.about.description.map((description, index) => (
-                  <Description key={index} description={description} />
+            <div className="mt-5 grid w-full gap-10 md:grid-cols-2">
+              <div className="col-span-1 md:text-left">
+                {skills.about.description.map((description, i) => (
+                  <Description key={i} description={description} />
                 ))}
               </div>
               <div className="col-span-2 md:col-span-1">
-                <div className="mb-5 text-xl uppercase">skills</div>
-                {skills.about.skillSet.map((skillCategory, index) => (
-                  <div key={index} className="mb-4">
-                    <div className="text-md font-light">
+                <h1 className="mb-5 text-xl uppercase">skills</h1>
+                {skills.about.skillSet.map((skillCategory, i) => (
+                  <div key={i} className="py-2">
+                    <div className="text-md py-2 font-light tracking-wide">
                       {skillCategory.category}
                     </div>
                     <div className="flex flex-wrap gap-2">
-                      {skillCategory.skills.map((skill, skillIndex) => (
-                        <SkillPill key={skillIndex} skill={skill} />
+                      {skillCategory.skills.map((skill, i) => (
+                        <SkillPill key={i} skill={skill} />
                       ))}
                     </div>
                   </div>
@@ -96,8 +96,8 @@ const TechProfile = () => {
           }}
         >
           <Section id="experience" title="experience">
-            {skills.experience.map((exp, expIndex) => (
-              <ExperienceBlock key={expIndex} experience={exp} />
+            {skills.experience.map((exp, i) => (
+              <ExperienceBlock key={i} experience={exp} />
             ))}
             <div className="flex flex-col items-center justify-center">
               <div className="grid w-full grid-cols-2 gap-10">
@@ -144,7 +144,9 @@ const TechProfile = () => {
           }}
         >
           <Section id="projects" title="projects">
-            <ProjectBlock />
+            {skills.projects.map((project, i) => (
+              <ProjectBlock key={i} project={project} />
+            ))}
           </Section>
         </motion.section>
         <motion.section
@@ -156,9 +158,9 @@ const TechProfile = () => {
         >
           <Section id="learning" title="learning">
             <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm">
-              {skills.learning.map((learn, index) => (
+              {skills.learning.map((learn, i) => (
                 <LearningBlock
-                  key={index}
+                  key={i}
                   href={learn.href}
                   src={learn.src}
                   alt={learn.alt}

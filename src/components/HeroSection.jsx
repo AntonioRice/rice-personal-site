@@ -1,5 +1,6 @@
 import { useScrollContext } from "../context/ScrollContext";
 import { motion } from "framer-motion";
+import skills from "../utils/skillsData";
 
 function HeroSection() {
   const { contactRef } = useScrollContext();
@@ -30,12 +31,11 @@ function HeroSection() {
           aria-label="Learn about my organization, Kappa Alpha Psi Fraternity Inc."
         ></a>
       </h1>
-      <p className="mb-5 p-5 text-center text-2xl font-extralight text-[#cccccc]">
-        For over half a decade, I've been at the forefront of innovation,
-        crafting an industry-leading supply chain visibility tool. Now, I'm
-        excited to turn the page and dive into the next chapter of my
-        professional journey!
-      </p>
+      <div className="flex justify-center">
+        <p className="mx-auto mb-5 max-w-3xl p-5 text-justify text-2xl font-light text-[#cccccc]">
+          {skills.hero.description}
+        </p>
+      </div>
       <motion.button
         title="contactMe"
         className="animate-pulse rounded-md bg-[#cccccc] px-4 py-2 text-black hover:animate-none hover:bg-gray-200"

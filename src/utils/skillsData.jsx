@@ -1,4 +1,9 @@
 export const skills = {
+  hero: {
+    description: [
+      "For over half a decade, I've been at the forefront of innovation, crafting an industry-leading supply chain visibility tool. Now, I'm excited to turn the page and dive into the next chapter of my professional journey!",
+    ],
+  },
   about: {
     description: [
       "Hello, I'm Antonio, a dedicated Full Stack Software Engineer from Minneapolis, MN. I have a passion for tackling intricate challenges and developing exceptional software solutions.",
@@ -244,6 +249,27 @@ export const skills = {
       src: "/assets/images/microsoft-certified-azure-fundamentals.png",
       alt: "My Azure Fundamentals Badge",
       description: "Azure Fundamentals",
+    },
+  ],
+  projects: [
+    {
+      title: "Navisphere Vision",
+      description: [
+        "Supply chain visibility SaaS product on Microsoft Azure Marketplace. I was responsible for key features including search, filter, notifications (email, in-app, SMS), data display on map/list view, and more. Managed new customer implementations involving requirements gathering, business rules creation, and development of tenant-specific features.",
+      ],
+      image: "/assets/images/navisphere-vision.png",
+
+      href: "https://appsource.microsoft.com/en-us/product/web-apps/chrobinsonworldwide.navispherevision?tab=Overview",
+      alt: "navisphere vision main view",
+    },
+    {
+      title: "Data Structures & Algorithms",
+      description: [
+        "Github repository containing my solutions to many LeetCode problems. My goal for this project is to deepen my understanding of complex topics in DSA.",
+      ],
+      image: "/assets/images/dsa-github.png",
+      href: "https://github.com/AntonioRice/data-structures-algorithms",
+      alt: "github leetcode grind",
     },
   ],
 };
