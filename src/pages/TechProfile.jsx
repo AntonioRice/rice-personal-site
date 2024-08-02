@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaDownload, FaArrowRightLong } from "react-icons/fa6";
 import {
-  AnimatedPage,
   SkillPill,
   Description,
   Section,
@@ -22,13 +21,13 @@ import ScrollContext from "../context/ScrollContext";
 const TechProfile = () => {
   const navigate = useNavigate();
   const trackEvent = useEventsTracker("User Interaction");
-  const offset = ["0 1", ".5 1"];
-  const heroSection = useSectionScroll(offset);
-  const aboutSection = useSectionScroll(offset);
-  const experienceSection = useSectionScroll(offset);
-  const projectSection = useSectionScroll(offset);
-  const learningSection = useSectionScroll(offset);
-  const contactSection = useSectionScroll(offset);
+
+  const heroSection = useSectionScroll();
+  const aboutSection = useSectionScroll();
+  const experienceSection = useSectionScroll();
+  const projectSection = useSectionScroll();
+  const learningSection = useSectionScroll();
+  const contactSection = useSectionScroll();
 
   const handleDownload = () => {
     trackEvent("Resume downloaded", "ALR Resume");
@@ -38,6 +37,11 @@ const TechProfile = () => {
   const handleNavigateToCV = () => {
     trackEvent("CV button clicked", "CV");
     navigate("/cv");
+  };
+
+  const animationVariants = {
+    hidden: { opacity: 0, y: 75 },
+    visible: { opacity: 1, y: 0 },
   };
 
   return (
@@ -51,17 +55,28 @@ const TechProfile = () => {
         learningRef: learningSection.ref,
       }}
     >
-      <AnimatedPage>
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        exit="hidden"
+        variants={animationVariants}
+      >
         <motion.section
           ref={heroSection.ref}
-          style={{ scale: heroSection.scale, opacity: heroSection.opacity }}
+          initial="hidden"
+          animate={heroSection.controls}
+          variants={animationVariants}
+          transition={{ duration: 0.5, delay: 0.25 }}
         >
           <HeroSection />
         </motion.section>
 
         <motion.section
           ref={aboutSection.ref}
-          style={{ scale: aboutSection.scale, opacity: aboutSection.opacity }}
+          initial="hidden"
+          animate={aboutSection.controls}
+          variants={animationVariants}
+          transition={{ duration: 0.5, delay: 0.25 }}
         >
           <Section id="about-me" title="about me">
             <div className="mt-5 grid w-full gap-10 md:grid-cols-2">
@@ -88,12 +103,13 @@ const TechProfile = () => {
             </div>
           </Section>
         </motion.section>
+
         <motion.section
           ref={experienceSection.ref}
-          style={{
-            scale: experienceSection.scale,
-            opacity: experienceSection.opacity,
-          }}
+          initial="hidden"
+          animate={experienceSection.controls}
+          variants={animationVariants}
+          transition={{ duration: 0.5, delay: 0.25 }}
         >
           <Section id="experience" title="experience">
             {skills.experience.map((exp, i) => (
@@ -136,12 +152,13 @@ const TechProfile = () => {
             </div>
           </Section>
         </motion.section>
+
         <motion.section
           ref={projectSection.ref}
-          style={{
-            scale: projectSection.scale,
-            opacity: projectSection.opacity,
-          }}
+          initial="hidden"
+          animate={projectSection.controls}
+          variants={animationVariants}
+          transition={{ duration: 0.5, delay: 0.25 }}
         >
           <Section id="projects" title="projects">
             {skills.projects.map((project, i) => (
@@ -149,12 +166,13 @@ const TechProfile = () => {
             ))}
           </Section>
         </motion.section>
+
         <motion.section
           ref={learningSection.ref}
-          style={{
-            scale: learningSection.scale,
-            opacity: learningSection.opacity,
-          }}
+          initial="hidden"
+          animate={learningSection.controls}
+          variants={animationVariants}
+          transition={{ duration: 0.5, delay: 0.25 }}
         >
           <Section id="learning" title="learning">
             <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm">
@@ -171,17 +189,18 @@ const TechProfile = () => {
             </div>
           </Section>
         </motion.section>
+
         <motion.section
           ref={contactSection.ref}
-          style={{
-            scale: contactSection.scale,
-            opacity: contactSection.opacity,
-          }}
+          initial="hidden"
+          animate={contactSection.controls}
+          variants={animationVariants}
+          transition={{ duration: 0.5, delay: 0.25 }}
         >
           <Contact />
         </motion.section>
         <DevNote />
-      </AnimatedPage>
+      </motion.div>
     </ScrollContext.Provider>
   );
 };
