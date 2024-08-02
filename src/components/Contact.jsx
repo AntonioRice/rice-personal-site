@@ -152,7 +152,7 @@ const Contact = () => {
           onSubmit={handleSend}
         >
           <div className="mb-5 flex flex-col items-center py-10 text-4xl">
-            <h1>Let's work together</h1>
+            <h1 className="tracking-wide">Let's work together!</h1>
           </div>
           <div className="-mx-3 flex flex-wrap">
             <div className="mb-6 w-full px-3 md:w-1/2">
@@ -238,7 +238,6 @@ const Contact = () => {
                 </p>
               )}
             </div>
-
             <div className="mb-6 w-full px-3 md:w-1/3">
               <select
                 className={`mb-3 block w-full rounded border px-4 py-[.60rem] leading-tight text-white focus:outline-[1px] focus:outline-gray-500 ${

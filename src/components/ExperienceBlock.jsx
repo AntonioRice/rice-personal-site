@@ -3,7 +3,7 @@ import SkillPill from "./SkillPill";
 
 const ExperienceBlock = ({ experience }) => {
   return (
-    <div className="mb-8 mt-8">
+    <div className="mb-8 mt-8 hover:cursor-default">
       <div className="mb-4 flex items-center justify-between">
         <h3 className="text-3xl font-semibold text-[#cccccc]">
           {experience.company}
