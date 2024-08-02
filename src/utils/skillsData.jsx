@@ -248,7 +248,6 @@ export const skills = {
       href: "https://www.credly.com/badges/0c799f8c-357b-434f-949c-d7f866f9e994/public_url",
       src: "/assets/images/microsoft-certified-azure-fundamentals.png",
       alt: "My Azure Fundamentals Badge",
-      description: "Azure Fundamentals",
     },
   ],
   projects: [
