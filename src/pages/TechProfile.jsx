@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
+import { animate, motion } from "framer-motion";
 import { FaDownload, FaArrowRightLong } from "react-icons/fa6";
 import {
   SkillPill,
@@ -42,6 +42,16 @@ const TechProfile = () => {
   const animationVariants = {
     hidden: { opacity: 0, y: 75 },
     visible: { opacity: 1, y: 0 },
+  };
+  const fadeInAnimationVariants = {
+    initial: { opacity: 0, y: 100 },
+    animate: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.05 * i,
+      },
+    }),
   };
 
   return (
@@ -113,7 +123,16 @@ const TechProfile = () => {
         >
           <Section id="experience" title="experience">
             {skills.experience.map((exp, i) => (
-              <ExperienceBlock key={i} experience={exp} />
+              <motion.div
+                key={i}
+                variants={fadeInAnimationVariants}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+                custom={i}
+              >
+                <ExperienceBlock experience={exp} />
+              </motion.div>
             ))}
             <div className="flex flex-col items-center justify-center">
               <div className="grid w-full grid-cols-2 gap-10">
@@ -162,7 +181,16 @@ const TechProfile = () => {
         >
           <Section id="projects" title="projects">
             {skills.projects.map((project, i) => (
-              <ProjectBlock key={i} project={project} />
+              <motion.div
+                key={i}
+                variants={fadeInAnimationVariants}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+                custom={i}
+              >
+                <ProjectBlock key={i} project={project} />
+              </motion.div>
             ))}
           </Section>
         </motion.section>
