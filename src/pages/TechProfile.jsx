@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { animate, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { FaDownload, FaArrowRightLong } from "react-icons/fa6";
 import {
   SkillPill,

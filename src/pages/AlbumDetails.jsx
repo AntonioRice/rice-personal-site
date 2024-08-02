@@ -17,7 +17,18 @@ const AlbumDetails = () => {
         const response = await axios.get(
           `${VITE_SERVER_URL}/images/album/${albumId}`,
         );
-        setImages(response.data.images);
+        const sortedImages = response.data.images.sort((a, b) => {
+          const nameA = a.url.toLowerCase();
+          const nameB = b.url.toLowerCase();
+          if (nameA < nameB) {
+            return -1;
+          }
+          if (nameA > nameB) {
+            return 1;
+          }
+          return 0;
+        });
+        setImages(sortedImages);
       } catch (error) {
         console.error("Failed to fetch album images", error);
       }
