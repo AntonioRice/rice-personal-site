@@ -89,13 +89,13 @@ const TechProfile = () => {
           transition={{ duration: 0.5, delay: 0.25 }}
         >
           <Section id="about-me" title="about me">
-            <div className="mt-5 grid w-full gap-10 md:grid-cols-2">
-              <div className="col-span-1 md:text-left">
+            <div className="my-10 grid gap-10 md:grid-cols-2">
+              <div className="col-span-1">
                 {skills.about.description.map((description, i) => (
                   <Description key={i} description={description} />
                 ))}
               </div>
-              <div className="col-span-2 md:col-span-1">
+              <div className="col-span-1">
                 <h1 className="mb-5 text-xl uppercase">skills</h1>
                 {skills.about.skillSet.map((skillCategory, i) => (
                   <div key={i} className="py-2">

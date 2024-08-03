@@ -1,12 +1,12 @@
 const ProjectBlock = ({ project }) => {
   return (
-    <div className="mt-8">
-      <div className="scale-105 gap-8 rounded-lg px-4 py-8 transition duration-300 hover:bg-[#3c4043] sm:py-16 md:grid md:grid-cols-2 lg:px-6 xl:gap-16">
+    <div className="my-10">
+      <h2 className="py-4 text-3xl font-semibold tracking-tight text-[#cccccc]">
+        {project.title}
+      </h2>
+      <div className="scale-105 gap-8 rounded-lg py-4 transition duration-300 hover:bg-[#3c4043] sm:px-4 sm:py-6 md:grid md:grid-cols-2 lg:px-6 xl:gap-16">
         <div className="hover:cursor-default">
-          <h2 className="mb-4 text-4xl font-extrabold tracking-tight">
-            {project.title}
-          </h2>
-          <p className="mb-6 font-light text-[#cccccc] md:text-lg">
+          <p className="b-4 mb-6 font-extralight tracking-wider text-[#cccccc] sm:text-xl md:text-left md:text-2xl">
             {project.description}
           </p>
         </div>

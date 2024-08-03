@@ -1,12 +1,13 @@
 import { useScrollContext } from "../context/ScrollContext";
 import { motion } from "framer-motion";
 import skills from "../utils/skillsData";
+import SocialLinks from "./SocialLinks";
 
 function HeroSection() {
   const { contactRef } = useScrollContext();
 
   return (
-    <section className="section-wrapper flex flex-col items-center justify-center sm:px-0">
+    <section className="section-wrapper flex min-h-screen flex-col items-center justify-center sm:px-0">
       <a
         title="Linkedin"
         href="https://www.linkedin.com/in/riceantonio"
@@ -31,14 +32,12 @@ function HeroSection() {
           aria-label="Learn about my organization, Kappa Alpha Psi Fraternity Inc."
         ></a>
       </h1>
-      <div className="flex justify-center">
-        <p className="mx-auto mb-5 max-w-3xl p-5 text-justify text-2xl font-light text-[#cccccc]">
-          {skills.hero.description}
-        </p>
-      </div>
+      <p className="mx-auto mb-5 max-w-4xl p-5 text-2xl font-light text-[#cccccc]">
+        {skills.hero.description}
+      </p>
       <motion.button
         title="contactMe"
-        className="animate-pulse rounded-md bg-[#cccccc] px-4 py-2 text-black hover:animate-none hover:bg-gray-200"
+        className="h-10 w-36 animate-pulse rounded-md bg-[#cccccc] text-black hover:animate-none hover:bg-gray-200"
         whileHover={{ scale: 1.1 }}
         transition={{ type: "spring", stiffness: 400, damping: 10 }}
         onClick={() => {

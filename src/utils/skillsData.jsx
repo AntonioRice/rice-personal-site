@@ -18,7 +18,7 @@ export const skills = {
       },
       {
         category: "Frameworks and Libraries",
-        skills: ["Node", "React", "Express", ".Net Core", "ServiceStack"],
+        skills: ["Node.js", "React", "Express", ".Net Core", "ServiceStack"],
       },
       { category: "APIs", skills: ["RESTful Api"] },
       {
@@ -50,7 +50,14 @@ export const skills = {
           skills: [
             "React.js",
             "Node.js",
-            "AWS Services",
+            "AWS EC2",
+            "AWS S3",
+            "AWS DynamoDB",
+            "AWS SES",
+            "Github Actions",
+            "AWS: CloudFront",
+            "Docker",
+            "NGINX",
             "Requirements Gathering",
             "System Design",
             "Testing",
@@ -79,7 +86,7 @@ export const skills = {
           skills: [
             "Javascript",
             "React",
-            "Node",
+            "Node.js",
             ".NET Core",
             "C#",
             "Kafka",
@@ -99,7 +106,7 @@ export const skills = {
           skills: [
             "Javascript",
             "AngularJs",
-            "Node",
+            "Node.js",
             "C#",
             "Python",
             "Kafka",
@@ -119,7 +126,7 @@ export const skills = {
           ],
           skills: [
             "Javascript",
-            "Node",
+            "Node.js",
             "AngularJS",
             "Express",
             "MongoDB",

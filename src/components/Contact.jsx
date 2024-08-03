@@ -355,7 +355,7 @@ const Contact = () => {
           <div className="flex justify-end">
             <button
               type="submit"
-              className={`animate-pulse rounded-md bg-[#cccccc] px-4 py-2 text-black hover:animate-none hover:bg-[#ffffff] ${
+              className={`h-10 w-36 animate-pulse rounded-md bg-[#cccccc] text-black hover:animate-none hover:bg-[#ffffff] ${
                 (!isFormValid || loading || completed) &&
                 "cursor-not-allowed opacity-50"
               }`}
