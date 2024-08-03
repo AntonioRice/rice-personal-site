@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import {} from "../components";
 import { motion, AnimatePresence } from "framer-motion";
 import useEventsTracker from "../hooks/useEventsTracker";
+import SocialLinks from "../components/SocialLinks";
 
 const Home = () => {
   const eventTracker = useEventsTracker("Home Navigation");
@@ -39,7 +40,7 @@ const Home = () => {
         >
           <div className="top-8 sm:justify-center">
             <div className="font-bold">
-              <p className="text-xl sm:text-2xl md:text-3xl">hello!</p>
+              <p className="text-xl sm:text-xl md:text-2xl">hello!</p>
               <h1 className="text-4xl sm:text-6xl md:text-8xl">
                 <motion.span
                   initial="hidden"
@@ -94,6 +95,7 @@ const Home = () => {
               </motion.button>
             </div>
           </div>
+          <SocialLinks size={30} />
         </motion.section>
         <motion.div
           variants={pageAnimation}

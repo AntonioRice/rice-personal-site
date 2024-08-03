@@ -13,6 +13,7 @@ import { MdModeEdit } from "react-icons/md";
 import useEventsTracker from "../hooks/useEventsTracker";
 import { validate } from "email-validator";
 import countryCodes from "../utils/countryCodes";
+import SocialLinks from "./SocialLinks";
 
 const VITE_SERVER_URL = import.meta.env.VITE_SERVER_URL;
 
@@ -33,8 +34,6 @@ const Contact = () => {
     subject: "",
     message: "",
   });
-
-  const trackEvent = useEventsTracker("User Interaction");
 
   useEffect(() => {
     const isValid =
@@ -416,38 +415,7 @@ const Contact = () => {
           </motion.div>
         </div>
       </div>
-      <section className="mt-5 flex justify-center space-x-4">
-        <a
-          title="Linkedin"
-          href="https://www.linkedin.com/in/riceantonio"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="transform transition duration-300 hover:scale-110 hover:text-blue-700"
-          onClick={() => trackEvent("Linkedin button clicked", "Linkedin")}
-        >
-          <FaLinkedin size={40} />
-        </a>
-        <a
-          title="Github"
-          href="https://www.github.com/AntonioRice"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="transform transition duration-300 hover:scale-110 hover:text-gray-100"
-          onClick={() => trackEvent("Github button clicked", "Github")}
-        >
-          <FaGithub size={40} />
-        </a>
-        <a
-          title="Resume"
-          href="/assets/ALR-Resume-2024-v4.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="transform transition duration-300 hover:scale-110 hover:text-red-500"
-          onClick={() => trackEvent("Resume downloaded", "ALR Resume")}
-        >
-          <FaFilePdf size={40} />
-        </a>
-      </section>
+      <SocialLinks size={40} />
     </section>
   );
 };
