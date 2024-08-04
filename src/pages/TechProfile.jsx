@@ -154,7 +154,7 @@ const TechProfile = () => {
 
                 <div className="flex flex-col items-center justify-center">
                   <h1 className="text-md mb-5 text-center font-extralight text-[#cccccc]">
-                    Explore before Tech experience:
+                    Life before Tech:
                   </h1>
                   <motion.button
                     title="navigateToCV"
