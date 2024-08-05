@@ -35,7 +35,7 @@ const Home = () => {
           initial="initial"
           animate="animate"
           transition={{ duration: 1 }}
-          className="order-2 flex flex-col justify-center p-10 sm:items-center md:order-1 md:col-span-1"
+          className="order-2 flex flex-col justify-center p-10 md:order-1 md:col-span-1"
         >
           <div className="top-8 font-bold">
             <p className="text-xl text-[#cccccc] sm:text-xl md:text-2xl">
@@ -70,7 +70,7 @@ const Home = () => {
               />
             </h1>
           </div>
-          <p className="my-5 max-w-xl pb-5 text-lg font-extralight text-[#cccccc] sm:text-center sm:text-xl">
+          <p className="my-5 max-w-xl pb-5 text-lg font-extralight text-[#cccccc] sm:text-xl">
             i'm a software engineer and I love to practice photography, which
             would you like to explore?
           </p>
@@ -108,7 +108,7 @@ const Home = () => {
           <img
             src="/assets/images/main-avatar-3.jpg"
             alt="main avatar"
-            className="size-60 rounded-full object-cover ring-4 ring-white md:size-[500px]"
+            className="size-60 rounded-full ring-2 ring-white ring-offset-8 ring-offset-[#202124] md:size-[500px]"
           />
         </motion.section>
       </div>

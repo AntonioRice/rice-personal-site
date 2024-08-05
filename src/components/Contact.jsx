@@ -147,7 +147,7 @@ const Contact = () => {
     <section className="section-wrapper flex flex-col !border-b-0">
       <div className="relative">
         <form
-          className={`relative rounded-xl border-[1px] border-gray-500  bg-[#202124] p-6 ${loading || completed ? "opacity-30" : "opacity-100"}`}
+          className={`relative rounded-xl border-[1px] border-gray-500 bg-[#202124] p-6 shadow-xl ${loading || completed ? "opacity-30" : "opacity-100"}`}
           onSubmit={handleSend}
         >
           <div className="mb-5 flex flex-col items-center py-10 text-4xl">

@@ -1,7 +1,6 @@
 import { useScrollContext } from "../context/ScrollContext";
 import { motion } from "framer-motion";
 import skills from "../utils/skillsData";
-import SocialLinks from "./SocialLinks";
 
 function HeroSection() {
   const { contactRef } = useScrollContext();

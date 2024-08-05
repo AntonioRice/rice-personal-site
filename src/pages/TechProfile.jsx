@@ -77,6 +77,7 @@ const TechProfile = () => {
           animate={heroSection.controls}
           variants={animationVariants}
           transition={{ duration: 0.5, delay: 0.25 }}
+          className="bg-[#26272a]"
         >
           <HeroSection />
         </motion.section>
@@ -134,38 +135,59 @@ const TechProfile = () => {
                 <ExperienceBlock experience={exp} />
               </motion.div>
             ))}
-            <div className="flex flex-col items-center justify-center">
-              <div className="grid w-full grid-cols-2 gap-10">
-                <div className="flex flex-col items-center justify-center">
-                  <h1 className="text-md mb-5 text-center font-extralight text-[#cccccc]">
-                    Download my resume for more details:
-                  </h1>
-                  <motion.button
-                    title="downloadResume"
-                    className="inline-flex h-10 w-36 animate-pulse items-center justify-center rounded-md bg-[#cccccc] px-4 py-2 text-black hover:animate-none hover:bg-gray-200"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                    onClick={handleDownload}
-                  >
-                    <FaDownload size={16} className="mr-2" />
-                    <span>my resume</span>
-                  </motion.button>
+            <div className="grid w-full gap-10 py-10 md:grid-cols-2">
+              <div className="mx flex w-full flex-col justify-center rounded-lg border-[1px] border-gray-500 bg-[#202124] p-4 shadow-xl md:mx-0">
+                <div className="flex flex-col gap-2">
+                  <h2 className="flex items-center text-xl font-semibold leading-7">
+                    My Resume
+                  </h2>
+                  <p>
+                    For more details about my experience, download my
+                    professional resume.
+                  </p>
+                  <div className="flex items-start justify-end gap-2 pt-4">
+                    <motion.button
+                      title="downloadResume"
+                      className="inline-flex h-10 w-36 animate-pulse items-center justify-center rounded-md bg-[#cccccc] px-4 py-2 text-black hover:animate-none hover:bg-gray-200"
+                      whileHover={{ scale: 1.1 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 10,
+                      }}
+                      onClick={handleDownload}
+                    >
+                      <FaDownload size={16} className="mr-2" />
+                      <span>Download</span>
+                    </motion.button>
+                  </div>
                 </div>
-
-                <div className="flex flex-col items-center justify-center">
-                  <h1 className="text-md mb-5 text-center font-extralight text-[#cccccc]">
-                    Life before Tech:
-                  </h1>
-                  <motion.button
-                    title="navigateToCV"
-                    className="inline-flex h-10 w-36 animate-pulse items-center justify-center rounded-md bg-[#cccccc] px-4 py-2 text-black hover:animate-none hover:bg-gray-200"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                    onClick={handleNavigateToCV}
-                  >
-                    <span>my cv</span>
-                    <FaArrowRightLong size={16} className="ml-2" />
-                  </motion.button>
+              </div>
+              <div className="mx-auto flex w-full flex-col  justify-center rounded-lg border-[1px] border-gray-500 bg-[#202124] p-4 shadow-xl md:mx-0">
+                <div className="flex flex-col gap-2">
+                  <h2 className="flex items-center text-xl font-semibold leading-7">
+                    Life Before Tech
+                  </h2>
+                  <p>
+                    Explore the professional experiences that have shaped me
+                    into the Software Engineer I am today.
+                  </p>
+                  <div className="flex items-start justify-end gap-2 pt-4">
+                    <motion.button
+                      title="navigateToCV"
+                      className="inline-flex h-10 w-36 animate-pulse items-center justify-center rounded-md bg-[#cccccc] px-4 py-2 text-black hover:animate-none hover:bg-gray-200"
+                      whileHover={{ scale: 1.1 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 10,
+                      }}
+                      onClick={handleNavigateToCV}
+                    >
+                      <span>Explore More</span>
+                      <FaArrowRightLong size={16} className="ml-2" />
+                    </motion.button>
+                  </div>
                 </div>
               </div>
             </div>
