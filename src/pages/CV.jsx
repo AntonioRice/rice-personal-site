@@ -21,7 +21,7 @@ const CV = () => {
 
   return (
     <AnimatedPage>
-      <div className="page-wrapper py- 10 my-10">
+      <div className="page-wrapper my-10 py-10">
         <motion.section>
           <Section id="beforeTech" title="life before tech">
             {skills.beforeTech.map((exp, i) => (
