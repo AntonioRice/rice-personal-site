@@ -1,6 +1,6 @@
 const ProjectBlock = ({ project }) => {
   return (
-    <div className="my-10">
+    <>
       <h2 className="order-2 py-4 text-3xl font-semibold tracking-tight text-[#cccccc] md:order-1">
         {project.title}
       </h2>
@@ -23,7 +23,7 @@ const ProjectBlock = ({ project }) => {
           />
         </a>
       </div>
-    </div>
+    </>
   );
 };
 

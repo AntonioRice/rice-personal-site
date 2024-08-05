@@ -144,14 +144,14 @@ const Contact = () => {
   };
 
   return (
-    <section className="section-wrapper flex flex-col !border-b-0">
+    <>
       <div className="relative">
         <form
           className={`relative rounded-xl border-[1px] border-gray-500 bg-[#202124] p-6 shadow-xl ${loading || completed ? "opacity-30" : "opacity-100"}`}
           onSubmit={handleSend}
         >
           <div className="mb-5 flex flex-col items-center py-10 text-4xl">
-            <h1 className="tracking-wide">Let's work together!</h1>
+            <h1 className="tracking-wide">let's work together!</h1>
           </div>
           <div className="-mx-3 flex flex-wrap">
             <div className="mb-6 w-full px-3 md:w-1/2">
@@ -416,7 +416,7 @@ const Contact = () => {
         </div>
       </div>
       <SocialLinks size={40} />
-    </section>
+    </>
   );
 };
 

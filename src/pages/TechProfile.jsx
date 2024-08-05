@@ -90,7 +90,7 @@ const TechProfile = () => {
           transition={{ duration: 0.5, delay: 0.25 }}
         >
           <Section id="about-me" title="about me">
-            <div className="my-10 grid gap-10 md:grid-cols-2">
+            <div className="grid gap-10 md:grid-cols-2">
               <div className="col-span-1">
                 {skills.about.description.map((description, i) => (
                   <Description key={i} description={description} />
@@ -225,7 +225,7 @@ const TechProfile = () => {
           transition={{ duration: 0.5, delay: 0.25 }}
         >
           <Section id="learning" title="learning">
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm">
+            <div className="flex flex-wrap items-center justify-center gap-6 text-sm">
               {skills.learning.map((learn, i) => (
                 <LearningBlock
                   key={i}
@@ -247,8 +247,11 @@ const TechProfile = () => {
           variants={animationVariants}
           transition={{ duration: 0.5, delay: 0.25 }}
         >
-          <Contact />
+          <Section id="contact" title="contact me">
+            <Contact />
+          </Section>
         </motion.section>
+
         <DevNote />
       </motion.div>
     </ScrollContext.Provider>

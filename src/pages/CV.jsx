@@ -23,7 +23,7 @@ const CV = () => {
     <AnimatedPage>
       <div className="page-wrapper py- 10 my-10">
         <motion.section>
-          <Section id="beforeTech" title="Life Before Tech">
+          <Section id="beforeTech" title="life before tech">
             {skills.beforeTech.map((exp, i) => (
               <motion.div
                 key={i}
@@ -38,7 +38,16 @@ const CV = () => {
             ))}
           </Section>
         </motion.section>
-        <Contact />
+        <motion.section
+          variants={fadeInAnimationVariants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+        >
+          <Section id="contact" title="contact me">
+            <Contact />
+          </Section>
+        </motion.section>
       </div>
     </AnimatedPage>
   );

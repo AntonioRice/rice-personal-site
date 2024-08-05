@@ -3,7 +3,7 @@ import SkillPill from "./SkillPill";
 
 const ExperienceBlock = ({ experience }) => {
   return (
-    <div className="my-10">
+    <>
       <div className="mb-4 flex items-center justify-between">
         <h3 className="text-3xl font-semibold text-[#cccccc]">
           {experience.company}
@@ -29,7 +29,7 @@ const ExperienceBlock = ({ experience }) => {
           </div>
         </div>
       ))}
-    </div>
+    </>
   );
 };
 
