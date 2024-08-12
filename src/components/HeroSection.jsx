@@ -17,7 +17,7 @@ function HeroSection() {
         <img
           className="mx-auto mb-6 transform rounded-full ring-4 ring-[#cccccc] transition duration-300 ease-in-out hover:scale-110 hover:ring-[#ffffff]"
           src="/assets/images/avatar.jpeg"
-          alt="Antonio Rice Head shot"
+          alt="Antonio Rice"
         />
       </a>
       <h1 className="mb-5 text-6xl font-bold text-[#ffffff] sm:text-5xl">

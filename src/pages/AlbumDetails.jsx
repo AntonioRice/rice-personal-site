@@ -40,8 +40,8 @@ const AlbumDetails = () => {
   return (
     <AnimatedPage>
       <div className="page-wrapper flex flex-col pt-20">
-        <div className="flex items-center justify-center">
-          <h1 className="text-md font-extralight uppercase text-[#cccccc]">
+        <div className="flex items-center justify-center py-4">
+          <h1 className="text-2xl font-extralight uppercase text-[#cccccc] sm:text-lg">
             {name} <span className="text-[#cccccc]">- {year}</span>
           </h1>
         </div>

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import useEventsTracker from "../hooks/useEventsTracker";
@@ -29,6 +30,23 @@ const Home = () => {
 
   return (
     <AnimatePresence>
+      <Helmet>
+        <title>A. Rice | Home</title>
+        <meta
+          name="description"
+          content="Welcome to the personal site of Antonio Rice, a multifaceted Software Engineer and Photographer. Discover Antonio's professional portfolio, projects, and photography gallery."
+        />
+        <link rel="canonical" href="https://antoniorice.com/" />
+        <meta property="og:title" content="A. Rice | Home" />
+        <meta
+          property="og:description"
+          content="Explore the home of Antonio Rice, where technology meets creativity. View his work as a Software Engineer and Photographer."
+        />
+        <meta
+          property="og:image"
+          content="https://antoniorice.com/assets/images/site-image.webp"
+        />
+      </Helmet>
       <div className="page-wrapper flex flex-col md:grid md:grid-cols-2 md:px-10 md:pt-20">
         <motion.section
           variants={pageAnimation}
@@ -106,9 +124,10 @@ const Home = () => {
           className="order-1 flex w-full items-center justify-center sm:mt-24 md:order-2 md:col-span-1"
         >
           <img
+            alt="Antonio Rice"
             src="/assets/images/main-avatar-3.jpg"
-            alt="main avatar"
             className="size-60 rounded-full ring-2 ring-white ring-offset-8 ring-offset-[#202124] md:size-[500px]"
+            loading="lazy"
           />
         </motion.section>
       </div>

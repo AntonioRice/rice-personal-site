@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaDownload, FaArrowRightLong } from "react-icons/fa6";
@@ -65,6 +66,23 @@ const TechProfile = () => {
         learningRef: learningSection.ref,
       }}
     >
+      <Helmet>
+        <title>A. Rice | Software Engineer</title>
+        <meta
+          name="description"
+          content="Explore the professional portfolio of Antonio Rice, a skilled Software Engineer specializing in modern web technologies, cloud computing, and software architecture. Discover projects, technical skills, and insights into the latest industry trends."
+        />
+        <link rel="canonical" href="https://antoniorice.com/" />
+        <meta property="og:title" content="A. Rice | Software Engineer" />
+        <meta
+          property="og:description"
+          content="Discover Antonio Rice's portfolio showcasing expertise in software engineering, including modern web development, cloud solutions, and innovative projects."
+        />
+        <meta
+          property="og:image"
+          content="https://antoniorice.com/assets/images/site-image.webp"
+        />
+      </Helmet>
       <motion.div
         initial="hidden"
         animate="visible"

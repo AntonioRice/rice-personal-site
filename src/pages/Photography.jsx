@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { useState, useEffect } from "react";
 import { PiInstagramLogo } from "react-icons/pi";
 import { Album, AnimatedPage } from "../components";
@@ -31,9 +32,26 @@ const Photography = () => {
 
   return (
     <AnimatedPage>
+      <Helmet>
+        <title>A. Rice | Photographer</title>
+        <meta
+          name="description"
+          content="Explore the photography portfolio of Antonio Rice, capturing moments through a unique lens. Dive into a diverse collection of landscapes, portraits, and more."
+        />
+        <link rel="canonical" href="https://antoniorice.com/" />
+        <meta property="og:title" content="A. Rice | Photographer" />
+        <meta
+          property="og:description"
+          content="Discover the world through the lens of Antonio Rice. A captivating collection of photography ranging from landscapes to portraits."
+        />
+        <meta
+          property="og:image"
+          content="https://antoniorice.com/assets/images/site-image.webp"
+        />
+      </Helmet>
       <div className="page-wrapper flex flex-col pt-20">
-        <div className="flex items-center justify-center">
-          <h1 className="text-md font-extralight uppercase text-[#cccccc]">
+        <div className="flex items-center justify-center py-4">
+          <h1 className="text-2xl font-extralight uppercase text-[#cccccc] sm:text-lg">
             A. Rice Photography <span className="text-red-500">.</span>
           </h1>
           <a
