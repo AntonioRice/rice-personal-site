@@ -50,3 +50,6 @@ jobs:
 
       - name: Clean up any unused Docker resources
         run: docker system prune -af
+
+      - name: Run Post-Deploy Script
+        run: ./post-deploy.sh
