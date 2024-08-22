@@ -151,7 +151,7 @@ const Contact = () => {
           onSubmit={handleSend}
         >
           <div className="mb-5 flex flex-col items-center py-10 text-4xl">
-            <h1 className="tracking-wide">let's work together!</h1>
+            <h1>Let's Work Together!</h1>
           </div>
           <div className="-mx-3 flex flex-wrap">
             <div className="mb-6 w-full px-3 md:w-1/2">
@@ -355,7 +355,7 @@ const Contact = () => {
           <div className="flex justify-end">
             <button
               type="submit"
-              className={`h-10 w-36 animate-pulse rounded-md bg-[#cccccc] text-black hover:animate-none hover:bg-[#ffffff] ${
+              className={`h-10 w-36 animate-pulse rounded-md bg-[#cccccc] text-sm text-black hover:animate-none hover:bg-[#ffffff] ${
                 (!isFormValid || loading || completed) &&
                 "cursor-not-allowed opacity-50"
               }`}

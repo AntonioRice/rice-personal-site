@@ -74,19 +74,17 @@ const Home = () => {
           `}
         </script>
       </Helmet>
-      <div className="page-wrapper flex flex-col md:grid md:grid-cols-2 md:px-10 md:pt-20">
+      <div className="page-wrapper flex min-h-screen flex-col md:grid md:grid-cols-2 md:px-10 md:pt-20">
         <motion.section
           variants={pageAnimation}
           initial="initial"
           animate="animate"
           transition={{ duration: 1 }}
-          className="order-2 flex flex-col justify-center p-10 md:order-1 md:col-span-1"
+          className="order-2 flex flex-grow flex-col justify-center p-10 md:order-1 md:col-span-1"
         >
           <div className="top-8 font-bold">
-            <p className="text-xl text-[#cccccc] sm:text-xl md:text-2xl">
-              hello i'm,
-            </p>
-            <h1 className="flex-shrink whitespace-nowrap text-4xl sm:text-6xl md:text-7xl lg:text-8xl">
+            <p className="text-[#cccccc] sm:text-sm md:text-xl">hello i'm,</p>
+            <h1 className="flex-shrink whitespace-nowrap text-4xl sm:text-5xl md:text-7xl lg:text-8xl">
               <motion.span
                 initial="hidden"
                 animate="visible"
@@ -114,17 +112,16 @@ const Home = () => {
                 className="inline-block size-4 rounded-full bg-red-500 sm:size-2"
               />
             </h1>
-            <p className="my-5 max-w-xl pb-5 text-xl font-extralight text-[#cccccc] sm:text-xl md:text-2xl">
-              i'm a software engineer and I love to practice photography, which
-              would you like to explore?
-            </p>
           </div>
-
+          <p className="my-5 max-w-xl pb-5 md:text-lg">
+            i'm a software engineer and I love to practice photography, which
+            would you like to explore?
+          </p>
           <div className="flex w-full gap-3 text-black sm:justify-center">
             <motion.button
               title="software engineer"
               aria-label="Explore software engineer portfolio"
-              className="h-10 w-36 animate-pulse rounded-md bg-[#cccccc] hover:animate-none hover:bg-gray-200 sm:flex-1"
+              className="h-10 w-36 animate-pulse rounded-md bg-[#cccccc] text-sm hover:animate-none hover:bg-gray-200 sm:flex-1"
               whileHover={{ scale: 1.1 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
               onClick={handleLeftClick}
@@ -134,7 +131,7 @@ const Home = () => {
             <motion.button
               title="photographer"
               aria-label="Explore photography portfolio"
-              className="h-10 w-36 animate-pulse rounded-md bg-[#cccccc] hover:animate-none hover:bg-gray-200 sm:flex-1"
+              className="h-10 w-36 animate-pulse rounded-md bg-[#cccccc] text-sm hover:animate-none hover:bg-gray-200 sm:flex-1"
               whileHover={{ scale: 1.1 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
               onClick={handleRightClick}
@@ -151,7 +148,7 @@ const Home = () => {
           initial="initial"
           animate="animate"
           transition={{ duration: 1 }}
-          className="order-1 flex w-full items-center justify-center sm:mt-24 md:order-2 md:col-span-1"
+          className="order-1 flex w-full flex-grow items-center justify-center sm:mt-24 md:order-2 md:col-span-1"
         >
           <img
             alt="Antonio Rice"

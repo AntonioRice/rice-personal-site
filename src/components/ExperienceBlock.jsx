@@ -5,7 +5,7 @@ const ExperienceBlock = ({ experience }) => {
   return (
     <>
       <div className="mb-4 flex items-center justify-between">
-        <h3 className="text-3xl font-semibold text-[#cccccc]">
+        <h3 className="text-2xl font-semibold text-[#cccccc]">
           {experience.company}
         </h3>
       </div>
@@ -14,7 +14,7 @@ const ExperienceBlock = ({ experience }) => {
           key={roleIndex}
           className="mx-2 mb-10 border-b-[1px] border-gray-500"
         >
-          <div className="text-[#cccccc] sm:text-[12px]">{role.duration}</div>
+          <div className="text-sm text-[#cccccc]">{role.duration}</div>
           <h4 className="mb-2 text-2xl font-bold">
             <span className="text-red-500"> - </span>
             {role.title}

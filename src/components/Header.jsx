@@ -25,6 +25,10 @@ const Header = () => {
     };
   }, []);
 
+  const linkClasses =
+    "uppercase text-[#cccccc] hover:border-b-2 hover:border-red-500 hover:text-[#ffffff] text-sm";
+  const iconLinkClasses = "text-[#cccccc] hover:text-red-500";
+
   return (
     <header
       className={`fixed left-0 top-0 z-50 flex w-full items-center justify-between bg-transparent px-5 py-6 transition-opacity duration-500 ${
@@ -36,42 +40,31 @@ const Header = () => {
           <img src="/assets/images/logo.png" alt="Antonio Rice" />
         </a>
       </div>
+
       <nav className="hidden md:flex">
         <ul className="flex space-x-4">
           <li>
-            <a
-              className="text-lg uppercase text-[#cccccc] hover:border-b-2 hover:border-red-500 hover:text-[#ffffff]"
-              href="/"
-            >
+            <a className={linkClasses} href="/">
               home
             </a>
           </li>
           <li>
-            <a
-              className="text-lg uppercase  text-[#cccccc] hover:border-b-2 hover:border-red-500 hover:text-[#ffffff]"
-              href="/software-engineer"
-            >
+            <a className={linkClasses} href="/software-engineer">
               Software Engineer
             </a>
           </li>
           <li>
-            <a
-              href="/photographer"
-              className=" text-lg uppercase  text-[#cccccc] hover:border-b-2 hover:border-red-500 hover:text-[#ffffff]"
-            >
+            <a className={linkClasses} href="/photographer">
               Photographer
             </a>
           </li>
         </ul>
       </nav>
+
       <nav className="flex rounded-2xl bg-black bg-opacity-80 p-2 md:hidden">
         <ul className="flex space-x-8">
           <li>
-            <a
-              title="home"
-              href="/"
-              className="text-[#cccccc] hover:text-red-500"
-            >
+            <a title="home" href="/" className={iconLinkClasses}>
               <IoHomeOutline size={20} />
             </a>
           </li>
@@ -79,7 +72,7 @@ const Header = () => {
             <a
               title="tech profile"
               href="/software-engineer"
-              className="text-[#cccccc] hover:text-red-500"
+              className={iconLinkClasses}
             >
               <IoCodeSlash size={20} />
             </a>
@@ -88,7 +81,7 @@ const Header = () => {
             <a
               title="photography profile"
               href="/photographer"
-              className="text-[#cccccc] hover:text-red-500"
+              className={iconLinkClasses}
             >
               <IoCameraOutline size={20} />
             </a>

@@ -139,12 +139,16 @@ const TechProfile = () => {
                 {skills.about.description.map((description, i) => (
                   <Description key={i} description={description} />
                 ))}
+                <div className="inline-flex w-full justify-end p-4">
+                  <span className="text-red-500"> - </span>
+                  <p className="ml-1 text-[#cccccc]">A. Rice</p>
+                </div>
               </div>
               <div className="col-span-1">
-                <h1 className="mb-5 text-xl uppercase">skills</h1>
+                <h1 className="font-bold uppercase">skills</h1>
                 {skills.about.skillSet.map((skillCategory, i) => (
                   <div key={i} className="py-2">
-                    <div className="text-md py-2 font-light tracking-wide">
+                    <div className="py-1 text-sm text-[#cccccc]">
                       {skillCategory.category}
                     </div>
                     <div className="flex flex-wrap gap-2">
@@ -180,9 +184,9 @@ const TechProfile = () => {
               </motion.div>
             ))}
             <div className="grid w-full gap-10 py-10 md:grid-cols-2">
-              <div className="mx flex w-full flex-col justify-center rounded-lg border-[1px] border-gray-500 bg-[#202124] p-4 shadow-xl md:mx-0">
+              <div className="mx flex w-full flex-col justify-center rounded-lg border-[1px] border-gray-500 bg-[#2c2f31] p-4 shadow-xl md:mx-0">
                 <div className="flex flex-col gap-2">
-                  <h2 className="flex items-center text-xl font-semibold leading-7">
+                  <h2 className="flex items-center text-xl font-semibold leading-7 text-[#cccccc]">
                     My Resume
                   </h2>
                   <p>
@@ -192,7 +196,7 @@ const TechProfile = () => {
                   <div className="flex items-start justify-end gap-2 pt-4">
                     <motion.button
                       title="downloadResume"
-                      className="inline-flex h-10 w-36 animate-pulse items-center justify-center rounded-md bg-[#cccccc] px-4 py-2 text-black hover:animate-none hover:bg-gray-200"
+                      className="inline-flex h-10 w-36 animate-pulse items-center justify-center rounded-md bg-[#cccccc] px-4 py-2 text-sm text-black hover:animate-none hover:bg-gray-200"
                       whileHover={{ scale: 1.1 }}
                       transition={{
                         type: "spring",
@@ -207,9 +211,9 @@ const TechProfile = () => {
                   </div>
                 </div>
               </div>
-              <div className="mx-auto flex w-full flex-col  justify-center rounded-lg border-[1px] border-gray-500 bg-[#202124] p-4 shadow-xl md:mx-0">
+              <div className="mx-auto flex w-full flex-col  justify-center rounded-lg border-[1px] border-gray-500 bg-[#2c2f31] p-4 shadow-xl md:mx-0">
                 <div className="flex flex-col gap-2">
-                  <h2 className="flex items-center text-xl font-semibold leading-7">
+                  <h2 className="flex items-center text-xl font-semibold leading-7 text-[#cccccc]">
                     Life Before Tech
                   </h2>
                   <p>
@@ -219,7 +223,7 @@ const TechProfile = () => {
                   <div className="flex items-start justify-end gap-2 pt-4">
                     <motion.button
                       title="navigateToCV"
-                      className="inline-flex h-10 w-36 animate-pulse items-center justify-center rounded-md bg-[#cccccc] px-4 py-2 text-black hover:animate-none hover:bg-gray-200"
+                      className="inline-flex h-10 w-36 animate-pulse items-center justify-center rounded-md bg-[#cccccc] px-4 py-2 text-sm text-black hover:animate-none hover:bg-gray-200"
                       whileHover={{ scale: 1.1 }}
                       transition={{
                         type: "spring",

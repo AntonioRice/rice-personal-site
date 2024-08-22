@@ -31,12 +31,12 @@ function HeroSection() {
           aria-label="Learn about my organization, Kappa Alpha Psi Fraternity Inc."
         ></a>
       </h1>
-      <p className="mx-auto mb-5 max-w-4xl p-5 text-2xl font-light text-[#cccccc]">
+      <p className="mx-auto mb-5 max-w-4xl p-5 text-xl">
         {skills.hero.description}
       </p>
       <motion.button
         title="contactMe"
-        className="h-10 w-36 animate-pulse rounded-md bg-[#cccccc] text-black hover:animate-none hover:bg-gray-200"
+        className="h-10 w-36 animate-pulse rounded-md bg-[#cccccc] text-sm text-black hover:animate-none hover:bg-gray-200"
         whileHover={{ scale: 1.1 }}
         transition={{ type: "spring", stiffness: 400, damping: 10 }}
         onClick={() => {
