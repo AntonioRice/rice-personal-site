@@ -31,6 +31,7 @@ const Home = () => {
   return (
     <AnimatePresence>
       <Helmet>
+        <html lang="en" />
         <title>A. Rice | Home</title>
         <meta
           name="description"
@@ -46,6 +47,32 @@ const Home = () => {
           property="og:image"
           content="https://antoniorice.com/assets/images/site-image.webp"
         />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="A. Rice | Home" />
+        <meta
+          name="twitter:description"
+          content="Explore the home of Antonio Rice, where technology meets creativity. View his work as a Software Engineer and Photographer."
+        />
+        <meta
+          name="twitter:image"
+          content="https://antoniorice.com/assets/images/site-image.webp"
+        />
+        <meta name="robots" content="index, follow" />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Antonio Rice",
+              "jobTitle": "Software Engineer",
+              "url": "https://antoniorice.com",
+              "sameAs": [
+                "https://www.linkedin.com/in/antoniorice",
+                "https://twitter.com/antoniorice"
+              ]
+            }
+          `}
+        </script>
       </Helmet>
       <div className="page-wrapper flex flex-col md:grid md:grid-cols-2 md:px-10 md:pt-20">
         <motion.section
@@ -96,6 +123,7 @@ const Home = () => {
           <div className="flex w-full gap-3 text-black sm:justify-center">
             <motion.button
               title="software engineer"
+              aria-label="Explore software engineer portfolio"
               className="h-10 w-36 animate-pulse rounded-md bg-[#cccccc] hover:animate-none hover:bg-gray-200 sm:flex-1"
               whileHover={{ scale: 1.1 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -105,6 +133,7 @@ const Home = () => {
             </motion.button>
             <motion.button
               title="photographer"
+              aria-label="Explore photography portfolio"
               className="h-10 w-36 animate-pulse rounded-md bg-[#cccccc] hover:animate-none hover:bg-gray-200 sm:flex-1"
               whileHover={{ scale: 1.1 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}

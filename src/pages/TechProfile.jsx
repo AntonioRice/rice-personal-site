@@ -72,7 +72,7 @@ const TechProfile = () => {
           name="description"
           content="Explore the professional portfolio of Antonio Rice, a skilled Software Engineer specializing in modern web technologies, cloud computing, and software architecture. Discover projects, technical skills, and insights into the latest industry trends."
         />
-        <link rel="canonical" href="https://antoniorice.com/" />
+        <link rel="canonical" href="https://antoniorice.com/techprofile" />
         <meta property="og:title" content="A. Rice | Software Engineer" />
         <meta
           property="og:description"
@@ -82,6 +82,33 @@ const TechProfile = () => {
           property="og:image"
           content="https://antoniorice.com/assets/images/site-image.webp"
         />
+        <meta property="og:url" content="https://antoniorice.com/techprofile" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="A. Rice | Software Engineer" />
+        <meta
+          name="twitter:description"
+          content="Explore the professional portfolio of Antonio Rice, a skilled Software Engineer specializing in modern web technologies, cloud computing, and software architecture."
+        />
+        <meta
+          name="twitter:image"
+          content="https://antoniorice.com/assets/images/site-image.webp"
+        />
+        <meta name="robots" content="index, follow" />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Antonio Rice",
+              "jobTitle": "Software Engineer",
+              "url": "https://antoniorice.com",
+              "sameAs": [
+                "https://www.linkedin.com/in/antoniorice",
+                "https://twitter.com/antoniorice"
+              ]
+            }
+          `}
+        </script>
       </Helmet>
       <motion.div
         initial="hidden"
@@ -95,7 +122,6 @@ const TechProfile = () => {
           animate={heroSection.controls}
           variants={animationVariants}
           transition={{ duration: 0.5, delay: 0.25 }}
-          className="bg-[#26272a]"
         >
           <HeroSection />
         </motion.section>
