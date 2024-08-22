@@ -133,7 +133,7 @@ const TechProfile = () => {
           variants={animationVariants}
           transition={{ duration: 0.5, delay: 0.25 }}
         >
-          <Section id="about-me" title="about me">
+          <Section id="about-me" title="About Me">
             <div className="grid gap-10 md:grid-cols-2">
               <div className="col-span-1">
                 {skills.about.description.map((description, i) => (
@@ -170,7 +170,7 @@ const TechProfile = () => {
           variants={animationVariants}
           transition={{ duration: 0.5, delay: 0.25 }}
         >
-          <Section id="experience" title="experience">
+          <Section id="experience" title="Experience">
             {skills.experience.map((exp, i) => (
               <motion.div
                 key={i}
@@ -249,7 +249,7 @@ const TechProfile = () => {
           variants={animationVariants}
           transition={{ duration: 0.5, delay: 0.25 }}
         >
-          <Section id="projects" title="projects">
+          <Section id="projects" title="Projects">
             {skills.projects.map((project, i) => (
               <motion.div
                 key={i}
@@ -272,7 +272,7 @@ const TechProfile = () => {
           variants={animationVariants}
           transition={{ duration: 0.5, delay: 0.25 }}
         >
-          <Section id="learning" title="learning">
+          <Section id="learning" title="Learning">
             <div className="flex flex-wrap items-center justify-center gap-6 text-sm">
               {skills.learning.map((learn, i) => (
                 <LearningBlock
@@ -295,7 +295,7 @@ const TechProfile = () => {
           variants={animationVariants}
           transition={{ duration: 0.5, delay: 0.25 }}
         >
-          <Section id="contact" title="contact me">
+          <Section id="contact" title="Contact Me">
             <Contact />
           </Section>
         </motion.section>

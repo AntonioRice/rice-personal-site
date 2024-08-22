@@ -39,9 +39,9 @@ const CV = () => {
           content="https://antoniorice.com/assets/images/site-image.webp"
         />
       </Helmet>
-      <div className="page-wrapper my-10 py-10">
+      <div className="page-wrapper md:pt-10">
         <motion.section>
-          <Section id="beforeTech" title="life before tech">
+          <Section id="beforeTech" title="Life Before Tech">
             {skills.beforeTech.map((exp, i) => (
               <motion.div
                 key={i}

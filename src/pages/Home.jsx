@@ -18,7 +18,7 @@ const Home = () => {
     navigate("/photographer");
   };
 
-  const text = "antonio rice";
+  const text = "Antonio Rice";
   const defaultAnimations = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
@@ -83,7 +83,7 @@ const Home = () => {
           className="order-2 flex flex-grow flex-col justify-center p-10 md:order-1 md:col-span-1"
         >
           <div className="top-8 font-bold">
-            <p className="text-[#cccccc] sm:text-sm md:text-xl">hello i'm,</p>
+            <p className="text-[#cccccc] sm:text-sm md:text-xl">Hello i'm,</p>
             <h1 className="flex-shrink whitespace-nowrap text-4xl sm:text-5xl md:text-7xl lg:text-8xl">
               <motion.span
                 initial="hidden"
@@ -114,7 +114,7 @@ const Home = () => {
             </h1>
           </div>
           <p className="my-5 max-w-xl pb-5 md:text-lg">
-            i'm a software engineer and I love to practice photography, which
+            I'm a software engineer and I love to practice photography, which
             would you like to explore?
           </p>
           <div className="flex w-full gap-3 text-black sm:justify-center">
@@ -126,7 +126,7 @@ const Home = () => {
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
               onClick={handleLeftClick}
             >
-              software engineer
+              Software Engineer
             </motion.button>
             <motion.button
               title="photographer"
@@ -136,7 +136,7 @@ const Home = () => {
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
               onClick={handleRightClick}
             >
-              photographer
+              Photographer
             </motion.button>
           </div>
           <div className="flex w-full sm:justify-center">
