@@ -83,8 +83,8 @@ const Home = () => {
           className="order-2 flex flex-grow flex-col justify-center p-10 md:order-1 md:col-span-1"
         >
           <div className="top-8 font-bold">
-            <p className="text-[#cccccc] sm:text-sm md:text-xl">Hello i'm,</p>
-            <h1 className="flex-shrink whitespace-nowrap text-4xl sm:text-5xl md:text-7xl lg:text-8xl">
+            <p className="text-[#cccccc] md:text-sm">Hello i'm,</p>
+            <h1 className="text-5xl font-bold tracking-tight sm:text-4xl">
               <motion.span
                 initial="hidden"
                 animate="visible"
@@ -109,11 +109,11 @@ const Home = () => {
                   delay: 1.7,
                   ease: [0, 0.71, 0.2, 1.01],
                 }}
-                className="inline-block size-4 rounded-full bg-red-500 sm:size-2"
+                className="ml-1 inline-block size-3 rounded-full bg-red-500 sm:size-2"
               />
             </h1>
           </div>
-          <p className="my-5 max-w-xl pb-5 md:text-lg">
+          <p className="my-5 max-w-md pb-5 md:text-lg">
             I'm a software engineer and I love to practice photography, which
             would you like to explore?
           </p>

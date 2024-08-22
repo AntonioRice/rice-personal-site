@@ -20,7 +20,7 @@ function HeroSection() {
           alt="Antonio Rice"
         />
       </a>
-      <h1 className="mb-5 text-5xl font-bold text-[#ffffff] sm:text-5xl">
+      <h1 className="mb-5 text-5xl font-bold tracking-tight sm:text-4xl">
         Welcome
         <a
           href="https://www.kappaalphapsi1911.com/"
