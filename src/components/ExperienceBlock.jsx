@@ -14,8 +14,10 @@ const ExperienceBlock = ({ experience }) => {
           key={roleIndex}
           className="mx-2 mb-10 border-b-[1px] border-gray-500"
         >
-          <div className="text-sm text-[#cccccc]">{role.duration}</div>
-          <h4 className="mb-2 text-2xl font-bold">
+          <div className="text-sm text-[#cccccc] sm:text-xs">
+            {role.duration}
+          </div>
+          <h4 className="mb-2 text-2xl font-bold sm:text-lg">
             <span className="text-red-500"> - </span>
             {role.title}
           </h4>

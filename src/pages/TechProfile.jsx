@@ -250,18 +250,20 @@ const TechProfile = () => {
           transition={{ duration: 0.5, delay: 0.25 }}
         >
           <Section id="projects" title="Projects">
-            {skills.projects.map((project, i) => (
-              <motion.div
-                key={i}
-                variants={fadeInAnimationVariants}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true }}
-                custom={i}
-              >
-                <ProjectBlock key={i} project={project} />
-              </motion.div>
-            ))}
+            <div className="flex flex-wrap items-center justify-center gap-6">
+              {skills.projects.map((project, i) => (
+                <motion.div
+                  key={i}
+                  variants={fadeInAnimationVariants}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{ once: true }}
+                  custom={i}
+                >
+                  <ProjectBlock key={i} project={project} />
+                </motion.div>
+              ))}
+            </div>
           </Section>
         </motion.section>
 
@@ -273,7 +275,7 @@ const TechProfile = () => {
           transition={{ duration: 0.5, delay: 0.25 }}
         >
           <Section id="learning" title="Learning">
-            <div className="flex flex-wrap items-center justify-center gap-6 text-sm">
+            <div className="flex flex-wrap items-center justify-center gap-6">
               {skills.learning.map((learn, i) => (
                 <LearningBlock
                   key={i}

@@ -1,6 +1,6 @@
 const ProjectBlock = ({ project }) => {
   return (
-    <div className="mb-4 rounded-lg border border-gray-500 bg-[#2c2f31] px-4 pb-6 shadow-xl ">
+    <div className="rounded-lg border border-gray-500 bg-[#2c2f31] px-4 pb-6 shadow-xl">
       <h2 className="py-4 text-2xl font-semibold text-[#cccccc]">
         {project.title}
       </h2>

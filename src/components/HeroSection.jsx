@@ -20,22 +20,22 @@ function HeroSection() {
           alt="Antonio Rice"
         />
       </a>
-      <h1 className="mb-5 text-6xl font-bold text-[#ffffff] sm:text-5xl">
+      <h1 className="mb-5 text-5xl font-bold text-[#ffffff] sm:text-5xl">
         Welcome
         <a
           href="https://www.kappaalphapsi1911.com/"
           title="Kappa Alpha Psi Fraternity, Inc. 1911"
           rel="noopener noreferrer"
           target="_blank"
-          className="ml-1 inline-block size-4 animate-pulse rounded-full bg-red-500 sm:size-2"
+          className="ml-1 inline-block size-3 animate-pulse rounded-full bg-red-500 sm:size-2"
           aria-label="Learn about my organization, Kappa Alpha Psi Fraternity Inc."
         ></a>
       </h1>
-      <p className="mx-auto mb-5 max-w-4xl p-5 text-xl">
+      <p className="mx-auto mb-5 max-w-4xl p-5 text-lg">
         {skills.hero.description}
       </p>
       <motion.button
-        title="contactMe"
+        title="contact-me"
         className="h-10 w-36 animate-pulse rounded-md bg-[#cccccc] text-sm text-black hover:animate-none hover:bg-gray-200"
         whileHover={{ scale: 1.1 }}
         transition={{ type: "spring", stiffness: 400, damping: 10 }}
