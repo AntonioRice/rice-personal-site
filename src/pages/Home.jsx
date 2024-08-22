@@ -87,11 +87,12 @@ const Home = () => {
                 className="inline-block size-4 rounded-full bg-red-500 sm:size-2"
               />
             </h1>
+            <p className="my-5 max-w-xl pb-5 text-xl font-extralight text-[#cccccc] sm:text-xl md:text-2xl">
+              i'm a software engineer and I love to practice photography, which
+              would you like to explore?
+            </p>
           </div>
-          <p className="my-5 max-w-xl pb-5 text-lg font-extralight text-[#cccccc] sm:text-xl">
-            i'm a software engineer and I love to practice photography, which
-            would you like to explore?
-          </p>
+
           <div className="flex w-full gap-3 text-black sm:justify-center">
             <motion.button
               title="software engineer"
