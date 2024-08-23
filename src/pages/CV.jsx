@@ -39,7 +39,7 @@ const CV = () => {
           content="https://antoniorice.com/assets/images/site-image.webp"
         />
       </Helmet>
-      <div className="page-wrapper md:pt-10">
+      <div className="page-wrapper sm:!p-0">
         <motion.section>
           <Section id="beforeTech" title="Life Before Tech">
             {skills.beforeTech.map((exp, i) => (
@@ -62,7 +62,7 @@ const CV = () => {
           whileInView="animate"
           viewport={{ once: true }}
         >
-          <Section id="contact" title="contact me">
+          <Section id="contact" title="Contact Me">
             <Contact />
           </Section>
         </motion.section>

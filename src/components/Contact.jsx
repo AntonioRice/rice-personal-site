@@ -1,16 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import axios from "axios";
-import {
-  FaLinkedin,
-  FaGithub,
-  FaFilePdf,
-  FaEnvelope,
-  FaPhone,
-  FaIdCard,
-} from "react-icons/fa6";
+import { FaEnvelope, FaPhone, FaIdCard } from "react-icons/fa6";
 import { MdModeEdit } from "react-icons/md";
-import useEventsTracker from "../hooks/useEventsTracker";
 import { validate } from "email-validator";
 import countryCodes from "../utils/countryCodes";
 import SocialLinks from "./SocialLinks";
@@ -150,7 +142,7 @@ const Contact = () => {
           className={`relative rounded-xl border-[1px] border-gray-500 bg-[#202124] p-6 shadow-xl ${loading || completed ? "opacity-30" : "opacity-100"}`}
           onSubmit={handleSend}
         >
-          <div className="mb-5 flex flex-col items-center py-10 text-4xl font-semibold">
+          <div className="mb-5 flex flex-col items-center py-10 text-4xl font-semibold sm:text-xl">
             <h1>Let's Work Together!</h1>
           </div>
           <div className="-mx-3 flex flex-wrap">

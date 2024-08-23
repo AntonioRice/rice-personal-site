@@ -39,9 +39,9 @@ const AlbumDetails = () => {
 
   return (
     <AnimatedPage>
-      <div className="page-wrapper flex flex-col pt-20">
-        <div className="flex items-center justify-center py-4">
-          <h1 className="text-2xl font-extralight uppercase text-[#cccccc] sm:text-lg">
+      <div className="page-wrapper">
+        <div className="flex items-center justify-center pt-10 font-bold tracking-tight sm:py-10">
+          <h1 className="uppercase leading-7 tracking-tighter text-[#cccccc]">
             {name} <span className="text-[#cccccc]">- {year}</span>
           </h1>
         </div>

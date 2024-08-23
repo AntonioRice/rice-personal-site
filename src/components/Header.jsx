@@ -26,8 +26,7 @@ const Header = () => {
   }, []);
 
   const linkClasses = (path) => {
-    const baseClasses =
-      "text-[#6b7280] hover:border-b-2 hover:border-red-500 hover:text-[#ffffff] text-sm";
+    const baseClasses = "text-[#6b7280] hover:text-[#ffffff] text-sm";
     const activeClasses = "border-b-2 border-red-500 !text-[#ffffff]";
 
     return location.pathname === path
@@ -46,7 +45,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed left-0 top-0 z-50 flex w-full items-center justify-between bg-transparent px-5 py-6 transition-opacity duration-500 ${
+      className={`fixed left-0 top-0 z-50 flex w-full items-center justify-between bg-transparent px-5 py-4 transition-opacity duration-500 ${
         isVisible ? "opacity-100" : "opacity-0"
       } hover:opacity-100`}
     >
@@ -70,7 +69,6 @@ const Header = () => {
           </li>
         </ul>
       </nav>
-
       <nav className="flex rounded-2xl bg-black bg-opacity-80 p-2 md:hidden">
         <ul className="flex space-x-8">
           <li>
