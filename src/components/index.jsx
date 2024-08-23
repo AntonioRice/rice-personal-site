@@ -14,6 +14,7 @@ export { default as Contact } from "./Contact";
 export { default as Description } from "./Description";
 export { default as DevNote } from "./DevNote";
 export { default as SkillPill } from "./SkillPill";
+export { default as NavItem } from "./NavItem";
 
 export { default as Album } from "./Album";
 export { default as ImageWithLoader } from "./ImageWithLoader";

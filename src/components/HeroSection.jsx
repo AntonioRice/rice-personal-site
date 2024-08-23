@@ -37,7 +37,7 @@ const HeroSection = () => {
           initial="initial"
           animate="animate"
           transition={{ duration: 1 }}
-          className="order-2 flex flex-grow flex-col justify-center p-10 md:order-1 md:col-span-1"
+          className="order-2 flex flex-grow flex-col justify-center py-10 md:order-1 md:col-span-1"
         >
           <h1 className="text-5xl font-bold tracking-tight sm:text-4xl">
             <motion.span

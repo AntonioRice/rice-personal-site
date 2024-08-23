@@ -1,6 +1,7 @@
+import { useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { FaDownload, FaArrowRightLong } from "react-icons/fa6";
 import {
   SkillPill,
@@ -13,22 +14,55 @@ import {
   HeroSection,
   Contact,
   DevNote,
+  NavItem,
 } from "../components";
-import useSectionScroll from "../hooks/useSectionScroll";
 import useEventsTracker from "../hooks/useEventsTracker";
 import skills from "../utils/skillsData";
 import ScrollContext from "../context/ScrollContext";
 
 const TechProfile = () => {
+  const [activeSection, setActiveSection] = useState("home");
   const navigate = useNavigate();
   const trackEvent = useEventsTracker("User Interaction");
 
-  const heroSection = useSectionScroll();
-  const aboutSection = useSectionScroll();
-  const experienceSection = useSectionScroll();
-  const projectSection = useSectionScroll();
-  const learningSection = useSectionScroll();
-  const contactSection = useSectionScroll();
+  const heroRef = useRef(null);
+  const aboutRef = useRef(null);
+  const experienceRef = useRef(null);
+  const projectRef = useRef(null);
+  const learningRef = useRef(null);
+  const contactRef = useRef(null);
+
+  const heroInView = useInView(heroRef, { amount: 0.5 });
+  const aboutInView = useInView(aboutRef, { amount: 0.5 });
+  const experienceInView = useInView(experienceRef, { amount: 0.1 });
+  const projectInView = useInView(projectRef, { amount: 0.2 });
+  const learningInView = useInView(learningRef, { amount: 0 });
+  const contactInView = useInView(contactRef, { amount: 0.1 });
+
+  const sections = [
+    { id: "home", ref: heroRef },
+    { id: "about", ref: aboutRef },
+    { id: "experience", ref: experienceRef },
+    { id: "projects", ref: projectRef },
+    { id: "learning", ref: learningRef },
+    { id: "contact", ref: contactRef },
+  ];
+
+  useEffect(() => {
+    if (contactInView) setActiveSection("contact");
+    else if (learningInView) setActiveSection("learning");
+    else if (projectInView) setActiveSection("projects");
+    else if (experienceInView) setActiveSection("experience");
+    else if (aboutInView) setActiveSection("about");
+    else if (heroInView) setActiveSection("home");
+  }, [
+    heroInView,
+    aboutInView,
+    experienceInView,
+    projectInView,
+    learningInView,
+    contactInView,
+  ]);
 
   const handleDownload = () => {
     trackEvent("Resume downloaded", "ALR Resume");
@@ -44,6 +78,7 @@ const TechProfile = () => {
     hidden: { opacity: 0, y: 75 },
     visible: { opacity: 1, y: 0 },
   };
+
   const fadeInAnimationVariants = {
     initial: { opacity: 0, y: 100 },
     animate: (i) => ({
@@ -58,12 +93,13 @@ const TechProfile = () => {
   return (
     <ScrollContext.Provider
       value={{
-        heroRef: heroSection.ref,
-        aboutRef: aboutSection.ref,
-        experienceRef: experienceSection.ref,
-        projectRef: projectSection.ref,
-        contactRef: contactSection.ref,
-        learningRef: learningSection.ref,
+        heroRef,
+        aboutRef,
+        experienceRef,
+        projectRef,
+        contactRef,
+        learningRef,
+        activeSection,
       }}
     >
       <Helmet>
@@ -110,30 +146,37 @@ const TechProfile = () => {
           `}
         </script>
       </Helmet>
+
+      <nav className="fixed left-0 top-1/3 z-50 p-4 sm:hidden">
+        <ul className="flex flex-col ">
+          {sections.map((section) => (
+            <li key={section.id}>
+              <NavItem
+                id={section.id}
+                isActive={activeSection === section.id}
+                onClick={() =>
+                  section.ref.current.scrollIntoView({ behavior: "smooth" })
+                }
+              >
+                {section.id.charAt(0).toUpperCase() + section.id.slice(1)}
+              </NavItem>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
       <motion.div
         initial="hidden"
         animate="visible"
         exit="hidden"
         variants={animationVariants}
       >
-        <motion.section
-          ref={heroSection.ref}
-          initial="hidden"
-          animate={heroSection.controls}
-          variants={animationVariants}
-          transition={{ duration: 0.5, delay: 0.25 }}
-        >
+        <motion.section ref={heroRef}>
           <HeroSection />
         </motion.section>
 
-        <motion.section
-          ref={aboutSection.ref}
-          initial="hidden"
-          animate={aboutSection.controls}
-          variants={animationVariants}
-          transition={{ duration: 0.5, delay: 0.25 }}
-        >
-          <Section id="about-me" title="About Me">
+        <motion.section ref={aboutRef}>
+          <Section id="about" title="About Me">
             <div className="grid gap-10 md:grid-cols-2">
               <div className="col-span-1">
                 {skills.about.description.map((description, i) => (
@@ -145,7 +188,7 @@ const TechProfile = () => {
                 </div>
               </div>
               <div className="col-span-1">
-                <h1 className="font-bold uppercase">skills</h1>
+                <h1 className="font-bold uppercase">Skills</h1>
                 {skills.about.skillSet.map((skillCategory, i) => (
                   <div key={i} className="py-2">
                     <div className="py-1 text-sm text-[#cccccc]">
@@ -163,25 +206,12 @@ const TechProfile = () => {
           </Section>
         </motion.section>
 
-        <motion.section
-          ref={experienceSection.ref}
-          initial="hidden"
-          animate={experienceSection.controls}
-          variants={animationVariants}
-          transition={{ duration: 0.5, delay: 0.25 }}
-        >
+        <motion.section ref={experienceRef}>
           <Section id="experience" title="Experience">
             {skills.experience.map((exp, i) => (
-              <motion.div
-                key={i}
-                variants={fadeInAnimationVariants}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true }}
-                custom={i}
-              >
+              <div key={i}>
                 <ExperienceBlock experience={exp} />
-              </motion.div>
+              </div>
             ))}
             <div className="grid w-full gap-10 py-10 md:grid-cols-2">
               <div className="mx flex w-full flex-col justify-center rounded-lg border-[1px] border-gray-500 bg-[#2c2f31] p-4 shadow-xl md:mx-0">
@@ -211,7 +241,7 @@ const TechProfile = () => {
                   </div>
                 </div>
               </div>
-              <div className="mx-auto flex w-full flex-col  justify-center rounded-lg border-[1px] border-gray-500 bg-[#2c2f31] p-4 shadow-xl md:mx-0">
+              <div className="mx-auto flex w-full flex-col justify-center rounded-lg border-[1px] border-gray-500 bg-[#2c2f31] p-4 shadow-xl md:mx-0">
                 <div className="flex flex-col gap-2">
                   <h2 className="flex items-center text-xl font-semibold leading-7 text-[#cccccc]">
                     Life Before Tech
@@ -242,13 +272,7 @@ const TechProfile = () => {
           </Section>
         </motion.section>
 
-        <motion.section
-          ref={projectSection.ref}
-          initial="hidden"
-          animate={projectSection.controls}
-          variants={animationVariants}
-          transition={{ duration: 0.5, delay: 0.25 }}
-        >
+        <motion.section ref={projectRef}>
           <Section id="projects" title="Projects">
             <div className="flex flex-wrap items-center justify-center gap-6">
               {skills.projects.map((project, i) => (
@@ -267,13 +291,7 @@ const TechProfile = () => {
           </Section>
         </motion.section>
 
-        <motion.section
-          ref={learningSection.ref}
-          initial="hidden"
-          animate={learningSection.controls}
-          variants={animationVariants}
-          transition={{ duration: 0.5, delay: 0.25 }}
-        >
+        <motion.section ref={learningRef}>
           <Section id="learning" title="Learning">
             <div className="flex flex-wrap items-center justify-center gap-6">
               {skills.learning.map((learn, i) => (
@@ -290,13 +308,7 @@ const TechProfile = () => {
           </Section>
         </motion.section>
 
-        <motion.section
-          ref={contactSection.ref}
-          initial="hidden"
-          animate={contactSection.controls}
-          variants={animationVariants}
-          transition={{ duration: 0.5, delay: 0.25 }}
-        >
+        <motion.section ref={contactRef}>
           <Section id="contact" title="Contact Me">
             <Contact />
           </Section>
