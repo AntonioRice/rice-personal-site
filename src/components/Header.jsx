@@ -14,8 +14,6 @@ const Header = () => {
         setIsVisible(true);
       } else if (lastScrollY < window.scrollY) {
         setIsVisible(false);
-      } else {
-        setIsVisible(true);
       }
       lastScrollY = window.scrollY;
     };
@@ -29,7 +27,7 @@ const Header = () => {
 
   const linkClasses = (path) => {
     const baseClasses =
-      "uppercase text-[#cccccc] hover:border-b-2 hover:border-red-500 hover:text-[#ffffff] text-sm";
+      "text-[#cccccc] hover:border-b-2 hover:border-red-500 hover:text-[#ffffff] text-sm";
     const activeClasses = "border-b-2 border-red-500 text-[#ffffff]";
 
     return location.pathname === path

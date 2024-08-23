@@ -146,7 +146,6 @@ const TechProfile = () => {
           `}
         </script>
       </Helmet>
-
       <nav className="fixed left-0 top-1/3 z-50 p-4 sm:hidden">
         <ul className="flex flex-col ">
           {sections.map((section) => (
@@ -164,7 +163,6 @@ const TechProfile = () => {
           ))}
         </ul>
       </nav>
-
       <motion.div
         initial="hidden"
         animate="visible"

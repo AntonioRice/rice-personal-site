@@ -35,11 +35,9 @@ body {
 
 .section-wrapper {
   position: relative;
-  z-index: 10;
   max-width: 1150px;
   margin: auto;
   padding: 3rem;
-  overflow: hidden;
   border-bottom-width: 2px;
 }
 
