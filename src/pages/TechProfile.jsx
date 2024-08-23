@@ -146,8 +146,8 @@ const TechProfile = () => {
           `}
         </script>
       </Helmet>
-      <nav className="fixed left-0 top-1/3 z-50 p-4 sm:hidden">
-        <ul className="flex flex-col ">
+      <nav className="sm:hidden md:fixed md:left-0 md:top-1/3 md:z-50 md:p-4">
+        <ul className="flex flex-col">
           {sections.map((section) => (
             <li key={section.id}>
               <NavItem

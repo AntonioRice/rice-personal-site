@@ -31,7 +31,7 @@ const HeroSection = () => {
 
   return (
     <AnimatePresence>
-      <div className="section-wrapper flex min-h-screen flex-col md:grid md:grid-cols-2">
+      <div className="section-wrapper flex min-h-screen flex-col items-center md:grid md:grid-cols-2">
         <motion.section
           variants={pageAnimation}
           initial="initial"
@@ -76,7 +76,7 @@ const HeroSection = () => {
             <motion.button
               title="software engineer"
               aria-label="Explore software engineer portfolio"
-              className="h-10 w-36 animate-pulse rounded-md bg-[#cccccc] text-xs font-semibold hover:animate-none hover:bg-gray-200 sm:flex-1"
+              className="h-10 w-36 animate-pulse rounded-md bg-[#cccccc] px-4 py-2 text-xs font-semibold hover:animate-none hover:bg-gray-200 sm:flex-1"
               whileHover={{ scale: 1.1 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
               onClick={handleLeftClick}
@@ -86,7 +86,7 @@ const HeroSection = () => {
             <motion.button
               title="photographer"
               aria-label="Explore photography portfolio"
-              className="h-10 w-36 animate-pulse rounded-md bg-[#cccccc] text-xs font-semibold hover:animate-none hover:bg-gray-200 sm:flex-1"
+              className="h-10 w-36 animate-pulse rounded-md bg-[#cccccc] px-4 py-2 text-xs font-semibold hover:animate-none hover:bg-gray-200 sm:flex-1"
               whileHover={{ scale: 1.1 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
               onClick={handleRightClick}
@@ -103,7 +103,7 @@ const HeroSection = () => {
           initial="initial"
           animate="animate"
           transition={{ duration: 1 }}
-          className="order-1 flex w-full flex-grow items-center justify-center sm:mt-24 md:order-2 md:col-span-1"
+          className="order-1 flex w-full flex-grow items-center justify-center md:order-2 md:col-span-1"
         >
           <a
             title="Linkedin"
@@ -114,7 +114,7 @@ const HeroSection = () => {
             <img
               alt="Antonio Rice"
               src="/assets/images/main-avatar-3.jpg"
-              className="size-60 transform rounded-full ring-2 ring-white ring-offset-8 ring-offset-[#202124] duration-300 hover:scale-105 md:size-[500px]"
+              className="size-60 transform rounded-full ring-2 ring-white ring-offset-8 ring-offset-[#202124] duration-300 hover:scale-105 md:size-[350px] lg:size-[500px]"
               loading="lazy"
             />
           </a>
