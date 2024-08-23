@@ -20,7 +20,7 @@ import useEventsTracker from "../hooks/useEventsTracker";
 import skills from "../utils/skillsData";
 import ScrollContext from "../context/ScrollContext";
 
-const TechProfile = () => {
+const Home = () => {
   const [activeSection, setActiveSection] = useState("home");
   const navigate = useNavigate();
   const trackEvent = useEventsTracker("User Interaction");
@@ -318,4 +318,4 @@ const TechProfile = () => {
   );
 };
 
-export default TechProfile;
+export default Home;

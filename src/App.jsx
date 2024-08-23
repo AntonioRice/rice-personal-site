@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import Layout from "./components/Layout";
 import AlbumDetails from "./pages/AlbumDetails";
-import TechProfile from "./pages/TechProfile";
+import Home from "./pages/Home";
 import Photography from "./pages/Photography";
 import CV from "./pages/CV";
 import ErrorPage from "./pages/ErrorPage";
@@ -20,7 +20,7 @@ const router = createBrowserRouter([
     element: <Layout />,
     errorElement: <ErrorPage />,
     children: [
-      { index: true, element: <TechProfile /> },
+      { index: true, element: <Home /> },
       { path: "cv", element: <CV /> },
       { path: "photographer", element: <Photography /> },
       { path: "album/:albumId", element: <AlbumDetails /> },
