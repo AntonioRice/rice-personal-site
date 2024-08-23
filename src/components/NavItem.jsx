@@ -15,6 +15,7 @@ const NavItem = ({ id, isActive, onClick, children }) => {
           transition: { duration: 0.2 },
         },
       }}
+      initial={isActive ? "active" : "inactive"}
       animate={isActive ? "active" : "inactive"}
       onClick={onClick}
       whileHover={{ color: "#ffffff" }}
