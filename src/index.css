@@ -28,8 +28,7 @@ body {
 .page-wrapper {
   min-height: calc(100vh - 2.5rem);
   margin: auto;
-  padding: 3rem;
-  max-width: 1150px;
+  padding: 2rem;
   z-index: 10;
 }
 
