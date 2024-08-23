@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
-import { IoHomeOutline, IoCameraOutline, IoCodeSlash } from "react-icons/io5";
+import { useLocation } from "react-router-dom";
+import { IoCameraOutline, IoCodeSlash } from "react-icons/io5";
 
 const Header = () => {
+  const location = useLocation();
   const [isVisible, setIsVisible] = useState(true);
 
   let lastScrollY = window.scrollY;
@@ -25,9 +27,24 @@ const Header = () => {
     };
   }, []);
 
-  const linkClasses =
-    "uppercase text-[#cccccc] hover:border-b-2 hover:border-red-500 hover:text-[#ffffff] text-sm";
-  const iconLinkClasses = "text-[#cccccc] hover:text-red-500";
+  const linkClasses = (path) => {
+    const baseClasses =
+      "uppercase text-[#cccccc] hover:border-b-2 hover:border-red-500 hover:text-[#ffffff] text-sm";
+    const activeClasses = "border-b-2 border-red-500 text-[#ffffff]";
+
+    return location.pathname === path
+      ? `${baseClasses} ${activeClasses}`
+      : baseClasses;
+  };
+
+  const iconLinkClasses = (path) => {
+    const baseClasses = "text-[#cccccc] hover:text-red-500";
+    const activeClasses = "text-red-500";
+
+    return location.pathname === path
+      ? `${baseClasses} ${activeClasses}`
+      : baseClasses;
+  };
 
   return (
     <header
@@ -44,12 +61,12 @@ const Header = () => {
       <nav className="hidden md:flex">
         <ul className="flex space-x-4">
           <li>
-            <a className={linkClasses} href="/">
+            <a className={linkClasses("/")} href="/">
               Software Engineer
             </a>
           </li>
           <li>
-            <a className={linkClasses} href="/photographer">
+            <a className={linkClasses("/photographer")} href="/photographer">
               Photographer
             </a>
           </li>
@@ -59,7 +76,7 @@ const Header = () => {
       <nav className="flex rounded-2xl bg-black bg-opacity-80 p-2 md:hidden">
         <ul className="flex space-x-8">
           <li>
-            <a title="home" href="/" className={iconLinkClasses}>
+            <a title="home" href="/" className={iconLinkClasses("/")}>
               <IoCodeSlash size={20} />
             </a>
           </li>
@@ -67,7 +84,7 @@ const Header = () => {
             <a
               title="photography profile"
               href="/photographer"
-              className={iconLinkClasses}
+              className={iconLinkClasses("/photographer")}
             >
               <IoCameraOutline size={20} />
             </a>
