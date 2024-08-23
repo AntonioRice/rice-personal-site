@@ -196,7 +196,7 @@ const TechProfile = () => {
                   <div className="flex items-start justify-end gap-2 pt-4">
                     <motion.button
                       title="downloadResume"
-                      className="inline-flex h-10 w-36 animate-pulse items-center justify-center rounded-md bg-[#cccccc] px-4 py-2 text-sm text-black hover:animate-none hover:bg-gray-200"
+                      className="inline-flex h-10 w-36 animate-pulse items-center justify-center rounded-md bg-[#cccccc] px-4 py-2 text-sm font-semibold text-black hover:animate-none hover:bg-gray-200"
                       whileHover={{ scale: 1.1 }}
                       transition={{
                         type: "spring",
@@ -223,7 +223,7 @@ const TechProfile = () => {
                   <div className="flex items-start justify-end gap-2 pt-4">
                     <motion.button
                       title="navigateToCV"
-                      className="inline-flex h-10 w-36 animate-pulse items-center justify-center rounded-md bg-[#cccccc] px-4 py-2 text-sm text-black hover:animate-none hover:bg-gray-200"
+                      className="inline-flex h-10 w-36 animate-pulse items-center justify-center rounded-md bg-[#cccccc] px-4 py-2 text-sm font-semibold text-black hover:animate-none hover:bg-gray-200"
                       whileHover={{ scale: 1.1 }}
                       transition={{
                         type: "spring",
@@ -233,7 +233,7 @@ const TechProfile = () => {
                       onClick={handleNavigateToCV}
                     >
                       <span>Explore More</span>
-                      <FaArrowRightLong size={16} className="ml-2" />
+                      <FaArrowRightLong size={14} className="ml-2" />
                     </motion.button>
                   </div>
                 </div>

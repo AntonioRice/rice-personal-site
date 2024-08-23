@@ -45,11 +45,6 @@ const Header = () => {
         <ul className="flex space-x-4">
           <li>
             <a className={linkClasses} href="/">
-              home
-            </a>
-          </li>
-          <li>
-            <a className={linkClasses} href="/software-engineer">
               Software Engineer
             </a>
           </li>
@@ -65,15 +60,6 @@ const Header = () => {
         <ul className="flex space-x-8">
           <li>
             <a title="home" href="/" className={iconLinkClasses}>
-              <IoHomeOutline size={20} />
-            </a>
-          </li>
-          <li>
-            <a
-              title="tech profile"
-              href="/software-engineer"
-              className={iconLinkClasses}
-            >
               <IoCodeSlash size={20} />
             </a>
           </li>

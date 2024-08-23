@@ -2,7 +2,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import Layout from "./components/Layout";
 import AlbumDetails from "./pages/AlbumDetails";
-import Home from "./pages/Home";
 import TechProfile from "./pages/TechProfile";
 import Photography from "./pages/Photography";
 import CV from "./pages/CV";
@@ -21,9 +20,8 @@ const router = createBrowserRouter([
     element: <Layout />,
     errorElement: <ErrorPage />,
     children: [
-      { index: true, element: <Home /> },
+      { index: true, element: <TechProfile /> },
       { path: "cv", element: <CV /> },
-      { path: "software-engineer", element: <TechProfile /> },
       { path: "photographer", element: <Photography /> },
       { path: "album/:albumId", element: <AlbumDetails /> },
     ],
