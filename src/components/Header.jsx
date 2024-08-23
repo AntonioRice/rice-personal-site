@@ -27,8 +27,8 @@ const Header = () => {
 
   const linkClasses = (path) => {
     const baseClasses =
-      "text-[#cccccc] hover:border-b-2 hover:border-red-500 hover:text-[#ffffff] text-sm";
-    const activeClasses = "border-b-2 border-red-500 text-[#ffffff]";
+      "text-[#6b7280] hover:border-b-2 hover:border-red-500 hover:text-[#ffffff] text-sm";
+    const activeClasses = "border-b-2 border-red-500 !text-[#ffffff]";
 
     return location.pathname === path
       ? `${baseClasses} ${activeClasses}`
@@ -36,7 +36,7 @@ const Header = () => {
   };
 
   const iconLinkClasses = (path) => {
-    const baseClasses = "text-[#cccccc] hover:text-red-500";
+    const baseClasses = "text-[#6b7280] hover:text-red-500";
     const activeClasses = "text-red-500";
 
     return location.pathname === path
