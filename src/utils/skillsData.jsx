@@ -145,7 +145,9 @@ export const skills = {
           title: "Executive Sales Manager",
           duration: "2016 - 2017",
           descriptions: [
-            "Managed a team of 30 associates, encompassing responsibilities such as conducting interviews, providing performance coaching, and managing key sales metrics.",
+            "Directed the Men’s Sales Department, overseeing a team of 30 associates in a fast-paced, diverse retail environment. Cultivated a high-performing team by conducting interviews, delivering targeted performance coaching, and fostering a collaborative and inclusive workplace culture.",
+            "Leveraged data-driven strategies to manage and analyze key sales metrics, resulting in consistent achievement of departmental goals and exceeding customer satisfaction benchmarks.",
+            "Streamlined operations and enhanced team productivity by implementing efficient workflows and establishing clear performance expectations, driving measurable improvements in team performance and client engagement.",
           ],
           skills: [
             "Team Leadership",
@@ -163,7 +165,12 @@ export const skills = {
           title: "Inbound Area Manager II",
           duration: "2014 - 2015",
           descriptions: [
-            "Supervised PIT Drivers, Dock Clerks, Process Assistants, Ambassadors, and general labor associates on a 60-door inbound dock, overseeing the facility's entire workflow.",
+            "Directed operations across 3 process paths, frequently serving as Interim Inbound Operations Manager, leading over 350 associates in a dynamic, high-volume environment.",
+            "Mentored and developed team members, fostering a culture of growth and excellence, which led to 23 associates achieving career advancements under my guidance.",
+            "Designed and implemented a First-In-First-Out (FIFO) trailer system, achieving 95% freight completion within SLA and streamlining operational efficiency.",
+            "Optimized labor allocation on the dock, reducing indirect labor by 50% and driving a 30% increase in throughput, positioning the team among top-performing shifts.",
+            "Introduced a robust defect audit process that improved quality metrics, achieving a 99% success rate and minimizing operational errors.",
+            "Elevated associate performance metrics, increasing weekly success rates from 45% to 90%, resulting in a consistent top ranking for the shift.",
           ],
           skills: [
             "Team Leadership",
@@ -181,7 +188,10 @@ export const skills = {
           title: "Logistics Team Lead",
           duration: "2013 - 2014",
           descriptions: [
-            "Spearheaded productivity initiatives by overseeing the overnight Logistics Team comprising 30+ Associates, ensuring an optimal shopping experience for customers.",
+            "Spearheaded productivity initiatives by overseeing the overnight Logistics Team of 30+ associates, managing the end-to-end replenishment process—from unloading trailers to stocking products—to ensure seamless inventory flow and an optimal shopping experience for customers.",
+            "Designed and implemented operational process improvements, reducing takt time by 20% and increasing overall productivity.",
+            "Led daily problem-solving initiatives, leveraging data-driven strategies to identify inefficiencies, implement solutions, and enhance profitability.",
+            "Collaborated cross-functionally with store leadership to align replenishment strategies with broader business goals, driving measurable improvements in operational performance and customer satisfaction",
           ],
           skills: [
             "Team Leadership",
