@@ -44,7 +44,7 @@ export const skills = {
           title: "Freelance Software Engineer",
           duration: "2023 - Present",
           descriptions: [
-            "Developed a custom web application using modern technologies, streamlining clients; business processes and increasing operational efficiency",
+            "Developed a custom web application using modern technologies, streamlining clients' business processes and increasing operational efficiency",
             "Engaged with clients to gather business requirements, create intuitive user interfaces, and deliver projects on time. Resulting in enhanced client satisfaction and repeat business",
           ],
           skills: [
