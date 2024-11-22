@@ -31,14 +31,14 @@ const LeetCodeBlock = () => {
                 data-state="indeterminate"
                 data-max="100"
                 className="h-full flex-1 rounded-full bg-[linear-gradient(90deg,#007AFF_0%,#7ED1FF_99.66%)] transition-all"
-                style={{ width: "89%" }}
+                style={{ width: "92%" }}
               ></div>
             </div>
           </div>
           <div className="flex items-center justify-between">
             <p className="text-caption mr-1 opacity-50">Total Progress:</p>
             <div className="flex items-center">
-              <p className="mr-1 text-[12px] font-medium">67</p>
+              <p className="mr-1 text-[12px] font-medium">69</p>
               <p className="text-[12px] font-medium opacity-50">/ 75</p>
             </div>
           </div>
