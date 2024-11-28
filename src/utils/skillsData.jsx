@@ -129,7 +129,7 @@ export const skills = {
           descriptions: [
             "Completed a full-time, 20-week immersive software engineering program focused on mastering the fundamentals of software development, problem-solving, and effectively communicating about code.",
             "Designed and developed a solo web application to track DIY car maintenance, showcasing full-stack development skills and practical software design.",
-            "Collaborated on a group project to build a rewards system for elementary schools, aimed at promoting student engagement through a challenge-based platform, demonstrating teamwork, agile practices, and creative problem-solving.",
+            "Collaborated on a group project to build a rewards system for high schools, aimed at promoting student engagement through a challenge-based platform, demonstrating teamwork, agile practices, and creative problem-solving.",
           ],
           skills: [
             "Javascript",
