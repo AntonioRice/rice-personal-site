@@ -71,8 +71,9 @@ export const skills = {
           title: "Senior Software Engineer - Tech Lead",
           duration: "2022 - 2023",
           descriptions: [
-            "Led a team of 7, including 5 engineers, by providing technical guidance and conducting code reviews, resulting in a 30% increase in sprint completion rates through strategic blocker elimination and system design contributions.",
-            "Designed and implemented Kafka-based data integration solutions and developed APIs in Node.js (Hapi.js) and .NET Core, significantly enhancing data processing efficiency. Additionally, I built UI features in React.js, directly improving client supply chain visibility.",
+            "Built and optimized microservices and APIs using Node.js and .NET Core (C#), integrating Kafka-based solutions to improve data processing and enhance client supply chain visibility.",
+            "Led a team of full-time and contract Software Engineers, providing technical guidance, conducting detailed code reviews, contributing to scalable system designs, and proactively removing blockers to ensure task completion and team success. Improved sprint completion rates by 30% through effective mentorship, fostering collaboration, and delivering robust technical solutions for new feature development.",
+            "Collaborated with Business Analysts and Project Managers to establish product roadmaps, evaluate the feasibility of new features, and forecast implementation strategies. Planned and assessed the necessary code updates and development approaches to ensure seamless integration, driving successful project outcomes and aligning technical solutions with business objectives."
           ],
           skills: ["System Design", "Leadership", "Coaching", "Code Reviews"],
         },
@@ -80,7 +81,10 @@ export const skills = {
           title: "Software Engineer II",
           duration: "2019 - 2022",
           descriptions: [
-            "Played a pivotal role in a team of 4, revamping our flagship SaaS application, Navisphere Vision, by transitioning from AngularJS to React with Redux. This comprehensive overhaul encompassed requirements gathering, UI/UX design, and both unit and E2E testing, significantly improving application performance and user satisfaction.",
+            "Collaborated with a team of four developers to modernize the Navisphere Vision SaaS application, transitioning from AngularJS to React. This strategic initiative improved efficiency, prepared the application for Azure cloud deployment, and enabled listing in the Microsoft App Store. Played a key role in UI/UX design, roadmap planning, and overseeing all stages of the software development lifecycle under tight deadlines.",
+            "Partnered with Data Scientists to design and implement a predictive freight tracking feature that forecasted whether shipments would be late, early, or on time, factoring in real-time disruptions such as wildfires and weather. This functionality proved critical during hurricane season, providing clients with actionable insights and significantly enhancing the application’s value across all users.",
+            "Appointed as Subject Matter Expert (SME) for customer onboarding and integrations, a critical role ensuring seamless adoption of the application by new paying clients. Aided efforts in requirements gathering, timeline forecasting, implementation of tenant-specific business rules, and integration of client data, including data grooming and massaging for compatibility with system architecture.",
+            "Successfully onboarded and integrated 3-5 clients per quarter, consistently exceeding projections while delivering high-quality solutions that aligned with customer-specific needs and business goals."
           ],
           skills: [
             "Javascript",
@@ -100,7 +104,9 @@ export const skills = {
           title: "Software Engineer I",
           duration: "2017 - 2019",
           descriptions: [
-            "Developed custom software solutions to integrate multiple data sources from Enterprise Service Bus, including RabbitMQ and Kafka, streamlining data processing and accessibility.",
+            "Contributed to the development of a Machine Learning program designed to scan live data from highway traffic cameras, identifying inbound and outbound truck traffic within major Metropolitan areas. Utilized Python, C#, TensorFlow, and Jupyter Notebook to implement the project.",
+            "Collaborated within an Agile team to implement features aligned with sprint and business requirements, while working closely with the UI/UX team to apply best practices for new UI development, ensuring design consistency and an intuitive user experience.",
+            "Ensured high-quality, maintainable code by achieving and sustaining 100% code coverage through rigorous test-driven development (TDD) practices. Conducted thorough testing across multiple environments and collaborated with Business Analysts to validate features against customer and business expectations, ensuring reliable production releases."
           ],
           skills: [
             "Javascript",
@@ -121,7 +127,9 @@ export const skills = {
           title: "Full Stack SWE Student",
           duration: "2017",
           descriptions: [
-            "A full-time 20-week immersive software engineering program in which I learned the core fundamental of creating software. I developed a web application for automotive use, and a took part in a group project that aimed to promote student engagement through a student driven challenge/rewards system.",
+            "Completed a full-time, 20-week immersive software engineering program focused on mastering the fundamentals of software development, problem-solving, and effectively communicating about code.",
+            "Designed and developed a solo web application to track DIY car maintenance, showcasing full-stack development skills and practical software design.",
+            "Collaborated on a group project to build a rewards system for elementary schools, aimed at promoting student engagement through a challenge-based platform, demonstrating teamwork, agile practices, and creative problem-solving."
           ],
           skills: [
             "Javascript",
@@ -147,8 +155,8 @@ export const skills = {
           descriptions: [
             "Directed the Men’s Sales Department, overseeing a team of 30 associates in a fast-paced, diverse retail environment. Cultivated a high-performing team by conducting interviews, delivering targeted performance coaching, and fostering a collaborative and inclusive workplace culture.",
             "Leveraged data-driven strategies to manage and analyze key sales metrics, resulting in consistent achievement of departmental goals and exceeding customer satisfaction benchmarks.",
-            "Streamlined operations and enhanced team productivity by implementing efficient workflows and establishing clear performance expectations, driving measurable improvements in team performance and client engagement.",
-          ],
+            "Streamlined operations and enhanced team productivity by implementing efficient workflows and establishing clear performance expectations, driving measurable improvements in team performance and client engagement."
+          ]/
           skills: [
             "Team Leadership",
             "Coaching",
@@ -164,13 +172,13 @@ export const skills = {
         {
           title: "Inbound Area Manager II",
           duration: "2014 - 2015",
-          descriptions: [
-            "Directed operations across 3 process paths, frequently serving as Interim Inbound Operations Manager, leading over 350 associates in a dynamic, high-volume environment.",
-            "Mentored and developed team members, fostering a culture of growth and excellence, which led to 23 associates achieving career advancements under my guidance.",
-            "Designed and implemented a First-In-First-Out (FIFO) trailer system, achieving 95% freight completion within SLA and streamlining operational efficiency.",
+          descriptions:[
+            "Led daily problem-solving initiatives across departments, removing barriers and empowering over 350 associates to consistently exceed objectives. Mentored and developed team members, fostering a culture of growth and excellence that resulted in 23 associates achieving career advancements.",
+            "Supervised PIT Drivers, Dock Clerks, Process Assistants, Team Ambassadors, and general labor associates on a 60-door inbound dock, managing the facility’s entire workflow and optimizing operations.",
+            "Designed and implemented a First-In-First-Out (FIFO) trailer system, achieving 95% freight completion within SLA and improving overall efficiency.",
             "Optimized labor allocation on the dock, reducing indirect labor by 50% and driving a 30% increase in throughput, positioning the team among top-performing shifts.",
-            "Introduced a robust defect audit process that improved quality metrics, achieving a 99% success rate and minimizing operational errors.",
-            "Elevated associate performance metrics, increasing weekly success rates from 45% to 90%, resulting in a consistent top ranking for the shift.",
+            "Introduced a robust defect audit process that enhanced quality metrics, achieving a 99% success rate and minimizing operational errors.",
+            "Elevated the Prep team from the lowest- to highest-performing process path in just two weeks; within a month, all associates met rate targets and actively engaged in operations. Improved weekly success rates from 45% to 90%, securing a consistent top ranking for the shift."
           ],
           skills: [
             "Team Leadership",
