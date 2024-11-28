@@ -31,7 +31,7 @@ const LeetCodeBlock = () => {
                 data-state="indeterminate"
                 data-max="100"
                 className="h-full flex-1 rounded-full bg-[linear-gradient(90deg,#007AFF_0%,#7ED1FF_99.66%)] transition-all"
-                style={{ width: "92%" }}
+                style={{ width: "93%" }}
               ></div>
             </div>
           </div>
