@@ -38,7 +38,7 @@ const LeetCodeBlock = () => {
           <div className="flex items-center justify-between">
             <p className="text-caption mr-1 opacity-50">Total Progress:</p>
             <div className="flex items-center">
-              <p className="mr-1 text-[12px] font-medium">69</p>
+              <p className="mr-1 text-[12px] font-medium">70</p>
               <p className="text-[12px] font-medium opacity-50">/ 75</p>
             </div>
           </div>
