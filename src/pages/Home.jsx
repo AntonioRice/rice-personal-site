@@ -66,7 +66,7 @@ const Home = () => {
 
   const handleDownload = () => {
     trackEvent("Resume downloaded", "ALR Resume");
-    window.open("/assets/ALR-Resume-2024-v4.pdf", "_blank", "noopener");
+    window.open("/assets/ALR-Resume-2024-v6.pdf", "_blank", "noopener");
   };
 
   const handleNavigateToCV = () => {
