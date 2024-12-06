@@ -28,7 +28,7 @@ const SocialLinks = ({ size }) => {
       </a>
       <a
         title="Resume"
-        href="/assets/ALR-Resume-2024-v6.pdf"
+        href="/assets/antonio_rice_resume.pdf"
         target="_blank"
         rel="noopener noreferrer"
         className="transform transition duration-300 hover:scale-110 hover:text-red-500"
