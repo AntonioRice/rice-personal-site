@@ -18,12 +18,19 @@ export const skills = {
       },
       {
         category: "Frameworks and Libraries",
-        skills: ["Node.js", "React", "Express", ".Net Core", "ServiceStack"],
+        skills: [
+          "Node.js",
+          "React",
+          "React Native",
+          "Express",
+          ".Net Core",
+          "ServiceStack",
+        ],
       },
       { category: "APIs", skills: ["RESTful Api"] },
       {
         category: "Databases",
-        skills: ["MongoDB", "SQL", "PostgreSQL", "Elasticsearch"],
+        skills: ["MongoDB", "SQL", "PostgreSQL", "Firebase", "Elasticsearch"],
       },
       {
         category: "Messaging & Monitoring",
