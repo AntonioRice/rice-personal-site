@@ -9,17 +9,6 @@ const CV = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const fadeInAnimationVariants = {
-    initial: { opacity: 0, y: 100 },
-    animate: (i) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: 0.05 * i,
-      },
-    }),
-  };
-
   return (
     <AnimatedPage>
       <Helmet>
@@ -43,25 +32,13 @@ const CV = () => {
         <motion.section>
           <Section id="beforeTech" title="Life Before Tech">
             {skills.beforeTech.map((exp, i) => (
-              <motion.div
-                key={i}
-                variants={fadeInAnimationVariants}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true }}
-                custom={i}
-              >
+              <div key={i}>
                 <ExperienceBlock experience={exp} />
-              </motion.div>
+              </div>
             ))}
           </Section>
         </motion.section>
-        <motion.section
-          variants={fadeInAnimationVariants}
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
-        >
+        <motion.section>
           <Section id="contact" title="Contact Me">
             <Contact />
           </Section>

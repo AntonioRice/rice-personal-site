@@ -79,17 +79,6 @@ const Home = () => {
     visible: { opacity: 1, y: 0 },
   };
 
-  const fadeInAnimationVariants = {
-    initial: { opacity: 0, y: 100 },
-    animate: (i) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: 0.05 * i,
-      },
-    }),
-  };
-
   return (
     <ScrollContext.Provider
       value={{
@@ -207,9 +196,7 @@ const Home = () => {
         <motion.section ref={experienceRef}>
           <Section id="experience" title="Experience">
             {skills.experience.map((exp, i) => (
-              <div key={i}>
-                <ExperienceBlock experience={exp} />
-              </div>
+              <ExperienceBlock key={i} experience={exp} />
             ))}
             <div className="grid w-full gap-10 py-10 md:grid-cols-2">
               <div className="mx flex w-full flex-col justify-center rounded-lg border-[1px] border-gray-500 bg-[#2c2f31] p-4 shadow-xl md:mx-0">
@@ -225,7 +212,7 @@ const Home = () => {
                     <motion.button
                       title="downloadResume"
                       className="inline-flex h-10 w-36 animate-pulse items-center justify-center rounded-md bg-[#cccccc] px-4 py-2 text-sm font-semibold text-black hover:animate-none hover:bg-gray-200"
-                      whileHover={{ scale: 1.1 }}
+                      whileHover={{ scale: 1.05 }}
                       transition={{
                         type: "spring",
                         stiffness: 400,
@@ -274,16 +261,7 @@ const Home = () => {
           <Section id="projects" title="Projects">
             <div className="flex flex-wrap items-center justify-center gap-6">
               {skills.projects.map((project, i) => (
-                <motion.div
-                  key={i}
-                  variants={fadeInAnimationVariants}
-                  initial="initial"
-                  whileInView="animate"
-                  viewport={{ once: true }}
-                  custom={i}
-                >
-                  <ProjectBlock key={i} project={project} />
-                </motion.div>
+                <ProjectBlock key={i} project={project} />
               ))}
             </div>
           </Section>

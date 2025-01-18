@@ -37,8 +37,6 @@ function HeroSectionV1() {
       <motion.button
         title="contact-me"
         className="h-10 w-36 animate-pulse rounded-md bg-[#cccccc] text-sm text-black hover:animate-none hover:bg-gray-200"
-        whileHover={{ scale: 1.1 }}
-        transition={{ type: "spring", stiffness: 400, damping: 10 }}
         onClick={() => {
           contactRef.current.scrollIntoView({ behavior: "smooth" });
         }}
