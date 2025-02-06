@@ -59,10 +59,10 @@ const HeroSection = () => {
               className="ml-1 inline-block size-3 rounded-full bg-red-500 sm:size-2"
             />
           </h1>
-          <p className="md:text-lg">Senior Software Engineer</p>
-          <p className="my-5 max-w-sm pb-5 font-light text-[#cccccc] md:text-base">
-            I build enterprise level software and I love to practice
-            photography, which would you like to explore?
+          <p className="md:text-lg">Software Engineer</p>
+          <p className="my-5 max-w-sm pb-5 leading-7 text-[#dadde2] md:text-base">
+            I love creating awesome software and capturing life’s moments
+            through photography. What would you like to explore?
           </p>
           <div className="flex w-full gap-3 text-black sm:justify-center">
             <motion.button

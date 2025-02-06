@@ -6,10 +6,10 @@ export const skills = {
   },
   about: {
     description: [
-      "Hello, I'm Antonio, a dedicated Full Stack Software Engineer from Minneapolis, MN. I have a passion for tackling intricate challenges and developing exceptional software solutions.",
-      "My most notable experience was with C.H. Robinson, a leading 3rd Party Logistics firm based in Eden Prairie, MN. I began my journey there as a junior software engineer and, through commitment and continuous learning, I advanced to become a Tech Lead and a Subject Matter Expert.",
-      "When not immersed in code, I love journeying through life with my family, capturing moments through my lens – which I find quite stunning, by the way! My curiosity also drives me to explore emerging technologies across diverse industries, and I have a profound interest in all things automotive.",
-      "Currently, I am on the lookout for new opportunities where I can apply my problem-solving skills and broaden my knowledge. If you have a position or a project you believe aligns with my expertise, I'm all ears and ready to connect!",
+      "Hello, I’m Antonio, a Full Stack Software Engineer based in Minneapolis, MN. I thrive on solving complex problems and building impactful software that makes a difference.",
+      "With experience at C.H. Robinson, a leading 3rd Party Logistics firm, I grew from a junior software engineer to a Tech Lead and Subject Matter Expert. This journey taught me the value of collaboration, continuous learning, and delivering solutions that matter.",
+      "Outside of coding, I’m a family man who loves capturing life’s moments through photography (I like to think I’ve got a good eye for it!). I’m also endlessly curious about emerging technologies and have a deep passion for all things automotive.",
+      "I’m currently exploring new opportunities where I can leverage my skills, solve meaningful problems, and continue growing. If you have a role or project that aligns with my expertise, I’d love to connect and hear more!",
     ],
     skillSet: [
       {
@@ -56,6 +56,7 @@ export const skills = {
           ],
           skills: [
             "React.js",
+            "React Native",
             "Node.js",
             "AWS EC2",
             "AWS S3",
@@ -65,8 +66,6 @@ export const skills = {
             "AWS CloudFront",
             "Docker",
             "NGINX",
-            "System Design",
-            "Testing",
           ],
         },
       ],
@@ -78,20 +77,20 @@ export const skills = {
           title: "Senior Software Engineer - Tech Lead",
           duration: "2022 - 2023",
           descriptions: [
-            "Built and optimized microservices and APIs using Node.js and .NET Core (C#), integrating Kafka-based solutions to improve data processing and enhance client supply chain visibility.",
-            "Led a team of full-time and contract Software Engineers, providing technical guidance, conducting detailed code reviews, contributing to scalable system designs, and proactively removing blockers to ensure task completion and team success. Improved sprint completion rates by 30% through effective mentorship, fostering collaboration, and delivering robust technical solutions for new feature development.",
-            "Collaborated with Business Analysts and Project Managers to establish product roadmaps, evaluate the feasibility of new features, and forecast implementation strategies. Planned and assessed the necessary code updates and development approaches to ensure seamless integration, driving successful project outcomes and aligning technical solutions with business objectives.",
+            "Designed and optimized microservices and APIs using Node.js and .NET Core (C#), leveraging Kafka to enhance data processing and client supply chain visibility.",
+            "Led a team of full-time and contract engineers, providing technical guidance, conducting code reviews, and designing scalable systems. Improved sprint completion rates by 30% through mentorship and collaboration.",
+            "Partnered with Business Analysts and Project Managers to define product roadmaps, evaluate feature feasibility, and plan implementation strategies, ensuring alignment between technical solutions and business goals.",
           ],
-          skills: ["System Design", "Leadership", "Coaching", "Code Reviews"],
+          skills: ["System Design", "Leadership", "Coaching"],
         },
         {
           title: "Software Engineer II",
           duration: "2019 - 2022",
           descriptions: [
-            "Collaborated with a team of four developers to modernize the Navisphere Vision SaaS application, transitioning from AngularJS to React. This strategic initiative improved efficiency, prepared the application for Azure cloud deployment, and enabled listing in the Microsoft App Store. Played a key role in UI/UX design, roadmap planning, and overseeing all stages of the software development lifecycle under tight deadlines.",
-            "Partnered with Data Scientists to design and implement a predictive freight tracking feature that forecasted whether shipments would be late, early, or on time, factoring in real-time disruptions such as wildfires and weather. This functionality proved critical during hurricane season, providing clients with actionable insights and significantly enhancing the application’s value across all users.",
-            "Appointed as Subject Matter Expert (SME) for customer onboarding and integrations, a critical role ensuring seamless adoption of the application by new paying clients. Aided efforts in requirements gathering, timeline forecasting, implementation of tenant-specific business rules, and integration of client data, including data grooming and massaging for compatibility with system architecture.",
-            "Successfully onboarded and integrated 3-5 clients per quarter, consistently exceeding projections while delivering high-quality solutions that aligned with customer-specific needs and business goals.",
+            "Modernized the Navisphere Vision SaaS application by leading the migration from AngularJS to React, enabling Azure cloud deployment and Microsoft App Store listing. Contributed to UI/UX design, roadmap planning, and end-to-end development under tight deadlines.",
+            "Collaborated with Data Scientists to develop a predictive freight tracking feature, leveraging real-time data (e.g., weather, wildfires) to forecast shipment delays. This feature became critical during hurricane season, delivering actionable insights and enhancing application value.",
+            "Served as Subject Matter Expert (SME) for customer onboarding and integrations, ensuring seamless adoption for new clients. Managed requirements gathering, timeline forecasting, and implementation of tenant-specific business rules, including data grooming and integration.",
+            "Onboarded 3-5 clients per quarter, exceeding projections while delivering tailored solutions aligned with customer needs and business objectives.",
           ],
           skills: [
             "Javascript",
@@ -282,6 +281,16 @@ export const skills = {
     },
   ],
   projects: [
+    // {
+    //   title: "Game On",
+    //   description: [
+    //     "A global learning challenge app that’s more than just individual growth—it’s about fostering a sense of global community and national pride. By turning education into a shared mission, Game On inspires users to learn, compete, and celebrate their achievements together. Join the movement, challenge your mind, and help your country climb the global leaderboard—one correct answer at a time.",
+    //   ],
+    //   image: "/assets/images/game-on-home.png",
+
+    //   href: "https://antoniorice.com/game-on",
+    //   alt: "game on, a learning competition mobile app",
+    // },
     {
       title: "Navisphere Vision",
       description: [
