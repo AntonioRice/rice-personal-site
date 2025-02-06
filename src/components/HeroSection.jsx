@@ -46,22 +46,14 @@ const HeroSection = () => {
               aria-hidden
               transition={{ staggerChildren: 0.1 }}
             >
-              {text.split("").map((char, i) => (
-                <motion.span
-                  key={i}
-                  variants={defaultAnimations}
-                  className="text-white"
-                >
-                  {char}
-                </motion.span>
-              ))}
+              {text}
             </motion.span>
             <motion.div
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{
                 duration: 0.8,
-                delay: 1.7,
+                delay: 0.5,
                 ease: [0, 0.71, 0.2, 1.01],
               }}
               className="ml-1 inline-block size-3 rounded-full bg-red-500 sm:size-2"
@@ -114,7 +106,7 @@ const HeroSection = () => {
             <img
               alt="Antonio Rice"
               src="/assets/images/main-avatar-3.jpg"
-              className="size-60 transform rounded-full ring-2 ring-white ring-offset-8 ring-offset-[#202124] duration-300 hover:scale-105 md:size-[350px] lg:size-[500px]"
+              className="mt-10 size-60 transform rounded-full ring-2 ring-white ring-offset-8 ring-offset-[#202124] md:size-[350px] lg:size-[500px]"
               loading="lazy"
             />
           </a>
