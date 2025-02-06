@@ -7,6 +7,8 @@ import Photography from "./pages/Photography";
 import CV from "./pages/CV";
 import ErrorPage from "./pages/ErrorPage";
 import TagManager from "react-gtm-module";
+// import GameOn from "./pages/GameOn";
+import { ScrollProvider } from "./context/ScrollContext";
 
 const VITE_GTM_ID = import.meta.env.VITE_GTM_ID;
 
@@ -24,12 +26,17 @@ const router = createBrowserRouter([
       { path: "cv", element: <CV /> },
       { path: "photographer", element: <Photography /> },
       { path: "album/:albumId", element: <AlbumDetails /> },
+      // { path: "game-on", element: <GameOn /> },
     ],
   },
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <ScrollProvider>
+      <RouterProvider router={router} />
+    </ScrollProvider>
+  );
 }
 
 export default App;

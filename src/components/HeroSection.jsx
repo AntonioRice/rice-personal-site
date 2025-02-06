@@ -20,10 +20,7 @@ const HeroSection = () => {
   };
 
   const text = "Antonio Rice";
-  const defaultAnimations = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-  };
+
   const pageAnimation = {
     initial: { opacity: 0, scale: 0.9 },
     animate: { opacity: 1, scale: 1 },

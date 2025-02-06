@@ -18,19 +18,22 @@ import {
 } from "../components";
 import useEventsTracker from "../hooks/useEventsTracker";
 import skills from "../utils/skillsData";
-import ScrollContext from "../context/ScrollContext";
+import { useScrollContext } from "../context/ScrollContext";
 
 const Home = () => {
-  const [activeSection, setActiveSection] = useState("home");
   const navigate = useNavigate();
   const trackEvent = useEventsTracker("User Interaction");
-
-  const heroRef = useRef(null);
-  const aboutRef = useRef(null);
-  const experienceRef = useRef(null);
-  const projectRef = useRef(null);
-  const learningRef = useRef(null);
-  const contactRef = useRef(null);
+  const {
+    heroRef,
+    aboutRef,
+    experienceRef,
+    projectRef,
+    learningRef,
+    contactRef,
+    sections,
+    activeSection,
+    setActiveSection,
+  } = useScrollContext();
 
   const heroInView = useInView(heroRef, { amount: 0.5 });
   const aboutInView = useInView(aboutRef, { amount: 0.5 });
@@ -38,15 +41,6 @@ const Home = () => {
   const projectInView = useInView(projectRef, { amount: 0.2 });
   const learningInView = useInView(learningRef, { amount: 0 });
   const contactInView = useInView(contactRef, { amount: 0.1 });
-
-  const sections = [
-    { id: "home", ref: heroRef },
-    { id: "about", ref: aboutRef },
-    { id: "experience", ref: experienceRef },
-    { id: "projects", ref: projectRef },
-    { id: "learning", ref: learningRef },
-    { id: "contact", ref: contactRef },
-  ];
 
   useEffect(() => {
     if (contactInView) setActiveSection("contact");
@@ -62,6 +56,7 @@ const Home = () => {
     projectInView,
     learningInView,
     contactInView,
+    setActiveSection,
   ]);
 
   const handleDownload = () => {
@@ -80,17 +75,7 @@ const Home = () => {
   };
 
   return (
-    <ScrollContext.Provider
-      value={{
-        heroRef,
-        aboutRef,
-        experienceRef,
-        projectRef,
-        contactRef,
-        learningRef,
-        activeSection,
-      }}
-    >
+    <>
       <Helmet>
         <title>A. Rice | Software Engineer</title>
         <meta
@@ -292,7 +277,7 @@ const Home = () => {
 
         <DevNote />
       </motion.div>
-    </ScrollContext.Provider>
+    </>
   );
 };
 
