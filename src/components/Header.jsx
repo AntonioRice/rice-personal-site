@@ -91,12 +91,12 @@ const Header = () => {
         <ul className="flex space-x-4">
           <li>
             <a className={linkClasses("/")} href="/">
-              Software Engineer
+              Software Engineering
             </a>
           </li>
           <li>
-            <a className={linkClasses("/photographer")} href="/photographer">
-              Photographer
+            <a className={linkClasses("/photography")} href="/photography">
+              Photography
             </a>
           </li>
         </ul>
@@ -120,7 +120,7 @@ const Header = () => {
               href="/"
               onClick={() => setIsMobileNavOpen(false)}
             >
-              Software Engineer
+              Software Engineering
             </a>
           </li>
           <ul className="flex flex-col px-4">
@@ -140,11 +140,11 @@ const Header = () => {
           </ul>
           <li>
             <a
-              className={linkClasses("/photographer")}
-              href="/photographer"
+              className={linkClasses("/photography")}
+              href="/photography"
               onClick={() => setIsMobileNavOpen(false)}
             >
-              Photographer
+              Photography
             </a>
           </li>
           <li>

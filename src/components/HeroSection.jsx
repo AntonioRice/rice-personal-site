@@ -15,8 +15,8 @@ const HeroSection = () => {
   };
 
   const handleRightClick = () => {
-    eventTracker("photographer button clicked", "Photographer");
-    navigate("/photographer");
+    eventTracker("photography button clicked", "Photography");
+    navigate("/photography");
   };
 
   const text = "Antonio Rice";
@@ -63,24 +63,24 @@ const HeroSection = () => {
           </p>
           <div className="flex w-full gap-3 text-black sm:justify-center">
             <motion.button
-              title="software engineer"
-              aria-label="Explore software engineer portfolio"
-              className="h-10 w-36 animate-pulse rounded-md bg-[#cccccc] px-4 py-2 text-xs font-semibold hover:animate-none hover:bg-gray-200 sm:flex-1"
+              title="software engineering"
+              aria-label="Explore software engineering portfolio"
+              className="h-10 w-36 animate-pulse rounded-md bg-[#cccccc] px-2 py-2 text-xs font-semibold hover:animate-none hover:bg-gray-200 sm:flex-1"
               whileHover={{ scale: 1.1 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
               onClick={handleLeftClick}
             >
-              Software Engineer
+              Software Engineering
             </motion.button>
             <motion.button
-              title="photographer"
+              title="photography"
               aria-label="Explore photography portfolio"
               className="h-10 w-36 animate-pulse rounded-md bg-[#cccccc] px-4 py-2 text-xs font-semibold hover:animate-none hover:bg-gray-200 sm:flex-1"
               whileHover={{ scale: 1.1 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
               onClick={handleRightClick}
             >
-              Photographer
+              Photography
             </motion.button>
           </div>
           <div className="flex w-full sm:justify-center">

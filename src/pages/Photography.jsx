@@ -33,13 +33,13 @@ const Photography = () => {
   return (
     <AnimatedPage>
       <Helmet>
-        <title>A. Rice | Photographer</title>
+        <title>A. Rice | Photography</title>
         <meta
           name="description"
           content="Explore the photography portfolio of Antonio Rice, capturing moments through a unique lens. Dive into a diverse collection of landscapes, portraits, and more."
         />
         <link rel="canonical" href="https://antoniorice.com/" />
-        <meta property="og:title" content="A. Rice | Photographer" />
+        <meta property="og:title" content="A. Rice | Photography" />
         <meta
           property="og:description"
           content="Discover the world through the lens of Antonio Rice. A captivating collection of photography ranging from landscapes to portraits."
