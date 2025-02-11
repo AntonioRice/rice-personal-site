@@ -19,9 +19,9 @@ export const skills = {
       {
         category: "Frameworks and Libraries",
         skills: [
-          "Node.js",
           "React",
           "React Native",
+          "Node.js",
           "Express",
           ".Net Core",
           "ServiceStack",
