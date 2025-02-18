@@ -169,7 +169,7 @@ const Contact = () => {
               </div>
               {isFieldInvalid("firstName") && (
                 <p className="text-xs italic text-red-500">
-                  Please provide first name.
+                  Please provide your first name.
                 </p>
               )}
             </div>
@@ -196,7 +196,7 @@ const Contact = () => {
               </div>
               {isFieldInvalid("lastName") && (
                 <p className="text-xs italic text-red-500">
-                  Please provide last name.
+                  Please provide your last name.
                 </p>
               )}
             </div>
