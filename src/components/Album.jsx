@@ -15,10 +15,10 @@ const Album = ({ albumId, coverImageUrl, name, albumDate }) => {
       onClick={handleAlbumClick}
     >
       <div className="absolute inset-0 z-10 flex items-center justify-center bg-transparent opacity-0 hover:opacity-100">
-        <p className="flex text-4xl uppercase tracking-tighter text-[#ccccc]">
+        <p className="flex text-4xl uppercase tracking-tighter text-[#cccccc]">
           {name}
         </p>
-        <p className="absolute mt-14 text-black">{year}</p>
+        <p className="absolute mt-14 text-[#cccccc]">{year}</p>
       </div>
       <ImageWithLoader src={coverImageUrl} alt={name} loading="eager" />
     </div>
