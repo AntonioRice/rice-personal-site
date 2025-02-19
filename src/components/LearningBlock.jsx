@@ -4,7 +4,10 @@ const LearningBlock = ({ href, src, alt, description }) => {
       <a href={href} target="_blank" rel="noopener noreferrer">
         <img src={src} alt={alt} className="block h-auto w-36 rounded-lg" />
       </a>
-      <p>{description}</p>
+      <div>
+        <div className="pt-2"></div>
+        <p>{description}</p>
+      </div>
     </div>
   );
 };
