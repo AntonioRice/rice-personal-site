@@ -49,7 +49,7 @@ const Header = () => {
   const linkClasses = (path) => {
     const baseClasses =
       "text-[#6b7280] hover:text-[#ffffff] sm:text-lg lg:text-sm";
-    const activeClasses = "border-b-2 border-red-500 !text-[#ffffff]";
+    const activeClasses = "!text-[#ffffff]";
 
     return location.pathname === path
       ? `${baseClasses} ${activeClasses}`
