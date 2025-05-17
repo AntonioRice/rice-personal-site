@@ -74,7 +74,7 @@ export const skills = {
       company: "CH Robinson",
       roles: [
         {
-          title: "Senior Software Engineer - Tech Lead",
+          title: "Software Engineer II - Tech Lead",
           duration: "2022 - 2023",
           descriptions: [
             "Designed and optimized microservices and APIs using Node.js and .NET Core (C#), leveraging Kafka to enhance data processing and client supply chain visibility.",
