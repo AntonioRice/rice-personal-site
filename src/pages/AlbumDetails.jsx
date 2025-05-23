@@ -15,7 +15,7 @@ const AlbumDetails = () => {
     const fetchImages = async () => {
       try {
         const response = await axios.get(
-          `${VITE_SERVER_URL}/images/album/${albumId}`,
+          `${VITE_SERVER_URL}/albums/${albumId}`,
         );
         const sortedImages = response.data.images.sort((a, b) => {
           const nameA = a.url.toLowerCase();
