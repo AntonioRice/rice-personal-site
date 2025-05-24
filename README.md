@@ -18,10 +18,13 @@ Backend:
 
 Deployment:
 
-- Github Actions
-- Docker
-- AWS EC2
-- AWS CloudFront
+- AWS Amplify
+- AWS Lambda
+
+- ~~Github Actions~~
+- ~~Docker~~
+- ~~AWS EC2~~
+- ~~AWS CloudFront~~
 
 ## Creator and Developer
 
