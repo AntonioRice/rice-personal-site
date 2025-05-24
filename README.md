@@ -14,17 +14,13 @@ Frontend:
 
 Backend:
 
-- [rice-personal-api](https://github.com/AntonioRice/rice-personal-api)
+- AWS Lambda Functions
+
+- ~~[rice-personal-api](https://github.com/AntonioRice/rice-personal-api)~~
 
 Deployment:
 
 - AWS Amplify
-- AWS Lambda
-
-- ~~Github Actions~~
-- ~~Docker~~
-- ~~AWS EC2~~
-- ~~AWS CloudFront~~
 
 ## Creator and Developer
 
