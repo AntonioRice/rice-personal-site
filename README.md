@@ -1,27 +1,49 @@
-# Personal Website
+# Antonio Rice - Personal Website
 
-Welcome to my personal website, a space where I showcase my professional achievements in technology alongside my passion for photography. I invite you to explore, download my resume, and connect with me through the provided links or my custom contact system.
+A modern portfolio website showcasing my software engineering projects and photography work.
 
-Link: https://www.antoniorice.com
+**Live Site:** [antoniorice.com](https://www.antoniorice.com)
 
-## Built With
+## Features
 
-Frontend:
+- **Project Portfolio**: Showcase of software engineering work and case studies
+- **Photography Gallery**: Creative work and visual storytelling
+- **Resume & Contact**: Professional information and direct communication
+- **Responsive Design**: Optimized for all devices
 
-- Javascript
-- React
-- Tailwind Css
+## Tech Stack
 
-Backend:
+**Frontend:**
+
+- React with JavaScript
+- Tailwind CSS
+- Responsive design
+
+**Backend:**
 
 - AWS Lambda Functions
 
-- ~~[rice-personal-api](https://github.com/AntonioRice/rice-personal-api)~~
-
-Deployment:
+**Deployment:**
 
 - AWS Amplify
 
-## Creator and Developer
+## Local Development
 
-- [Antonio Rice](https://www.antoniorice.com)
+```bash
+# Clone and install
+git clone https://github.com/yourusername/personal-website.git
+cd personal-website
+npm install
+
+# Start development server
+npm start
+
+# Build for production
+npm run build
+```
+
+## 👨‍💻 Developer
+
+**Antonio Rice**  
+Full-Stack Software Engineer & Photographer  
+[antoniorice.com](https://www.antoniorice.com)
