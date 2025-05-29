@@ -281,16 +281,15 @@ export const skills = {
     },
   ],
   projects: [
-    // {
-    //   title: "Game On",
-    //   description: [
-    //     "A global learning challenge app that’s more than just individual growth—it’s about fostering a sense of global community and national pride. By turning education into a shared mission, Game On inspires users to learn, compete, and celebrate their achievements together. Join the movement, challenge your mind, and help your country climb the global leaderboard—one correct answer at a time.",
-    //   ],
-    //   image: "/assets/images/game-on-home.png",
-
-    //   href: "https://antoniorice.com/game-on",
-    //   alt: "game on, a learning competition mobile app",
-    // },
+    {
+      title: "Cliente.io",
+      description: [
+        "A robust SaaS platform tailored for boutique hotels in South America, offering intuitive guest, reservation, and room management. Built with a responsive, modern frontend and an optimized cloud-based backend to streamline hotel operations.",
+      ],
+      image: "/assets/images/cliente.png",
+      href: "https://github.com/AntonioRice/cliente-crm",
+      alt: "a customer relationship management platform",
+    },
     {
       title: "Navisphere Vision",
       description: [
