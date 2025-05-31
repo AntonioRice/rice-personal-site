@@ -300,15 +300,6 @@ export const skills = {
       href: "https://appsource.microsoft.com/en-us/product/web-apps/chrobinsonworldwide.navispherevision?tab=Overview",
       alt: "navisphere vision main view",
     },
-    {
-      title: "Data Structures & Algorithms",
-      description: [
-        "A GitHub repository showcasing my solutions to a wide array of LeetCode problems. This project aims to deepen my understanding of complex Data Structures and Algorithms (DSA) topics.",
-      ],
-      image: "/assets/images/dsa-github.png",
-      href: "https://github.com/AntonioRice/data-structures-algorithms",
-      alt: "github leetcode grind",
-    },
   ],
 };
 
