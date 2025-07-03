@@ -12,7 +12,7 @@ const ProjectBlock = ({ project }) => {
           className="order-1 md:order-2"
         >
           <img
-            className="h-64 w-full rounded-lg object-cover hover:cursor-pointer"
+            className="w-full rounded-lg object-cover hover:cursor-pointer"
             src={project.image}
             alt={project.alt}
           />
