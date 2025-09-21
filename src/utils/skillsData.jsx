@@ -14,7 +14,7 @@ export const skills = {
     skillSet: [
       {
         category: "Programming Languages",
-        skills: ["Javascript", "C#"],
+        skills: ["Javascript", "C#", "Python"],
       },
       {
         category: "Frameworks and Libraries",
