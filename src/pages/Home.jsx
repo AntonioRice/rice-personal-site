@@ -77,47 +77,70 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>A. Rice | Software Engineer</title>
+        <title>
+          A. Rice | Full-Stack Software Engineer | Web Development & Cloud
+          Computing
+        </title>
         <meta
           name="description"
-          content="Explore the professional portfolio of Antonio Rice, a skilled Software Engineer specializing in modern web technologies, cloud computing, and software architecture. Discover projects, technical skills, and insights into the latest industry trends."
+          content="Skilled Software Engineer specializing in modern web technologies, cloud computing, and software architecture. Explore my projects and technical insights."
         />
-        <link rel="canonical" href="https://antoniorice.com/techprofile" />
-        <meta property="og:title" content="A. Rice | Software Engineer" />
+        <meta name="author" content="Antonio Rice" />
+        <meta
+          name="keywords"
+          content="software engineer, web development, cloud computing, full-stack developer, modern web technologies, software architecture"
+        />
+
+        <link rel="canonical" href="https://antoniorice.com" />
+        <meta
+          property="og:title"
+          content="A. Rice | Full-Stack Software Engineer | Web Development & Cloud Computing"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Antonio Rice Portfolio" />
         <meta
           property="og:description"
-          content="Discover Antonio Rice's portfolio showcasing expertise in software engineering, including modern web development, cloud solutions, and innovative projects."
+          content="Skilled Software Engineer specializing in modern web technologies, cloud computing, and software architecture. Explore my projects and technical insights."
         />
         <meta
           property="og:image"
           content="https://antoniorice.com/assets/images/site-image.webp"
         />
-        <meta property="og:url" content="https://antoniorice.com/techprofile" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="A. Rice | Software Engineer" />
-        <meta
-          name="twitter:description"
-          content="Explore the professional portfolio of Antonio Rice, a skilled Software Engineer specializing in modern web technologies, cloud computing, and software architecture."
-        />
-        <meta
-          name="twitter:image"
-          content="https://antoniorice.com/assets/images/site-image.webp"
-        />
+        <meta property="og:url" content="https://antoniorice.com" />
+        <meta property="og:locale" content="en_US" />
+
         <meta name="robots" content="index, follow" />
+
         <script type="application/ld+json">
           {`
-            {
-              "@context": "https://schema.org",
-              "@type": "Person",
-              "name": "Antonio Rice",
-              "jobTitle": "Software Engineer",
-              "url": "https://antoniorice.com",
-              "sameAs": [
-                "https://www.linkedin.com/in/antoniorice",
-                "https://twitter.com/antoniorice"
-              ]
-            }
-          `}
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Antonio Rice",
+        "alternateName": "A. Rice",
+        "jobTitle": "Full-Stack Software Engineer",
+        "description": "Software Engineer specializing in modern web technologies, cloud computing, and software architecture",
+        "url": "https://antoniorice.com",
+        "image": "https://antoniorice.com/assets/images/site-image.webp",
+        "sameAs": [
+          "https://www.linkedin.com/in/antoniorice"
+        ],
+        "knowsAbout": [
+          "Web Development",
+          "Cloud Computing", 
+          "Software Architecture",
+          "Modern Web Technologies",
+          "Full-Stack Development",
+          "Javascript",
+          "React",
+          ".NET Core",
+          "C#",
+          "Amazon Web Services",
+          "MongoDB",
+          "SQL"
+        ]
+      }
+    `}
         </script>
       </Helmet>
       <nav className="sm:hidden md:fixed md:left-0 md:top-1/3 md:z-50 md:p-4">

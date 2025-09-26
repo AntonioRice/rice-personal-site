@@ -12,21 +12,67 @@ const CV = () => {
   return (
     <AnimatedPage>
       <Helmet>
-        <title>A. Rice | Life Before Tech</title>
+        <title>A. Rice | CV & Resume | Software Engineer Career Journey</title>
         <meta
           name="description"
-          content="Explore Antonio Rice's diverse professional journey before transitioning into software engineering. Discover the skills and experiences that shaped his career."
+          content="Antonio Rice's professional CV showcasing software engineering expertise, career progression, and technical skills in web development and cloud computing."
         />
-        <link rel="canonical" href="https://antoniorice.com/" />
-        <meta property="og:title" content="A. Rice | Life Before Tech" />
+        <meta name="author" content="Antonio Rice" />
+        <meta
+          name="keywords"
+          content="Antonio Rice CV, software engineer resume, career history, professional experience, web developer CV"
+        />
+
+        <link rel="canonical" href="https://antoniorice.com/cv" />
+
+        <meta
+          property="og:title"
+          content="A. Rice | CV & Resume | Software Engineer Career Journey"
+        />
+        <meta property="og:type" content="profile" />
+        <meta property="og:site_name" content="Antonio Rice Portfolio" />
         <meta
           property="og:description"
-          content="Uncover the rich professional history of Antonio Rice prior to becoming a software engineer, including key experiences that contributed to his expertise."
+          content="Antonio Rice's professional CV showcasing software engineering expertise, career progression, and technical skills in web development and cloud computing."
         />
         <meta
           property="og:image"
           content="https://antoniorice.com/assets/images/site-image.webp"
         />
+        <meta property="og:url" content="https://antoniorice.com/cv" />
+        <meta property="og:locale" content="en_US" />
+
+        <meta name="robots" content="index, follow" />
+
+        <script type="application/ld+json">
+          {`
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "mainEntity": {
+          "@type": "Person",
+          "name": "Antonio Rice",
+          "alternateName": "A. Rice",
+          "jobTitle": "Full-Stack Software Engineer",
+          "description": "Professional CV showcasing software engineering expertise and career progression",
+          "url": "https://antoniorice.com",
+          "sameAs": [
+            "https://www.linkedin.com/in/antoniorice"
+          ],
+          "hasOccupation": {
+            "@type": "Occupation",
+            "name": "Software Engineer",
+            "occupationLocation": {
+              "@type": "Place",
+              "name": "Remote/US"
+            }
+          }
+        },
+        "about": "Professional resume and career history of Antonio Rice, Full-Stack Software Engineer",
+        "url": "https://antoniorice.com/cv"
+      }
+    `}
+        </script>
       </Helmet>
       <div className="page-wrapper sm:!p-0">
         <motion.section>
