@@ -11,7 +11,7 @@ const Header = () => {
 
   const isDossierRoute =
     location.pathname === "/" ||
-    location.pathname === "/photography" ||
+    location.pathname === "/photography/" ||
     location.pathname.startsWith("/album/");
 
   const [isVisible, setIsVisible] = useState(true);
