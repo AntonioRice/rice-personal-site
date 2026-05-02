@@ -74,6 +74,19 @@ const Home = () => {
     visible: { opacity: 1, y: 0 },
   };
 
+  const sectionFade = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const sectionFadeProps = {
+    variants: sectionFade,
+    initial: "hidden",
+    whileInView: "visible",
+    viewport: { once: true, amount: 0.15 },
+    transition: { duration: 0.6, ease: "easeOut" },
+  };
+
   return (
     <>
       <Helmet>
@@ -166,11 +179,11 @@ const Home = () => {
         exit="hidden"
         variants={animationVariants}
       >
-        <motion.section ref={heroRef}>
+        <motion.section ref={heroRef} {...sectionFadeProps}>
           <HeroSection />
         </motion.section>
 
-        <motion.section ref={aboutRef}>
+        <motion.section ref={aboutRef} {...sectionFadeProps}>
           <Section id="about" title="About Me">
             <div className="grid gap-10 md:grid-cols-2">
               <div className="col-span-1">
@@ -201,7 +214,7 @@ const Home = () => {
           </Section>
         </motion.section>
 
-        <motion.section ref={experienceRef}>
+        <motion.section ref={experienceRef} {...sectionFadeProps}>
           <Section id="experience" title="Experience">
             {skills.experience.map((exp, i) => (
               <ExperienceBlock key={i} experience={exp} />
@@ -265,7 +278,7 @@ const Home = () => {
           </Section>
         </motion.section>
 
-        <motion.section ref={projectRef}>
+        <motion.section ref={projectRef} {...sectionFadeProps}>
           <Section id="projects" title="Projects">
             <div className="flex flex-wrap items-center justify-center gap-6">
               {skills.projects.map((project, i) => (
@@ -275,7 +288,7 @@ const Home = () => {
           </Section>
         </motion.section>
 
-        <motion.section ref={learningRef}>
+        <motion.section ref={learningRef} {...sectionFadeProps}>
           <Section id="learning" title="Learning">
             <div className="flex flex-wrap items-center justify-center gap-6">
               {skills.learning.map((learn, i) => (
@@ -292,7 +305,7 @@ const Home = () => {
           </Section>
         </motion.section>
 
-        <motion.section ref={contactRef}>
+        <motion.section ref={contactRef} {...sectionFadeProps}>
           <Section id="contact" title="Contact Me">
             <Contact />
           </Section>
