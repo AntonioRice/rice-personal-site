@@ -11,7 +11,7 @@ export default defineConfig({
     react(),
     sitemap({
       hostname: "https://www.antoniorice.com",
-      routes: ["/", "software-engineering", "photography", "cv"],
+      routes: ["/", "photography"],
     }),
   ],
 });

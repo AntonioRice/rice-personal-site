@@ -1,9 +1,10 @@
 import { Helmet } from "react-helmet";
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { motion } from "framer-motion";
 import useIsMobile from "../hooks/useIsMobile";
+import SiteFooter from "../components/SiteFooter";
 
 const VITE_SERVER_URL = import.meta.env.VITE_SERVER_URL;
 
@@ -30,11 +31,6 @@ const Photography = () => {
   const [albums, setAlbums] = useState([]);
   const [loading, setLoading] = useState(true);
   const isMobile = useIsMobile(1024);
-
-  useEffect(() => {
-    document.body.classList.add("dossier");
-    return () => document.body.classList.remove("dossier");
-  }, []);
 
   useEffect(() => {
     async function fetchAlbums() {
@@ -79,8 +75,6 @@ const Photography = () => {
           paddingBottom: 80,
         }}
       >
-        <PhotoTopBar mobile={isMobile} />
-
         <div
           style={{
             maxWidth: 1280,
@@ -265,157 +259,12 @@ const Photography = () => {
             </div>
           )}
 
-          <PhotoFooter mobile={isMobile} />
+          <SiteFooter marginTop={isMobile ? 32 : 56} />
         </div>
       </div>
     </>
   );
 };
-
-function PhotoTopBar({ mobile }) {
-  const navigate = useNavigate();
-  if (mobile) {
-    return (
-      <div
-        style={{
-          position: "sticky",
-          top: 0,
-          zIndex: 10,
-          background: "rgba(10,10,10,0.92)",
-          backdropFilter: "blur(8px)",
-          WebkitBackdropFilter: "blur(8px)",
-          borderBottom: "1px solid var(--border)",
-          padding: "12px 18px",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          fontSize: 11,
-          fontFamily: "var(--font-mono)",
-        }}
-      >
-        <Link
-          to="/"
-          className="dossier-hover"
-          style={{
-            fontFamily: "var(--font-mono)",
-            fontSize: 10,
-            letterSpacing: "0.06em",
-            textTransform: "uppercase",
-            color: "var(--text)",
-            border: "1px solid var(--border-strong)",
-            padding: "6px 10px",
-            textDecoration: "none",
-          }}
-        >
-          ← index
-        </Link>
-        <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-          <span style={{ color: "var(--accent)" }}>●</span>
-          <span style={{ color: "var(--muted)" }}>antoniorice.com</span>
-        </div>
-      </div>
-    );
-  }
-
-  const scrollOrNav = (id) => (e) => {
-    e.preventDefault();
-    navigate(`/#${id}`);
-  };
-
-  return (
-    <div
-      style={{
-        position: "sticky",
-        top: 0,
-        zIndex: 10,
-        background: "rgba(10,10,10,0.92)",
-        backdropFilter: "blur(8px)",
-        WebkitBackdropFilter: "blur(8px)",
-        borderBottom: "1px solid var(--border)",
-        padding: "14px 48px",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        fontSize: 12,
-        fontFamily: "var(--font-mono)",
-      }}
-    >
-      <div style={{ display: "flex", gap: 18, alignItems: "center" }}>
-        <Link
-          to="/"
-          className="dossier-hover"
-          style={{
-            fontFamily: "var(--font-mono)",
-            fontSize: 11,
-            letterSpacing: "0.06em",
-            textTransform: "uppercase",
-            color: "var(--text)",
-            border: "1px solid var(--border-strong)",
-            padding: "8px 12px",
-            textDecoration: "none",
-          }}
-        >
-          ← back to index
-        </Link>
-        <span style={{ color: "var(--muted-2)" }}>/</span>
-        <span style={{ color: "var(--muted)" }}>antoniorice.com</span>
-        <span style={{ color: "var(--muted-2)" }}>/</span>
-        <span style={{ color: "var(--text)" }}>photography</span>
-      </div>
-      <div
-        style={{
-          display: "flex",
-          gap: 24,
-          color: "var(--muted)",
-          letterSpacing: "0.06em",
-          textTransform: "uppercase",
-          fontSize: 11,
-        }}
-      >
-        <a
-          href="/#about"
-          onClick={scrollOrNav("about")}
-          className="dossier-nav-link"
-          style={{ textDecoration: "none", color: "inherit", cursor: "pointer" }}
-        >
-          about
-        </a>
-        <a
-          href="/#experience"
-          onClick={scrollOrNav("experience")}
-          className="dossier-nav-link"
-          style={{ textDecoration: "none", color: "inherit", cursor: "pointer" }}
-        >
-          work
-        </a>
-        <a
-          href="/#projects"
-          onClick={scrollOrNav("projects")}
-          className="dossier-nav-link"
-          style={{ textDecoration: "none", color: "inherit", cursor: "pointer" }}
-        >
-          projects
-        </a>
-        <span
-          style={{
-            color: "var(--accent)",
-            cursor: "default",
-          }}
-        >
-          photography →
-        </span>
-        <a
-          href="/#contact"
-          onClick={scrollOrNav("contact")}
-          className="dossier-nav-link"
-          style={{ textDecoration: "none", color: "inherit", cursor: "pointer" }}
-        >
-          contact
-        </a>
-      </div>
-    </div>
-  );
-}
 
 function AlbumFrame({ album, index }) {
   const idStr = `f${String(index + 1).padStart(3, "0")}`;
@@ -490,46 +339,5 @@ function AlbumFrame({ album, index }) {
   );
 }
 
-function PhotoFooter({ mobile }) {
-  if (mobile) {
-    return (
-      <div
-        style={{
-          marginTop: 32,
-          display: "flex",
-          flexDirection: "column",
-          gap: 6,
-          fontFamily: "var(--font-mono)",
-          fontSize: 10,
-          letterSpacing: "0.06em",
-          textTransform: "uppercase",
-          color: "var(--muted)",
-          textAlign: "center",
-        }}
-      >
-        <span>© 2026 — minneapolis, mn</span>
-        <span>last deploy: 4d ago · uptime 99.97%</span>
-      </div>
-    );
-  }
-  return (
-    <div
-      style={{
-        marginTop: 56,
-        display: "flex",
-        justifyContent: "space-between",
-        fontFamily: "var(--font-mono)",
-        fontSize: 11,
-        letterSpacing: "0.06em",
-        textTransform: "uppercase",
-        color: "var(--muted)",
-      }}
-    >
-      <span>© 2026 — minneapolis, mn</span>
-      <span>last deploy: 4d ago</span>
-      <span>uptime 99.97%</span>
-    </div>
-  );
-}
 
 export default Photography;

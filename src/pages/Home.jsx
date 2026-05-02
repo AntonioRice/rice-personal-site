@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import {
@@ -10,6 +10,7 @@ import {
   BEFORE_TECH,
 } from "../utils/portfolioData";
 import useIsMobile from "../hooks/useIsMobile";
+import SiteFooter from "../components/SiteFooter";
 
 const reveal = {
   hidden: { opacity: 0, y: 14 },
@@ -34,11 +35,6 @@ function Reveal({ children, delay = 0, amount = 0.15, className, style }) {
 
 const Home = () => {
   const isMobile = useIsMobile(1024);
-
-  useEffect(() => {
-    document.body.classList.add("dossier");
-    return () => document.body.classList.remove("dossier");
-  }, []);
 
   return (
     <>
@@ -111,8 +107,6 @@ function Desktop() {
         position: "relative",
       }}
     >
-      <TopBar />
-
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 48px" }}>
         {/* Hero */}
         <header
@@ -464,22 +458,7 @@ function Desktop() {
                 </a>
               </div>
             </div>
-            <div
-              style={{
-                marginTop: 28,
-                display: "flex",
-                justifyContent: "space-between",
-                fontFamily: "var(--font-mono)",
-                fontSize: 11,
-                letterSpacing: "0.06em",
-                textTransform: "uppercase",
-                color: "var(--muted)",
-              }}
-            >
-              <span>© 2026 — minneapolis, mn</span>
-              <span>last deploy: 4d ago</span>
-              <span>uptime 99.97%</span>
-            </div>
+            <SiteFooter />
           </Reveal>
         </Section>
       </div>
@@ -501,8 +480,6 @@ function Mobile() {
         overflow: "hidden",
       }}
     >
-      <MobileTopBar />
-
       <div style={{ padding: "0 18px" }}>
         {/* Hero */}
         <header
@@ -822,205 +799,10 @@ function Mobile() {
               </a>
             </div>
           </div>
-          <div
-            style={{
-              marginTop: 20,
-              display: "flex",
-              flexDirection: "column",
-              gap: 6,
-              fontFamily: "var(--font-mono)",
-              fontSize: 10,
-              letterSpacing: "0.06em",
-              textTransform: "uppercase",
-              color: "var(--muted)",
-              textAlign: "center",
-            }}
-          >
-            <span>© 2026 — minneapolis, mn</span>
-            <span>last deploy: 4d ago · uptime 99.97%</span>
-          </div>
+          <SiteFooter marginTop={20} />
         </MobileSection>
       </div>
     </div>
-  );
-}
-
-/* ============== Top bars ============== */
-function TopBar() {
-  const scrollTo = (id) => (e) => {
-    e.preventDefault();
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
-  return (
-    <div
-      style={{
-        position: "sticky",
-        top: 0,
-        zIndex: 10,
-        background: "rgba(10,10,10,0.92)",
-        backdropFilter: "blur(8px)",
-        WebkitBackdropFilter: "blur(8px)",
-        borderBottom: "1px solid var(--border)",
-        padding: "14px 48px",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        fontSize: 12,
-        fontFamily: "var(--font-mono)",
-      }}
-    >
-      <div style={{ display: "flex", gap: 18, alignItems: "center" }}>
-        <span style={{ color: "var(--accent)" }}>●</span>
-        <span style={{ color: "var(--muted)" }}>antoniorice.com</span>
-        <span style={{ color: "var(--muted-2)" }}>/</span>
-        <span style={{ color: "var(--text)" }}>index</span>
-      </div>
-      <div
-        style={{
-          display: "flex",
-          gap: 24,
-          color: "var(--muted)",
-          letterSpacing: "0.06em",
-          textTransform: "uppercase",
-          fontSize: 11,
-        }}
-      >
-        <a href="#about" onClick={scrollTo("about")} className="dossier-nav-link" style={topNavLink}>
-          about
-        </a>
-        <a
-          href="#experience"
-          onClick={scrollTo("experience")}
-          className="dossier-nav-link"
-          style={topNavLink}
-        >
-          work
-        </a>
-        <a href="#projects" onClick={scrollTo("projects")} className="dossier-nav-link" style={topNavLink}>
-          projects
-        </a>
-        <a
-          href="/photography"
-          className="dossier-photography-link"
-          style={{ ...topNavLink, color: "var(--accent)" }}
-        >
-          photography →
-        </a>
-        <a href="#contact" onClick={scrollTo("contact")} className="dossier-nav-link" style={topNavLink}>
-          contact
-        </a>
-      </div>
-    </div>
-  );
-}
-
-function MobileTopBar() {
-  const [open, setOpen] = useState(false);
-  const goto = (id) => (e) => {
-    e.preventDefault();
-    setOpen(false);
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
-  return (
-    <>
-      <div
-        style={{
-          position: "sticky",
-          top: 0,
-          zIndex: 10,
-          background: "rgba(10,10,10,0.92)",
-          backdropFilter: "blur(8px)",
-          WebkitBackdropFilter: "blur(8px)",
-          borderBottom: "1px solid var(--border)",
-          padding: "12px 18px",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          fontSize: 11,
-          fontFamily: "var(--font-mono)",
-        }}
-      >
-        <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-          <span style={{ color: "var(--accent)" }}>●</span>
-          <span style={{ color: "var(--muted)" }}>antoniorice.com</span>
-        </div>
-        <button
-          onClick={() => setOpen((o) => !o)}
-          className="dossier-hover"
-          style={{
-            background: "transparent",
-            border: "1px solid var(--border-strong)",
-            color: "var(--text)",
-            fontFamily: "var(--font-mono)",
-            fontSize: 10,
-            letterSpacing: "0.06em",
-            textTransform: "uppercase",
-            padding: "6px 10px",
-            cursor: "pointer",
-          }}
-        >
-          {open ? "close" : "menu"}
-        </button>
-      </div>
-      {open && (
-        <div
-          style={{
-            position: "sticky",
-            top: 41,
-            zIndex: 9,
-            background: "rgba(10,10,10,0.96)",
-            backdropFilter: "blur(8px)",
-            WebkitBackdropFilter: "blur(8px)",
-            borderBottom: "1px solid var(--border)",
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
-          {[
-            ["about", "about"],
-            ["experience", "work"],
-            ["projects", "projects"],
-            ["learning", "learning"],
-            ["contact", "contact"],
-          ].map(([id, label]) => (
-            <a
-              key={id}
-              href={`#${id}`}
-              onClick={goto(id)}
-              className="dossier-hover"
-              style={{
-                padding: "16px 18px",
-                borderBottom: "1px solid var(--border)",
-                fontFamily: "var(--font-mono)",
-                fontSize: 12,
-                letterSpacing: "0.06em",
-                textTransform: "uppercase",
-                color: "var(--text)",
-                textDecoration: "none",
-              }}
-            >
-              {label}
-            </a>
-          ))}
-          <a
-            href="/photography"
-            className="dossier-hover dossier-photography-link"
-            style={{
-              padding: "16px 18px",
-              borderBottom: "1px solid var(--border)",
-              fontFamily: "var(--font-mono)",
-              fontSize: 12,
-              letterSpacing: "0.06em",
-              textTransform: "uppercase",
-              color: "var(--accent)",
-              textDecoration: "none",
-            }}
-          >
-            photography →
-          </a>
-        </div>
-      )}
-    </>
   );
 }
 
@@ -2574,11 +2356,6 @@ const linkChip = {
   textTransform: "uppercase",
   padding: "12px 18px",
   textDecoration: "none",
-};
-const topNavLink = {
-  textDecoration: "none",
-  color: "inherit",
-  cursor: "pointer",
 };
 const tagPill = {
   fontFamily: "var(--font-mono)",

@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import { ImageWithLoader } from "../components";
 import useIsMobile from "../hooks/useIsMobile";
+import SiteFooter from "../components/SiteFooter";
 
 const VITE_SERVER_URL = import.meta.env.VITE_SERVER_URL;
 
@@ -34,11 +35,6 @@ const AlbumDetails = () => {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);
   const isMobile = useIsMobile(1024);
-
-  useEffect(() => {
-    document.body.classList.add("dossier");
-    return () => document.body.classList.remove("dossier");
-  }, []);
 
   useEffect(() => {
     const fetchImages = async () => {
@@ -80,26 +76,21 @@ const AlbumDetails = () => {
           paddingBottom: 80,
         }}
       >
-        {/* Sticky top bar */}
         <div
           style={{
-            position: "sticky",
-            top: 0,
-            zIndex: 10,
-            background: "rgba(10,10,10,0.92)",
-            backdropFilter: "blur(8px)",
-            WebkitBackdropFilter: "blur(8px)",
-            borderBottom: "1px solid var(--border)",
-            padding: isMobile ? "12px 18px" : "14px 48px",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            fontSize: isMobile ? 11 : 12,
-            fontFamily: "var(--font-mono)",
+            maxWidth: 1280,
+            margin: "0 auto",
+            padding: isMobile ? "0 18px" : "0 48px",
           }}
         >
+          {/* Sub-nav back chip */}
           <div
-            style={{ display: "flex", gap: isMobile ? 8 : 18, alignItems: "center" }}
+            style={{
+              paddingTop: isMobile ? 18 : 28,
+              display: "flex",
+              alignItems: "center",
+              gap: 12,
+            }}
           >
             <Link
               to="/photography"
@@ -117,32 +108,14 @@ const AlbumDetails = () => {
             >
               ← contact sheet
             </Link>
-            {!isMobile && (
-              <>
-                <span style={{ color: "var(--muted-2)" }}>/</span>
-                <span style={{ color: "var(--muted)" }}>antoniorice.com</span>
-                <span style={{ color: "var(--muted-2)" }}>/</span>
-                <span style={{ color: "var(--muted)" }}>photography</span>
-                <span style={{ color: "var(--muted-2)" }}>/</span>
-                <span style={{ color: "var(--text)" }}>{albumId}</span>
-              </>
-            )}
           </div>
-        </div>
 
-        <div
-          style={{
-            maxWidth: 1280,
-            margin: "0 auto",
-            padding: isMobile ? "0 18px" : "0 48px",
-          }}
-        >
           {/* Hero */}
           <header
             style={{
               maxWidth: 720,
               margin: "0 auto",
-              paddingTop: isMobile ? 40 : 80,
+              paddingTop: isMobile ? 32 : 64,
               paddingBottom: isMobile ? 28 : 56,
               textAlign: "center",
             }}
@@ -255,27 +228,7 @@ const AlbumDetails = () => {
             </div>
           )}
 
-          {/* Footer */}
-          <div
-            style={{
-              marginTop: isMobile ? 32 : 56,
-              display: "flex",
-              flexDirection: isMobile ? "column" : "row",
-              justifyContent: "space-between",
-              alignItems: isMobile ? "center" : "stretch",
-              gap: 6,
-              fontFamily: "var(--font-mono)",
-              fontSize: isMobile ? 10 : 11,
-              letterSpacing: "0.06em",
-              textTransform: "uppercase",
-              color: "var(--muted)",
-              textAlign: isMobile ? "center" : "inherit",
-            }}
-          >
-            <span>© 2026 — minneapolis, mn</span>
-            <span>last deploy: 4d ago{isMobile && " · uptime 99.97%"}</span>
-            {!isMobile && <span>uptime 99.97%</span>}
-          </div>
+          <SiteFooter marginTop={isMobile ? 32 : 56} />
         </div>
       </div>
     </>
