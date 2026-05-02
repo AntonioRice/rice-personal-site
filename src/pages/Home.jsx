@@ -1101,10 +1101,9 @@ function PortraitCard({ mobile }) {
             fontSize: mobile ? 9 : 10,
             letterSpacing: "0.08em",
             textTransform: "uppercase",
-            color: "var(--accent)",
+            color: "var(--text)",
             background: "rgba(0,0,0,0.7)",
             padding: mobile ? "4px 7px" : "5px 9px",
-            border: "1px solid var(--accent-line)",
             textDecoration: "none",
           }}
         >

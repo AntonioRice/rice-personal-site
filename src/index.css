@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 :root {
-  /* Legacy tokens (kept for CV/Photography pages) */
-  --primary-color: #202124;
-  --secondary-color: #e8eaed;
-  --tertiary-color: #cccccc;
-  --accent-color: red;
+  /* Legacy tokens — pointed at the new dossier palette so any leftover refs render correctly */
+  --primary-color: #0a0a0a;
+  --secondary-color: #ededed;
+  --tertiary-color: #b8b8b8;
+  --accent-color: #b81e1e;
 
   /* Dossier tokens */
   --bg: #0a0a0a;
@@ -38,9 +38,9 @@ body {
   padding: 0;
   min-height: 100vh;
   height: 100%;
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  font-family: "Inter", sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans), "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
