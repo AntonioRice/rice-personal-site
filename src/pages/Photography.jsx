@@ -1,85 +1,535 @@
 import { Helmet } from "react-helmet";
 import { useState, useEffect } from "react";
-import { PiInstagramLogo } from "react-icons/pi";
-import { Album, AnimatedPage } from "../components";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { motion } from "framer-motion";
+import useIsMobile from "../hooks/useIsMobile";
 
 const VITE_SERVER_URL = import.meta.env.VITE_SERVER_URL;
 
-const isMobileDevice = () => {
-  return /Mobi|Android|iPhone/i.test(navigator.userAgent);
+const reveal = {
+  hidden: { opacity: 0, y: 14 },
+  visible: { opacity: 1, y: 0 },
 };
+
+function Reveal({ children, delay = 0, amount = 0.15 }) {
+  return (
+    <motion.div
+      variants={reveal}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount }}
+      transition={{ duration: 0.7, ease: [0.2, 0.7, 0.2, 1], delay: delay / 1000 }}
+    >
+      {children}
+    </motion.div>
+  );
+}
 
 const Photography = () => {
   const [albums, setAlbums] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const isMobile = useIsMobile(1024);
 
   useEffect(() => {
-    async function fetchAlbum() {
-      try {
-        const response = await axios.get(`${VITE_SERVER_URL}/albums`);
-        setAlbums(response.data.data);
-      } catch (err) {
-        if (import.meta.env.DEV) console.error("Error retrieving albums", err);
-      }
-    }
-
-    fetchAlbum();
+    document.body.classList.add("dossier");
+    return () => document.body.classList.remove("dossier");
   }, []);
 
-  const instagramUrl = isMobileDevice()
-    ? "instagram://user?username=mr_arroz"
-    : "https://www.instagram.com/mr_arroz/";
+  useEffect(() => {
+    async function fetchAlbums() {
+      try {
+        const response = await axios.get(`${VITE_SERVER_URL}/albums`);
+        setAlbums(response.data.data || []);
+      } catch (err) {
+        if (import.meta.env.DEV) console.error("Error retrieving albums", err);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchAlbums();
+  }, []);
 
   return (
-    <AnimatedPage>
+    <>
       <Helmet>
         <title>A. Rice | Photography</title>
         <meta
           name="description"
-          content="Explore the photography portfolio of Antonio Rice, capturing moments through a unique lens. Dive into a diverse collection of landscapes, portraits, and more."
+          content="Photography archive — Antonio Rice. Portraits, travel, and street, shot on Sony A7 III."
         />
-        <link rel="canonical" href="https://antoniorice.com/" />
+        <link rel="canonical" href="https://antoniorice.com/photography" />
         <meta property="og:title" content="A. Rice | Photography" />
         <meta
           property="og:description"
-          content="Discover the world through the lens of Antonio Rice. A captivating collection of photography ranging from landscapes to portraits."
+          content="Photography archive — Antonio Rice. Portraits, travel, and street, shot on Sony A7 III."
         />
         <meta
           property="og:image"
           content="https://antoniorice.com/assets/images/site-image.webp"
         />
       </Helmet>
-      <div className="page-wrapper">
-        <div className="flex items-center justify-center pt-10 font-bold tracking-tight sm:py-10">
-          <h1 className="uppercase leading-7 tracking-tighter text-[#cccccc]">
-            A. Rice Photography <span className="text-red-500">.</span>
-          </h1>
-          <a
-            href={instagramUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="ml-2 text-[#cccccc] hover:text-red-500"
+
+      <div
+        style={{
+          background: "var(--bg)",
+          color: "var(--text)",
+          fontFamily: "var(--font-mono)",
+          minHeight: "100vh",
+          paddingBottom: 80,
+        }}
+      >
+        <PhotoTopBar mobile={isMobile} />
+
+        <div
+          style={{
+            maxWidth: 1280,
+            margin: "0 auto",
+            padding: isMobile ? "0 18px" : "0 48px",
+          }}
+        >
+          {/* Hero — narrow centered */}
+          <header
+            style={{
+              maxWidth: 720,
+              margin: "0 auto",
+              paddingTop: isMobile ? 40 : 96,
+              paddingBottom: isMobile ? 32 : 64,
+              textAlign: "center",
+            }}
           >
-            <PiInstagramLogo size={20} />
-          </a>
-        </div>
-        <div className="sm:p-1 md:p-10">
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            {albums &&
-              albums.map(({ id, coverImageUrl, name, albumDate }) => (
-                <Album
-                  key={id}
-                  albumId={id}
-                  coverImageUrl={coverImageUrl}
-                  name={name}
-                  albumDate={albumDate}
-                />
+            <Reveal>
+              <div
+                className="mono-label"
+                style={{
+                  marginBottom: isMobile ? 14 : 24,
+                  fontSize: isMobile ? 10 : 11,
+                }}
+              >
+                {"// archive · /photography"}
+              </div>
+            </Reveal>
+            <Reveal delay={80}>
+              <h1
+                style={{
+                  fontFamily: "var(--font-sans)",
+                  fontSize: isMobile
+                    ? 56
+                    : "clamp(56px, 8vw, 112px)",
+                  lineHeight: 0.95,
+                  letterSpacing: "-0.04em",
+                  fontWeight: 500,
+                  margin: 0,
+                }}
+              >
+                Photography<span style={{ color: "var(--accent)" }}>.</span>
+              </h1>
+            </Reveal>
+            <Reveal delay={160}>
+              <p
+                style={{
+                  fontFamily: "var(--font-sans)",
+                  fontSize: isMobile ? 15 : 17,
+                  lineHeight: 1.55,
+                  color: "var(--text-dim)",
+                  marginTop: isMobile ? 18 : 24,
+                  maxWidth: 560,
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                  textWrap: "pretty",
+                }}
+              >
+                Mostly portraits, travel, and street. Shot on a Sony A7 III.
+                New frames added when something earns it.
+              </p>
+            </Reveal>
+            <Reveal delay={240}>
+              <div
+                style={{
+                  marginTop: isMobile ? 22 : 28,
+                  fontFamily: "var(--font-mono)",
+                  fontSize: isMobile ? 9 : 10,
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                  color: "var(--muted)",
+                }}
+              >
+                {albums.length || "—"} albums · since 2018 · sony a7 iii · digital
+              </div>
+            </Reveal>
+          </header>
+
+          {/* Section header for the grid */}
+          <Reveal>
+            <header
+              style={{
+                display: "flex",
+                alignItems: "baseline",
+                justifyContent: "space-between",
+                paddingBottom: isMobile ? 14 : 24,
+                borderBottom: "1px solid var(--border-strong)",
+                marginBottom: isMobile ? 22 : 32,
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "baseline",
+                  gap: isMobile ? 12 : 20,
+                }}
+              >
+                <span
+                  style={{
+                    fontFamily: "var(--font-mono)",
+                    fontSize: isMobile ? 11 : 12,
+                    color: "var(--accent)",
+                  }}
+                >
+                  {"// 01"}
+                </span>
+                <h2
+                  style={{
+                    fontFamily: "var(--font-sans)",
+                    fontSize: isMobile ? 26 : 40,
+                    fontWeight: 500,
+                    letterSpacing: "-0.025em",
+                    margin: 0,
+                  }}
+                >
+                  contact sheet
+                  <span style={{ color: "var(--accent)" }}>.</span>
+                </h2>
+              </div>
+              <span
+                style={{
+                  fontFamily: "var(--font-mono)",
+                  fontSize: isMobile ? 9 : 11,
+                  color: "var(--muted)",
+                  letterSpacing: "0.06em",
+                  textTransform: "uppercase",
+                }}
+              >
+                {loading
+                  ? "loading…"
+                  : `${albums.length} ${
+                      albums.length === 1 ? "record" : "records"
+                    }`}
+              </span>
+            </header>
+          </Reveal>
+
+          {/* Album grid */}
+          {loading ? (
+            <div
+              style={{
+                padding: "48px 0",
+                textAlign: "center",
+                fontFamily: "var(--font-mono)",
+                fontSize: 11,
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+                color: "var(--muted)",
+              }}
+            >
+              fetching frames…<span className="cursor"></span>
+            </div>
+          ) : albums.length === 0 ? (
+            <div
+              style={{
+                padding: "48px 0",
+                textAlign: "center",
+                fontFamily: "var(--font-mono)",
+                fontSize: 11,
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+                color: "var(--muted)",
+              }}
+            >
+              no frames available · check back soon
+            </div>
+          ) : (
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: isMobile
+                  ? "1fr"
+                  : "repeat(auto-fill, minmax(280px, 1fr))",
+                gap: 1,
+                background: "var(--border)",
+                border: "1px solid var(--border)",
+              }}
+            >
+              {albums.map((album, i) => (
+                <AlbumFrame key={album.id} album={album} index={i} />
               ))}
-          </div>
+            </div>
+          )}
+
+          <PhotoFooter mobile={isMobile} />
         </div>
       </div>
-    </AnimatedPage>
+    </>
   );
 };
+
+function PhotoTopBar({ mobile }) {
+  const navigate = useNavigate();
+  if (mobile) {
+    return (
+      <div
+        style={{
+          position: "sticky",
+          top: 0,
+          zIndex: 10,
+          background: "rgba(10,10,10,0.92)",
+          backdropFilter: "blur(8px)",
+          WebkitBackdropFilter: "blur(8px)",
+          borderBottom: "1px solid var(--border)",
+          padding: "12px 18px",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          fontSize: 11,
+          fontFamily: "var(--font-mono)",
+        }}
+      >
+        <Link
+          to="/"
+          className="dossier-hover"
+          style={{
+            fontFamily: "var(--font-mono)",
+            fontSize: 10,
+            letterSpacing: "0.06em",
+            textTransform: "uppercase",
+            color: "var(--text)",
+            border: "1px solid var(--border-strong)",
+            padding: "6px 10px",
+            textDecoration: "none",
+          }}
+        >
+          ← index
+        </Link>
+        <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+          <span style={{ color: "var(--accent)" }}>●</span>
+          <span style={{ color: "var(--muted)" }}>antoniorice.com</span>
+        </div>
+      </div>
+    );
+  }
+
+  const scrollOrNav = (id) => (e) => {
+    e.preventDefault();
+    navigate(`/#${id}`);
+  };
+
+  return (
+    <div
+      style={{
+        position: "sticky",
+        top: 0,
+        zIndex: 10,
+        background: "rgba(10,10,10,0.92)",
+        backdropFilter: "blur(8px)",
+        WebkitBackdropFilter: "blur(8px)",
+        borderBottom: "1px solid var(--border)",
+        padding: "14px 48px",
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        fontSize: 12,
+        fontFamily: "var(--font-mono)",
+      }}
+    >
+      <div style={{ display: "flex", gap: 18, alignItems: "center" }}>
+        <Link
+          to="/"
+          className="dossier-hover"
+          style={{
+            fontFamily: "var(--font-mono)",
+            fontSize: 11,
+            letterSpacing: "0.06em",
+            textTransform: "uppercase",
+            color: "var(--text)",
+            border: "1px solid var(--border-strong)",
+            padding: "8px 12px",
+            textDecoration: "none",
+          }}
+        >
+          ← back to index
+        </Link>
+        <span style={{ color: "var(--muted-2)" }}>/</span>
+        <span style={{ color: "var(--muted)" }}>antoniorice.com</span>
+        <span style={{ color: "var(--muted-2)" }}>/</span>
+        <span style={{ color: "var(--text)" }}>photography</span>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          gap: 24,
+          color: "var(--muted)",
+          letterSpacing: "0.06em",
+          textTransform: "uppercase",
+          fontSize: 11,
+        }}
+      >
+        <a
+          href="/#about"
+          onClick={scrollOrNav("about")}
+          className="dossier-nav-link"
+          style={{ textDecoration: "none", color: "inherit", cursor: "pointer" }}
+        >
+          about
+        </a>
+        <a
+          href="/#experience"
+          onClick={scrollOrNav("experience")}
+          className="dossier-nav-link"
+          style={{ textDecoration: "none", color: "inherit", cursor: "pointer" }}
+        >
+          work
+        </a>
+        <a
+          href="/#projects"
+          onClick={scrollOrNav("projects")}
+          className="dossier-nav-link"
+          style={{ textDecoration: "none", color: "inherit", cursor: "pointer" }}
+        >
+          projects
+        </a>
+        <span
+          style={{
+            color: "var(--accent)",
+            cursor: "default",
+          }}
+        >
+          photography →
+        </span>
+        <a
+          href="/#contact"
+          onClick={scrollOrNav("contact")}
+          className="dossier-nav-link"
+          style={{ textDecoration: "none", color: "inherit", cursor: "pointer" }}
+        >
+          contact
+        </a>
+      </div>
+    </div>
+  );
+}
+
+function AlbumFrame({ album, index }) {
+  const idStr = `f${String(index + 1).padStart(3, "0")}`;
+  const year =
+    album.albumDate && album.albumDate.slice
+      ? album.albumDate.slice(0, 4)
+      : "—";
+  return (
+    <Link
+      to={`/album/${album.id}`}
+      state={{ name: album.name, year }}
+      className="dossier-photo-frame"
+      style={{
+        background: "var(--bg)",
+        position: "relative",
+        display: "block",
+        aspectRatio: "4 / 3",
+        overflow: "hidden",
+        textDecoration: "none",
+        color: "inherit",
+      }}
+    >
+      {album.coverImageUrl && (
+        <img
+          src={album.coverImageUrl}
+          alt={album.name}
+          loading={index < 6 ? "eager" : "lazy"}
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            filter: "saturate(0.85)",
+            transition: "filter 0.3s ease, transform 0.3s ease",
+            display: "block",
+          }}
+        />
+      )}
+      <div
+        style={{
+          position: "absolute",
+          top: 8,
+          left: 8,
+          fontFamily: "var(--font-mono)",
+          fontSize: 9,
+          letterSpacing: "0.08em",
+          textTransform: "uppercase",
+          color: "var(--muted)",
+          background: "rgba(0,0,0,0.55)",
+          padding: "3px 6px",
+        }}
+      >
+        {idStr}
+      </div>
+      <div
+        style={{
+          position: "absolute",
+          right: 8,
+          bottom: 8,
+          fontFamily: "var(--font-mono)",
+          fontSize: 9,
+          letterSpacing: "0.08em",
+          textTransform: "uppercase",
+          color: "var(--text)",
+          background: "rgba(0,0,0,0.65)",
+          padding: "3px 6px",
+          border: "1px solid var(--border-strong)",
+        }}
+      >
+        {album.name} · {year}
+      </div>
+    </Link>
+  );
+}
+
+function PhotoFooter({ mobile }) {
+  if (mobile) {
+    return (
+      <div
+        style={{
+          marginTop: 32,
+          display: "flex",
+          flexDirection: "column",
+          gap: 6,
+          fontFamily: "var(--font-mono)",
+          fontSize: 10,
+          letterSpacing: "0.06em",
+          textTransform: "uppercase",
+          color: "var(--muted)",
+          textAlign: "center",
+        }}
+      >
+        <span>© 2026 — minneapolis, mn</span>
+        <span>last deploy: 4d ago · uptime 99.97%</span>
+      </div>
+    );
+  }
+  return (
+    <div
+      style={{
+        marginTop: 56,
+        display: "flex",
+        justifyContent: "space-between",
+        fontFamily: "var(--font-mono)",
+        fontSize: 11,
+        letterSpacing: "0.06em",
+        textTransform: "uppercase",
+        color: "var(--muted)",
+      }}
+    >
+      <span>© 2026 — minneapolis, mn</span>
+      <span>last deploy: 4d ago</span>
+      <span>uptime 99.97%</span>
+    </div>
+  );
+}
 
 export default Photography;

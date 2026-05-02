@@ -1,13 +1,19 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 
 const Layout = () => {
+  const { pathname } = useLocation();
+  const isDossier =
+    pathname === "/" ||
+    pathname === "/photography" ||
+    pathname.startsWith("/album/");
+
   return (
     <>
-      <Header />
+      {!isDossier && <Header />}
       <Outlet />
-      <Footer />
+      {!isDossier && <Footer />}
     </>
   );
 };
