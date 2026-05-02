@@ -9,6 +9,11 @@ const Header = () => {
   const navigate = useNavigate();
   const { sections, activeSection } = useScrollContext();
 
+  const isDossierRoute =
+    location.pathname === "/" ||
+    location.pathname === "/photography" ||
+    location.pathname.startsWith("/album/");
+
   const [isVisible, setIsVisible] = useState(true);
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
@@ -73,6 +78,8 @@ const Header = () => {
   const toggleMobileNav = () => {
     setIsMobileNavOpen(!isMobileNavOpen);
   };
+
+  if (isDossierRoute) return null;
 
   return (
     <header
