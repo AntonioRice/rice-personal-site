@@ -286,7 +286,7 @@ export const skills = {
       description: [
         "Excelling While Black is a full-stack web application built to highlight Black-owned businesses and professionals across the United States. The platform features a React frontend, a custom Node.js backend API, and MongoDB for structured data storage. It includes advanced functionalities such as location-based search, dynamic filters that adjust based on the displayed data, comprehensive category management, and detailed business profiles. The backend API optimizes data retrieval and supports complex queries, while the business data itself is compiled, validated, and maintained to ensure accuracy and enhance user experience.",
       ],
-      image: "/assets/images/ewb.png",
+      image: "/assets/images/ewb.jpg",
       href: "https://www.excellingwhileblack.com",
       alt: "a platform promoting and supporting Black-Owned businesses and entrepreneurs across the country.",
     },

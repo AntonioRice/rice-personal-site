@@ -13,7 +13,7 @@ const ErrorPage = () => {
     <AnimatedPage>
       <section className="page-wrapper flex flex-col items-center justify-center">
         <h1 className="text-4xl font-bold text-[#ffffff] sm:text-lg">
-          Whoops, you shouldn't have gotten here
+          Whoops, you shouldn&apos;t have gotten here
           <span className="text-red-500">...</span>
         </h1>
         <motion.button

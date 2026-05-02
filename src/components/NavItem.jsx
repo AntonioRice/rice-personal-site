@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const NavItem = ({ id, isActive, onClick, children }) => {
+const NavItem = ({ isActive, onClick, children }) => {
   return (
     <motion.button
       variants={{

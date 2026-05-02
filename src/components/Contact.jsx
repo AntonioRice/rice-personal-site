@@ -143,7 +143,7 @@ const Contact = () => {
           onSubmit={handleSend}
         >
           <div className="mb-5 flex flex-col items-center py-10 text-4xl font-semibold sm:text-xl">
-            <h1>Let's Work Together!</h1>
+            <h1>Let&apos;s Work Together!</h1>
           </div>
           <div className="-mx-3 flex flex-wrap">
             <div className="mb-6 w-full px-3 md:w-1/2">

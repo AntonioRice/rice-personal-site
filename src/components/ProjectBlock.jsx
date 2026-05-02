@@ -15,6 +15,7 @@ const ProjectBlock = ({ project }) => {
             className="w-full rounded-lg object-cover hover:cursor-pointer"
             src={project.image}
             alt={project.alt}
+            loading="lazy"
           />
         </a>
         <div className="order-2 md:order-1">

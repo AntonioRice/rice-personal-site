@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { IoMenu, IoClose } from "react-icons/io5";
-import { useScrollContext } from "../context/ScrollContext";
+import { useScrollContext } from "../context/scrollContextValue";
 import NavItem from "./NavItem";
 
 const Header = () => {
@@ -12,7 +12,7 @@ const Header = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
-  let lastScrollY = useRef(window.scrollY);
+  const lastScrollY = useRef(window.scrollY);
   const pendingScroll = useRef(null);
 
   useEffect(() => {
@@ -33,10 +33,10 @@ const Header = () => {
     const handleScroll = () => {
       if (window.scrollY < 50) {
         setIsVisible(true);
-      } else if (lastScrollY < window.scrollY) {
+      } else if (lastScrollY.current < window.scrollY) {
         setIsVisible(false);
       }
-      lastScrollY = window.scrollY;
+      lastScrollY.current = window.scrollY;
     };
 
     window.addEventListener("scroll", handleScroll);

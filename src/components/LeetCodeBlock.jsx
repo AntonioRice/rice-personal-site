@@ -10,6 +10,7 @@ const LeetCodeBlock = () => {
         alt="LeetCode 75"
         src="https://assets.leetcode.com/study_plan_v2/leetcode-75/cover"
         className="mr-3.5 h-[72px] w-[72px] rounded-[4px]"
+        loading="lazy"
       />
       <div className="h-[72px] flex-grow py-1">
         <div className="flex flex-col justify-center pr-1">

@@ -18,7 +18,7 @@ import {
 } from "../components";
 import useEventsTracker from "../hooks/useEventsTracker";
 import skills from "../utils/skillsData";
-import { useScrollContext } from "../context/ScrollContext";
+import { useScrollContext } from "../context/scrollContextValue";
 
 const Home = () => {
   const navigate = useNavigate();

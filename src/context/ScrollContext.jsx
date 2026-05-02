@@ -1,8 +1,5 @@
-import { createContext, useContext, useRef, useState } from "react";
-
-const ScrollContext = createContext();
-
-export const useScrollContext = () => useContext(ScrollContext);
+import { useRef, useState } from "react";
+import { ScrollContext } from "./scrollContextValue";
 
 export const ScrollProvider = ({ children }) => {
   const [activeSection, setActiveSection] = useState("");

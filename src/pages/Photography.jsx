@@ -19,7 +19,7 @@ const Photography = () => {
         const response = await axios.get(`${VITE_SERVER_URL}/albums`);
         setAlbums(response.data.data);
       } catch (err) {
-        console.error("Error retrieving albums", err);
+        if (import.meta.env.DEV) console.error("Error retrieving albums", err);
       }
     }
 

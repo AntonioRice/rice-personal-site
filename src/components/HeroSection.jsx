@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useScrollContext } from "../context/ScrollContext";
+import { useScrollContext } from "../context/scrollContextValue";
 import { motion, AnimatePresence } from "framer-motion";
 import useEventsTracker from "../hooks/useEventsTracker";
 import SocialLinks from "./SocialLinks";

@@ -30,7 +30,8 @@ const AlbumDetails = () => {
         });
         setImages(sortedImages);
       } catch (error) {
-        console.error("Failed to fetch album images", error);
+        if (import.meta.env.DEV)
+          console.error("Failed to fetch album images", error);
       }
     };
 
