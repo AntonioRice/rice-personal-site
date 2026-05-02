@@ -2,30 +2,11 @@ import { Helmet } from "react-helmet";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { motion } from "framer-motion";
 import useIsMobile from "../hooks/useIsMobile";
 import SiteFooter from "../components/SiteFooter";
+import Reveal from "../components/Reveal";
 
 const VITE_SERVER_URL = import.meta.env.VITE_SERVER_URL;
-
-const reveal = {
-  hidden: { opacity: 0, y: 14 },
-  visible: { opacity: 1, y: 0 },
-};
-
-function Reveal({ children, delay = 0, amount = 0.15 }) {
-  return (
-    <motion.div
-      variants={reveal}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount }}
-      transition={{ duration: 0.7, ease: [0.2, 0.7, 0.2, 1], delay: delay / 1000 }}
-    >
-      {children}
-    </motion.div>
-  );
-}
 
 const Photography = () => {
   const [albums, setAlbums] = useState([]);
