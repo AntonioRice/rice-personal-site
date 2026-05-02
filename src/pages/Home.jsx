@@ -74,15 +74,9 @@ const Home = () => {
     visible: { opacity: 1, y: 0 },
   };
 
-  const sectionFade = {
-    hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0 },
-  };
-
   const sectionFadeProps = {
-    variants: sectionFade,
-    initial: "hidden",
-    whileInView: "visible",
+    initial: { opacity: 0, y: 40 },
+    whileInView: { opacity: 1, y: 0 },
     viewport: { once: true, amount: 0.15 },
     transition: { duration: 0.6, ease: "easeOut" },
   };
