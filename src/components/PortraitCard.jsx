@@ -26,9 +26,9 @@ const PortraitCard = () => (
       </div>
       <Link
         to="/photography"
-        className="dossier-photography-pill absolute bottom-2.5 right-2.5 border border-accent-line bg-black/70 px-[7px] py-[4px] font-mono text-[9px] uppercase tracking-[0.08em] text-accent no-underline lg:bottom-3 lg:right-3 lg:px-[9px] lg:py-[5px] lg:text-[10px]"
+        className="dossier-photography-pill absolute bottom-2.5 right-2.5 bg-black/70 px-[7px] py-[4px] font-mono text-[9px] uppercase tracking-[0.08em] text-fg no-underline lg:bottom-3 lg:right-3 lg:px-[9px] lg:py-[5px] lg:text-[10px]"
       >
-        photography →
+        view photography →
       </Link>
     </div>
   </div>
