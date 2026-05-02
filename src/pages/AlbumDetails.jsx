@@ -3,7 +3,6 @@ import { Link, useParams, useLocation } from "react-router-dom";
 import axios from "axios";
 import { Helmet } from "react-helmet";
 import { ImageWithLoader } from "../components";
-import useIsMobile from "../hooks/useIsMobile";
 import SiteFooter from "../components/SiteFooter";
 import Reveal from "../components/Reveal";
 
@@ -15,30 +14,33 @@ const AlbumDetails = () => {
   const { albumId } = useParams();
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);
-  const isMobile = useIsMobile(1024);
 
   useEffect(() => {
+    const controller = new AbortController();
     const fetchImages = async () => {
       try {
         const response = await axios.get(
           `${VITE_SERVER_URL}/albums/${albumId}`,
+          { signal: controller.signal },
         );
-        const sorted = response.data.images.sort((a, b) => {
-          const nameA = a.url.toLowerCase();
-          const nameB = b.url.toLowerCase();
-          if (nameA < nameB) return -1;
-          if (nameA > nameB) return 1;
+        const sorted = response.data.images.sort((left, right) => {
+          const leftName = left.url.toLowerCase();
+          const rightName = right.url.toLowerCase();
+          if (leftName < rightName) return -1;
+          if (leftName > rightName) return 1;
           return 0;
         });
         setImages(sorted);
       } catch (error) {
+        if (axios.isCancel(error) || error?.name === "CanceledError") return;
         if (import.meta.env.DEV)
           console.error("Failed to fetch album images", error);
       } finally {
-        setLoading(false);
+        if (!controller.signal.aborted) setLoading(false);
       }
     };
     fetchImages();
+    return () => controller.abort();
   }, [albumId]);
 
   return (
@@ -48,172 +50,93 @@ const AlbumDetails = () => {
           {name ? `${name} | A. Rice Photography` : "A. Rice | Photography"}
         </title>
       </Helmet>
-      <div
-        style={{
-          background: "var(--bg)",
-          color: "var(--text)",
-          fontFamily: "var(--font-mono)",
-          minHeight: "100vh",
-          paddingBottom: 80,
-        }}
-      >
-        <div
-          style={{
-            maxWidth: 1280,
-            margin: "0 auto",
-            padding: isMobile ? "0 18px" : "0 48px",
-          }}
-        >
-          {/* Sub-nav back chip */}
-          <div
-            style={{
-              paddingTop: isMobile ? 18 : 28,
-              display: "flex",
-              alignItems: "center",
-              gap: 12,
-            }}
-          >
-            <Link
-              to="/photography"
-              className="dossier-hover"
-              style={{
-                fontFamily: "var(--font-mono)",
-                fontSize: isMobile ? 10 : 11,
-                letterSpacing: "0.06em",
-                textTransform: "uppercase",
-                color: "var(--text)",
-                border: "1px solid var(--border-strong)",
-                padding: isMobile ? "6px 10px" : "8px 12px",
-                textDecoration: "none",
-              }}
-            >
-              ← contact sheet
-            </Link>
-          </div>
-
-          {/* Hero */}
-          <header
-            style={{
-              maxWidth: 720,
-              margin: "0 auto",
-              paddingTop: isMobile ? 32 : 64,
-              paddingBottom: isMobile ? 28 : 56,
-              textAlign: "center",
-            }}
-          >
-            <Reveal>
-              <div
-                className="mono-label"
-                style={{
-                  marginBottom: isMobile ? 14 : 22,
-                  fontSize: isMobile ? 10 : 11,
-                }}
-              >
-                {`// archive · /album/${albumId}`}
-              </div>
-            </Reveal>
-            <Reveal delay={80}>
-              <h1
-                style={{
-                  fontFamily: "var(--font-sans)",
-                  fontSize: isMobile ? 44 : "clamp(48px, 7vw, 88px)",
-                  lineHeight: 0.98,
-                  letterSpacing: "-0.035em",
-                  fontWeight: 500,
-                  margin: 0,
-                }}
-              >
-                {name || "Album"}
-                <span style={{ color: "var(--accent)" }}>.</span>
-              </h1>
-            </Reveal>
-            {year && (
-              <Reveal delay={160}>
-                <div
-                  style={{
-                    marginTop: isMobile ? 14 : 18,
-                    fontFamily: "var(--font-mono)",
-                    fontSize: isMobile ? 10 : 11,
-                    letterSpacing: "0.08em",
-                    textTransform: "uppercase",
-                    color: "var(--muted)",
-                  }}
-                >
-                  {year} · {images.length || "—"} frames
-                </div>
-              </Reveal>
-            )}
-          </header>
-
-          {/* Grid */}
-          {loading ? (
-            <div
-              style={{
-                padding: "48px 0",
-                textAlign: "center",
-                fontFamily: "var(--font-mono)",
-                fontSize: 11,
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                color: "var(--muted)",
-              }}
-            >
-              loading frames…<span className="cursor"></span>
-            </div>
-          ) : (
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: isMobile
-                  ? "1fr"
-                  : "repeat(auto-fill, minmax(320px, 1fr))",
-                gap: 1,
-                background: "var(--border)",
-                border: "1px solid var(--border)",
-              }}
-            >
-              {images.map((image, i) => (
-                <div
-                  key={image.id}
-                  className="dossier-photo-frame"
-                  style={{
-                    background: "var(--bg)",
-                    position: "relative",
-                    overflow: "hidden",
-                  }}
-                >
-                  <ImageWithLoader
-                    src={image.url}
-                    alt={`${name || "Album"} — frame ${i + 1}`}
-                    loading={i < 6 ? "eager" : "lazy"}
-                  />
-                  <div
-                    style={{
-                      position: "absolute",
-                      top: 8,
-                      left: 8,
-                      fontFamily: "var(--font-mono)",
-                      fontSize: 9,
-                      letterSpacing: "0.08em",
-                      textTransform: "uppercase",
-                      color: "var(--muted)",
-                      background: "rgba(0,0,0,0.55)",
-                      padding: "3px 6px",
-                      pointerEvents: "none",
-                    }}
-                  >
-                    f{String(i + 1).padStart(3, "0")}
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-
-          <SiteFooter marginTop={isMobile ? 32 : 56} />
+      <div className="min-h-screen bg-canvas pb-20 font-mono text-fg">
+        <div className="mx-auto max-w-[1280px] px-[18px] lg:px-12">
+          <BackToContactSheet />
+          <Hero albumId={albumId} name={name} year={year} count={images.length} />
+          <ImageGrid images={images} loading={loading} albumName={name} />
+          <SiteFooter />
         </div>
       </div>
     </>
   );
 };
+
+const BackToContactSheet = () => (
+  <div className="flex items-center gap-3 pt-4 lg:pt-7">
+    <Link
+      to="/photography"
+      className="dossier-hover border border-rule-strong px-2.5 py-1.5 font-mono text-[10px] uppercase tracking-[0.06em] text-fg no-underline lg:px-3 lg:py-2 lg:text-[11px]"
+    >
+      ← contact sheet
+    </Link>
+  </div>
+);
+
+const Hero = ({ albumId, name, year, count }) => (
+  <header className="mx-auto max-w-[720px] pb-7 pt-8 text-center lg:pb-14 lg:pt-16">
+    <Reveal>
+      <div className="mono-label mb-3.5 text-[10px] lg:mb-5 lg:text-[11px]">
+        {`// archive · /album/${albumId}`}
+      </div>
+    </Reveal>
+    <Reveal delay={80}>
+      <h1
+        className="m-0 font-sans font-medium leading-[0.98] tracking-[-0.035em]"
+        style={{ fontSize: "clamp(44px, 7vw, 88px)" }}
+      >
+        {name || "Album"}
+        <span className="text-accent">.</span>
+      </h1>
+    </Reveal>
+    {year && (
+      <Reveal delay={160}>
+        <div className="mt-3.5 font-mono text-[10px] uppercase tracking-[0.08em] text-muted lg:mt-4 lg:text-[11px]">
+          {year} · {count || "-"} frames
+        </div>
+      </Reveal>
+    )}
+  </header>
+);
+
+const ImageGrid = ({ images, loading, albumName }) => {
+  if (loading) {
+    return (
+      <div className="py-12 text-center font-mono text-[11px] uppercase tracking-[0.08em] text-muted">
+        loading frames…<span aria-hidden="true" className="cursor" />
+      </div>
+    );
+  }
+  return (
+    <div
+      className="grid gap-px border border-rule bg-rule"
+      style={{
+        gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
+      }}
+    >
+      {images.map((image, imageIndex) => (
+        <ImageFrame
+          key={image.id}
+          image={image}
+          index={imageIndex}
+          albumName={albumName}
+        />
+      ))}
+    </div>
+  );
+};
+
+const ImageFrame = ({ image, index, albumName }) => (
+  <div className="dossier-photo-frame relative overflow-hidden bg-canvas">
+    <ImageWithLoader
+      src={image.url}
+      alt={`${albumName || "Album"} - frame ${index + 1}`}
+      loading={index < 6 ? "eager" : "lazy"}
+    />
+    <div className="pointer-events-none absolute left-2 top-2 bg-black/55 px-1.5 py-0.5 font-mono text-[9px] uppercase tracking-[0.08em] text-muted">
+      f{String(index + 1).padStart(3, "0")}
+    </div>
+  </div>
+);
 
 export default AlbumDetails;

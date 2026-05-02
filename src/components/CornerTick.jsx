@@ -1,43 +1,14 @@
-const positions = (offset) => ({
-  tl: {
-    top: offset,
-    left: offset,
-    borderTop: "1px solid var(--accent)",
-    borderLeft: "1px solid var(--accent)",
-  },
-  tr: {
-    top: offset,
-    right: offset,
-    borderTop: "1px solid var(--accent)",
-    borderRight: "1px solid var(--accent)",
-  },
-  bl: {
-    bottom: offset,
-    left: offset,
-    borderBottom: "1px solid var(--accent)",
-    borderLeft: "1px solid var(--accent)",
-  },
-  br: {
-    bottom: offset,
-    right: offset,
-    borderBottom: "1px solid var(--accent)",
-    borderRight: "1px solid var(--accent)",
-  },
-});
-
-const CornerTick = ({ pos, mobile }) => {
-  const offset = mobile ? 6 : 8;
-  const size = mobile ? 11 : 14;
-  return (
-    <div
-      style={{
-        position: "absolute",
-        width: size,
-        height: size,
-        ...positions(offset)[pos],
-      }}
-    />
-  );
+const POSITIONS = {
+  tl: "top-1.5 left-1.5 border-t border-l lg:top-2 lg:left-2",
+  tr: "top-1.5 right-1.5 border-t border-r lg:top-2 lg:right-2",
+  bl: "bottom-1.5 left-1.5 border-b border-l lg:bottom-2 lg:left-2",
+  br: "bottom-1.5 right-1.5 border-b border-r lg:bottom-2 lg:right-2",
 };
+
+const CornerTick = ({ pos }) => (
+  <div
+    className={`absolute h-[11px] w-[11px] border-accent lg:h-[14px] lg:w-[14px] ${POSITIONS[pos]}`}
+  />
+);
 
 export default CornerTick;

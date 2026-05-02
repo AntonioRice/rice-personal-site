@@ -38,13 +38,13 @@ export const SKILLS = {
 
 export const EXPERIENCE = [
   {
-    company: "Various Clients",
+    company: "Self Employed",
     role: "Freelance Software Engineer",
-    period: "2023 — Present",
+    period: "2023 - Present",
     location: "Remote",
     bullets: [
       "Developed custom web applications using modern technologies, streamlining clients' business processes and increasing operational efficiency.",
-      "Engaged with clients to gather business requirements, design intuitive interfaces, and deliver projects on time — resulting in repeat business and referrals.",
+      "Engaged with clients to gather business requirements, design intuitive interfaces, and deliver projects on time - resulting in repeat business and referrals.",
     ],
     stack: [
       "React.js",
@@ -62,26 +62,64 @@ export const EXPERIENCE = [
   },
   {
     company: "C.H. Robinson",
-    role: "Software Engineer II — Tech Lead",
-    period: "2022 — 2023",
+    role: "SE I → II → Tech Lead",
+    period: "2017 - 2023",
     location: "Minneapolis, MN",
-    bullets: [
-      "Designed and optimized microservices and APIs using Node.js and .NET Core (C#), leveraging Kafka to enhance data processing and supply chain visibility.",
-      "Led a team of full-time and contract engineers — technical guidance, code reviews, scalable system design. Improved sprint completion rates by 30%.",
-      "Partnered with BAs and PMs to define product roadmaps, evaluate feasibility, and align technical solutions with business goals.",
+    summary:
+      "Six years at a leading 3PL - joined as a junior engineer, grew into a Tech Lead and SME for the Navisphere Vision SaaS platform. Owned features from migration to launch, mentored a cross-functional team, and shipped through Microsoft Azure Marketplace.",
+    promotions: [
+      {
+        role: "Software Engineer II - Tech Lead",
+        period: "2022 - 2023",
+        bullets: [
+          "Designed and optimized microservices and APIs using Node.js and .NET Core (C#), leveraging Kafka to enhance data processing and supply chain visibility.",
+          "Led a team of full-time and contract engineers - technical guidance, code reviews, scalable system design. Improved sprint completion rates by 30%.",
+          "Partnered with BAs and PMs to define product roadmaps, evaluate feasibility, and align technical solutions with business goals.",
+        ],
+        stack: ["System Design", "Leadership", "Coaching"],
+      },
+      {
+        role: "Software Engineer II",
+        period: "2019 - 2022",
+        bullets: [
+          "Modernized the Navisphere Vision SaaS app - led the migration from AngularJS to React, enabling Azure cloud deployment and a Microsoft App Store listing.",
+          "Built a predictive freight-tracking feature with Data Scientists using real-time signals (weather, wildfires) to forecast shipment delays - became critical during hurricane season.",
+          "Served as SME for customer onboarding and integrations. Onboarded 3–5 clients per quarter, exceeding projections with tailored implementations.",
+        ],
+        stack: [
+          "JavaScript",
+          "React",
+          "Node.js",
+          ".NET Core",
+          "C#",
+          "Kafka",
+          "MongoDB",
+          "Elasticsearch",
+          "MSSQL",
+          "Azure",
+          "Microservices",
+        ],
+      },
+      {
+        role: "Software Engineer I",
+        period: "2017 - 2019",
+        bullets: [
+          "Contributed to a Machine Learning program scanning live highway-camera data to identify inbound/outbound truck traffic across major metros (Python, C#, TensorFlow).",
+          "Worked in an Agile team to ship features aligned with sprint goals, partnering with UI/UX on design consistency.",
+          "Maintained 100% test coverage through TDD; validated features against business expectations to ensure reliable releases.",
+        ],
+        stack: [
+          "JavaScript",
+          "AngularJS",
+          "Node.js",
+          "C#",
+          "Python",
+          "Kafka",
+          "RabbitMQ",
+        ],
+      },
     ],
-    stack: ["System Design", "Leadership", "Coaching"],
-  },
-  {
-    company: "C.H. Robinson",
-    role: "Software Engineer II",
-    period: "2019 — 2022",
-    location: "Minneapolis, MN",
-    bullets: [
-      "Modernized the Navisphere Vision SaaS app — led the migration from AngularJS to React, enabling Azure cloud deployment and a Microsoft App Store listing.",
-      "Built a predictive freight-tracking feature with Data Scientists using real-time signals (weather, wildfires) to forecast shipment delays — became critical during hurricane season.",
-      "Served as SME for customer onboarding and integrations. Onboarded 3–5 clients per quarter, exceeding projections with tailored implementations.",
-    ],
+    bullets: [],
     stack: [
       "JavaScript",
       "React",
@@ -89,31 +127,8 @@ export const EXPERIENCE = [
       ".NET Core",
       "C#",
       "Kafka",
-      "MongoDB",
-      "Elasticsearch",
-      "MSSQL",
       "Azure",
-      "Microservices",
-    ],
-  },
-  {
-    company: "C.H. Robinson",
-    role: "Software Engineer I",
-    period: "2017 — 2019",
-    location: "Minneapolis, MN",
-    bullets: [
-      "Contributed to a Machine Learning program scanning live highway-camera data to identify inbound/outbound truck traffic across major metros (Python, C#, TensorFlow).",
-      "Worked in an Agile team to ship features aligned with sprint goals, partnering with UI/UX on design consistency.",
-      "Maintained 100% test coverage through TDD; validated features against business expectations to ensure reliable releases.",
-    ],
-    stack: [
-      "JavaScript",
-      "AngularJS",
-      "Node.js",
-      "C#",
-      "Python",
-      "Kafka",
-      "RabbitMQ",
+      "Leadership",
     ],
   },
   {
@@ -123,7 +138,7 @@ export const EXPERIENCE = [
     location: "Minneapolis, MN",
     bullets: [
       "Completed a 20-week immersive software engineering program focused on fundamentals, problem-solving, and communicating about code.",
-      "Designed and built a solo web application to track DIY car maintenance — full-stack from schema to UI.",
+      "Designed and built a solo web application to track DIY car maintenance - full-stack from schema to UI.",
       "Collaborated on a group rewards platform for high schools, promoting student engagement through challenges.",
     ],
     stack: ["JavaScript", "Node.js", "AngularJS", "Express", "MongoDB"],
@@ -151,7 +166,7 @@ export const PROJECTS = [
     year: "2023",
     role: "Solo · SaaS",
     blurb:
-      "A SaaS platform tailored for boutique hotels in South America — guest, reservation, and room management. Responsive frontend with an optimized cloud-based backend.",
+      "A SaaS platform tailored for boutique hotels in South America - guest, reservation, and room management. Responsive frontend with an optimized cloud-based backend.",
     tags: ["React", "Node.js", "PostgreSQL"],
     image: "/assets/images/cliente.png",
     href: "https://github.com/AntonioRice/cliente-crm",
@@ -159,7 +174,7 @@ export const PROJECTS = [
   {
     id: "p03",
     title: "Navisphere Vision",
-    year: "2019 — 2023",
+    year: "2019 - 2023",
     role: "Lead engineer",
     blurb:
       "Supply-chain visibility SaaS on Microsoft Azure Marketplace. Owned search, filtering, multi-channel notifications (email, in-app, SMS), and map/list visualization. Led tenant-specific implementations end-to-end.",
@@ -171,34 +186,34 @@ export const PROJECTS = [
 
 export const BEFORE_TECH = [
   {
-    period: "2016 — 2017",
+    period: "2016 - 2017",
     title: "Executive Sales Manager",
     where: "Macy's",
-    note: "Directed Men's Sales — 30 associates in a fast-paced retail floor. First taste of leading hiring, coaching, and performance under data-driven targets.",
+    note: "Directed Men's Sales - 30 associates in a fast-paced retail floor. First taste of leading hiring, coaching, and performance under data-driven targets.",
   },
   {
-    period: "2014 — 2015",
+    period: "2014 - 2015",
     title: "Inbound Area Manager II",
     where: "Amazon",
     note: "Owned a 60-door inbound dock with 350+ associates. Designed a FIFO trailer system that hit 95% SLA and turned the lowest-performing process path into the highest in two weeks.",
   },
   {
-    period: "2013 — 2014",
+    period: "2013 - 2014",
     title: "Logistics Team Lead",
     where: "Target",
-    note: "Overnight replenishment lead for 30+ associates. Cut takt time 20% via process redesign — first time I shipped a system change and watched the numbers move.",
+    note: "Overnight replenishment lead for 30+ associates. Cut takt time 20% via process redesign - first time I shipped a system change and watched the numbers move.",
   },
   {
-    period: "2012 — 2014",
+    period: "2012 - 2014",
     title: "Bank Teller",
     where: "U.S. Bank",
     note: "Hit quarterly sales targets by wide margins; ranked #2 in district. Where I learned that listening carefully sells better than pitching.",
   },
   {
-    period: "2009 — 2013",
+    period: "2009 - 2013",
     title: "Sales Associate",
     where: "Finish Line",
-    note: "First job. Communication, multitasking, and customer service in a chaotic dynamic environment — the foundation everything else was built on.",
+    note: "First job. Communication, multitasking, and customer service in a chaotic dynamic environment - the foundation everything else was built on.",
   },
 ];
 

@@ -4,6 +4,7 @@ import "./index.css";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import ErrorPage from "./pages/ErrorPage";
+import ErrorBoundary from "./components/ErrorBoundary";
 import TagManager from "react-gtm-module";
 
 const Photography = lazy(() => import("./pages/Photography"));
@@ -16,7 +17,9 @@ if (VITE_GTM_ID) {
 }
 
 const withSuspense = (element) => (
-  <Suspense fallback={null}>{element}</Suspense>
+  <ErrorBoundary>
+    <Suspense fallback={null}>{element}</Suspense>
+  </ErrorBoundary>
 );
 
 const router = createBrowserRouter([

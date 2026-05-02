@@ -1,72 +1,45 @@
 import { PROFILE } from "../utils/portfolioData";
 
-const JsonRow = ({ k, v, accent }) => (
-  <div
-    style={{
-      display: "flex",
-      justifyContent: "space-between",
-      padding: "3px 0",
-      gap: 12,
-    }}
-  >
-    <span style={{ color: "var(--muted)", flexShrink: 0 }}>
-      {`"${k}":`}
-    </span>
+const JsonRow = ({ name, value, accent }) => (
+  <div className="flex justify-between gap-3 py-[3px]">
+    <span className="shrink-0 text-muted">{`"${name}":`}</span>
     <span
-      style={{
-        color: accent ? "var(--accent)" : "var(--text)",
-        textAlign: "right",
-        overflow: "hidden",
-        textOverflow: "ellipsis",
-        whiteSpace: "nowrap",
-      }}
+      className={`overflow-hidden text-ellipsis whitespace-nowrap text-right ${
+        accent ? "text-accent" : "text-fg"
+      }`}
     >
-      {v}
+      {value}
     </span>
   </div>
 );
 
-const ProfileJsonCard = ({ full }) => (
+const ProfileJsonCard = ({ full = false }) => (
   <div
-    style={{
-      border: "1px solid var(--border-strong)",
-      background: "var(--bg-soft)",
-      fontFamily: "var(--font-mono)",
-      fontSize: full ? 12 : 11,
-    }}
+    className={`border border-rule-strong bg-card font-mono ${
+      full ? "text-[12px]" : "text-[11px]"
+    }`}
   >
     <div
-      style={{
-        padding: full ? "10px 14px" : "8px 12px",
-        borderBottom: "1px solid var(--border)",
-        display: "flex",
-        justifyContent: "space-between",
-        color: "var(--muted)",
-        letterSpacing: "0.08em",
-        textTransform: "uppercase",
-        fontSize: full ? 10 : 9,
-      }}
+      className={`flex justify-between border-b border-rule uppercase tracking-[0.08em] text-muted ${
+        full ? "px-3.5 py-2.5 text-[10px]" : "px-3 py-2 text-[9px]"
+      }`}
     >
       <span>profile.json</span>
-      <span style={{ color: "var(--accent)" }}>● live</span>
+      <span className="text-accent">● live</span>
     </div>
     <div
-      style={{
-        padding: full ? 18 : 14,
-        lineHeight: 1.85,
-        color: "var(--text-dim)",
-      }}
+      className={`leading-[1.85] text-dim ${full ? "p-[18px]" : "p-3.5"}`}
     >
-      <JsonRow k="name" v={`"${PROFILE.name}"`} />
-      <JsonRow k="role" v={`"${PROFILE.role}"`} />
-      <JsonRow k="loc" v={`"${PROFILE.location}"`} />
-      <JsonRow k="status" v={`"open"`} accent />
-      <JsonRow k="yrs_exp" v="6+" />
-      <JsonRow k="responds_within" v={`"1d"`} />
+      <JsonRow name="name" value={`"${PROFILE.name}"`} />
+      <JsonRow name="role" value={`"${PROFILE.role}"`} />
+      <JsonRow name="loc" value={`"${PROFILE.location}"`} />
+      <JsonRow name="status" value={`"open"`} accent />
+      <JsonRow name="yrs_exp" value="6+" />
+      <JsonRow name="responds_within" value={`"1d"`} />
       {full && (
         <>
-          <JsonRow k="open_to" v={`["full-time", "contract"]`} />
-          <JsonRow k="last_updated" v={`"2026-04-29"`} />
+          <JsonRow name="open_to" value={`["full-time", "contract"]`} />
+          <JsonRow name="last_updated" value={`"2026-04-29"`} />
         </>
       )}
     </div>

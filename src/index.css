@@ -101,7 +101,7 @@ body {
   background-color: #181818 !important;
 }
 
-/* Primary CTA (accent-filled) — subtle darken on hover */
+/* Primary CTA (accent-filled) - subtle darken on hover */
 .dossier-cta {
   transition: filter 0.18s ease;
 }
@@ -109,7 +109,7 @@ body {
   filter: brightness(0.88);
 }
 
-/* Top-bar nav link — muted by default, white on hover */
+/* Top-bar nav link - muted by default, white on hover */
 .dossier-nav-link {
   transition: color 0.18s ease;
 }
@@ -117,7 +117,7 @@ body {
   color: var(--text) !important;
 }
 
-/* Photography top-nav link — stays accent (red), lightens on hover */
+/* Photography top-nav link - stays accent (red), lightens on hover */
 .dossier-photography-link {
   transition: filter 0.18s ease;
 }
@@ -125,7 +125,7 @@ body {
   filter: brightness(1.4);
 }
 
-/* Photography pill on portrait — text lightens, bg deepens on hover */
+/* Photography pill on portrait - text lightens, bg deepens on hover */
 .dossier-photography-pill {
   transition: background-color 0.15s ease, filter 0.15s ease;
 }
@@ -134,7 +134,7 @@ body {
   filter: brightness(1.4);
 }
 
-/* Photo grid cell — saturate and slight zoom on hover */
+/* Photo grid cell - saturate and slight zoom on hover */
 .dossier-photo-frame {
   cursor: zoom-in;
 }

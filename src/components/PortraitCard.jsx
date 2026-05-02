@@ -2,87 +2,31 @@ import { Link } from "react-router-dom";
 import { PROFILE } from "../utils/portfolioData";
 import CornerTick from "./CornerTick";
 
-const PortraitCard = ({ mobile }) => (
-  <div
-    style={{
-      border: "1px solid var(--border-strong)",
-      background: "var(--bg-soft)",
-      position: "relative",
-      overflow: "hidden",
-    }}
-  >
-    <div
-      style={{
-        padding: mobile ? "8px 12px" : "10px 14px",
-        borderBottom: "1px solid var(--border)",
-        display: "flex",
-        justifyContent: "space-between",
-        color: "var(--muted)",
-        fontFamily: "var(--font-mono)",
-        fontSize: mobile ? 9 : 10,
-        letterSpacing: "0.08em",
-        textTransform: "uppercase",
-      }}
-    >
+const PortraitCard = () => (
+  <div className="relative overflow-hidden border border-rule-strong bg-card">
+    <div className="flex justify-between border-b border-rule px-3 py-2 font-mono text-[9px] uppercase tracking-[0.08em] text-muted lg:px-3.5 lg:py-2.5 lg:text-[10px]">
       <span>portrait.jpg</span>
       <span>1200 × 1200</span>
     </div>
-    <div
-      style={{
-        position: "relative",
-        aspectRatio: "1 / 1",
-        background: "#0a0a0a",
-      }}
-    >
+    <div className="relative aspect-square bg-canvas">
       <img
         src={PROFILE.avatar}
         alt="Antonio Rice"
-        style={{
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          filter: "saturate(0.92) contrast(1.02)",
-          display: "block",
-        }}
+        className="block h-full w-full object-cover"
+        style={{ filter: "saturate(0.92) contrast(1.02)" }}
       />
-      <CornerTick pos="tl" mobile={mobile} />
-      <CornerTick pos="tr" mobile={mobile} />
-      <CornerTick pos="bl" mobile={mobile} />
-      <CornerTick pos="br" mobile={mobile} />
+      <CornerTick pos="tl" />
+      <CornerTick pos="tr" />
+      <CornerTick pos="bl" />
+      <CornerTick pos="br" />
       <div
-        style={{
-          position: "absolute",
-          left: mobile ? 10 : 12,
-          bottom: mobile ? 10 : 12,
-          fontFamily: "var(--font-mono)",
-          fontSize: mobile ? 9 : 10,
-          letterSpacing: "0.08em",
-          textTransform: "uppercase",
-          color: "var(--text)",
-          background: "rgba(0,0,0,0.7)",
-          padding: mobile ? "4px 7px" : "5px 9px",
-          border: "1px solid var(--border-strong)",
-        }}
+        className="absolute bottom-2.5 left-2.5 border border-rule-strong bg-black/70 px-[7px] py-[4px] font-mono text-[9px] uppercase tracking-[0.08em] text-fg lg:bottom-3 lg:left-3 lg:px-[9px] lg:py-[5px] lg:text-[10px]"
       >
         {"// subj: a.rice"}
       </div>
       <Link
         to="/photography"
-        className="dossier-photography-pill"
-        style={{
-          position: "absolute",
-          right: mobile ? 10 : 12,
-          bottom: mobile ? 10 : 12,
-          fontFamily: "var(--font-mono)",
-          fontSize: mobile ? 9 : 10,
-          letterSpacing: "0.08em",
-          textTransform: "uppercase",
-          color: "var(--accent)",
-          background: "rgba(0,0,0,0.7)",
-          padding: mobile ? "4px 7px" : "5px 9px",
-          border: "1px solid var(--accent-line)",
-          textDecoration: "none",
-        }}
+        className="dossier-photography-pill absolute bottom-2.5 right-2.5 border border-accent-line bg-black/70 px-[7px] py-[4px] font-mono text-[9px] uppercase tracking-[0.08em] text-accent no-underline lg:bottom-3 lg:right-3 lg:px-[9px] lg:py-[5px] lg:text-[10px]"
       >
         photography →
       </Link>

@@ -1,436 +1,233 @@
-import { useState } from "react";
+import { useCallback, useId, useState } from "react";
 import { motion } from "framer-motion";
 import Reveal from "../Reveal";
 import { BEFORE_TECH } from "../../utils/portfolioData";
 
-const expandTransition = {
-  height: { duration: 0.45, ease: [0.2, 0.7, 0.2, 1] },
-  opacity: { duration: 0.35, delay: 0.1 },
+const TERMINAL_ENTRY = {
+  period: "2017 →",
+  title: "new beginnings",
+  caption: "the chapters above pick up here",
 };
 
-const BeforeTechTimeline = ({ mobile }) => {
-  const [open, setOpen] = useState(false);
+const BeforeTechTimeline = () => (
+  <>
+    <MobileTimeline />
+    <DesktopTimeline />
+  </>
+);
 
-  if (mobile) {
-    return (
-      <div style={{ marginTop: 32 }}>
-        <button
-          onClick={() => setOpen((o) => !o)}
-          className="dossier-hover"
-          style={{
-            width: "100%",
-            background: "transparent",
-            border: 0,
-            borderTop: "1px solid var(--border-strong)",
-            borderBottom: "1px dashed var(--border-strong)",
-            color: "var(--text)",
-            cursor: "pointer",
-            padding: "16px 14px",
-            display: "flex",
-            flexDirection: "column",
-            gap: 6,
-            textAlign: "left",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              width: "100%",
-              fontFamily: "var(--font-mono)",
-              fontSize: 10,
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-            }}
-          >
-            <span style={{ color: "var(--accent)" }}>
-              {"// before tech"}
-            </span>
-            <span
-              style={{
-                color: "var(--muted)",
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 6,
-              }}
-            >
-              {open ? "collapse" : "expand"}
-              <span
-                style={{
-                  color: "var(--accent)",
-                  fontSize: 14,
-                  transform: open ? "rotate(90deg)" : "none",
-                  transition: "transform 0.2s",
-                  display: "inline-block",
-                }}
-              >
-                →
-              </span>
-            </span>
-          </div>
-          <span
-            style={{
-              fontFamily: "var(--font-sans)",
-              fontSize: 18,
-              fontWeight: 500,
-              letterSpacing: "-0.015em",
-              color: "var(--text)",
-            }}
-          >
-            the long way around
-            <span style={{ color: "var(--accent)" }}>.</span>
-          </span>
-        </button>
-        <motion.div
-          initial={false}
-          animate={{ height: open ? "auto" : 0, opacity: open ? 1 : 0 }}
-          transition={{
-            height: expandTransition.height,
-            opacity: { duration: open ? 0.35 : 0.15, delay: open ? 0.1 : 0 },
-          }}
-          style={{ overflow: "hidden" }}
-        >
-          <div
-            style={{
-              position: "relative",
-              paddingLeft: 18,
-              paddingTop: 18,
-              paddingBottom: 8,
-            }}
-          >
-            <div
-              style={{
-                position: "absolute",
-                left: 0,
-                top: 18,
-                bottom: 0,
-                width: 1,
-                background: "var(--border-strong)",
-              }}
-            />
-            {BEFORE_TECH.map((e, i) => (
-              <div
-                key={e.where + i}
-                style={{ position: "relative", paddingBottom: 18 }}
-              >
-                <div
-                  style={{
-                    position: "absolute",
-                    top: 4,
-                    left: -22,
-                    width: 7,
-                    height: 7,
-                    background: "var(--accent)",
-                  }}
-                />
-                <div
-                  style={{
-                    fontFamily: "var(--font-mono)",
-                    fontSize: 10,
-                    letterSpacing: "0.08em",
-                    textTransform: "uppercase",
-                    color: "var(--muted)",
-                    marginBottom: 4,
-                  }}
-                >
-                  {e.period}
-                </div>
-                <div
-                  style={{
-                    fontFamily: "var(--font-sans)",
-                    fontSize: 15,
-                    fontWeight: 500,
-                    letterSpacing: "-0.01em",
-                    color: "var(--text)",
-                  }}
-                >
-                  {e.title}
-                </div>
-                <div
-                  style={{
-                    fontFamily: "var(--font-mono)",
-                    fontSize: 10,
-                    color: "var(--accent)",
-                    letterSpacing: "0.06em",
-                    textTransform: "uppercase",
-                    marginBottom: 8,
-                  }}
-                >
-                  {e.where}
-                </div>
-                <div
-                  style={{
-                    fontFamily: "var(--font-sans)",
-                    fontSize: 13,
-                    lineHeight: 1.55,
-                    color: "var(--text-dim)",
-                    textWrap: "pretty",
-                  }}
-                >
-                  {e.note}
-                </div>
-              </div>
-            ))}
-            <div style={{ position: "relative", paddingBottom: 6 }}>
-              <div
-                style={{
-                  position: "absolute",
-                  top: 2,
-                  left: -25,
-                  width: 0,
-                  height: 0,
-                  borderTop: "5px solid transparent",
-                  borderBottom: "5px solid transparent",
-                  borderLeft: "8px solid var(--accent)",
-                }}
-              />
-              <div
-                style={{
-                  fontFamily: "var(--font-mono)",
-                  fontSize: 10,
-                  letterSpacing: "0.08em",
-                  textTransform: "uppercase",
-                  color: "var(--accent)",
-                  marginBottom: 4,
-                }}
-              >
-                2017 →
-              </div>
-              <div
-                style={{
-                  fontFamily: "var(--font-sans)",
-                  fontSize: 15,
-                  fontWeight: 500,
-                  color: "var(--text)",
-                }}
-              >
-                enrolled · prime digital academy
-              </div>
-              <div
-                style={{
-                  fontFamily: "var(--font-mono)",
-                  fontSize: 9,
-                  color: "var(--muted)",
-                  letterSpacing: "0.06em",
-                  textTransform: "uppercase",
-                }}
-              >
-                the chapters above pick up here
-              </div>
-            </div>
-          </div>
-        </motion.div>
-      </div>
-    );
-  }
+/* ============== Mobile ============== */
+
+const MobileTimeline = () => {
+  const [open, setOpen] = useState(false);
+  const panelId = `before-tech-panel-${useId()}`;
+  const handleToggle = useCallback(
+    () => setOpen((current) => !current),
+    [],
+  );
 
   return (
-    <div style={{ marginTop: 56 }}>
-      <Reveal>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "baseline",
-            gap: 16,
-            paddingBottom: 18,
-            borderBottom: "1px dashed var(--border-strong)",
-          }}
-        >
-          <span
-            style={{
-              fontFamily: "var(--font-mono)",
-              fontSize: 11,
-              color: "var(--accent)",
-            }}
-          >
-            {"// before tech"}
-          </span>
-          <span
-            style={{
-              fontFamily: "var(--font-sans)",
-              fontSize: 22,
-              fontWeight: 500,
-              letterSpacing: "-0.015em",
-            }}
-          >
-            the long way around
-            <span style={{ color: "var(--accent)" }}>.</span>
-          </span>
-          <span
-            style={{
-              marginLeft: "auto",
-              fontFamily: "var(--font-mono)",
-              fontSize: 10,
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-              color: "var(--muted)",
-            }}
-          >
-            archive · pre-2017
-          </span>
-        </div>
-      </Reveal>
+    <div className="mt-8 lg:hidden">
+      <MobileToggle open={open} panelId={panelId} onClick={handleToggle} />
+      <motion.div
+        id={panelId}
+        role="region"
+        aria-hidden={!open}
+        initial={false}
+        animate={{ height: open ? "auto" : 0, opacity: open ? 1 : 0 }}
+        transition={{
+          height: { duration: 0.45, ease: [0.2, 0.7, 0.2, 1] },
+          opacity: { duration: open ? 0.35 : 0.15, delay: open ? 0.1 : 0 },
+        }}
+        className="overflow-hidden"
+      >
+        <VerticalRail entries={BEFORE_TECH} />
+      </motion.div>
+    </div>
+  );
+};
 
-      <div style={{ position: "relative", paddingTop: 24, paddingBottom: 8 }}>
-        <div
-          style={{
-            position: "absolute",
-            left: 0,
-            right: 0,
-            top: 80,
-            height: 1,
-            background: "var(--border-strong)",
-          }}
-        />
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: `repeat(${BEFORE_TECH.length + 1}, 1fr)`,
-            gap: 0,
-          }}
+const MobileToggle = ({ open, panelId, onClick }) => (
+  <button
+    type="button"
+    onClick={onClick}
+    aria-expanded={open}
+    aria-controls={panelId}
+    className="dossier-hover flex w-full cursor-pointer flex-col gap-1.5 border-0 border-b border-t border-rule-strong border-b-dashed bg-transparent p-[16px_14px] text-left text-fg"
+  >
+    <div className="flex w-full items-center justify-between font-mono text-[10px] uppercase tracking-[0.08em]">
+      <span className="text-accent">{"// before tech"}</span>
+      <span className="inline-flex items-center gap-1.5 text-muted">
+        {open ? "collapse" : "expand"}
+        <span
+          aria-hidden="true"
+          className="inline-block text-[14px] text-accent transition-transform duration-200"
+          style={{ transform: open ? "rotate(90deg)" : "none" }}
         >
-          {BEFORE_TECH.slice()
-            .reverse()
-            .map((e, i) => (
-              <Reveal key={e.where + i} delay={i * 80}>
-                <div style={{ position: "relative", paddingRight: 16 }}>
-                  <div
-                    style={{
-                      position: "absolute",
-                      top: 75,
-                      left: 0,
-                      width: 1,
-                      height: 11,
-                      background: "var(--accent)",
-                    }}
-                  />
-                  <div
-                    style={{
-                      position: "absolute",
-                      top: 74,
-                      left: -3,
-                      width: 7,
-                      height: 7,
-                      background: "var(--accent)",
-                    }}
-                  />
-                  <div
-                    style={{
-                      fontFamily: "var(--font-mono)",
-                      fontSize: 10,
-                      letterSpacing: "0.08em",
-                      textTransform: "uppercase",
-                      color: "var(--muted)",
-                      marginBottom: 4,
-                    }}
-                  >
-                    {e.period}
-                  </div>
-                  <div
-                    style={{
-                      fontFamily: "var(--font-sans)",
-                      fontSize: 15,
-                      fontWeight: 500,
-                      letterSpacing: "-0.01em",
-                      color: "var(--text)",
-                      marginBottom: 2,
-                      minHeight: 22,
-                    }}
-                  >
-                    {e.title}
-                  </div>
-                  <div
-                    style={{
-                      fontFamily: "var(--font-mono)",
-                      fontSize: 10,
-                      color: "var(--accent)",
-                      letterSpacing: "0.06em",
-                      textTransform: "uppercase",
-                      marginTop: 10,
-                      marginBottom: 28,
-                    }}
-                  >
-                    {e.where}
-                  </div>
-                  <div
-                    style={{
-                      fontFamily: "var(--font-sans)",
-                      fontSize: 13,
-                      lineHeight: 1.55,
-                      color: "var(--text-dim)",
-                      paddingTop: 18,
-                      textWrap: "pretty",
-                    }}
-                  >
-                    {e.note}
-                  </div>
-                </div>
-              </Reveal>
-            ))}
+          →
+        </span>
+      </span>
+    </div>
+    <span className="font-sans text-[18px] font-medium tracking-[-0.015em] text-fg">
+      the long way around<span className="text-accent">.</span>
+    </span>
+  </button>
+);
 
-          <Reveal delay={BEFORE_TECH.length * 80}>
-            <div
-              style={{
-                position: "relative",
-                paddingLeft: 16,
-                borderLeft: "1px dashed var(--border-strong)",
-                minHeight: 140,
-              }}
-            >
-              <div
-                style={{
-                  position: "absolute",
-                  top: 74,
-                  left: -1,
-                  width: 0,
-                  height: 0,
-                  borderTop: "5px solid transparent",
-                  borderBottom: "5px solid transparent",
-                  borderLeft: "8px solid var(--accent)",
-                }}
-              />
-              <div
-                style={{
-                  fontFamily: "var(--font-mono)",
-                  fontSize: 10,
-                  letterSpacing: "0.08em",
-                  textTransform: "uppercase",
-                  color: "var(--accent)",
-                  marginBottom: 4,
-                }}
-              >
-                2017 →
-              </div>
-              <div
-                style={{
-                  fontFamily: "var(--font-sans)",
-                  fontSize: 15,
-                  fontWeight: 500,
-                  letterSpacing: "-0.01em",
-                  color: "var(--text)",
-                }}
-              >
-                enrolled · prime digital academy
-              </div>
-              <div
-                style={{
-                  fontFamily: "var(--font-mono)",
-                  fontSize: 10,
-                  color: "var(--muted)",
-                  letterSpacing: "0.06em",
-                  textTransform: "uppercase",
-                  marginBottom: 28,
-                }}
-              >
-                the chapters above pick up here
-              </div>
-            </div>
+const VerticalRail = ({ entries }) => (
+  <div className="relative pb-2 pl-[18px] pt-[18px]">
+    <div className="absolute bottom-0 left-0 top-[18px] w-px bg-rule-strong" />
+    {entries.map((entry) => (
+      <VerticalEntry key={entry.where + entry.period} entry={entry} />
+    ))}
+    <VerticalTerminal />
+  </div>
+);
+
+const VerticalEntry = ({ entry }) => (
+  <div className="relative pb-[18px]">
+    <EntryPeriod>{entry.period}</EntryPeriod>
+    <EntryTitle>{entry.title}</EntryTitle>
+    <EntryWhere>{entry.where}</EntryWhere>
+    <EntryNote>{entry.note}</EntryNote>
+  </div>
+);
+
+const VerticalTerminal = () => (
+  <div className="relative pb-1.5">
+    <RailArrow top={2} offsetX={-25} />
+    <EntryPeriod accent>{TERMINAL_ENTRY.period}</EntryPeriod>
+    <EntryTitle>{TERMINAL_ENTRY.title}</EntryTitle>
+    <div className="font-mono text-[9px] uppercase tracking-[0.06em] text-muted">
+      {TERMINAL_ENTRY.caption}
+    </div>
+  </div>
+);
+
+/* ============== Desktop ============== */
+
+const DesktopTimeline = () => (
+  <div className="mt-14 hidden lg:block">
+    <Reveal>
+      <DesktopHeading />
+    </Reveal>
+    <HorizontalRail entries={BEFORE_TECH} />
+  </div>
+);
+
+const DesktopHeading = () => (
+  <div className="flex items-baseline gap-4 border-b border-dashed border-rule-strong pb-[18px]">
+    <span className="font-mono text-[11px] text-accent">
+      {"// before tech"}
+    </span>
+    <span className="font-sans text-[22px] font-medium tracking-[-0.015em]">
+      the long way around<span className="text-accent">.</span>
+    </span>
+    <span className="ml-auto font-mono text-[10px] uppercase tracking-[0.08em] text-muted">
+      archive · pre-2017
+    </span>
+  </div>
+);
+
+const HorizontalRail = ({ entries }) => {
+  const reversed = entries.slice().reverse();
+  return (
+    <div className="relative pb-2 pt-6">
+      <div
+        className="absolute left-0 right-0 h-px bg-rule-strong"
+        style={{ top: 80 }}
+      />
+      <div
+        className="grid"
+        style={{
+          gridTemplateColumns: `repeat(${reversed.length + 1}, 1fr)`,
+        }}
+      >
+        {reversed.map((entry, entryIndex) => (
+          <Reveal key={entry.where + entry.period} delay={entryIndex * 80}>
+            <HorizontalEntry entry={entry} />
           </Reveal>
-        </div>
+        ))}
+        <Reveal delay={reversed.length * 80}>
+          <HorizontalTerminal />
+        </Reveal>
       </div>
     </div>
   );
 };
+
+const HorizontalEntry = ({ entry }) => (
+  <div className="relative pr-4">
+    <EntryPeriod>{entry.period}</EntryPeriod>
+    <EntryTitle>{entry.title}</EntryTitle>
+    <EntryWhere style={{ marginTop: 20, marginBottom: 5 }}>
+      {entry.where}
+    </EntryWhere>
+    <EntryNote style={{ paddingTop: 18 }}>{entry.note}</EntryNote>
+  </div>
+);
+
+const HorizontalTerminal = () => (
+  <div
+    className="relative border-l border-dashed border-rule-strong pl-4"
+    style={{ minHeight: 140 }}
+  >
+    <RailArrow top={74} offsetX={-1} />
+    <EntryPeriod accent>{TERMINAL_ENTRY.period}</EntryPeriod>
+    <EntryTitle>{TERMINAL_ENTRY.title}</EntryTitle>
+    <div className="mb-7 mt-5 font-mono text-[10px] uppercase tracking-[0.06em] text-muted">
+      {TERMINAL_ENTRY.caption}
+    </div>
+  </div>
+);
+
+/* ============== Shared atoms ============== */
+
+const RailArrow = ({ top, offsetX = -25 }) => (
+  <div
+    className="absolute h-0 w-0"
+    style={{
+      top,
+      left: offsetX,
+      borderTop: "5px solid transparent",
+      borderBottom: "5px solid transparent",
+      borderLeft: "8px solid var(--accent)",
+    }}
+  />
+);
+
+const EntryPeriod = ({ children, accent }) => (
+  <div
+    className={`mb-1 font-mono text-[10px] uppercase tracking-[0.08em] ${
+      accent ? "text-accent" : "text-muted"
+    }`}
+  >
+    {children}
+  </div>
+);
+
+const EntryTitle = ({ children }) => (
+  <div className="min-h-[22px] font-sans text-[15px] font-medium tracking-[-0.01em] text-fg">
+    {children}
+  </div>
+);
+
+const EntryWhere = ({ children, style }) => (
+  <div
+    className="mb-2 mt-2 font-mono text-[10px] uppercase tracking-[0.06em] text-accent"
+    style={style}
+  >
+    {children}
+  </div>
+);
+
+const EntryNote = ({ children, style }) => (
+  <div
+    className="font-sans text-[13px] leading-[1.55] text-dim"
+    style={{ textWrap: "pretty", ...style }}
+  >
+    {children}
+  </div>
+);
 
 export default BeforeTechTimeline;

@@ -1,122 +1,33 @@
 import Reveal from "../Reveal";
-import { tagPill, mTagPill } from "./styles";
+import TagPill from "./TagPill";
 
-export const ProjectCard = ({ p }) => (
+const ProjectCard = ({ project }) => (
   <Reveal>
     <a
-      href={p.href}
+      href={project.href}
       target="_blank"
       rel="noreferrer"
-      className="dossier-hover"
-      style={{
-        background: "var(--bg)",
-        padding: "28px 26px",
-        minHeight: 280,
-        display: "flex",
-        flexDirection: "column",
-        gap: 14,
-        cursor: "pointer",
-        textDecoration: "none",
-        color: "inherit",
-      }}
+      className="dossier-hover flex cursor-pointer flex-col gap-2.5 bg-canvas p-[18px] text-fg no-underline lg:min-h-[280px] lg:gap-3.5 lg:p-[28px_26px]"
     >
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <span className="mono-label">
-          {p.id} · {p.year}
+      <div className="flex justify-between">
+        <span className="mono-label text-[10px] lg:text-[11px]">
+          {project.id} · {project.year}
         </span>
-        <span style={{ color: "var(--muted)" }}>→</span>
+        <span className="text-muted">→</span>
       </div>
-      <h4
-        style={{
-          fontFamily: "var(--font-sans)",
-          fontSize: 24,
-          letterSpacing: "-0.015em",
-          margin: 0,
-          fontWeight: 500,
-        }}
-      >
-        {p.title}
+      <h4 className="m-0 font-sans text-[19px] font-medium tracking-[-0.015em] lg:text-[24px]">
+        {project.title}
       </h4>
-      <p
-        style={{
-          fontFamily: "var(--font-sans)",
-          fontSize: 14,
-          color: "var(--text-dim)",
-          margin: 0,
-          lineHeight: 1.55,
-          flex: 1,
-        }}
-      >
-        {p.blurb}
+      <p className="m-0 font-sans text-[13px] leading-[1.5] text-dim lg:flex-1 lg:text-[14px] lg:leading-[1.55]">
+        {project.blurb}
       </p>
-      <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
-        {p.tags.map((t) => (
-          <span key={t} style={tagPill}>
-            {t}
-          </span>
+      <div className="flex flex-wrap gap-[5px] lg:gap-1.5">
+        {project.tags.map((tag) => (
+          <TagPill key={tag}>{tag}</TagPill>
         ))}
       </div>
     </a>
   </Reveal>
 );
 
-export const MobileProjectCard = ({ p }) => (
-  <a
-    href={p.href}
-    target="_blank"
-    rel="noreferrer"
-    className="dossier-hover"
-    style={{
-      background: "var(--bg)",
-      display: "flex",
-      flexDirection: "column",
-      textDecoration: "none",
-      color: "inherit",
-    }}
-  >
-    <div
-      style={{
-        padding: 18,
-        display: "flex",
-        flexDirection: "column",
-        gap: 10,
-      }}
-    >
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <span className="mono-label" style={{ fontSize: 10 }}>
-          {p.id} · {p.year}
-        </span>
-        <span style={{ color: "var(--muted)" }}>→</span>
-      </div>
-      <h4
-        style={{
-          fontFamily: "var(--font-sans)",
-          fontSize: 19,
-          letterSpacing: "-0.015em",
-          margin: 0,
-          fontWeight: 500,
-        }}
-      >
-        {p.title}
-      </h4>
-      <p
-        style={{
-          fontFamily: "var(--font-sans)",
-          fontSize: 13,
-          color: "var(--text-dim)",
-          margin: 0,
-          lineHeight: 1.5,
-        }}
-      >
-        {p.blurb}
-      </p>
-      <div style={{ display: "flex", flexWrap: "wrap", gap: 5 }}>
-        {p.tags.map((t) => (
-          <span key={t} style={mTagPill}>
-            {t}
-          </span>
-        ))}
-      </div>
-    </div>
-  </a>
-);
+export default ProjectCard;

@@ -1,50 +1,19 @@
 import Reveal from "../Reveal";
 
-export const Section = ({ num, title, count, id, children }) => (
-  <section id={id} style={{ paddingTop: 96, paddingBottom: 24 }}>
+const Section = ({ num, title, count, id, children }) => (
+  <section id={id} className="pt-14 lg:pt-24 lg:pb-6">
     <Reveal>
-      <header
-        style={{
-          display: "flex",
-          alignItems: "baseline",
-          justifyContent: "space-between",
-          paddingBottom: 24,
-          borderBottom: "1px solid var(--border-strong)",
-          marginBottom: 32,
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "baseline", gap: 20 }}>
-          <span
-            style={{
-              fontFamily: "var(--font-mono)",
-              fontSize: 12,
-              color: "var(--accent)",
-            }}
-          >
+      <header className="flex items-baseline justify-between border-b border-rule-strong pb-3.5 mb-5 lg:pb-6 lg:mb-8">
+        <div className="flex items-baseline gap-3 lg:gap-5">
+          <span className="font-mono text-[11px] text-accent lg:text-[12px]">
             {`// ${num}`}
           </span>
-          <h2
-            style={{
-              fontFamily: "var(--font-sans)",
-              fontSize: 40,
-              fontWeight: 500,
-              letterSpacing: "-0.025em",
-              margin: 0,
-            }}
-          >
+          <h2 className="m-0 font-sans text-[26px] font-medium tracking-[-0.02em] lg:text-[40px] lg:tracking-[-0.025em]">
             {title}
-            <span style={{ color: "var(--accent)" }}>.</span>
+            <span className="text-accent">.</span>
           </h2>
         </div>
-        <span
-          style={{
-            fontFamily: "var(--font-mono)",
-            fontSize: 11,
-            color: "var(--muted)",
-            letterSpacing: "0.06em",
-            textTransform: "uppercase",
-          }}
-        >
+        <span className="font-mono text-[9px] uppercase tracking-[0.06em] text-muted lg:text-[11px]">
           {count}
         </span>
       </header>
@@ -53,53 +22,4 @@ export const Section = ({ num, title, count, id, children }) => (
   </section>
 );
 
-export const MobileSection = ({ num, title, count, id, children }) => (
-  <section id={id} style={{ paddingTop: 56 }}>
-    <header
-      style={{
-        display: "flex",
-        alignItems: "baseline",
-        justifyContent: "space-between",
-        paddingBottom: 14,
-        borderBottom: "1px solid var(--border-strong)",
-        marginBottom: 22,
-      }}
-    >
-      <div style={{ display: "flex", alignItems: "baseline", gap: 12 }}>
-        <span
-          style={{
-            fontFamily: "var(--font-mono)",
-            fontSize: 11,
-            color: "var(--accent)",
-          }}
-        >
-          {`// ${num}`}
-        </span>
-        <h2
-          style={{
-            fontFamily: "var(--font-sans)",
-            fontSize: 26,
-            fontWeight: 500,
-            letterSpacing: "-0.02em",
-            margin: 0,
-          }}
-        >
-          {title}
-          <span style={{ color: "var(--accent)" }}>.</span>
-        </h2>
-      </div>
-      <span
-        style={{
-          fontFamily: "var(--font-mono)",
-          fontSize: 9,
-          color: "var(--muted)",
-          letterSpacing: "0.06em",
-          textTransform: "uppercase",
-        }}
-      >
-        {count}
-      </span>
-    </header>
-    {children}
-  </section>
-);
+export default Section;
