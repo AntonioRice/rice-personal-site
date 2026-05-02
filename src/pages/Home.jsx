@@ -18,7 +18,7 @@ import {
 } from "../components";
 import useEventsTracker from "../hooks/useEventsTracker";
 import skills from "../utils/skillsData";
-import { useScrollContext } from "../context/scrollContextValue";
+import { useScrollContext } from "../context/ScrollContext";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -72,13 +72,6 @@ const Home = () => {
   const animationVariants = {
     hidden: { opacity: 0, y: 75 },
     visible: { opacity: 1, y: 0 },
-  };
-
-  const sectionFadeProps = {
-    initial: { opacity: 0, y: 40 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, amount: 0.15 },
-    transition: { duration: 0.6, ease: "easeOut" },
   };
 
   return (
@@ -173,11 +166,11 @@ const Home = () => {
         exit="hidden"
         variants={animationVariants}
       >
-        <motion.section ref={heroRef} {...sectionFadeProps}>
+        <motion.section ref={heroRef}>
           <HeroSection />
         </motion.section>
 
-        <motion.section ref={aboutRef} {...sectionFadeProps}>
+        <motion.section ref={aboutRef}>
           <Section id="about" title="About Me">
             <div className="grid gap-10 md:grid-cols-2">
               <div className="col-span-1">
@@ -208,7 +201,7 @@ const Home = () => {
           </Section>
         </motion.section>
 
-        <motion.section ref={experienceRef} {...sectionFadeProps}>
+        <motion.section ref={experienceRef}>
           <Section id="experience" title="Experience">
             {skills.experience.map((exp, i) => (
               <ExperienceBlock key={i} experience={exp} />
@@ -272,7 +265,7 @@ const Home = () => {
           </Section>
         </motion.section>
 
-        <motion.section ref={projectRef} {...sectionFadeProps}>
+        <motion.section ref={projectRef}>
           <Section id="projects" title="Projects">
             <div className="flex flex-wrap items-center justify-center gap-6">
               {skills.projects.map((project, i) => (
@@ -282,7 +275,7 @@ const Home = () => {
           </Section>
         </motion.section>
 
-        <motion.section ref={learningRef} {...sectionFadeProps}>
+        <motion.section ref={learningRef}>
           <Section id="learning" title="Learning">
             <div className="flex flex-wrap items-center justify-center gap-6">
               {skills.learning.map((learn, i) => (
@@ -299,7 +292,7 @@ const Home = () => {
           </Section>
         </motion.section>
 
-        <motion.section ref={contactRef} {...sectionFadeProps}>
+        <motion.section ref={contactRef}>
           <Section id="contact" title="Contact Me">
             <Contact />
           </Section>
